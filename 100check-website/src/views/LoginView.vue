@@ -25,7 +25,7 @@
       <button type="submit" class="primary-btn">登入</button>
     </form>
     <div class="login-links">
-      <router-link to="/register" class="link-btn">尚未註冊</router-link>
+      <router-link to="/RegisterView" class="link-btn">尚未註冊</router-link>
       <router-link to="/ForgetPassword" class="link-btn">忘記密碼</router-link>
     </div>
   </div>

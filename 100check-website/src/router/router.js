@@ -5,8 +5,8 @@ import PIFView from './views/PIFView.vue'
 import PlanView from './views/PlanView.vue'
 import NewsView from './views/NewsView.vue'
 import AboutView from './views/AboutView.vue'
-import Loginview from './views/Loginview.vue' 
-
+import Loginview from './views/LoginView.vue' 
+import Loginview from './views/RegisterView.vue' 
 const routes = [
   { path: '/', component: Home },
   { path: '/ServicesView', component: Services },
@@ -15,7 +15,7 @@ const routes = [
   { path: '/NewsView', component: NewsView },
   { path: '/AboutView', component: AboutView },
   { path: '/LoginView', component: Loginview },
-  { path: '/register', component: () => import('./views/Register.vue') }, 
+  { path: '/RegisterView', component:RegisterView }, 
   { path: '/ForgetPassword', component: () => import('./views/ForgetPassword.vue') } 
 ]
 const router = createRouter({
