@@ -12,7 +12,7 @@
         <div class="register-form">
           <h2>建立您的帳號</h2>
           <div v-if="formSubmitted" class="success-message">
-            註冊成功！請檢查您的電子郵件以完成驗證。
+            註冊成功！請檢查您的電子郵件以完成後續步驟。
           </div>
           <div v-else>
             <div class="form-group">
@@ -36,7 +36,7 @@
               <span v-if="errors.terms" class="error-message">{{ errors.terms }}</span>
             </div>
             <button class="primary-btn" @click="submitForm">註冊</button>
-            <p class="login-link">已有帳號？<router-link to="/login">立即登入</router-link></p>
+            <p class="login-link">已有帳號？<router-link to="/LoginView">立即登入</router-link></p>
           </div>
         </div>
       </div>
@@ -45,6 +45,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -73,7 +75,6 @@ export default {
       }
       let isValid = true
 
-      // 驗證電子郵件格式
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       if (!this.form.email) {
         this.errors.email = '請輸入電子郵件'
@@ -83,7 +84,6 @@ export default {
         isValid = false
       }
 
-      // 驗證密碼長度
       if (!this.form.password) {
         this.errors.password = '請輸入密碼'
         isValid = false
@@ -92,7 +92,6 @@ export default {
         isValid = false
       }
 
-      // 驗證確認密碼
       if (!this.form.confirmPassword) {
         this.errors.confirmPassword = '請再次輸入密碼'
         isValid = false
@@ -101,7 +100,6 @@ export default {
         isValid = false
       }
 
-      // 驗證服務條款
       if (!this.form.terms) {
         this.errors.terms = '請同意服務條款'
         isValid = false
@@ -109,19 +107,27 @@ export default {
 
       return isValid
     },
-    submitForm() {
+    async submitForm() {
       if (this.validateForm()) {
-        // 模擬表單提交
-        this.formSubmitted = true
-        // 重置表單
-        this.form.email = ''
-        this.form.password = ''
-        this.form.confirmPassword = ''
-        this.form.terms = false
-        // 5 秒後隱藏成功訊息
-        setTimeout(() => {
-          this.formSubmitted = false
-        }, 5000)
+        try {
+          const response = await axios.post('http://localhost:3000/api/register', {
+            email: this.form.email,
+            password: this.form.password
+          })
+          if (response.status === 201) {
+            this.formSubmitted = true
+            this.form.email = ''
+            this.form.password = ''
+            this.form.confirmPassword = ''
+            this.form.terms = false
+            setTimeout(() => {
+              this.formSubmitted = false
+            }, 5000)
+          }
+        } catch (error) {
+          console.log('註冊失敗', error.response?.data)
+          this.errors.email = error.response?.data?.message || '註冊失敗，請稍後重試'
+        }
       }
     }
   }
@@ -135,7 +141,6 @@ export default {
   max-width: 1200px;
 }
 
-/* 標題區塊 */
 .hero-section {
   text-align: center;
   margin-bottom: 40px;
@@ -152,7 +157,6 @@ export default {
   color: #333;
 }
 
-/* 註冊表單區塊 */
 .register-section {
   margin-bottom: 40px;
 }
@@ -188,7 +192,7 @@ export default {
   margin-bottom: 5px;
 }
 
-.form-group input, .form-group textarea {
+.form-group input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -267,7 +271,6 @@ export default {
   color: #e04e2d;
 }
 
-/* 響應式設計 */
 @media (max-width: 768px) {
   .register-form {
     padding: 15px;
