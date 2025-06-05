@@ -125,8 +125,20 @@ export default {
             }, 5000)
           }
         } catch (error) {
-          console.log('註冊失敗', error.response?.data)
-          this.errors.email = error.response?.data?.message || '註冊失敗，請稍後重試'
+          console.log('註冊失敗詳細錯誤:', error)
+          if (!error.response) {
+            this.errors.email = '無法連線到伺服器，請確認後端是否運行'
+          } else {
+            const status = error.response.status
+            const message = error.response.data?.message || '註冊失敗，請稍後重試'
+            if (status === 400) {
+              this.errors.email = message
+            } else if (status === 500) {
+              this.errors.email = '伺服器內部錯誤，請稍後重試'
+            } else {
+              this.errors.email = message
+            }
+          }
         }
       }
     }
