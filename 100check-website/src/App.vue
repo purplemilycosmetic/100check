@@ -15,8 +15,13 @@
       </nav>
       <div class="right-section">
         <div class="lang-switcher">
+          <!-- 語言切換器 -->
         </div>
-         <router-link to="/loginview" class="auth-btn">註冊/登入</router-link>
+        <div v-if="isLoggedIn" class="user-info">
+          <span class="username">{{ username }}</span>
+          <button @click="logout" class="logout-btn">登出</button>
+        </div>
+        <router-link v-else to="/loginview" class="auth-btn">註冊/登入</router-link>
       </div>
     </header>
 
@@ -25,7 +30,7 @@
       <router-view />
     </main>
     <!-- 頁尾 -->
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -37,7 +42,25 @@ export default {
     Footer
   },
   data() {
-    return {}
+    return {
+      username: localStorage.getItem('username') || '',
+      isLoggedIn: !!localStorage.getItem('token')
+    }
+  },
+  methods: {
+    logout() {
+      localStorage.removeItem('token')
+      localStorage.removeItem('username')
+      this.isLoggedIn = false
+      this.username = ''
+      this.$router.push('/loginview')
+    }
+  },
+  watch: {
+    '$route'() {
+      this.isLoggedIn = !!localStorage.getItem('token')
+      this.username = localStorage.getItem('username') || ''
+    }
   }
 }
 </script>
@@ -63,18 +86,21 @@ export default {
 }
 
 .logo-btn {
-  text-decoration: none; /* 移除底線 */
-  display: flex; /* 確保圖片居中 */
+  text-decoration: none;
+  display: flex;
   align-items: center;
 }
+
 .logo-image {
-  height: 40px; /* 調整圖片高度 */
-  width: auto; /* 保持比例 */
-  cursor: pointer; /* 顯示手形游標 */
+  height: 40px;
+  width: auto;
+  cursor: pointer;
 }
+
 .logo-btn:hover .logo-image {
-  opacity: 0.8; /* hover 效果 */
+  opacity: 0.8;
 }
+
 nav {
   flex-grow: 1;
   text-align: center;
@@ -113,14 +139,38 @@ nav a:hover, router-link:hover {
   cursor: pointer;
   font-size: 14px;
   margin-right: 100px;
-  text-decoration: none; /* 移除底線 */
+  text-decoration: none;
 }
 
 .auth-btn:hover {
   background: #e04e2d;
 }
 
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 100px;
+}
 
+.username {
+  font-size: 14px;
+  color: #333;
+}
+
+.logout-btn {
+  background: #ff5733;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background: #e04e2d;
+}
 
 /* 主內容 */
 .content {

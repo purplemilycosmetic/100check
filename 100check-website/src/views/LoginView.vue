@@ -116,16 +116,30 @@ export default {
         this.isLoading = true
         try {
           const response = await axios.post('http://localhost:3000/api/login', {
-            email: this.username, // 假設帳號為電子郵件
+            email: this.username,
             password: this.password
           })
           if (response.status === 200) {
-            this.loginSuccess = true
+            // 儲存會話資訊
+            localStorage.setItem('token', response.data.token)
+            localStorage.setItem('username', this.username)
+
+            // 確認會話已儲存
+            const storedToken = localStorage.getItem('token')
+            const storedUsername = localStorage.getItem('username')
+            if (!storedToken || !storedUsername) {
+              throw new Error('會話儲存失敗')
+            }
+            console.log('會話儲存成功:', { token: storedToken, username: storedUsername })
+
+            // 處理「記住我」功能
             if (this.rememberMe) {
               localStorage.setItem('username', this.username)
             } else {
               localStorage.removeItem('username')
             }
+
+            this.loginSuccess = true
             setTimeout(() => {
               this.loginSuccess = false
               this.$router.push('/')
