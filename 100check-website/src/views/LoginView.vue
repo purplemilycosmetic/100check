@@ -8,9 +8,10 @@
           v-model="username"
           type="text"
           id="username"
-          placeholder="請輸入帳號"
+          placeholder="請輸入帳號（電子郵件）"
           required
         />
+        <span v-if="errors.username" class="error-message">{{ errors.username }}</span>
       </div>
       <div class="form-group">
         <label for="password">密碼</label>
@@ -18,11 +19,22 @@
           v-model="password"
           type="password"
           id="password"
-          placeholder="請輸入密碼"
+          placeholder="請輸入密碼（至少 8 個字符）"
           required
         />
+        <span v-if="errors.password" class="error-message">{{ errors.password }}</span>
       </div>
-      <button type="submit" class="primary-btn">登入</button>
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="remember" v-model="rememberMe" />
+        <label for="remember">記住我</label>
+      </div>
+      <button type="submit" class="primary-btn" :disabled="isLoading">
+        <span v-if="isLoading">載入中...</span>
+        <span v-else>登入</span>
+      </button>
+      <div v-if="loginSuccess" class="success-message">
+        登入成功！即將導向首頁。
+      </div>
     </form>
     <div class="login-links">
       <router-link to="/RegisterView" class="link-btn">尚未註冊</router-link>
@@ -32,19 +44,116 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
       username: '',
-      password: ''
+      password: '',
+      errors: {
+        username: '',
+        password: ''
+      },
+      rememberMe: false,
+      isLoading: false,
+      loginSuccess: false
+    }
+  },
+  watch: {
+    username(newValue) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (newValue && !emailRegex.test(newValue)) {
+        this.errors.username = '請輸入有效的電子郵件格式'
+      } else {
+        this.errors.username = ''
+      }
+    },
+    password(newValue) {
+      if (newValue && newValue.length < 8) {
+        this.errors.password = '密碼必須至少 8 個字符'
+      } else {
+        this.errors.password = ''
+      }
+    }
+  },
+  created() {
+    const savedUsername = localStorage.getItem('username')
+    if (savedUsername) {
+      this.username = savedUsername
+      this.rememberMe = true
     }
   },
   methods: {
-    handleLogin() {
-      // 這裡可以添加登入邏輯，例如發送 API 請求
-      console.log('登入嘗試:', { username: this.username, password: this.password })
-      // 模擬成功後跳轉到首頁（/）
-      this.$router.push('/')
+    validateForm() {
+      this.errors = {
+        username: '',
+        password: ''
+      }
+      let isValid = true
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (!this.username) {
+        this.errors.username = '請輸入帳號'
+        isValid = false
+      } else if (!emailRegex.test(this.username)) {
+        this.errors.username = '請輸入有效的電子郵件格式'
+        isValid = false
+      }
+
+      if (!this.password) {
+        this.errors.password = '請輸入密碼'
+        isValid = false
+      } else if (this.password.length < 8) {
+        this.errors.password = '密碼必須至少 8 個字符'
+        isValid = false
+      }
+
+      return isValid
+    },
+    async handleLogin() {
+      if (this.validateForm()) {
+        this.isLoading = true
+        try {
+          const response = await axios.post('http://localhost:3000/api/login', {
+            email: this.username, // 假設帳號為電子郵件
+            password: this.password
+          })
+          if (response.status === 200) {
+            this.loginSuccess = true
+            if (this.rememberMe) {
+              localStorage.setItem('username', this.username)
+            } else {
+              localStorage.removeItem('username')
+            }
+            setTimeout(() => {
+              this.loginSuccess = false
+              this.$router.push('/')
+            }, 2000)
+          }
+        } catch (error) {
+          console.log('登入失敗詳細錯誤:', error)
+          if (!error.response) {
+            this.errors.username = '無法連線到伺服器，請確認後端是否運行'
+          } else {
+            const status = error.response.status
+            const message = error.response.data?.message || '登入失敗，請稍後重試'
+            if (status === 400) {
+              if (message.includes('用戶不存在')) {
+                this.errors.username = message
+              } else if (message.includes('密碼錯誤')) {
+                this.errors.password = message
+              } else {
+                this.errors.username = message
+              }
+            } else {
+              this.errors.username = message
+            }
+          }
+        } finally {
+          this.isLoading = false
+        }
+      }
     }
   }
 }
@@ -90,6 +199,36 @@ export default {
   box-sizing: border-box;
 }
 
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input {
+  width: auto;
+  margin-right: 10px;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+}
+
+.error-message {
+  display: block;
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-align: center;
+}
+
 .primary-btn {
   padding: 10px 20px;
   background: #ff5733;
@@ -102,6 +241,11 @@ export default {
 
 .primary-btn:hover {
   background: #e04e2d;
+}
+
+.primary-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
 }
 
 .login-links {
