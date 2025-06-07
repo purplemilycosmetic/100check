@@ -7,6 +7,7 @@
       </router-link>
       <nav>
         <router-link to="/" exact>首頁</router-link>
+        <router-link to="/AIAuditView">AI廣告檢核</router-link> 
         <router-link to="/ServicesView">服務介紹</router-link>
         <router-link to="/PIFView">化妝品安全資料簽署</router-link>
         <router-link to="/PlanView">方案介紹</router-link>
