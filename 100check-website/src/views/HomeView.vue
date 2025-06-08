@@ -2,9 +2,9 @@
   <section class="hero-section">
     <!-- 區塊1 -->
     <div class="hero-section-content" style="background-color: #fff;">
-      <h1>百元快檢 | 廣告快速審核 - AI 快速審核廣告</h1>
+      <h1>審盾橘 | 廣告快速審核 - AI 快速審核廣告</h1>
       <p>減少人工檢核，建立標準化審查程序，降低建項風險！</p>
-      <p class="subtext">※ 詳情請參考 <a href="#">百元快檢</a>，免費體驗檢核廣告</p>
+      <p class="subtext">※ 詳情請參考 <a href="#">審盾橘</a>，免費體驗檢核廣告</p>
       <div class="buttons">
         <router-link to="/ServicesView" class="primary-btn">查看方案</router-link>
         <router-link to="/LoginView" class="primary-btn">註冊免費體驗</router-link>

@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section">
-        <h3>百元快檢</h3>
+        <h3>審盾橘</h3>
       </div>
       <div class="footer-section">
         <h3>產品服務</h3>

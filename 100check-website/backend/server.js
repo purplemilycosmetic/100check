@@ -65,7 +65,7 @@ app.post('/api/register', async (req, res) => {
           console.error('插入錯誤:', err.message);
           return res.status(500).json({ message: '註冊失敗' });
         }
-        console.log(`用戶 ${email} 註冊成功`);
+        console.log(`帳號 ${email} 註冊成功`);
         res.status(201).json({ message: '註冊成功' });
       });
     });
@@ -90,7 +90,7 @@ app.post('/api/login', (req, res) => {
       return res.status(500).json({ message: '伺服器錯誤' });
     }
     if (!row) {
-      return res.status(400).json({ message: '用戶不存在' });
+      return res.status(400).json({ message: '帳號不存在' });
     }
 
     bcrypt.compare(password, row.password, (err, result) => {
@@ -102,13 +102,13 @@ app.post('/api/login', (req, res) => {
         return res.status(400).json({ message: '密碼錯誤' });
       }
 
-      console.log(`用戶 ${email} 登入成功`);
+      console.log(`帳號 ${email} 登入成功`);
       res.status(200).json({ message: '登入成功', userId: row.id });
     });
   });
 });
 
-// 查詢所有用戶（開發用）
+// 查詢所有帳號（開發用）
 app.get('/api/users', (req, res) => {
   db.all('SELECT id, email FROM users', [], (err, rows) => {
     if (err) {

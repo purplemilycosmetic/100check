@@ -153,7 +153,7 @@ export default {
             const status = error.response.status
             const message = error.response.data?.message || '登入失敗，請稍後重試'
             if (status === 400) {
-              if (message.includes('用戶不存在')) {
+              if (message.includes('帳號不存在')) {
                 this.errors.username = message
               } else if (message.includes('密碼錯誤')) {
                 this.errors.password = message

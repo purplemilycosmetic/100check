@@ -59,18 +59,7 @@
       </div>
     </section>
 
-    <!-- 地圖區塊 -->
-    <section class="map-section">
-      <h2>我們的位置</h2>
-      <div class="map-container">
-        <!-- 使用靜態地圖圖片（可替換為 Google 地圖 iframe） -->
-        <img src="https://via.placeholder.com/800x400?text=Map+Placeholder" alt="公司地圖" />
-        <!-- 若使用 Google 地圖 iframe，可替換為以下：
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.678804982573!2d121.52215931500624!3d25.041020983972406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a94e6b6e3b2f%3A0x5f5f5f5f5f5f5f5f!2sTaipei%20101!5e0!3m2!1sen!2stw!4v1698234567890!5m2!1sen!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        -->
-      </div>
-    </section>
-  </div>
+ </div>
 </template>
 
 <script>
@@ -243,29 +232,6 @@ export default {
   color: #e04e2d;
 }
 
-/* 地圖區塊 */
-.map-section {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.map-section h2 {
-  color: #ff5733;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.map-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.map-container img, .map-container iframe {
-  width: 100%;
-  height: 400px;
-  border-radius: 10px;
-}
 
 /* 響應式設計 */
 @media (max-width: 768px) {
