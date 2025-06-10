@@ -110,7 +110,7 @@ nav {
 nav a, router-link {
   margin: 0 15px;
   text-decoration: none;
-  color: #ec0000;
+  color: #e04e2d;
   font-size: 16px;
 }
 
