@@ -67,28 +67,7 @@
     </div>
 
     <!-- 區塊3 -->
-    <div class="info-sections1">
-      <div class="info-card">
-        <img src="@/assets/test2.jpg" alt="test" class="card-icon" />
-        <h3>降低建規風險</h3>
-        <p>大幅提升效率及合規性檢核</p>
-        <ul>
-          <li>有效控管風險及錯誤</li>
-          <li>提升法規效率及合規性</li>
-          <li>建立完整法規庫</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <img src="@/assets/test2.jpg" alt="Cosmetics" class="card-icon" />
-        <h3>化妝品安全資料簽署</h3>
-        <p>提供化妝品安全資料簽署</p>
-        <ul>
-          <li>提供法規合規性檢查</li>
-          <li>確保產品安全</li>
-          <li>減少法規風險</li>
-        </ul>
-      </div>
-    </div>
+
   </section>
 </template>
 
