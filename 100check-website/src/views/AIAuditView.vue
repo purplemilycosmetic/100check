@@ -18,7 +18,7 @@
     <button @click="auditAd" class="audit-button" :disabled="!selectedCategory || !adText">審核</button>
     <div v-if="auditResult" class="audit-result">
       <h3>審核結果</h3>
-      <p>{{ auditResult }}</p>
+      <p v-html="auditResult" v-bind:style="isRed"></p>
     </div>
   </div>
 </template>
@@ -76,11 +76,13 @@ export default {
 
         if(response.data.ileagalWords.length > 0) 
         {
-          this.auditResult = response.data.ileagalWords.join("、");
+          this.auditResult = response.data.ileagalWords.join("</br>");
+          this.isRed = {color: 'red'}
         }
         else
         {
-          this.auditResult = `文案初步符合 ${this.selectedCategory} 的合規要求，請確認其他細節。`;
+          this.auditResult = "文案初步符合";
+          this.isRed = {color: 'green'}
         }
       })
       .catch(error => {
