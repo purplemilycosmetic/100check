@@ -11,7 +11,6 @@
         <router-link to="/ServicesView">服務介紹</router-link>
         <router-link to="/PIFView">化妝品安全資料簽署</router-link>
         <router-link to="/PlanView">方案介紹</router-link>
-        <router-link to="/NewsView">最新消息</router-link>
         <router-link to="/AboutView">關於我們</router-link>
       </nav>
       <div class="right-section">
