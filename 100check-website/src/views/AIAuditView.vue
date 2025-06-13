@@ -175,6 +175,6 @@ export default {
 
 .audit-result p {
   font-size: 14px;
-  color: #ffffff;
+  color: #333;
 }
 </style>
