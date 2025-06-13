@@ -18,10 +18,10 @@
     <div class="carousel">
       <div class="carousel-slides">
         <div class="carousel-slide">
-          <img src="@/assets/test.jpg" alt="Slide 1" class="carousel-image" />
+          <img src="@/assets/幻燈片1.png" alt="Slide 1" class="carousel-image" />
         </div>
         <div class="carousel-slide">
-          <img src="@/assets/test2.jpg" alt="Slide 2" class="carousel-image" />
+          <img src="@/assets/幻燈片2.png" alt="Slide 2" class="carousel-image" />
         </div>
         <div class="carousel-slide">
           <img src="@/assets/簽署圖.jpg" alt="Slide 3" class="carousel-image" />
