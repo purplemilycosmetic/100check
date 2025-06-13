@@ -193,7 +193,7 @@ export default {
 }
 
 .audit-result h3 {
-  color: #ec0000;
+  color: #000000;
   font-size: 18px;
   margin-bottom: 10px;
 }
