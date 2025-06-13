@@ -55,6 +55,7 @@ export default {
     auditAd() {
       if (!this.selectedCategory || !this.adText) return;
 
+      this.auditResult = "";
       // 簡單的審核邏輯範例
       // const hasMedicalClaim = this.adText.toLowerCase().includes('治療') || this.adText.toLowerCase().includes('醫學');
       // const isExaggerated = this.adText.toLowerCase().includes('完美') || this.adText.toLowerCase().includes('神奇');
@@ -73,8 +74,14 @@ export default {
       })
       .then(response => {
 
-        this.auditResult += response.data.ileagalWords.join("、");
-
+        if(response.data.ileagalWords.length > 0) 
+        {
+          this.auditResult = response.data.ileagalWords.join("、");
+        }
+        else
+        {
+          this.auditResult = `文案初步符合 ${this.selectedCategory} 的合規要求，請確認其他細節。`;
+        }
       })
       .catch(error => {
         console.error(error);
