@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'AIAuditView',
   data() {
@@ -55,16 +56,31 @@ export default {
       if (!this.selectedCategory || !this.adText) return;
 
       // 簡單的審核邏輯範例
-      const hasMedicalClaim = this.adText.toLowerCase().includes('治療') || this.adText.toLowerCase().includes('醫學');
-      const isExaggerated = this.adText.toLowerCase().includes('完美') || this.adText.toLowerCase().includes('神奇');
+      // const hasMedicalClaim = this.adText.toLowerCase().includes('治療') || this.adText.toLowerCase().includes('醫學');
+      // const isExaggerated = this.adText.toLowerCase().includes('完美') || this.adText.toLowerCase().includes('神奇');
 
-      if (hasMedicalClaim) {
-        this.auditResult = '警告：文案涉及醫療效能，需修正以符合法規。';
-      } else if (isExaggerated) {
-        this.auditResult = '警告：文案可能誇大效果，建議調整。';
-      } else {
-        this.auditResult = `文案初步符合 ${this.selectedCategory} 的合規要求，請確認其他細節。`;
-      }
+      // if (hasMedicalClaim) {
+      //   this.auditResult = '警告：文案涉及醫療效能，需修正以符合法規。';
+      // } else if (isExaggerated) {
+      //   this.auditResult = '警告：文案可能誇大效果，建議調整。';
+      // } else {
+      //   this.auditResult = `文案初步符合 ${this.selectedCategory} 的合規要求，請確認其他細節。`;
+      // }
+
+      axios.post('http://52.91.0.205:8080/check', 
+      {
+        content : this.adText,
+      })
+      .then(response => {
+
+        this.auditResult += response.data.ileagalWords.join("、");
+
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+
     }
   }
 }
