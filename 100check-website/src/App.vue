@@ -92,7 +92,7 @@ export default {
 }
 
 .logo-image {
-  height: 40px;
+  height: 60px;
   width: auto;
   cursor: pointer;
 }
@@ -107,10 +107,10 @@ nav {
 }
 
 nav a, router-link {
-  margin: 0 15px;
+  margin: 0 30px;
   text-decoration: none;
   color: #e04e2d;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 nav a:hover, router-link:hover {
