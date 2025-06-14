@@ -27,9 +27,6 @@
           <img src="@/assets/簽署圖.jpg" alt="Slide 3" class="carousel-image" />
         </div>
       </div>
-      <button class="carousel-prev" @click="prevSlide">◄</button>
-      <button class="carousel-next" @click="nextSlide">►</button>
-      <div class="carousel-counter">{{ currentSlide + 1 }} / {{ slidesCount }}</div>
     </div>
 
     <!-- 區塊2 -->
@@ -179,18 +176,7 @@ export default {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.carousel-counter {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  z-index: 10;
-}
+
 
 /* 自動播放幻燈片 */
 @keyframes slide {
@@ -199,9 +185,9 @@ export default {
   66.66%, 100% { opacity: 0; }
 }
 
-.carousel-slide:nth-child(1) { animation: slide 9s infinite 0s; }
-.carousel-slide:nth-child(2) { animation: slide 9s infinite 3s; }
-.carousel-slide:nth-child(3) { animation: slide 9s infinite 6s; }
+.carousel-slide:nth-child(1) { animation: slide 15s infinite 0s; }
+.carousel-slide:nth-child(2) { animation: slide 15s infinite 5s; }
+.carousel-slide:nth-child(3) { animation: slide 15s infinite 10s; }
 
 /* 動態控制幻燈片 */
 .carousel-slide {
