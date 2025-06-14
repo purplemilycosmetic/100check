@@ -29,7 +29,9 @@
     <button @click="auditAd" class="audit-button" :disabled="!selectedCategory || !adText">審核</button>
     <div v-if="auditResult" class="audit-result">
       <h3>審核結果</h3>
-      <p v-html="auditResult" :style="isRed"></p>
+      <p v-html="formattedResult"></p>
+      <div v-if="hasViolations" class="risk-tag">風險</div>
+      <div v-else-if="auditResult === '文案初步符合'" class="risk-tag low-risk">低風險</div>
     </div>
   </div>
 </template>
@@ -66,8 +68,16 @@ export default {
     }
   },
   computed: {
-    isRed() {
-      return { color: this.auditResult.includes('警告') ? 'red' : 'green' };
+    hasViolations() {
+      return this.auditResult.includes('</br>');
+    },
+    formattedResult() {
+      if (this.auditResult.includes('</br>')) {
+        const parts = this.auditResult.split('</br>');
+        const blackText = parts.map(part => `<span style="color: #000000; padding: 2px;">${part}</span>`).join('<br>');
+        return blackText;
+      }
+      return this.auditResult === '文案初步符合' ? '<span style="padding: 2px;">' + this.auditResult + '</span>' : this.auditResult;
     }
   },
   methods: {
@@ -80,7 +90,7 @@ export default {
       // }
     },
     auditAd() {
-      if (!this.selectedCategory || !adText) return;
+      if (!this.selectedCategory || !this.adText) return;
 
       this.auditResult = '';
       axios.post('http://52.91.0.205:8080/check', {
@@ -94,7 +104,7 @@ export default {
         }
       })
       .catch(error => {
-        console.error(error);
+        console.error('API 錯誤:', error.response ? error.response.data : error.message);
       });
     }
   }
@@ -207,7 +217,7 @@ export default {
 .audit-result {
   margin-top: 20px;
   padding: 15px;
-  background: #f9f9f9;
+  background: #ffffff;
   border-radius: 5px;
   text-align: left;
   max-width: 600px;
@@ -224,5 +234,21 @@ export default {
 .audit-result p {
   font-size: 14px;
   color: #333;
+}
+
+.risk-tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 15px;
+  background-color: #ff0000;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.low-risk {
+  background-color: #02ff02; /* 綠色背景 */
+  color: #000000; /* 黑色文字 */
 }
 </style>
