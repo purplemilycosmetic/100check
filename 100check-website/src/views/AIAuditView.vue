@@ -13,18 +13,30 @@
     </div>
     <div class="audit-input">
       <label for="ad-text">輸入廣告文案：</label>
-      <textarea id="ad-text" v-model="adText" class="ad-textarea" placeholder="請輸入您的廣告文案..."></textarea>
+      <textarea
+        id="ad-text"
+        v-model="adText"
+        class="ad-textarea"
+        placeholder="請輸入您的廣告文案..."
+        :maxlength="maxLength"
+        @input="updateCharCount"
+      ></textarea>
+      <div class="char-count" :class="{ 'warning': charCount > maxLength }">
+        字數: {{ charCount }} / {{ maxLength }}
+        <span v-if="charCount > maxLength" class="warning-text">（文案超出字數限制）</span>
+      </div>
     </div>
     <button @click="auditAd" class="audit-button" :disabled="!selectedCategory || !adText">審核</button>
     <div v-if="auditResult" class="audit-result">
       <h3>審核結果</h3>
-      <p v-html="auditResult" v-bind:style="isRed"></p>
+      <p v-html="auditResult" :style="isRed"></p>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+
 export default {
   name: 'AIAuditView',
   data() {
@@ -48,48 +60,42 @@ export default {
         '十三、美白牙齒類',
         '十四、非藥用牙膏、漱口水類',
         '十五、其他及綜合性內容'
-      ]
+      ],
+      maxLength: 2000, // 最大字數限制
+      charCount: 0
+    }
+  },
+  computed: {
+    isRed() {
+      return { color: this.auditResult.includes('警告') ? 'red' : 'green' };
     }
   },
   methods: {
-    auditAd() {
-      if (!this.selectedCategory || !this.adText) return;
-
-      this.auditResult = "";
-      // 簡單的審核邏輯範例
-      // const hasMedicalClaim = this.adText.toLowerCase().includes('治療') || this.adText.toLowerCase().includes('醫學');
-      // const isExaggerated = this.adText.toLowerCase().includes('完美') || this.adText.toLowerCase().includes('神奇');
-
-      // if (hasMedicalClaim) {
-      //   this.auditResult = '警告：文案涉及醫療效能，需修正以符合法規。';
-      // } else if (isExaggerated) {
-      //   this.auditResult = '警告：文案可能誇大效果，建議調整。';
-      // } else {
-      //   this.auditResult = `文案初步符合 ${this.selectedCategory} 的合規要求，請確認其他細節。`;
+    updateCharCount() {
+      this.charCount = this.adText.length;
+      // 移除截斷邏輯，讓使用者看到警告後自行調整
+      // if (this.charCount > this.maxLength) {
+      //   this.adText = this.adText.substring(0, this.maxLength);
+      //   this.charCount = this.maxLength;
       // }
+    },
+    auditAd() {
+      if (!this.selectedCategory || !adText) return;
 
-      axios.post('http://52.91.0.205:8080/check', 
-      {
-        content : this.adText,
+      this.auditResult = '';
+      axios.post('http://52.91.0.205:8080/check', {
+        content: this.adText
       })
       .then(response => {
-
-        if(response.data.ileagalWords.length > 0) 
-        {
-          this.auditResult = response.data.ileagalWords.join("</br>");
-          this.isRed = {color: 'red'}
-        }
-        else
-        {
-          this.auditResult = "文案初步符合";
-          this.isRed = {color: 'green'}
+        if (response.data.ileagalWords.length > 0) {
+          this.auditResult = response.data.ileagalWords.join('</br>');
+        } else {
+          this.auditResult = '文案初步符合';
         }
       })
       .catch(error => {
         console.error(error);
       });
-
-
     }
   }
 }
@@ -99,7 +105,7 @@ export default {
 .ai-audit-page {
   padding: 40px;
   text-align: center;
-  background: linear-gradient(to bottom, #f0f0f0 50%, #ffffff 50%);
+  background: linear-gradient(to bottom, #ffffff 50%, #ffffff 50%);
   min-height: calc(100vh - 100px);
 }
 
@@ -159,6 +165,23 @@ export default {
   border: 1px solid #ddd;
   border-radius: 5px;
   resize: vertical;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 12px;
+  color: #666;
+  max-width: 600px;
+  margin-top: 5px;
+}
+
+.char-count.warning {
+  color: #ff0000; /* 超過時顯示紅色 */
+}
+
+.warning-text {
+  margin-left: 10px;
+  color: #ff0000;
 }
 
 .audit-button {
