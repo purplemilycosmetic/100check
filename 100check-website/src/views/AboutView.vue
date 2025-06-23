@@ -37,11 +37,11 @@
           <h2>聯絡資訊</h2>
             <div class="info-item">
             <i class="fas fa-phone"></i>
-            <p>+886 932-911-445</p>
+            <p></p>
           </div>
           <div class="info-item">
             <i class="fas fa-envelope"></i>
-            <p>purplemilycosmetic@gmail.com</p>
+            <p></p>
           </div>
           <div class="info-item">
             <i class="fas fa-clock"></i>
