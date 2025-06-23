@@ -11,8 +11,8 @@
       </div>
       <div class="footer-section">
         <h3>聯絡我們</h3>
-        <p>0932-911-445</p>
-        <p>purplemilycosmetic@gmail.com</p>
+        <p></p>
+        <p></p>
       </div>
     </div>
     <div class="footer-bottom">
