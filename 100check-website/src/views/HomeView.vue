@@ -1,7 +1,7 @@
 <template>
   <section class="hero-section">
     <!-- 區塊1 -->
-    <div class="hero-section-content" style="background-color: #fff;">
+    <div class="hero-section-content">
       <h1>審盾橘 | 廣告快速審核 - AI 快速審核廣告</h1>
       <p>減少人工檢核，建立標準化審查程序，降低建項風險！</p>
       <p class="subtext">※ 詳情請參考 <a href="#">審盾橘</a>，免費體驗檢核廣告</p>
@@ -10,20 +10,17 @@
         <router-link to="/LoginView" class="primary-btn">註冊免費體驗</router-link>
       </div>
     </div>
-    <!-- <div align="center" style="margin-top: 50px;">
-      <img src="@/assets/test.jpg" alt="Hero Image" class="hero-image" />
-    </div> -->
 
     <!-- 幻燈片場景 -->
     <div class="carousel">
       <div class="carousel-slides">
-        <div class="carousel-slide">
+        <div class="carousel-slide" :class="{ active: currentSlide === 0 }">
           <img src="@/assets/幻燈片1.png" alt="Slide 1" class="carousel-image" />
         </div>
-        <div class="carousel-slide">
+        <div class="carousel-slide" :class="{ active: currentSlide === 1 }">
           <img src="@/assets/幻燈片2.png" alt="Slide 2" class="carousel-image" />
         </div>
-        <div class="carousel-slide">
+        <div class="carousel-slide" :class="{ active: currentSlide === 2 }">
           <img src="@/assets/簽署圖.jpg" alt="Slide 3" class="carousel-image" />
         </div>
       </div>
@@ -62,9 +59,6 @@
         </ul>
       </div>
     </div>
-
-    <!-- 區塊3 -->
-
   </section>
 </template>
 
@@ -79,25 +73,25 @@ export default {
     }
   },
   mounted() {
-    this.startAutoPlay();
+    this.startAutoPlay()
   },
   beforeDestroy() {
-    this.stopAutoPlay();
+    this.stopAutoPlay()
   },
   methods: {
     prevSlide() {
-      this.currentSlide = (this.currentSlide - 1 + this.slidesCount) % this.slidesCount;
+      this.currentSlide = (this.currentSlide - 1 + this.slidesCount) % this.slidesCount
     },
     nextSlide() {
-      this.currentSlide = (this.currentSlide + 1) % this.slidesCount;
+      this.currentSlide = (this.currentSlide + 1) % this.slidesCount
     },
     startAutoPlay() {
       this.autoPlayInterval = setInterval(() => {
-        this.nextSlide();
-      }, 5000); // 每 5 秒自動切換
+        this.nextSlide()
+      }, 3000) // 改為 3 秒
     },
     stopAutoPlay() {
-      clearInterval(this.autoPlayInterval);
+      clearInterval(this.autoPlayInterval)
     }
   }
 }
@@ -107,9 +101,10 @@ export default {
 /* 幻燈片場景樣式 */
 .carousel {
   position: relative;
-  width: 1200px; /* 鎖定寬度 */
-  height: 432px; /* 鎖定高度 */
-  margin: 0 auto; /* 置中 */
+  width: 100%;
+  max-width: 75rem;
+  height: 27rem;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -143,90 +138,35 @@ export default {
   left: 0;
 }
 
+/* 移除按鈕相關樣式 */
 .carousel-prev,
 .carousel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  z-index: 10;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel-prev {
-  left: 10px;
-}
-
-.carousel-next {
-  right: 10px;
-}
-
-.carousel-prev:hover,
-.carousel-next:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-
-
-/* 自動播放幻燈片 */
-@keyframes slide {
-  0%, 33.33% { opacity: 0; }
-  33.33%, 66.66% { opacity: 1; }
-  66.66%, 100% { opacity: 0; }
-}
-
-.carousel-slide:nth-child(1) { animation: slide 15s infinite 0s; }
-.carousel-slide:nth-child(2) { animation: slide 15s infinite 5s; }
-.carousel-slide:nth-child(3) { animation: slide 15s infinite 10s; }
-
-/* 動態控制幻燈片 */
-.carousel-slide {
-  animation-play-state: paused;
-}
-
-.carousel-slide.active {
-  animation-play-state: running;
+  display: none; /* 隱藏按鈕 */
 }
 
 /* 區塊1 樣式 */
 .hero-section {
   text-align: center;
+  padding: 1.25rem;
 }
 
 .hero-section-content {
-  height: 250px;
-}
-
-.hero-image {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  margin-bottom: 20px;
+  padding: 1.25rem;
 }
 
 .hero-section-content h1 {
   color: #ff5733;
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
 }
 
 .hero-section-content p {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #333;
 }
 
 .subtext {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #666;
 }
 
@@ -236,38 +176,22 @@ export default {
 }
 
 .buttons {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
-.primary-btn, .secondary-btn {
-  padding: 10px 20px;
-  margin: 0 10px;
+.primary-btn {
+  padding: 0.625rem 1.25rem;
+  margin: 0 0.625rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
-}
-
-.primary-btn {
   background: #ff5733;
   color: white;
+  text-decoration: none;
 }
 
-.secondary-btn {
-  background: #fff;
-  color: #ff5733;
-  border: 1px solid #ff5733;
-}
-
-.primary-btn {
-  background: #ff5733;
-  color: white;
-  text-decoration: none; /* 移除底線 */
-}
-
-.primary-btn:hover,
-.primary-btn:active,
-.primary-btn:visited {
-  text-decoration: none; /* 確保點擊後無底線 */
+.primary-btn:hover {
+  background: #e04e2d;
 }
 
 /* 區塊2 樣式 */
@@ -275,63 +199,128 @@ export default {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 0px;
-  padding: 50px;
+  margin-top: 0;
+  padding: 1.25rem;
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 
 .info-card {
-  width: 20%;
+  width: 30%;
   text-align: center;
-  padding: 20px;
+  padding: 1.25rem;
   box-sizing: border-box;
+  margin-bottom: 1.25rem;
 }
 
 .card-icon {
-  width: 250px;
-  height: 250px;
-  margin-bottom: 0px;
+  width: 15.625rem;
+  height: 15.625rem;
+  margin-bottom: 0.625rem;
 }
 
 .info-card h3 {
   color: #ff5733;
-  font-size: 24px;
-  margin-bottom: 10px; /* 調整與下一個元素的間距 */
-  letter-spacing: 2px; /* 調整字元間距 */
-  line-height: 1; /* 調整行高 */
-}
-
-.info-card p {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 0.625rem;
+  letter-spacing: 0.125rem;
+  line-height: 1;
 }
 
 .info-card ul {
   list-style: none;
   padding: 0;
   text-align: left;
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .info-card ul li {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #666;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 }
 
-@media (max-width: 768px) {
+/* 設備斷點 - 手機 (max-width: 600px) */
+@media (max-width: 600px) {
+  .carousel {
+    max-width: 100%;
+    height: 15rem;
+  }
+
+  .hero-section-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section-content p {
+    font-size: 0.875rem;
+  }
+
+  .subtext {
+    font-size: 0.75rem;
+  }
+
+  .primary-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    margin: 0 0.3125rem;
+  }
+
   .info-card {
-    width: 45%;
-    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .card-icon {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .info-card ul li {
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 480px) {
+/* 設備斷點 - 平板 (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .carousel {
+    max-width: 60rem;
+    height: 21rem;
+  }
+
+  .hero-section-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section-content p {
+    font-size: 1rem;
+  }
+
   .info-card {
-    width: 100%;
-    margin-bottom: 20px;
+    width: 45%;
+  }
+
+  .card-icon {
+    width: 12.5rem;
+    height: 12.5rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.375rem;
+  }
+}
+
+/* 設備斷點 - 桌面 (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .carousel {
+    max-width: 75rem;
+    height: 27rem;
+  }
+
+  .info-card {
+    width: 30%;
   }
 }
 </style>
