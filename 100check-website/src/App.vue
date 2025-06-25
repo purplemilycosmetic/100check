@@ -183,11 +183,11 @@ nav a:hover {
   color: white;
   padding: 0.5rem 0.9375rem;
   border: none;
-  border-radius: 0.3125rem;
+  border-radius: 0.6125rem;
   cursor: pointer;
   font-size: 0.875rem;
   text-decoration: none;
-  min-width: 6.25rem;
+  min-width: 1.25rem;
 }
 
 .auth-btn:hover {
@@ -283,7 +283,7 @@ nav a:hover {
   .logout-btn {
     padding: 0.375rem 0.75rem;
     font-size: 0.75rem;
-    min-width: 5rem;
+    min-width: 3rem;
   }
 
   .content {
