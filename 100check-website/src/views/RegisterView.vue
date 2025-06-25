@@ -148,29 +148,29 @@ export default {
 
 <style scoped>
 .register-page {
-  margin: 60px auto 20px;
-  padding: 20px;
-  max-width: 1200px;
+  margin: 3.75rem auto 1.25rem; /* 60px 20px 轉為 rem */
+  padding: 1.25rem; /* 20px 轉為 rem */
+  max-width: 75rem; /* 1200px 轉為 rem */
 }
 
 .hero-section {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem; /* 40px 轉為 rem */
 }
 
 .hero-section h1 {
   color: #ff5733;
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 2.25rem; /* 36px 轉為 rem */
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .hero-section p {
-  font-size: 18px;
+  font-size: 1.25rem; /* 18px 轉為 rem */
   color: #333;
 }
 
 .register-section {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem; /* 40px 轉為 rem */
 }
 
 .register-container {
@@ -180,36 +180,36 @@ export default {
 
 .register-form {
   width: 100%;
-  max-width: 500px;
+  max-width: 31.25rem; /* 500px 轉為 rem */
   background: #f8f8f8;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 1.25rem; /* 20px 轉為 rem */
+  border-radius: 0.625rem; /* 10px 轉為 rem */
 }
 
 .register-form h2 {
   color: #ff5733;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 1.5rem; /* 24px 轉為 rem */
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
   text-align: center;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem; /* 15px 轉為 rem */
 }
 
 .form-group label {
   display: block;
-  font-size: 16px;
+  font-size: 1rem; /* 16px 轉為 rem */
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem; /* 5px 轉為 rem */
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px;
+  padding: 0.625rem; /* 10px 轉為 rem */
   border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  font-size: 0.875rem; /* 14px 轉為 rem */
   color: #333;
 }
 
@@ -220,11 +220,11 @@ export default {
 
 .checkbox-group input {
   width: auto;
-  margin-right: 10px;
+  margin-right: 0.625rem; /* 10px 轉為 rem */
 }
 
 .checkbox-group label {
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px 轉為 rem */
 }
 
 .terms-link {
@@ -239,27 +239,27 @@ export default {
 .error-message {
   display: block;
   color: #ff0000;
-  font-size: 12px;
-  margin-top: 5px;
+  font-size: 0.75rem; /* 12px 轉為 rem */
+  margin-top: 0.3125rem; /* 5px 轉為 rem */
 }
 
 .success-message {
   background: #d4edda;
   color: #155724;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 0.625rem; /* 10px 轉為 rem */
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .primary-btn {
   width: 100%;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem; /* 10px 20px 轉為 rem */
   background: #ff5733;
   color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  font-size: 1rem; /* 16px 轉為 rem */
   cursor: pointer;
 }
 
@@ -269,8 +269,8 @@ export default {
 
 .login-link {
   text-align: center;
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 0.9375rem; /* 15px 轉為 rem */
+  font-size: 0.875rem; /* 14px 轉為 rem */
   color: #333;
 }
 
@@ -283,31 +283,63 @@ export default {
   color: #e04e2d;
 }
 
-@media (max-width: 768px) {
-  .register-form {
-    padding: 15px;
+/* 設備斷點 - 手機 (max-width: 600px) */
+@media (max-width: 600px) {
+  .register-page {
+    margin: 2rem auto 1rem; /* 32px 16px 轉為 rem */
+    padding: 1rem; /* 16px 轉為 rem */
+    max-width: 100%; /* 滿寬 */
   }
 
-  .form-group label {
-    font-size: 14px;
-  }
-
-  .form-group input {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
   .hero-section h1 {
-    font-size: 28px;
+    font-size: 1.75rem; /* 28px 轉為 rem */
   }
 
   .hero-section p {
-    font-size: 16px;
+    font-size: 1rem; /* 16px 轉為 rem */
+  }
+
+  .register-form {
+    padding: 0.9375rem; /* 15px 轉為 rem */
   }
 
   .register-form h2 {
-    font-size: 20px;
+    font-size: 1.25rem; /* 20px 轉為 rem */
+  }
+
+  .form-group label {
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+
+  .form-group input {
+    font-size: 0.75rem; /* 12px 轉為 rem */
+  }
+
+  .primary-btn {
+    padding: 0.5rem 1rem; /* 8px 16px 轉為 rem */
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+}
+
+/* 設備斷點 - 平板 (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .register-page {
+    max-width: 60rem; /* 960px 轉為 rem */
+  }
+
+  .register-form {
+    max-width: 25rem; /* 400px 轉為 rem */
+  }
+
+  .hero-section h1 {
+    font-size: 2rem; /* 32px 轉為 rem */
+  }
+}
+
+/* 設備斷點 - 桌面 (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .register-page {
+    max-width: 75rem; /* 1200px 轉為 rem */
   }
 }
 </style>

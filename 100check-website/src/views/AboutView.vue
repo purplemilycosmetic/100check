@@ -35,7 +35,7 @@
         <!-- 公司資訊 -->
         <div class="contact-info">
           <h2>聯絡資訊</h2>
-            <div class="info-item">
+          <div class="info-item">
             <i class="fas fa-phone"></i>
             <p></p>
           </div>
@@ -58,8 +58,7 @@
         </div>
       </div>
     </section>
-
- </div>
+  </div>
 </template>
 
 <script>
@@ -97,70 +96,73 @@ export default {
 
 <style scoped>
 .contact-page {
-  margin: 60px auto 20px;
-  padding: 20px;
-  max-width: 1200px;
+  margin: 3.75rem auto 1.25rem; /* 60px 20px 轉為 rem */
+  padding: 1.25rem; /* 20px 轉為 rem */
+  max-width: 75rem; /* 1200px 轉為 rem */
 }
 
 /* 標題區塊 */
 .hero-section {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem; /* 40px 轉為 rem */
 }
 
 .hero-section h1 {
   color: #ff5733;
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 2.25rem; /* 36px 轉為 rem */
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .hero-section p {
-  font-size: 18px;
+  font-size: 1.125rem; /* 18px 轉為 rem */
   color: #333;
 }
 
 /* 聯絡表單與資訊區塊 */
 .contact-section {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem; /* 40px 轉為 rem */
 }
 
 .contact-container {
   display: flex;
-  gap: 40px;
+  gap: 2.5rem; /* 40px 轉為 rem */
   flex-wrap: wrap;
 }
 
-.contact-form, .contact-info {
+.contact-form,
+.contact-info {
   flex: 1;
-  min-width: 300px;
+  min-width: 18.75rem; /* 300px 轉為 rem */
   background: #f8f8f8;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 1.25rem; /* 20px 轉為 rem */
+  border-radius: 0.625rem; /* 10px 轉為 rem */
 }
 
-.contact-form h2, .contact-info h2 {
+.contact-form h2,
+.contact-info h2 {
   color: #ff5733;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 1.5rem; /* 24px 轉為 rem */
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem; /* 15px 轉為 rem */
 }
 
 .form-group label {
   display: block;
-  font-size: 16px;
+  font-size: 1rem; /* 16px 轉為 rem */
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem; /* 5px 轉為 rem */
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 0.625rem; /* 10px 轉為 rem */
   border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  font-size: 0.875rem; /* 14px 轉為 rem */
   color: #333;
 }
 
@@ -169,12 +171,12 @@ export default {
 }
 
 .primary-btn {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem; /* 10px 20px 轉為 rem */
   background: #ff5733;
   color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  font-size: 1rem; /* 16px 轉為 rem */
   cursor: pointer;
 }
 
@@ -185,46 +187,46 @@ export default {
 .success-message {
   background: #d4edda;
   color: #155724;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 0.625rem; /* 10px 轉為 rem */
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 /* 聯絡資訊 */
 .info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem; /* 15px 轉為 rem */
 }
 
 .info-item i {
   color: #ff5733;
-  font-size: 20px;
-  margin-right: 10px;
+  font-size: 1.25rem; /* 20px 轉為 rem */
+  margin-right: 0.625rem; /* 10px 轉為 rem */
 }
 
 .info-item p {
-  font-size: 16px;
+  font-size: 1rem; /* 16px 轉為 rem */
   color: #333;
   margin: 0;
 }
 
 .social-links {
-  margin-top: 20px;
+  margin-top: 1.25rem; /* 20px 轉為 rem */
 }
 
 .social-links h3 {
   color: #ff5733;
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 1.125rem; /* 18px 轉為 rem */
+  margin-bottom: 0.625rem; /* 10px 轉為 rem */
 }
 
 .social-icon {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 0.625rem; /* 10px 轉為 rem */
   color: #ff5733;
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px 轉為 rem */
   text-decoration: none;
 }
 
@@ -232,46 +234,80 @@ export default {
   color: #e04e2d;
 }
 
-
-/* 響應式設計 */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    gap: 20px;
+/* 設備斷點 - 手機 (max-width: 600px) */
+@media (max-width: 600px) {
+  .contact-page {
+    margin: 2rem auto 1rem; /* 32px 16px 轉為 rem */
+    padding: 1rem; /* 16px 轉為 rem */
+    max-width: 100%; /* 滿寬 */
   }
 
-  .contact-form, .contact-info {
-    width: 100%;
-  }
-
-  .info-item p {
-    font-size: 14px;
-  }
-
-  .map-container img, .map-container iframe {
-    height: 300px;
-  }
-}
-
-@media (max-width: 480px) {
   .hero-section h1 {
-    font-size: 28px;
+    font-size: 1.75rem; /* 28px 轉為 rem */
   }
 
   .hero-section p {
-    font-size: 16px;
+    font-size: 1rem; /* 16px 轉為 rem */
   }
 
-  .contact-form h2, .contact-info h2 {
-    font-size: 20px;
+  .contact-container {
+    flex-direction: column;
+    gap: 1.25rem; /* 20px 轉為 rem */
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+  }
+
+  .contact-form h2,
+  .contact-info h2 {
+    font-size: 1.25rem; /* 20px 轉為 rem */
   }
 
   .form-group label {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px 轉為 rem */
   }
 
-  .form-group input, .form-group textarea {
-    font-size: 12px;
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.75rem; /* 12px 轉為 rem */
+  }
+
+  .info-item p {
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+
+  .primary-btn {
+    padding: 0.5rem 1rem; /* 8px 16px 轉為 rem */
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+}
+
+/* 設備斷點 - 平板 (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .contact-page {
+    max-width: 60rem; /* 960px 轉為 rem */
+  }
+
+  .contact-container {
+    gap: 1.875rem; /* 30px 轉為 rem */
+  }
+
+  .hero-section h1 {
+    font-size: 2rem; /* 32px 轉為 rem */
+  }
+
+  .contact-form h2,
+  .contact-info h2 {
+    font-size: 1.375rem; /* 22px 轉為 rem */
+  }
+}
+
+/* 設備斷點 - 桌面 (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .contact-page {
+    max-width: 75rem; /* 1200px 轉為 rem */
   }
 }
 </style>

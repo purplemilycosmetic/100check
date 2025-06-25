@@ -63,49 +63,45 @@ export default {
         '十四、非藥用牙膏、漱口水類',
         '十五、其他及綜合性內容'
       ],
-      maxLength: 2000, // 最大字數限制
+      maxLength: 2000,
       charCount: 0
     }
   },
   computed: {
     hasViolations() {
-      return this.auditResult.includes('</br>');
+      return this.auditResult.includes('</br>')
     },
     formattedResult() {
       if (this.auditResult.includes('</br>')) {
-        const parts = this.auditResult.split('</br>');
-        const blackText = parts.map(part => `<span style="color: #000000; padding: 2px;">${part}</span>`).join('<br>');
-        return blackText;
+        const parts = this.auditResult.split('</br>')
+        const blackText = parts.map(part => `<span style="color: #000000; padding: 2px;">${part}</span>`).join('<br>')
+        return blackText
       }
-      return this.auditResult === '文案初步符合' ? '<span style="padding: 2px;">' + this.auditResult + '</span>' : this.auditResult;
+      return this.auditResult === '文案初步符合' ? '<span style="padding: 2px;">' + this.auditResult + '</span>' : this.auditResult
     }
   },
   methods: {
     updateCharCount() {
-      this.charCount = this.adText.length;
-      // 移除截斷邏輯，讓使用者看到警告後自行調整
-      // if (this.charCount > this.maxLength) {
-      //   this.adText = this.adText.substring(0, this.maxLength);
-      //   this.charCount = this.maxLength;
-      // }
+      this.charCount = this.adText.length
     },
     auditAd() {
-      if (!this.selectedCategory || !this.adText) return;
+      if (!this.selectedCategory || !this.adText) return
 
-      this.auditResult = '';
-      axios.post('http://52.91.0.205:8080/check', {
-        content: this.adText
-      })
-      .then(response => {
-        if (response.data.ileagalWords.length > 0) {
-          this.auditResult = response.data.ileagalWords.join('</br>');
-        } else {
-          this.auditResult = '文案初步符合';
-        }
-      })
-      .catch(error => {
-        console.error('API 錯誤:', error.response ? error.response.data : error.message);
-      });
+      this.auditResult = ''
+      axios
+        .post('http://52.91.0.205:8080/check', {
+          content: this.adText
+        })
+        .then(response => {
+          if (response.data.ileagalWords.length > 0) {
+            this.auditResult = response.data.ileagalWords.join('</br>')
+          } else {
+            this.auditResult = '文案初步符合'
+          }
+        })
+        .catch(error => {
+          console.error('API 錯誤:', error.response ? error.response.data : error.message)
+        })
     }
   }
 }
@@ -113,39 +109,39 @@ export default {
 
 <style scoped>
 .ai-audit-page {
-  padding: 40px;
+  padding: 2.5rem; /* 40px 轉為 rem */
   text-align: center;
   background: linear-gradient(to bottom, #ffffff 50%, #ffffff 50%);
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 6.25rem); /* 100px 轉為 rem，假設首欄高度 60px */
 }
 
 .ai-audit-page h1 {
   color: #ff5733;
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 2.25rem; /* 36px 轉為 rem */
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .ai-audit-page p {
-  font-size: 18px;
+  font-size: 1.125rem; /* 18px 轉為 rem */
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem; /* 30px 轉為 rem */
 }
 
 .audit-controls {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .audit-controls label {
-  font-size: 16px;
+  font-size: 1rem; /* 16px 轉為 rem */
   color: #333;
-  margin-right: 10px;
+  margin-right: 0.625rem; /* 10px 轉為 rem */
 }
 
 .category-select {
-  padding: 8px 12px;
-  font-size: 14px;
+  padding: 0.5rem 0.75rem; /* 8px 12px 轉為 rem */
+  font-size: 0.875rem; /* 14px 轉為 rem */
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
   background-color: #fff;
   cursor: pointer;
 }
@@ -155,54 +151,53 @@ export default {
 }
 
 .audit-input {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .audit-input label {
-  font-size: 16px;
+  font-size: 1rem; /* 16px 轉為 rem */
   color: #333;
-  margin-right: 10px;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem; /* 5px 轉為 rem */
 }
 
 .ad-textarea {
   width: 100%;
-  max-width: 600px;
-  height: 150px;
-  padding: 10px;
-  font-size: 14px;
+  max-width: 37.5rem; /* 600px 轉為 rem */
+  height: 9.375rem; /* 150px 轉為 rem */
+  padding: 0.625rem; /* 10px 轉為 rem */
+  font-size: 0.875rem; /* 14px 轉為 rem */
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
   resize: vertical;
 }
 
 .char-count {
   text-align: right;
-  font-size: 12px;
+  font-size: 0.75rem; /* 12px 轉為 rem */
   color: #666;
-  max-width: 600px;
-  margin-top: 5px;
+  max-width: 37.5rem; /* 600px 轉為 rem */
+  margin-top: 0.3125rem; /* 5px 轉為 rem */
 }
 
 .char-count.warning {
-  color: #ff0000; /* 超過時顯示紅色 */
+  color: #ff0000;
 }
 
 .warning-text {
-  margin-left: 10px;
+  margin-left: 0.625rem; /* 10px 轉為 rem */
   color: #ff0000;
 }
 
 .audit-button {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem; /* 10px 20px 轉為 rem */
   background: #ff5733;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
   cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 1rem; /* 16px 轉為 rem */
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .audit-button:hover {
@@ -215,40 +210,115 @@ export default {
 }
 
 .audit-result {
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: 1.25rem; /* 20px 轉為 rem */
+  padding: 0.9375rem; /* 15px 轉為 rem */
   background: #ffffff;
-  border-radius: 5px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
   text-align: left;
-  max-width: 600px;
+  max-width: 37.5rem; /* 600px 轉為 rem */
   margin-left: auto;
   margin-right: auto;
 }
 
 .audit-result h3 {
   color: #000000;
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 1.125rem; /* 18px 轉為 rem */
+  margin-bottom: 0.625rem; /* 10px 轉為 rem */
 }
 
 .audit-result p {
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px 轉為 rem */
   color: #333;
 }
 
 .risk-tag {
   display: inline-block;
-  margin-top: 10px;
-  padding: 5px 15px;
+  margin-top: 0.625rem; /* 10px 轉為 rem */
+  padding: 0.3125rem 0.9375rem; /* 5px 15px 轉為 rem */
   background-color: #ff0000;
   color: white;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  font-size: 0.875rem; /* 14px 轉為 rem */
   font-weight: bold;
 }
 
 .low-risk {
-  background-color: #02ff02; /* 綠色背景 */
-  color: #000000; /* 黑色文字 */
+  background-color: #02ff02;
+  color: #000000;
+}
+
+/* 設備斷點 - 手機 (max-width: 600px) */
+@media (max-width: 600px) {
+  .ai-audit-page {
+    padding: 1rem; /* 16px 轉為 rem */
+    min-height: calc(100vh - 4rem); /* 調整為手機首欄高度 */
+  }
+
+  .ai-audit-page h1 {
+    font-size: 1.5rem; /* 24px 轉為 rem */
+  }
+
+  .ai-audit-page p {
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+
+  .category-select {
+    width: 100%; /* 滿寬 */
+    margin-top: 0.5rem; /* 8px 轉為 rem */
+  }
+
+  .ad-textarea {
+    height: 6.25rem; /* 100px 轉為 rem */
+    font-size: 0.75rem; /* 12px 轉為 rem */
+  }
+
+  .audit-button {
+    padding: 0.5rem 1rem; /* 8px 16px 轉為 rem */
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+
+  .audit-result {
+    max-width: 100%; /* 滿寬 */
+    padding: 0.625rem; /* 10px 轉為 rem */
+  }
+
+  .audit-result h3 {
+    font-size: 1rem; /* 16px 轉為 rem */
+  }
+
+  .risk-tag {
+    font-size: 0.75rem; /* 12px 轉為 rem */
+    padding: 0.25rem 0.75rem; /* 4px 12px 轉為 rem */
+  }
+}
+
+/* 設備斷點 - 平板 (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .ai-audit-page {
+    padding: 1.5rem; /* 24px 轉為 rem */
+  }
+
+  .ai-audit-page h1 {
+    font-size: 2rem; /* 32px 轉為 rem */
+  }
+
+  .ad-textarea {
+    height: 7.5rem; /* 120px 轉為 rem */
+  }
+
+  .audit-button {
+    padding: 0.625rem 1.25rem; /* 10px 20px 轉為 rem */
+  }
+
+  .audit-result {
+    max-width: 90%; /* 略窄於桌面 */
+  }
+}
+
+/* 設備斷點 - 桌面 (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .ai-audit-page {
+    padding: 2.5rem; /* 40px 轉為 rem */
+  }
 }
 </style>

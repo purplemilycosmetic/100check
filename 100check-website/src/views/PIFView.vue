@@ -13,7 +13,7 @@
         衛生福利部食品藥物管理署於 2019 年 5 月 30 日公告「化粧品產品資訊檔案管理辦法」及「應建立產品資訊檔案之化粧品種類及施行日期」。自 2024 年 6 月 30 日起，原「特定用途化粧品」許可證已全面失效，改以「產品資訊檔案」（PIF）管理。
       </p>
       <p>
-        自 2024 年 7 月 1 日起，化粧品依產品類別分階段實施 PIF 要求。根據最新法規，實施進度已至 2025 年 6 月，特定用途化粧品已需完成 PIF 與 GMP 合規，後續階段將逐步涵蓋其他類別。此變革影響深遠，建議業者提前準備以符合主管機關要求。
+        自 2024 年 7 月 1 日起，化妝品依產品類別分階段實施 PIF 要求。根據最新法規，實施進度已至 2025 年 6 月，特定用途化妝品已需完成 PIF 與 GMP 合規，後續階段將逐步涵蓋其他類別。此變革影響深遠，建議業者提前準備以符合主管機關要求。
       </p>
     </section>
 
@@ -70,14 +70,14 @@
     <section class="definition-section">
       <h2>什麼是化粧品 PIF？</h2>
       <p>
-        產品資訊檔案（Product Information File，簡稱 PIF）是有關化粝品品質、安全性與功能的完整資料文件。國際間如歐盟及東協早已施行此制度，台灣自 2024 年起全面取代「特定用途許可證」。業者需在產品上市前完成 PIF 製作，並經「安全簽署人員」簽署後，方可進行販賣、贈送、公開陳列或試用。試產階段則可免除 PIF 要求。
+        產品資訊檔案（Product Information File，簡稱 PIF）是有關化妝品品質、安全性與功能的完整資料文件。國際間如歐盟及東協早已施行此制度，台灣自 2024 年起全面取代「特定用途許可證」。業者需在產品上市前完成 PIF 製作，並經「安全簽署人員」簽署後，方可進行販賣、贈送、公開陳列或試用。試產階段則可免除 PIF 要求。
       </p>
     </section>
 
     <!-- 執行 PIF 理由區塊 -->
     <section class="reason-section">
       <h2>為什麼需要 PIF？</h2>
-      <p>PIF 旨在強化業者自主管理，提升產品品質與安全性，保障消費者權益，並與國際法規接軌，促進化粝品產業全球化發展。</p>
+      <p>PIF 旨在強化業者自主管理，提升產品品質與安全性，保障消費者權益，並與國際法規接軌，促進化妝品產業全球化發展。</p>
     </section>
 
     <!-- 好處區塊 -->
@@ -93,8 +93,8 @@
     <!-- 適用產品區塊 -->
     <section class="products-section">
       <h2>哪些產品需要 PIF？</h2>
-      <p>符合化粝品定義者（註1），需依產品類別與時程完成 PIF 建檔。註1：指使用於人體外部、牙齒或口腔黏膜，用以潤澤髮膚、刺激嗅覺、改善體味、修飾容貌或清潔身體的製劑。</p>
-      <p><strong>2025 年最新進展：</strong> 截至 2025 年 6 月，特定用途化粝品已需完成 PIF 與 GMP，後續階段將涵蓋嬰兒用、唇用、眼部用產品及一般化粝品。</p>
+      <p>符合化妝品定義者（註1），需依產品類別與時程完成 PIF 建檔。註1：指使用於人體外部、牙齒或口腔黏膜，用以潤澤髮膚、刺激嗅覺、改善體味、修飾容貌或清潔身體的製劑。</p>
+      <p><strong>2025 年最新進展：</strong> 截至 2025 年 6 月，特定用途化妝品已需完成 PIF 與 GMP，後續階段將涵蓋嬰兒用、唇用、眼部用產品及一般化妝品。</p>
     </section>
 
     <!-- 準備 PIF 區塊 -->
@@ -122,7 +122,7 @@
         <tr><td>二、完成產品登錄之證明文件</td><td>產品登錄結案資料</td></tr>
         <tr><td>三、全成分名稱及其各含量</td><td>INCI NAME、含量、用途，成分總計需為 100%</td></tr>
         <tr><td>四、產品標籤、仿單、外包裝或容器</td><td>產品中文標籤、仿單、外包裝或容器照片或設計稿</td></tr>
-        <tr><td>五、製造場所符合化粝品優良製造準則之證明文件或聲明書</td><td>製造場所符合 ISO 22716 證明文件或聲明書</td></tr>
+        <tr><td>五、製造場所符合化妝品優良製造準則之證明文件或聲明書</td><td>製造場所符合 ISO 22716 證明文件或聲明書</td></tr>
         <tr><td>六、製造方法、流程</td><td>簡述產品製造流程，可為圖示或文字描述</td></tr>
         <tr><td>七、使用方法、部位、用量、頻率及族群</td><td>產品類型、使用部位、使用量、使用停留時間、使用頻率、使用族群等</td></tr>
         <tr><td>八、產品使用不良反應資料</td><td>產品正常使用若無不良反應可提供聲明書</td></tr>
@@ -249,59 +249,59 @@ export default {
 
 <style scoped>
 .cosmetics-safety-page {
-  margin: 60px auto 20px;
-  padding: 20px;
-  max-width: 1200px;
+  margin: 3.75rem auto 1.25rem; /* 60px 20px 轉為 rem */
+  padding: 1.25rem; /* 20px 轉為 rem */
+  max-width: 75rem; /* 1200px 轉為 rem */
 }
 
 /* 標題區塊 */
 .hero-section {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem; /* 40px 轉為 rem */
 }
 
 .hero-section h1 {
   color: #ff5733;
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 2.25rem; /* 36px 轉為 rem */
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .hero-section p {
-  font-size: 18px;
+  font-size: 1.125rem; /* 18px 轉為 rem */
   color: #333;
 }
 
 /* 時間軸區塊 */
 .timeline-section {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem; /* 40px 轉為 rem */
 }
 
 .timeline-section h2 {
   color: #ff5733;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 1.5rem; /* 24px 轉為 rem */
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
   text-align: center;
 }
 
 .timeline {
   position: relative;
-  max-width: 800px;
+  max-width: 50rem; /* 800px 轉為 rem */
   margin: 0 auto;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  width: 4px;
+  width: 0.25rem; /* 4px 轉為 rem */
   background: #ff5733;
   top: 0;
   bottom: 0;
   left: 50%;
-  margin-left: -2px;
+  margin-left: -0.125rem; /* 2px 轉為 rem */
 }
 
 .timeline-item {
-  padding: 20px 40px;
+  padding: 1.25rem 2.5rem; /* 20px 40px 轉為 rem */
   position: relative;
   width: 50%;
   box-sizing: border-box;
@@ -320,77 +320,102 @@ export default {
 .timeline-item::before {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem; /* 20px 轉為 rem */
+  height: 1.25rem; /* 20px 轉為 rem */
   background: #ff5733;
   border-radius: 50%;
-  top: 30px;
+  top: 1.875rem; /* 30px 轉為 rem */
 }
 
 .timeline-item:nth-child(odd)::before {
-  right: -10px;
+  right: -0.625rem; /* 10px 轉為 rem */
 }
 
 .timeline-item:nth-child(even)::before {
-  left: -10px;
+  left: -0.625rem; /* 10px 轉為 rem */
 }
 
 .timeline-date {
-  font-size: 16px;
+  font-size: 1rem; /* 16px 轉為 rem */
   font-weight: bold;
   color: #ff5733;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem; /* 10px 轉為 rem */
 }
 
 .timeline-content {
   background: #f8f8f8;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.9375rem; /* 15px 轉為 rem */
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* 2px 5px 轉為 rem */
 }
 
 .timeline-content p {
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px 轉為 rem */
   color: #333;
 }
 
-/* 簡介區塊 */
-.intro-section, .definition-section, .reason-section, .benefits-section, .products-section, .preparation-section, .files-section, .guide-section, .faq-section, .contact-section {
-  margin-bottom: 40px;
+/* 通用區塊樣式 */
+.intro-section,
+.definition-section,
+.reason-section,
+.benefits-section,
+.products-section,
+.preparation-section,
+.files-section,
+.guide-section,
+.faq-section,
+.contact-section {
+  margin-bottom: 2.5rem; /* 40px 轉為 rem */
 }
 
-.intro-section h2, .definition-section h2, .reason-section h2, .benefits-section h2, .products-section h2, .preparation-section h2, .files-section h2, .guide-section h2, .faq-section h2, .contact-section h2 {
+.intro-section h2,
+.definition-section h2,
+.reason-section h2,
+.benefits-section h2,
+.products-section h2,
+.preparation-section h2,
+.files-section h2,
+.guide-section h2,
+.faq-section h2,
+.contact-section h2 {
   color: #ff5733;
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 1.5rem; /* 24px 轉為 rem */
+  margin-bottom: 0.9375rem; /* 15px 轉為 rem */
 }
 
-.intro-section p, .definition-section p, .reason-section p, .products-section p, .preparation-section p, .contact-section p {
-  font-size: 16px;
+.intro-section p,
+.definition-section p,
+.reason-section p,
+.products-section p,
+.preparation-section p,
+.contact-section p {
+  font-size: 1rem; /* 16px 轉為 rem */
   color: #333;
   line-height: 1.6;
 }
 
-.benefits-section ul, .preparation-section ul {
+.benefits-section ul,
+.preparation-section ul {
   list-style: disc;
-  padding-left: 20px;
+  padding-left: 1.25rem; /* 20px 轉為 rem */
 }
 
 .guide-section ol {
   list-style: decimal;
-  padding-left: 20px;
+  padding-left: 1.25rem; /* 20px 轉為 rem */
 }
 
 /* 檔案資訊表格 */
 .files-section table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: 0.9375rem; /* 15px 轉為 rem */
 }
 
-.files-section th, .files-section td {
+.files-section th,
+.files-section td {
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 0.625rem; /* 10px 轉為 rem */
   text-align: left;
 }
 
@@ -405,17 +430,11 @@ export default {
 
 /* 常見問題區塊 */
 .faq-section {
-  margin-bottom: 40px;
-}
-
-.faq-section h2 {
-  color: #ff5733;
-  font-size: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 2.5rem; /* 40px 轉為 rem */
 }
 
 .faq-item {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem; /* 10px 轉為 rem */
   border-bottom: 1px solid #ddd;
 }
 
@@ -423,7 +442,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 0.9375rem; /* 15px 轉為 rem */
   background: #f8f8f8;
   cursor: pointer;
 }
@@ -435,22 +454,22 @@ export default {
 .faq-number {
   font-weight: bold;
   color: #ff5733;
-  margin-right: 10px;
+  margin-right: 0.625rem; /* 10px 轉為 rem */
 }
 
 .faq-text {
   flex-grow: 1;
   color: #333;
-  font-size: 16px;
+  font-size: 1rem; /* 16px 轉為 rem */
 }
 
 .faq-icon {
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px 轉為 rem */
   color: #ff5733;
 }
 
 .faq-answer {
-  padding: 15px;
+  padding: 0.9375rem; /* 15px 轉為 rem */
   background: #fff;
   border-top: 1px solid #ddd;
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
@@ -458,7 +477,7 @@ export default {
 
 .faq-answer p {
   margin: 0;
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px 轉為 rem */
   color: #333;
   line-height: 1.6;
   white-space: pre-line;
@@ -467,58 +486,52 @@ export default {
 /* 呼籲行動區塊 */
 .contact-section {
   text-align: center;
-  padding: 40px 0;
+  padding: 2.5rem 0; /* 40px 轉為 rem */
 }
 
 .contact-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 1.75rem; /* 28px 轉為 rem */
+  margin-bottom: 1.25rem; /* 20px 轉為 rem */
 }
 
 .primary-btn {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem; /* 10px 20px 轉為 rem */
   background: #ff5733;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem; /* 5px 轉為 rem */
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1rem; /* 16px 轉為 rem */
 }
 
 .primary-btn:hover {
   background: #e04e2d;
 }
 
-/* 響應式設計 */
-@media (max-width: 768px) {
+/* 設備斷點 - 手機 (max-width: 600px) */
+@media (max-width: 600px) {
   .cosmetics-safety-page {
-    padding: 10px;
+    margin: 2rem auto 1rem; /* 32px 16px 轉為 rem */
+    padding: 1rem; /* 16px 轉為 rem */
+    max-width: 100%; /* 滿寬 */
   }
 
-  .intro-section p, .definition-section p, .reason-section p, .products-section p, .preparation-section p, .contact-section p {
-    font-size: 14px;
+  .hero-section h1 {
+    font-size: 1.75rem; /* 28px 轉為 rem */
   }
 
-  .files-section table {
-    font-size: 12px;
-  }
-
-  .faq-text {
-    font-size: 14px;
-  }
-
-  .faq-answer p {
-    font-size: 12px;
+  .hero-section p {
+    font-size: 0.875rem; /* 14px 轉為 rem */
   }
 
   .timeline::before {
-    left: 20px;
+    left: 1.25rem; /* 20px 轉為 rem */
   }
 
   .timeline-item {
     width: 100%;
-    padding-left: 60px;
-    padding-right: 20px;
+    padding-left: 3.75rem; /* 60px 轉為 rem */
+    padding-right: 1.25rem; /* 20px 轉為 rem */
     text-align: left;
   }
 
@@ -529,21 +542,72 @@ export default {
 
   .timeline-item:nth-child(odd)::before,
   .timeline-item:nth-child(even)::before {
-    left: 10px;
+    left: 0.625rem; /* 10px 轉為 rem */
   }
 
   .timeline-date {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+
+  .intro-section p,
+  .definition-section p,
+  .reason-section p,
+  .products-section p,
+  .preparation-section p,
+  .contact-section p {
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+
+  .files-section table {
+    font-size: 0.75rem; /* 12px 轉為 rem */
+  }
+
+  .faq-text {
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+
+  .faq-answer p {
+    font-size: 0.75rem; /* 12px 轉為 rem */
+  }
+
+  .contact-section h2 {
+    font-size: 1.25rem; /* 20px 轉為 rem */
+  }
+
+  .primary-btn {
+    padding: 0.5rem 1rem; /* 8px 16px 轉為 rem */
+    font-size: 0.875rem; /* 14px 轉為 rem */
   }
 }
 
-@media (max-width: 480px) {
-  .hero-section h1 {
-    font-size: 28px;
+/* 設備斷點 - 平板 (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .cosmetics-safety-page {
+    max-width: 60rem; /* 960px 轉為 rem */
   }
 
-  .intro-section h2, .definition-section h2, .reason-section h2, .benefits-section h2, .products-section h2, .preparation-section h2, .files-section h2, .guide-section h2, .faq-section h2, .contact-section h2 {
-    font-size: 20px;
+  .timeline {
+    max-width: 40rem; /* 640px 轉為 rem */
+  }
+
+  .intro-section p,
+  .definition-section p,
+  .reason-section p,
+  .products-section p,
+  .preparation-section p,
+  .contact-section p {
+    font-size: 0.9375rem; /* 15px 轉為 rem */
+  }
+
+  .files-section table {
+    font-size: 0.875rem; /* 14px 轉為 rem */
+  }
+}
+
+/* 設備斷點 - 桌面 (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .cosmetics-safety-page {
+    max-width: 75rem; /* 1200px 轉為 rem */
   }
 }
 </style>
