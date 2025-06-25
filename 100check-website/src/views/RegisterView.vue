@@ -36,7 +36,7 @@
               <span v-if="errors.terms" class="error-message">{{ errors.terms }}</span>
             </div>
             <button class="primary-btn" @click="submitForm">註冊</button>
-            <p class="login-link">已有帳號？<router-link to="/LoginView">立即登入</router-link></p>
+            <p class="login-link">已有帳號？<router-link to="/login">立即登入</router-link></p>
           </div>
         </div>
       </div>

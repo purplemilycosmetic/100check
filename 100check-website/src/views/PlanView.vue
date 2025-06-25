@@ -17,7 +17,7 @@
           <li>提供法規合規建議</li>
           <li>適用於所有化妝品廣告</li>
         </ul>
-        <router-link to="/AIAuditView" class="primary-btn">立即體驗</router-link>
+        <router-link to="/ai-audit" class="primary-btn">立即體驗</router-link>
       </div>
       <div class="plan-card">
         <h3>化妝品安全資料簽署</h3>
@@ -28,7 +28,7 @@
           <li>針對成分進行毒理評估</li>
           <li>提供詳細合規報告</li>
         </ul>
-        <router-link to="/AboutView" class="primary-btn">洽詢報價</router-link>
+        <router-link to="/about" class="primary-btn">洽詢報價</router-link>
       </div>
       <div class="plan-card">
         <h3>協助 PIF 建檔</h3>
@@ -39,7 +39,7 @@
           <li>完成安全性與功效佐證文件</li>
           <li>符合國際與台灣法規標準</li>
         </ul>
-        <router-link to="/AboutView" class="primary-btn">免費諮詢</router-link>
+        <router-link to="/about" class="primary-btn">免費諮詢</router-link>
       </div>
     </section>
 
@@ -47,7 +47,7 @@
     <section class="contact-section">
       <h2>需要更多資訊？</h2>
       <p>我們的專業團隊隨時為您提供諮詢，協助您選擇最適合的方案。</p>
-      <router-link to="/AboutView" class="primary-btn">聯繫我們</router-link>
+      <router-link to="/about" class="primary-btn">聯繫我們</router-link>
     </section>
   </div>
 </template>

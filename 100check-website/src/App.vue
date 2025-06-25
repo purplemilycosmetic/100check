@@ -14,11 +14,11 @@
       </div>
       <nav :class="{ 'active': isMenuOpen }">
         <router-link to="/" exact>首頁</router-link>
-        <router-link to="/AIAuditView">AI廣告檢核</router-link>
-        <router-link to="/ServicesView">服務介紹</router-link>
-        <router-link to="/PIFView">化妝品安全資料簽署</router-link>
-        <router-link to="/PlanView">方案介紹</router-link>
-        <router-link to="/AboutView">關於我們</router-link>
+        <router-link to="/ai-audit">AI廣告檢核</router-link>
+        <router-link to="/services">服務介紹</router-link>
+        <router-link to="/PIF">化妝品安全資料簽署</router-link>
+        <router-link to="/plan">方案介紹</router-link>
+        <router-link to="/about">關於我們</router-link>
       </nav>
       <div class="right-section">
         <div class="lang-switcher">
@@ -28,7 +28,7 @@
           <span class="username">{{ username }}</span>
           <button @click="logout" class="logout-btn">登出</button>
         </div>
-        <router-link v-else to="/loginview" class="auth-btn">註冊/登入</router-link>
+        <router-link v-else to="/login" class="auth-btn">註冊/登入</router-link>
       </div>
     </header>
 
@@ -324,7 +324,7 @@ nav a:hover {
   }
 
   .logo-image {
-    height: 3rem;
+    height: 4rem;
   }
 
   nav a {

@@ -37,8 +37,8 @@
       </div>
     </form>
     <div class="login-links">
-      <router-link to="/RegisterView" class="link-btn">尚未註冊</router-link>
-      <router-link to="/ForgetPassword" class="link-btn">忘記密碼</router-link>
+      <router-link to="/register" class="link-btn">尚未註冊</router-link>
+      <router-link to="/forget-password" class="link-btn">忘記密碼</router-link>
     </div>
   </div>
 </template>

@@ -172,7 +172,7 @@
       <p>
         我們提供專業安全評估與簽署服務，完整 PIF 製作協助您快速完成合規流程，加速產品上市，確保品質與安全。歡迎聯繫我們，獲取專業諮詢與服務！
       </p>
-      <router-link to="/AboutView" class="primary-btn">聯繫我們</router-link>
+      <router-link to="/about" class="primary-btn">聯繫我們</router-link>
     </section>
   </div>
 </template>

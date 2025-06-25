@@ -1,24 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './views/Home.vue'
-import AIAuditView from './views/AIAuditView.vue'
-import Services from './views/ServicesView.vue'
-import PIFView from './views/PIFView.vue'
-import PlanView from './views/PlanView.vue'
+import aiaudit from './views/ai-audit.vue'
+import services from './views/services.vue'
+import PIF from './views/PIF.vue'
+import plan from './views/plan.vue'
 import NewsView from './views/NewsView.vue'
-import AboutView from './views/AboutView.vue'
-import Loginview from './views/LoginView.vue' 
-import Loginview from './views/RegisterView.vue' 
+import about from './views/about.vue'
+import login from './views/login.vue' 
+import register from './views/register.vue' 
 const routes = [
   { path: '/', component: Home },
-  { path: '/AIAuditView', component: Services },
-  { path: '/ServicesView', component: Services },
-  { path: '/PIFView', component: PIFView },
-  { path: '/PlanView', component: PlanView },
+  { path: '/ai-audit', component: ai-audit },
+  { path: '/services', component: services },
+  { path: '/PIF', component: PIF },
+  { path: '/plan', component: plan },
   { path: '/NewsView', component: NewsView },
-  { path: '/AboutView', component: AboutView },
-  { path: '/LoginView', component: Loginview },
-  { path: '/RegisterView', component:RegisterView }, 
-  { path: '/ForgetPassword', component: () => import('./views/ForgetPassword.vue') } 
+  { path: '/about', component: about },
+  { path: '/login', component: login },
+  { path: '/register', component:register }, 
+  { path: '/forget-password', component: () => import('./views/forget-password.vue') } 
 ]
 const router = createRouter({
   history: createWebHistory(),

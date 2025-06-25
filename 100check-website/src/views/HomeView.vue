@@ -6,8 +6,8 @@
       <p>減少人工檢核，建立標準化審查程序，降低建項風險！</p>
       <p class="subtext">※ 詳情請參考 <a href="#">審盾橘</a>，免費體驗檢核廣告</p>
       <div class="buttons">
-        <router-link to="/ServicesView" class="primary-btn">查看方案</router-link>
-        <router-link to="/LoginView" class="primary-btn">註冊免費體驗</router-link>
+        <router-link to="/services" class="primary-btn">查看方案</router-link>
+        <router-link to="/login" class="primary-btn">註冊免費體驗</router-link>
       </div>
     </div>
 

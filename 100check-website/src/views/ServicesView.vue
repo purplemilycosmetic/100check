@@ -29,7 +29,7 @@
     <!-- 呼籲行動區塊 -->
     <section class="cta-section">
       <h2>立即體驗 AI 智慧檢核</h2>
-      <router-link to="RegisterView" class="primary-btn">立即體驗</router-link>
+      <router-link to="register" class="primary-btn">立即體驗</router-link>
     </section>
   </div>
 </template>
