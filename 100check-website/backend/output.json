@@ -1,0 +1,15 @@
+{
+    "pass": false,
+    "matched": [
+        {
+            "riskLevel": "需佐證資料",
+            "forbiddenPhrase": "-45%痘痘瑕疵",
+            "referenceSource": "台○萊雅股份有限公司(113年8月)"
+        },
+        {
+            "riskLevel": "需要佐證資料",
+            "forbiddenPhrase": "%",
+            "referenceSource": ""
+        }
+    ]
+}
