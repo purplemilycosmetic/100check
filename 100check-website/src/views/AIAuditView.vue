@@ -30,7 +30,7 @@
     <div v-if="auditResult" class="audit-result">
       <h3>審核結果</h3>
       <p v-html="formattedResult"></p>
-      <div v-if="violationCount > 0" class="risk-tag">風險</div>
+      <div v-if="violationCount > 0" class="risk-tag">未通過</div>
       <div v-else class="risk-tag low-risk">低風險</div>
     </div>
   </div>
@@ -85,7 +85,7 @@ export default {
 
       this.auditResult = ''
       axios
-        .post('http://localhost:8080/check/test', {
+        .post('http://52.91.0.205:8080/check/test', {
           text: this.adText
         })
         .then(response => {
@@ -93,8 +93,8 @@ export default {
           this.violationCount = matched.length
 
           if (matched.length > 0) {
-            const violations = matched.map(item =>
-              `❌ ${item.forbiddenPhrase}（${item.riskLevel}）－${item.referenceSource}`
+            const violations = matched.map((item, index) =>
+            `${index + 1}: <span style="color:red; font-weight:bold;">${item.forbiddenPhrase}</span> (${item.riskLevel}) －${item.referenceSource || ''}`
             )
             this.auditResult = `共檢出違規 ${matched.length} 項：</br>` + violations.join('</br>')
           } else {
