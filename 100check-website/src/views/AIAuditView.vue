@@ -30,8 +30,8 @@
     <div v-if="auditResult" class="audit-result">
       <h3>審核結果</h3>
       <p v-html="formattedResult"></p>
-      <div v-if="hasViolations" class="risk-tag">風險</div>
-      <div v-else-if="auditResult === '文案初步符合'" class="risk-tag low-risk">低風險</div>
+      <div v-if="violationCount > 0" class="risk-tag">風險</div>
+      <div v-else class="risk-tag low-risk">低風險</div>
     </div>
   </div>
 </template>
@@ -46,6 +46,7 @@ export default {
       selectedCategory: '',
       adText: '',
       auditResult: '',
+      violationCount: 0,
       categories: [
         '一、洗髮用化粧品類',
         '二、洗臉卸粧用化粧品類',
@@ -68,16 +69,11 @@ export default {
     }
   },
   computed: {
-    hasViolations() {
-      return this.auditResult.includes('</br>')
-    },
     formattedResult() {
-      if (this.auditResult.includes('</br>')) {
-        const parts = this.auditResult.split('</br>')
-        const blackText = parts.map(part => `<span style="color: #000000; padding: 2px;">${part}</span>`).join('<br>')
-        return blackText
-      }
-      return this.auditResult === '文案初步符合' ? '<span style="padding: 2px;">' + this.auditResult + '</span>' : this.auditResult
+      return this.auditResult
+        .split('</br>')
+        .map(part => `<span style="color: #000000; padding: 2px;">${part}</span>`)
+        .join('<br>')
     }
   },
   methods: {
@@ -89,18 +85,26 @@ export default {
 
       this.auditResult = ''
       axios
-        .post('http://52.91.0.205:8080/check', {
-          content: this.adText
+        .post('http://localhost:8080/check/test', {
+          text: this.adText
         })
         .then(response => {
-          if (response.data.ileagalWords.length > 0) {
-            this.auditResult = response.data.ileagalWords.join('</br>')
+          const matched = response.data.matched || []
+          this.violationCount = matched.length
+
+          if (matched.length > 0) {
+            const violations = matched.map(item =>
+              `❌ ${item.forbiddenPhrase}（${item.riskLevel}）－${item.referenceSource}`
+            )
+            this.auditResult = `共檢出違規 ${matched.length} 項：</br>` + violations.join('</br>')
           } else {
-            this.auditResult = '文案初步符合'
+            this.auditResult = '✅ 文案初步符合，未檢出違規用語'
           }
         })
         .catch(error => {
           console.error('API 錯誤:', error.response ? error.response.data : error.message)
+          this.violationCount = 0
+          this.auditResult = '⚠️ API 發生錯誤，請稍後再試'
         })
     }
   }
@@ -109,39 +113,39 @@ export default {
 
 <style scoped>
 .ai-audit-page {
-  padding: 2.5rem; /* 40px 轉為 rem */
+  padding: 2.5rem;
   text-align: center;
   background: linear-gradient(to bottom, #ffffff 50%, #ffffff 50%);
-  min-height: calc(100vh - 6.25rem); /* 100px 轉為 rem，假設首欄高度 60px */
+  min-height: calc(100vh - 6.25rem);
 }
 
 .ai-audit-page h1 {
   color: #ff5733;
-  font-size: 2.25rem; /* 36px 轉為 rem */
-  margin-bottom: 1.25rem; /* 20px 轉為 rem */
+  font-size: 2.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .ai-audit-page p {
-  font-size: 1.125rem; /* 18px 轉為 rem */
+  font-size: 1.125rem;
   color: #333;
-  margin-bottom: 1.875rem; /* 30px 轉為 rem */
+  margin-bottom: 1.875rem;
 }
 
 .audit-controls {
-  margin-bottom: 1.25rem; /* 20px 轉為 rem */
+  margin-bottom: 1.25rem;
 }
 
 .audit-controls label {
-  font-size: 1rem; /* 16px 轉為 rem */
+  font-size: 1rem;
   color: #333;
-  margin-right: 0.625rem; /* 10px 轉為 rem */
+  margin-right: 0.625rem;
 }
 
 .category-select {
-  padding: 0.5rem 0.75rem; /* 8px 12px 轉為 rem */
-  font-size: 0.875rem; /* 14px 轉為 rem */
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
   border: 1px solid #ddd;
-  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  border-radius: 0.3125rem;
   background-color: #fff;
   cursor: pointer;
 }
@@ -151,33 +155,33 @@ export default {
 }
 
 .audit-input {
-  margin-bottom: 1.25rem; /* 20px 轉為 rem */
+  margin-bottom: 1.25rem;
 }
 
 .audit-input label {
-  font-size: 1rem; /* 16px 轉為 rem */
+  font-size: 1rem;
   color: #333;
   display: block;
-  margin-bottom: 0.3125rem; /* 5px 轉為 rem */
+  margin-bottom: 0.3125rem;
 }
 
 .ad-textarea {
   width: 100%;
-  max-width: 37.5rem; /* 600px 轉為 rem */
-  height: 9.375rem; /* 150px 轉為 rem */
-  padding: 0.625rem; /* 10px 轉為 rem */
-  font-size: 0.875rem; /* 14px 轉為 rem */
+  max-width: 37.5rem;
+  height: 9.375rem;
+  padding: 0.625rem;
+  font-size: 0.875rem;
   border: 1px solid #ddd;
-  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  border-radius: 0.3125rem;
   resize: vertical;
 }
 
 .char-count {
   text-align: right;
-  font-size: 0.75rem; /* 12px 轉為 rem */
+  font-size: 0.75rem;
   color: #666;
-  max-width: 37.5rem; /* 600px 轉為 rem */
-  margin-top: 0.3125rem; /* 5px 轉為 rem */
+  max-width: 37.5rem;
+  margin-top: 0.3125rem;
 }
 
 .char-count.warning {
@@ -185,19 +189,19 @@ export default {
 }
 
 .warning-text {
-  margin-left: 0.625rem; /* 10px 轉為 rem */
+  margin-left: 0.625rem;
   color: #ff0000;
 }
 
 .audit-button {
-  padding: 0.625rem 1.25rem; /* 10px 20px 轉為 rem */
+  padding: 0.625rem 1.25rem;
   background: #ff5733;
   color: white;
   border: none;
-  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  border-radius: 0.3125rem;
   cursor: pointer;
-  font-size: 1rem; /* 16px 轉為 rem */
-  margin-bottom: 1.25rem; /* 20px 轉為 rem */
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .audit-button:hover {
@@ -210,35 +214,35 @@ export default {
 }
 
 .audit-result {
-  margin-top: 1.25rem; /* 20px 轉為 rem */
-  padding: 0.9375rem; /* 15px 轉為 rem */
+  margin-top: 1.25rem;
+  padding: 0.9375rem;
   background: #ffffff;
-  border-radius: 0.3125rem; /* 5px 轉為 rem */
+  border-radius: 0.3125rem;
   text-align: left;
-  max-width: 37.5rem; /* 600px 轉為 rem */
+  max-width: 37.5rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .audit-result h3 {
   color: #000000;
-  font-size: 1.125rem; /* 18px 轉為 rem */
-  margin-bottom: 0.625rem; /* 10px 轉為 rem */
+  font-size: 1.125rem;
+  margin-bottom: 0.625rem;
 }
 
 .audit-result p {
-  font-size: 0.875rem; /* 14px 轉為 rem */
+  font-size: 0.875rem;
   color: #333;
 }
 
 .risk-tag {
   display: inline-block;
-  margin-top: 0.625rem; /* 10px 轉為 rem */
-  padding: 0.3125rem 0.9375rem; /* 5px 15px 轉為 rem */
+  margin-top: 0.625rem;
+  padding: 0.3125rem 0.9375rem;
   background-color: #ff0000;
   color: white;
-  border-radius: 0.3125rem; /* 5px 轉為 rem */
-  font-size: 0.875rem; /* 14px 轉為 rem */
+  border-radius: 0.3125rem;
+  font-size: 0.875rem;
   font-weight: bold;
 }
 
@@ -247,78 +251,69 @@ export default {
   color: #000000;
 }
 
-/* 設備斷點 - 手機 (max-width: 600px) */
 @media (max-width: 600px) {
   .ai-audit-page {
-    padding: 1rem; /* 16px 轉為 rem */
-    min-height: calc(100vh - 4rem); /* 調整為手機首欄高度 */
+    padding: 1rem;
+    min-height: calc(100vh - 4rem);
   }
 
   .ai-audit-page h1 {
-    font-size: 1.5rem; /* 24px 轉為 rem */
+    font-size: 1.5rem;
   }
 
   .ai-audit-page p {
-    font-size: 0.875rem; /* 14px 轉為 rem */
+    font-size: 0.875rem;
   }
 
   .category-select {
-    width: 100%; /* 滿寬 */
-    margin-top: 0.5rem; /* 8px 轉為 rem */
+    width: 100%;
+    margin-top: 0.5rem;
   }
 
   .ad-textarea {
-    height: 6.25rem; /* 100px 轉為 rem */
-    font-size: 0.75rem; /* 12px 轉為 rem */
+    height: 6.25rem;
+    font-size: 0.75rem;
   }
 
   .audit-button {
-    padding: 0.5rem 1rem; /* 8px 16px 轉為 rem */
-    font-size: 0.875rem; /* 14px 轉為 rem */
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
   }
 
   .audit-result {
-    max-width: 100%; /* 滿寬 */
-    padding: 0.625rem; /* 10px 轉為 rem */
+    max-width: 100%;
+    padding: 0.625rem;
   }
 
   .audit-result h3 {
-    font-size: 1rem; /* 16px 轉為 rem */
+    font-size: 1rem;
   }
 
   .risk-tag {
-    font-size: 0.75rem; /* 12px 轉為 rem */
-    padding: 0.25rem 0.75rem; /* 4px 12px 轉為 rem */
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
   }
 }
 
-/* 設備斷點 - 平板 (601px - 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
   .ai-audit-page {
-    padding: 1.5rem; /* 24px 轉為 rem */
+    padding: 1.5rem;
   }
 
   .ai-audit-page h1 {
-    font-size: 2rem; /* 32px 轉為 rem */
+    font-size: 2rem;
   }
 
   .ad-textarea {
-    height: 7.5rem; /* 120px 轉為 rem */
+    height: 7.5rem;
   }
 
   .audit-button {
-    padding: 0.625rem 1.25rem; /* 10px 20px 轉為 rem */
+    padding: 0.625rem 1.25rem;
   }
 
   .audit-result {
-    max-width: 90%; /* 略窄於桌面 */
-  }
-}
-
-/* 設備斷點 - 桌面 (min-width: 1025px) */
-@media (min-width: 1025px) {
-  .ai-audit-page {
-    padding: 2.5rem; /* 40px 轉為 rem */
+    max-width: 90%;
   }
 }
 </style>
