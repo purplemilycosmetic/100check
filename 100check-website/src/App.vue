@@ -28,7 +28,7 @@
           <span class="username">{{ username }}</span>
           <button @click="logout" class="logout-btn">登出</button>
         </div>
-        <router-link v-else to="/login" class="auth-btn">註冊/登入</router-link>
+        <!-- <router-link v-else to="/login" class="auth-btn">註冊/登入</router-link> -->
       </div>
     </header>
 

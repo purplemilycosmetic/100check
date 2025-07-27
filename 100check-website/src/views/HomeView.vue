@@ -7,7 +7,7 @@
       <p class="subtext">※ 詳情請參考 <a href="#">審盾橘</a>，免費體驗檢核廣告</p>
       <div class="buttons">
         <router-link to="/services" class="primary-btn">查看方案</router-link>
-        <router-link to="/login" class="primary-btn">註冊免費體驗</router-link>
+        <router-link to="/ai-audit" class="primary-btn">馬上檢核廣告</router-link>
       </div>
     </div>
 
