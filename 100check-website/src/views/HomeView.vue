@@ -361,7 +361,7 @@ export default {
 @media (max-width: 600px) {
   .carousel {
     max-width: 100%;
-    height: 15rem;
+    height: 10rem;
   }
 
   .hero-section-content h1 {
@@ -420,7 +420,7 @@ export default {
 
   .card-icon4 {
     width: 100%;
-    height: 15rem;
+    height: 10rem;
   }
 }
 
