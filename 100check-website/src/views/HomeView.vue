@@ -26,6 +26,32 @@
       </div>
     </div>
 
+    <!-- 新增區塊 1 -->
+    <div class="info-sections2">
+      <h2 class="section-title">｜一鍵快速AI審查，長篇劇本輕鬆審查，免除人工看字失誤</h2>
+      <div class="info-card2">
+        <img src="@/assets/實際案例1.jpg" alt="test" class="card-icon2" />
+      </div>
+      <div class="info-card2">
+        <img src="@/assets/實際案例2.jpg" alt="Cosmetics" class="card-icon2" />
+      </div>
+    </div>
+
+    <!-- 新增區塊 2 -->
+    <div class="info-sections3">
+      <h2 class="section-title">｜台北市衛生局查緝資訊</h2>
+      <div class="info-card4">
+        <img src="@/assets/臺北市政府衛生局1.png" alt="Case 3" class="card-icon4" />
+      </div>
+    </div>
+
+    <!-- 新增區塊 3 -->
+    <div class="info-sections4">
+      <div class="info-card4">
+        <img src="@/assets/臺北市政府衛生局2.png" alt="Case 4" class="card-icon4" />
+      </div>
+    </div>
+
     <!-- 區塊2 -->
     <div class="info-sections1">
       <div class="info-card">
@@ -194,6 +220,97 @@ export default {
   background: #e04e2d;
 }
 
+/* 新增區塊 1 樣式 */
+.info-sections2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0;
+  padding: 1.25rem;
+  background: #ffffff;
+  border-radius: 0.625rem;
+}
+
+.section-title {
+  width: 100%;
+  text-align: center;
+  color: #ff5733;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.125rem;
+}
+
+.info-card2 {
+  width: auto;
+  text-align: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  margin: 0 0.625rem;
+}
+
+.card-icon2 {
+  width: 75rem;
+  height: 27rem;
+  margin-bottom: 0.625rem;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+
+/* 新增區塊 2 樣式 */
+.info-sections3 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  border-radius: 0.625rem;
+}
+
+.info-card4 {
+  width: auto;
+  text-align: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  margin: 0 0.625rem;
+}
+
+.card-icon4 {
+  width: 75rem;
+  height: 27rem;
+  margin-bottom: 0.625rem;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+
+/* 新增區塊 3 樣式 */
+.info-sections4 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  border-radius: 0.625rem;
+}
+
+.info-card4 {
+  width: auto;
+  text-align: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  margin: 0 0.625rem;
+}
+
+.card-icon4 {
+  width: 75rem;
+  height: 27rem;
+  margin-bottom: 0.625rem;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+
 /* 區塊2 樣式 */
 .info-sections1 {
   display: flex;
@@ -281,6 +398,30 @@ export default {
   .info-card ul li {
     font-size: 1rem;
   }
+
+  .info-sections2, .info-sections3, .info-sections4 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .info-card2, .info-card4 {
+    margin: 0.625rem 0;
+  }
+
+  .card-icon2 {
+    width: 100%;
+    height: 15rem;
+  }
+
+  .card-icon4 {
+    width: 100%;
+    height: 15rem;
+  }
 }
 
 /* 設備斷點 - 平板 (601px - 1024px) */
@@ -310,6 +451,25 @@ export default {
   .info-card h3 {
     font-size: 1.375rem;
   }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-card2, .info-card4 {
+    margin: 0 0.625rem;
+  }
+
+  .card-icon2 {
+    width: 60rem;
+    height: 21rem;
+  }
+
+  .card-icon4 {
+    width: 60rem;
+    height: 21rem;
+  }
 }
 
 /* 設備斷點 - 桌面 (min-width: 1025px) */
@@ -321,6 +481,21 @@ export default {
 
   .info-card {
     width: 30%;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-icon2 {
+    width: 37rem;
+    height: 37rem;
+  }
+
+  .card-icon4 {
+    width: 70rem;
+    height: 40rem;
   }
 }
 </style>
