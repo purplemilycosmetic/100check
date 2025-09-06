@@ -7,7 +7,7 @@ Disallow: /login
 Disallow: /register
 
 # 指向 sitemap
-Sitemap: https://www.aicheck.com.tw/sitemap.xml
+Sitemap: http://www.aicheck.com.tw/sitemap.xml
 
 # 爬取延遲（可選）
 Crawl-delay: 1
