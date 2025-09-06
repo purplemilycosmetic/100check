@@ -118,7 +118,7 @@ export default {
   color: #333;
 }
 
-/* 聯絡表單與資訊區塊 */
+/* 聯絡表單與資訊區塊123 */
 .contact-section {
   margin-bottom: 2.5rem; /* 40px 轉為 rem */
 }
