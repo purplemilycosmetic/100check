@@ -11,12 +11,18 @@
       </div>
       <div class="footer-section">
         <h3>聯絡我們</h3>
-        <p></p>
-        <p></p>
+        <p>Email: adcheck@gmail.com</p>
+        <div class="info-item">
+          <i class="fas fa-qrcode"></i>
+          <div class="qrcode-container">
+            <p class="qrcode-text">Line 免費諮詢</p>
+            <img src="@/assets/line-qrcode.png" alt="Line QR Code" class="qrcode-image" />
+          </div>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      </div>
+    </div>
   </footer>
 </template>
 
@@ -53,13 +59,38 @@
   margin: 5px 0;
 }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 12px;
-  color: #666;
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
 }
 
+.info-item i {
+  color: #ff5733;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.qrcode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.qrcode-text {
+  font-size: 14px;
+  color: #ff5733;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.qrcode-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* 設備斷點 - 手機 (max-width: 768px) */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -68,6 +99,20 @@
 
   .footer-section {
     margin-bottom: 30px;
+  }
+
+  .info-item {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .qrcode-container {
+    align-items: center;
+  }
+
+  .qrcode-image {
+    width: 60px;
+    height: 60px;
   }
 }
 </style>
