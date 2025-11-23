@@ -52,6 +52,14 @@
       </div>
     </div>
 
+    <!-- 插入 Google AdSense 廣告 -->
+    <div class="ad-container" style="margin: 2rem auto; max-width: 970px; text-align: center;">
+      <AdsenseAd 
+        ad-client="ca-pub-XXXXXXXXXXXXXXXX" 
+        ad-slot="YYYYYYYYYY"
+      />
+    </div>
+
     <!-- 區塊2 -->
     <div class="info-sections1">
       <div class="info-card">
@@ -89,7 +97,10 @@
 </template>
 
 <script>
+import AdsenseAd from '@/components/Adsense.vue'; // 引入廣告元件
+
 export default {
+  components: { AdsenseAd }, // 註冊元件
   name: 'HomeView',
   data() {
     return {
