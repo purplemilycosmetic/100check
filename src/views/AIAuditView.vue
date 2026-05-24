@@ -56,7 +56,7 @@ export default {
       maxLength: 2000,
       charCount: 0,
       forbiddenWordsList: [],
-      isLoaded: false // 新增狀態，確保詞庫載入後才允許審查
+      isLoaded: false
     }
   },
   async mounted() {
@@ -69,21 +69,22 @@ export default {
     
     async fetchForbiddenWords() {
       try {
-        console.log("開始抓取詞庫...");
-        const { data, error } = await supabase.from('forbidden_words').select('name, risk_level, reference')
+        // 這是最關鍵的修改：確保這裡選取的欄位與資料庫完全一致
+        const { data, error } = await supabase
+          .from('forbidden_words')
+          .select('name, risk_level, reference');
         
         if (error) {
-          console.error("Supabase 查詢錯誤:", error);
-          this.auditResult = '⚠️ 詞庫載入失敗 (資料庫連線錯誤)';
+          console.error("Supabase 錯誤:", error);
+          this.auditResult = '⚠️ 詞庫連線失敗';
           return;
         }
         
         this.forbiddenWordsList = data || [];
         this.isLoaded = true;
-        console.log("成功載入詞庫，共", data.length, "筆");
+        console.log("詞庫已成功載入:", this.forbiddenWordsList);
       } catch (e) {
-        console.error("系統異常:", e);
-        this.auditResult = '⚠️ 系統異常，請稍後再試';
+        console.error("系統錯誤:", e);
       }
     },
 
@@ -95,12 +96,12 @@ export default {
       if (!this.selectedCategory || !this.adText) return;
 
       let matched = [];
+      // 這裡比對時使用 item.name
       this.forbiddenWordsList.forEach(item => {
-        // 確保 item.name 有值且文案中包含該字詞
         if (item.name && this.adText.includes(item.name)) {
           matched.push({
             forbiddenPhrase: item.name,
-            riskLevel: item.risk_level || '未知風險',
+            riskLevel: item.risk_level || '無等級',
             referenceSource: item.reference || '無參考資料'
           });
         }
