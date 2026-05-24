@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { supabase } from '../supabaseClient'
 
 export default {
   name: 'AIAuditView',
@@ -47,65 +47,43 @@ export default {
       adText: '',
       auditResult: '',
       violationCount: 0,
-      categories: [
-        '一、洗髮用化粧品類',
-        '二、洗臉卸粧用化粧品類',
-        '三、沐浴用化粧品類',
-        '四、香皂類',
-        '五、頭髮用化粧品類',
-        '六、化粧水/油/面霜乳液類',
-        '七、香氛用化粧品類',
-        '八、止汗制臭劑',
-        '九、唇用化粧品類',
-        '十、覆敷用化粧品類',
-        '十一、眼部用化粧品類',
-        '十二、指甲用化粧品類',
-        '十三、美白牙齒類',
-        '十四、非藥用牙膏、漱口水類',
-        '十五、其他及綜合性內容'
-      ],
+      categories: ['一、洗髮用化粧品類', '二、洗臉卸粧用化粧品類', '三、沐浴用化粧品類', '四、香皂類', '五、頭髮用化粧品類', '六、化粧水/油/面霜乳液類', '七、香氛用化粧品類', '八、止汗制臭劑', '九、唇用化粧品類', '十、覆敷用化粧品類', '十一、眼部用化粧品類', '十二、指甲用化粧品類', '十三、美白牙齒類', '十四、非藥用牙膏、漱口水類', '十五、其他及綜合性內容'],
       maxLength: 2000,
-      charCount: 0
+      charCount: 0,
+      forbiddenWordsList: []
+    }
+  },
+  async mounted() {
+    // 簡單的測試：抓取所有資料
+    const { data, error } = await supabase.from('forbidden_words').select('*')
+    if (error) {
+      console.error('抓取失敗:', error)
+    } else {
+      this.forbiddenWordsList = data
+      console.log('成功載入詞庫:', data)
     }
   },
   computed: {
     formattedResult() {
       return this.auditResult
-        .split('</br>')
-        .map(part => `<span style="color: #000000; padding: 2px;">${part}</span>`)
-        .join('<br>')
     }
   },
   methods: {
-    updateCharCount() {
-      this.charCount = this.adText.length
-    },
+    updateCharCount() { this.charCount = this.adText.length },
     auditAd() {
-      if (!this.selectedCategory || !this.adText) return
-
-      this.auditResult = ''
-      axios
-        .post('http://52.91.0.205:8080/check/test', {
-          text: this.adText
-        })
-        .then(response => {
-          const matched = response.data.matched || []
-          this.violationCount = matched.length
-
-          if (matched.length > 0) {
-            const violations = matched.map((item, index) =>
-            `${index + 1}: <span style="color:red; font-weight:bold;">${item.forbiddenPhrase}</span> (${item.riskLevel}) －${item.referenceSource || ''}`
-            )
-            this.auditResult = `共檢出違規 ${matched.length} 項：</br>` + violations.join('</br>')
-          } else {
-            this.auditResult = '✅ 文案初步符合，未檢出違規用語'
-          }
-        })
-        .catch(error => {
-          console.error('API 錯誤:', error.response ? error.response.data : error.message)
-          this.violationCount = 0
-          this.auditResult = '⚠️ API 發生錯誤，請稍後再試'
-        })
+      let matched = []
+      // 這裡對應你截圖裡的欄位名稱：name, risk_level, reference
+      this.forbiddenWordsList.forEach(item => {
+        if (this.adText.includes(item.name)) {
+          matched.push({
+            forbiddenPhrase: item.name,
+            riskLevel: item.risk_level,
+            referenceSource: item.reference
+          })
+        }
+      })
+      this.violationCount = matched.length
+      this.auditResult = matched.length > 0 ? `共檢出違規 ${matched.length} 項：</br>` + matched.map((i, idx) => `${idx+1}: ${i.forbiddenPhrase} (${i.riskLevel})`).join('</br>') : '✅ 無違規用語'
     }
   }
 }
@@ -182,6 +160,8 @@ export default {
   color: #666;
   max-width: 37.5rem;
   margin-top: 0.3125rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .char-count.warning {
