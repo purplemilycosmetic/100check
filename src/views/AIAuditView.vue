@@ -47,49 +47,75 @@ export default {
       adText: '',
       auditResult: '',
       violationCount: 0,
-      categories: ['一、洗髮用化粧品類', '二、洗臉卸粧用化粧品類', '三、沐浴用化粧品類', '四、香皂類', '五、頭髮用化粧品類', '六、化粧水/油/面霜乳液類', '七、香氛用化粧品類', '八、止汗制臭劑', '九、唇用化粧品類', '十、覆敷用化粧品類', '十一、眼部用化粧品類', '十二、指甲用化粧品類', '十三、美白牙齒類', '十四、非藥用牙膏、漱口水類', '十五、其他及綜合性內容'],
+      categories: [
+        '一、洗髮用化粧品類', '二、洗臉卸粧用化粧品類', '三、沐浴用化粧品類', '四、香皂類',
+        '五、頭髮用化粧品類', '六、化粧水/油/面霜乳液類', '七、香氛用化粧品類', '八、止汗制臭劑',
+        '九、唇用化粧品類', '十、覆敷用化粧品類', '十一、眼部用化粧品類', '十二、指甲用化粧品類',
+        '十三、美白牙齒類', '十四、非藥用牙膏、漱口水類', '十五、其他及綜合性內容'
+      ],
       maxLength: 2000,
       charCount: 0,
-      forbiddenWordsList: []
+      forbiddenWordsList: [],
+      isLoaded: false // 新增狀態，確保詞庫載入後才允許審查
     }
   },
   async mounted() {
-    // 簡單的測試：抓取所有資料
-    const { data, error } = await supabase.from('forbidden_words').select('*')
-    if (error) {
-      console.error('抓取失敗:', error)
-    } else {
-      this.forbiddenWordsList = data
-      console.log('成功載入詞庫:', data)
-    }
-  },
-  computed: {
-    formattedResult() {
-      return this.auditResult
-    }
+    await this.fetchForbiddenWords()
   },
   methods: {
-    updateCharCount() { this.charCount = this.adText.length },
-    auditAd() {
-      if (this.forbiddenWordsList.length === 0) {
-        this.auditResult = '⚠️ 詞庫尚未載入，請稍後再試'
-        this.violationCount = 0
-        return
+    updateCharCount() {
+      this.charCount = this.adText.length
+    },
+    
+    async fetchForbiddenWords() {
+      try {
+        console.log("開始抓取詞庫...");
+        const { data, error } = await supabase.from('forbidden_words').select('name, risk_level, reference')
+        
+        if (error) {
+          console.error("Supabase 查詢錯誤:", error);
+          this.auditResult = '⚠️ 詞庫載入失敗 (資料庫連線錯誤)';
+          return;
+        }
+        
+        this.forbiddenWordsList = data || [];
+        this.isLoaded = true;
+        console.log("成功載入詞庫，共", data.length, "筆");
+      } catch (e) {
+        console.error("系統異常:", e);
+        this.auditResult = '⚠️ 系統異常，請稍後再試';
       }
-      let matched = []
+    },
+
+    auditAd() {
+      if (!this.isLoaded) {
+        this.auditResult = '⚠️ 詞庫尚未載入，請稍後再試';
+        return;
+      }
+      if (!this.selectedCategory || !this.adText) return;
+
+      let matched = [];
       this.forbiddenWordsList.forEach(item => {
-        if (this.adText.includes(item.name)) {
+        // 確保 item.name 有值且文案中包含該字詞
+        if (item.name && this.adText.includes(item.name)) {
           matched.push({
             forbiddenPhrase: item.name,
-            riskLevel: item.risk_level,
-            referenceSource: item.reference
-          })
+            riskLevel: item.risk_level || '未知風險',
+            referenceSource: item.reference || '無參考資料'
+          });
         }
-      })
-      this.violationCount = matched.length
-      this.auditResult = matched.length > 0
-        ? `共檢出違規 ${matched.length} 項：<br>` + matched.map((i, idx) => `${idx + 1}: ${i.forbiddenPhrase}（${i.riskLevel}）`).join('<br>')
-        : '✅ 無違規用語'
+      });
+
+      this.violationCount = matched.length;
+
+      if (matched.length > 0) {
+        const violations = matched.map((item, index) =>
+          `${index + 1}: <span style="color:red; font-weight:bold;">${item.forbiddenPhrase}</span> (${item.riskLevel}) - ${item.referenceSource}`
+        );
+        this.auditResult = `共檢出違規 ${matched.length} 項：<br>` + violations.join('<br>');
+      } else {
+        this.auditResult = '✅ 文案初步符合，未檢出違規用語';
+      }
     }
   }
 }
