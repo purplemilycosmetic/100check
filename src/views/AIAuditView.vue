@@ -71,8 +71,12 @@ export default {
   methods: {
     updateCharCount() { this.charCount = this.adText.length },
     auditAd() {
+      if (this.forbiddenWordsList.length === 0) {
+        this.auditResult = '⚠️ 詞庫尚未載入，請稍後再試'
+        this.violationCount = 0
+        return
+      }
       let matched = []
-      // 這裡對應你截圖裡的欄位名稱：name, risk_level, reference
       this.forbiddenWordsList.forEach(item => {
         if (this.adText.includes(item.name)) {
           matched.push({
@@ -83,7 +87,9 @@ export default {
         }
       })
       this.violationCount = matched.length
-      this.auditResult = matched.length > 0 ? `共檢出違規 ${matched.length} 項：</br>` + matched.map((i, idx) => `${idx+1}: ${i.forbiddenPhrase} (${i.riskLevel})`).join('</br>') : '✅ 無違規用語'
+      this.auditResult = matched.length > 0
+        ? `共檢出違規 ${matched.length} 項：<br>` + matched.map((i, idx) => `${idx + 1}: ${i.forbiddenPhrase}（${i.riskLevel}）`).join('<br>')
+        : '✅ 無違規用語'
     }
   }
 }
