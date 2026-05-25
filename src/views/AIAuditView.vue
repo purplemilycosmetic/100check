@@ -1,7 +1,7 @@
 <template>
   <div class="ai-audit-page">
     <h1>AI廣告檢核</h1>
-    <p>違規詞彙將在輸入時即時高亮標示。滑鼠移到標記文字可查看法規依據。</p>
+    <p>歡迎使用我們的 AI 廣告檢核服務！此功能利用人工智慧技術，幫助您檢查廣告內容的合規性與安全性。</p>
 
     <div class="audit-controls">
       <label for="category-select">選擇化粧品種類：</label>
@@ -14,16 +14,8 @@
     </div>
 
     <div class="audit-input">
-      <label for="ad-text">輸入廣告文案：</label>
+      <label>輸入廣告文案：</label>
       <div class="audit-wrapper">
-        <!-- 高亮背景層（在輸入框之後渲染，z-index 較低） -->
-        <div
-          class="highlight-backdrop"
-          v-html="highlightedText"
-          aria-hidden="true"
-          ref="backdrop"
-        ></div>
-        <!-- 輸入層（透明背景，浮在高亮層上方） -->
         <textarea
           id="ad-text"
           v-model="adText"
@@ -31,11 +23,10 @@
           placeholder="請輸入您的廣告文案..."
           :maxlength="maxLength"
           @input="updateCharCount"
-          @scroll="syncScroll"
-          ref="inputArea"
         ></textarea>
+        <div class="highlight-area" v-html="highlightedText"></div>
       </div>
-      <div class="char-count" :class="{ warning: charCount > maxLength }">
+      <div class="char-count" :class="{ 'warning': charCount > maxLength }">
         字數: {{ charCount }} / {{ maxLength }}
         <span v-if="charCount > maxLength" class="warning-text">（文案超出字數限制）</span>
       </div>
@@ -88,15 +79,16 @@ export default {
     highlightedText() {
       if (!this.adText) return ''
 
-      // 依關鍵字長度由長到短排序，防止短詞先替換破壞長詞匹配
+      // 依關鍵字長度由長到短排序，並去除多餘空白
       const sorted = [...this.forbiddenWordsList]
-        .filter(item => item.name)
+        .filter(item => item.name && item.name.trim() !== '')
+        .map(item => ({ ...item, name: item.name.trim() }))
         .sort((a, b) => b.name.length - a.name.length)
 
       const text = this.adText
       const matches = []
 
-      // 單次掃描找出所有不重疊的匹配位置
+      // 找出所有不重疊的匹配位置
       sorted.forEach(item => {
         let idx = 0
         while (idx < text.length) {
@@ -104,7 +96,9 @@ export default {
           if (pos === -1) break
           const end = pos + item.name.length
           const overlaps = matches.some(m => pos < m.end && end > m.start)
-          if (!overlaps) matches.push({ start: pos, end, item })
+          if (!overlaps) {
+            matches.push({ start: pos, end, item })
+          }
           idx = pos + 1
         }
       })
@@ -118,6 +112,7 @@ export default {
       let result = ''
       let lastIdx = 0
 
+      // 生成帶有 class 的 HTML 標籤
       matches.forEach(({ start, end, item }) => {
         result += toHtml(text.slice(lastIdx, start))
         const cls = item.risk_level === '高風險' ? 'highlight highlight-high' : 'highlight highlight-other'
@@ -137,12 +132,6 @@ export default {
     updateCharCount() {
       this.charCount = this.adText.length
     },
-    // 同步 textarea 與高亮背景層的捲軸位置
-    syncScroll() {
-      if (this.$refs.backdrop) {
-        this.$refs.backdrop.scrollTop = this.$refs.inputArea.scrollTop
-      }
-    },
     auditAd() {
       if (this.forbiddenWordsList.length === 0) {
         this.auditResult = '⚠️ 詞庫尚未載入，請稍後再試'
@@ -151,9 +140,10 @@ export default {
       }
       const matched = []
       this.forbiddenWordsList.forEach(item => {
-        if (this.adText.includes(item.name)) {
+        const keyword = item.name ? item.name.trim() : ''
+        if (keyword && this.adText.includes(keyword)) {
           matched.push({
-            forbiddenPhrase: item.name,
+            forbiddenPhrase: keyword,
             riskLevel: item.risk_level,
             referenceSource: item.reference
           })
@@ -161,7 +151,7 @@ export default {
       })
       this.violationCount = matched.length
       this.auditResult = matched.length > 0
-        ? `共檢出違規 ${matched.length} 項：<br>` + matched.map((i, idx) => `${idx + 1}: ${i.forbiddenPhrase}（${i.riskLevel}）`).join('<br>')
+        ? `共檢出違規 ${matched.length} 項：<br>` + matched.map((i, idx) => `${idx + 1}: <strong style="color:red;">${i.forbiddenPhrase}</strong>（${i.riskLevel}）`).join('<br>')
         : '✅ 無違規用語'
     }
   }
@@ -182,8 +172,8 @@ export default {
 }
 
 .ai-audit-page > p {
-  font-size: 1rem;
-  color: #555;
+  font-size: 1.125rem;
+  color: #333;
   margin-bottom: 1.875rem;
 }
 
@@ -219,70 +209,29 @@ export default {
   color: #333;
   display: block;
   margin-bottom: 0.5rem;
-  text-align: left;
-  max-width: 56rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* ── Overlay 容器 ─────────────────────────────── */
 .audit-wrapper {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   max-width: 56rem;
-  height: 12rem;
   margin: 0 auto;
-  border-radius: 0.375rem;
   text-align: left;
 }
 
-/* ── 高亮背景層：絕對定位，在 textarea 之下 ─── */
-.highlight-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  /* 必須與 textarea 的字型、Padding 完全一致 */
-  padding: 0.75rem;
-  font-size: 0.9375rem;
-  font-family: inherit;
-  line-height: 1.6;
-  letter-spacing: normal;
-  word-spacing: normal;
-  border: 1px solid transparent;
-  border-radius: 0.375rem;
-  background-color: #fff;
-  overflow: hidden;
-  white-space: pre-wrap;
-  word-break: break-all;
-  box-sizing: border-box;
-  pointer-events: none; /* 點擊事件穿透到 textarea */
-  color: transparent;   /* 隱藏文字，只顯示 span 背景色 */
-}
-
-/* ── 輸入層：透明背景，浮在高亮層上方 ─────── */
 .input-area {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
   width: 100%;
-  height: 100%;
+  height: 10rem;
   padding: 0.75rem;
   font-size: 0.9375rem;
   font-family: inherit;
   line-height: 1.6;
-  letter-spacing: normal;
-  word-spacing: normal;
   border: 1px solid #ddd;
   border-radius: 0.375rem;
-  resize: none;
+  resize: vertical;
   outline: none;
   box-sizing: border-box;
-  background: transparent; /* 讓背景層的高亮透出來 */
-  color: #333;
-  caret-color: #333;
   transition: border-color 0.2s;
 }
 
@@ -290,30 +239,52 @@ export default {
   border-color: #ff5733;
 }
 
-/* ── 高亮 span 樣式 ───────────────────────────── */
-/* 注意：不設 font-weight: bold，避免字寬不同造成錯位 */
-.highlight {
-  border-radius: 0.2rem;
-  padding: 0.05rem 0;
+/* 顯示顏色的區域 */
+.highlight-area {
+  width: 100%;
+  min-height: 6rem;
+  padding: 0.75rem;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  line-height: 1.6;
+  border: 1px solid #ddd;
+  border-radius: 0.375rem;
+  background-color: #fafafa;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  box-sizing: border-box;
+  color: #333;
 }
 
-.highlight-high {
+/* 關鍵修正：使用 :deep() 讓動態產生的 HTML 能夠吃到 CSS 顏色 */
+:deep(.highlight) {
+  font-weight: bold;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.3rem;
+  cursor: help;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+:deep(.highlight-high) {
   background-color: #ffcccc;
-  box-shadow: 0 2px 0 0 #e74c3c; /* 底線效果，不影響字寬 */
+  border: 2px solid #e74c3c;
+  color: #c0392b;
 }
 
-.highlight-other {
+:deep(.highlight-other) {
   background-color: #fff3cd;
-  box-shadow: 0 2px 0 0 #fd7e14;
+  border: 2px solid #fd7e14;
+  color: #7d4e00;
 }
 
-/* ── 字數統計 ─────────────────────────────────── */
 .char-count {
   text-align: right;
   font-size: 0.75rem;
   color: #666;
   max-width: 56rem;
-  margin: 0.4rem auto 0;
+  margin: 0.3125rem auto 0;
 }
 
 .char-count.warning {
@@ -325,7 +296,6 @@ export default {
   color: #ff0000;
 }
 
-/* ── 審核按鈕 ─────────────────────────────────── */
 .audit-button {
   padding: 0.625rem 1.25rem;
   background: #ff5733;
@@ -346,13 +316,12 @@ export default {
   cursor: not-allowed;
 }
 
-/* ── 審核結果 ─────────────────────────────────── */
 .audit-result {
   margin-top: 1.25rem;
   padding: 0.9375rem;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #eee;
-  border-radius: 0.375rem;
+  border-radius: 0.3125rem;
   text-align: left;
   max-width: 56rem;
   margin-left: auto;
@@ -387,54 +356,20 @@ export default {
   color: #fff;
 }
 
-/* ── 手機 ─────────────────────────────────────── */
 @media (max-width: 600px) {
-  .ai-audit-page {
-    padding: 1rem;
-    min-height: calc(100vh - 4rem);
-  }
-
-  .ai-audit-page h1 {
-    font-size: 1.5rem;
-  }
-
-  .audit-wrapper {
-    height: 10rem;
-  }
-
-  .category-select {
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  .audit-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-  }
-
-  .audit-result {
-    max-width: 100%;
-    padding: 0.625rem;
-  }
-
-  .risk-tag {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-  }
+  .ai-audit-page { padding: 1rem; min-height: calc(100vh - 4rem); }
+  .ai-audit-page h1 { font-size: 1.5rem; }
+  .ai-audit-page > p { font-size: 0.875rem; }
+  .input-area { height: 8rem; }
+  .category-select { width: 100%; margin-top: 0.5rem; }
+  .audit-button { padding: 0.5rem 1rem; font-size: 0.875rem; }
+  .audit-result { max-width: 100%; padding: 0.625rem; }
+  .risk-tag { font-size: 0.75rem; padding: 0.25rem 0.75rem; }
 }
 
-/* ── 平板 ─────────────────────────────────────── */
 @media (min-width: 601px) and (max-width: 1024px) {
-  .ai-audit-page {
-    padding: 1.5rem;
-  }
-
-  .ai-audit-page h1 {
-    font-size: 2rem;
-  }
-
-  .audit-wrapper {
-    height: 11rem;
-  }
+  .ai-audit-page { padding: 1.5rem; }
+  .ai-audit-page h1 { font-size: 2rem; }
+  .input-area { height: 10rem; }
 }
 </style>
