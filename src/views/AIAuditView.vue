@@ -2,6 +2,7 @@
   <div class="ai-audit-page">
     <h1>AI廣告檢核</h1>
     <p>歡迎使用我們的 AI 廣告檢核服務！此功能利用人工智慧技術，幫助您檢查廣告內容的合規性與安全性。</p>
+
     <div class="audit-controls">
       <label for="category-select">選擇化粧品種類：</label>
       <select id="category-select" v-model="selectedCategory" class="category-select">
@@ -11,22 +12,28 @@
         </option>
       </select>
     </div>
+
     <div class="audit-input">
-      <label for="ad-text">輸入廣告文案：</label>
-      <textarea
-        id="ad-text"
-        v-model="adText"
-        class="ad-textarea"
-        placeholder="請輸入您的廣告文案..."
-        :maxlength="maxLength"
-        @input="updateCharCount"
-      ></textarea>
+      <label>輸入廣告文案：</label>
+      <div class="audit-wrapper">
+        <textarea
+          id="ad-text"
+          v-model="adText"
+          class="input-area"
+          placeholder="請輸入您的廣告文案..."
+          :maxlength="maxLength"
+          @input="updateCharCount"
+        ></textarea>
+        <div class="highlight-area" v-html="highlightedText"></div>
+      </div>
       <div class="char-count" :class="{ 'warning': charCount > maxLength }">
         字數: {{ charCount }} / {{ maxLength }}
         <span v-if="charCount > maxLength" class="warning-text">（文案超出字數限制）</span>
       </div>
     </div>
+
     <button @click="auditAd" class="audit-button" :disabled="!selectedCategory || !adText">審核</button>
+
     <div v-if="auditResult" class="audit-result">
       <h3>審核結果</h3>
       <p v-html="formattedResult"></p>
@@ -48,75 +55,101 @@ export default {
       auditResult: '',
       violationCount: 0,
       categories: [
-        '一、洗髮用化粧品類', '二、洗臉卸粧用化粧品類', '三、沐浴用化粧品類', '四、香皂類',
-        '五、頭髮用化粧品類', '六、化粧水/油/面霜乳液類', '七、香氛用化粧品類', '八、止汗制臭劑',
-        '九、唇用化粧品類', '十、覆敷用化粧品類', '十一、眼部用化粧品類', '十二、指甲用化粧品類',
+        '一、洗髮用化粧品類', '二、洗臉卸粧用化粧品類', '三、沐浴用化粧品類',
+        '四、香皂類', '五、頭髮用化粧品類', '六、化粧水/油/面霜乳液類',
+        '七、香氛用化粧品類', '八、止汗制臭劑', '九、唇用化粧品類',
+        '十、覆敷用化粧品類', '十一、眼部用化粧品類', '十二、指甲用化粧品類',
         '十三、美白牙齒類', '十四、非藥用牙膏、漱口水類', '十五、其他及綜合性內容'
       ],
       maxLength: 2000,
       charCount: 0,
-      forbiddenWordsList: [],
-      isLoaded: false
+      forbiddenWordsList: []
     }
   },
   async mounted() {
-    await this.fetchForbiddenWords()
+    const { data, error } = await supabase.from('forbidden_words').select('*')
+    if (error) {
+      console.error('抓取失敗:', error)
+    } else {
+      this.forbiddenWordsList = data
+      console.log('成功載入詞庫:', data)
+    }
+  },
+  computed: {
+    highlightedText() {
+      if (!this.adText) return ''
+
+      // 依關鍵字長度由長到短排序，避免短詞先替換導致長詞無法比對
+      const sorted = [...this.forbiddenWordsList]
+        .filter(item => item.name)
+        .sort((a, b) => b.name.length - a.name.length)
+
+      const text = this.adText
+      const matches = []
+
+      // 單次掃描：找出所有不重疊的匹配位置
+      sorted.forEach(item => {
+        let idx = 0
+        while (idx < text.length) {
+          const pos = text.indexOf(item.name, idx)
+          if (pos === -1) break
+          const end = pos + item.name.length
+          const overlaps = matches.some(m => pos < m.end && end > m.start)
+          if (!overlaps) {
+            matches.push({ start: pos, end, item })
+          }
+          idx = pos + 1
+        }
+      })
+
+      matches.sort((a, b) => a.start - b.start)
+
+      const escapeHtml = str =>
+        str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+      const toHtml = str => escapeHtml(str).replace(/\n/g, '<br>')
+
+      let result = ''
+      let lastIdx = 0
+
+      matches.forEach(({ start, end, item }) => {
+        result += toHtml(text.slice(lastIdx, start))
+        const cls = item.risk_level === '高風險' ? 'highlight highlight-high' : 'highlight highlight-other'
+        const title = item.reference ? ` title="${escapeHtml(item.reference)}"` : ''
+        result += `<span class="${cls}"${title}>${escapeHtml(item.name)}</span>`
+        lastIdx = end
+      })
+
+      result += toHtml(text.slice(lastIdx))
+      return result
+    },
+    formattedResult() {
+      return this.auditResult
+    }
   },
   methods: {
     updateCharCount() {
       this.charCount = this.adText.length
     },
-    
-    async fetchForbiddenWords() {
-      try {
-        // 這是最關鍵的修改：確保這裡選取的欄位與資料庫完全一致
-        const { data, error } = await supabase
-          .from('forbidden_words')
-          .select('name, risk_level, reference');
-        
-        if (error) {
-          console.error("Supabase 錯誤:", error);
-          this.auditResult = '⚠️ 詞庫連線失敗';
-          return;
-        }
-        
-        this.forbiddenWordsList = data || [];
-        this.isLoaded = true;
-        console.log("詞庫已成功載入:", this.forbiddenWordsList);
-      } catch (e) {
-        console.error("系統錯誤:", e);
-      }
-    },
-
     auditAd() {
-      if (!this.isLoaded) {
-        this.auditResult = '⚠️ 詞庫尚未載入，請稍後再試';
-        return;
+      if (this.forbiddenWordsList.length === 0) {
+        this.auditResult = '⚠️ 詞庫尚未載入，請稍後再試'
+        this.violationCount = 0
+        return
       }
-      if (!this.selectedCategory || !this.adText) return;
-
-      let matched = [];
-      // 這裡比對時使用 item.name
+      const matched = []
       this.forbiddenWordsList.forEach(item => {
-        if (item.name && this.adText.includes(item.name)) {
+        if (this.adText.includes(item.name)) {
           matched.push({
             forbiddenPhrase: item.name,
-            riskLevel: item.risk_level || '無等級',
-            referenceSource: item.reference || '無參考資料'
-          });
+            riskLevel: item.risk_level,
+            referenceSource: item.reference
+          })
         }
-      });
-
-      this.violationCount = matched.length;
-
-      if (matched.length > 0) {
-        const violations = matched.map((item, index) =>
-          `${index + 1}: <span style="color:red; font-weight:bold;">${item.forbiddenPhrase}</span> (${item.riskLevel}) - ${item.referenceSource}`
-        );
-        this.auditResult = `共檢出違規 ${matched.length} 項：<br>` + violations.join('<br>');
-      } else {
-        this.auditResult = '✅ 文案初步符合，未檢出違規用語';
-      }
+      })
+      this.violationCount = matched.length
+      this.auditResult = matched.length > 0
+        ? `共檢出違規 ${matched.length} 項：<br>` + matched.map((i, idx) => `${idx + 1}: ${i.forbiddenPhrase}（${i.riskLevel}）`).join('<br>')
+        : '✅ 無違規用語'
     }
   }
 }
@@ -126,7 +159,6 @@ export default {
 .ai-audit-page {
   padding: 2.5rem;
   text-align: center;
-  background: linear-gradient(to bottom, #ffffff 50%, #ffffff 50%);
   min-height: calc(100vh - 6.25rem);
 }
 
@@ -136,7 +168,7 @@ export default {
   margin-bottom: 1.25rem;
 }
 
-.ai-audit-page p {
+.ai-audit-page > p {
   font-size: 1.125rem;
   color: #333;
   margin-bottom: 1.875rem;
@@ -169,32 +201,82 @@ export default {
   margin-bottom: 1.25rem;
 }
 
-.audit-input label {
+.audit-input > label {
   font-size: 1rem;
   color: #333;
   display: block;
-  margin-bottom: 0.3125rem;
+  margin-bottom: 0.5rem;
 }
 
-.ad-textarea {
-  width: 100%;
-  max-width: 37.5rem;
-  height: 9.375rem;
-  padding: 0.625rem;
-  font-size: 0.875rem;
+/* 左右並排容器 */
+.audit-wrapper {
+  display: flex;
+  gap: 1rem;
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* 輸入框 */
+.input-area {
+  flex: 1;
+  height: 12rem;
+  padding: 0.75rem;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  line-height: 1.6;
   border: 1px solid #ddd;
-  border-radius: 0.3125rem;
+  border-radius: 0.375rem;
   resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-area:focus {
+  border-color: #ff5733;
+}
+
+/* 高亮預覽區 */
+.highlight-area {
+  flex: 1;
+  height: 12rem;
+  padding: 0.75rem;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  line-height: 1.6;
+  border: 1px solid #ddd;
+  border-radius: 0.375rem;
+  background-color: #fafafa;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #333;
+}
+
+/* 高亮樣式 */
+.highlight {
+  font-weight: bold;
+  border-radius: 0.2rem;
+  padding: 0 0.1rem;
+  cursor: help;
+}
+
+.highlight-high {
+  background-color: #ffd5d5;
+  color: #c0392b;
+}
+
+.highlight-other {
+  background-color: #fff3cd;
+  color: #856404;
 }
 
 .char-count {
   text-align: right;
   font-size: 0.75rem;
   color: #666;
-  max-width: 37.5rem;
-  margin-top: 0.3125rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 56rem;
+  margin: 0.3125rem auto 0;
 }
 
 .char-count.warning {
@@ -230,15 +312,16 @@ export default {
   margin-top: 1.25rem;
   padding: 0.9375rem;
   background: #ffffff;
+  border: 1px solid #eee;
   border-radius: 0.3125rem;
   text-align: left;
-  max-width: 37.5rem;
+  max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .audit-result h3 {
-  color: #000000;
+  color: #000;
   font-size: 1.125rem;
   margin-bottom: 0.625rem;
 }
@@ -246,6 +329,7 @@ export default {
 .audit-result p {
   font-size: 0.875rem;
   color: #333;
+  line-height: 1.8;
 }
 
 .risk-tag {
@@ -260,10 +344,11 @@ export default {
 }
 
 .low-risk {
-  background-color: #02ff02;
-  color: #000000;
+  background-color: #02c702;
+  color: #fff;
 }
 
+/* 手機：改為上下堆疊 */
 @media (max-width: 600px) {
   .ai-audit-page {
     padding: 1rem;
@@ -274,18 +359,22 @@ export default {
     font-size: 1.5rem;
   }
 
-  .ai-audit-page p {
+  .ai-audit-page > p {
     font-size: 0.875rem;
+  }
+
+  .audit-wrapper {
+    flex-direction: column;
+  }
+
+  .input-area,
+  .highlight-area {
+    height: 8rem;
   }
 
   .category-select {
     width: 100%;
     margin-top: 0.5rem;
-  }
-
-  .ad-textarea {
-    height: 6.25rem;
-    font-size: 0.75rem;
   }
 
   .audit-button {
@@ -298,16 +387,13 @@ export default {
     padding: 0.625rem;
   }
 
-  .audit-result h3 {
-    font-size: 1rem;
-  }
-
   .risk-tag {
     font-size: 0.75rem;
     padding: 0.25rem 0.75rem;
   }
 }
 
+/* 平板 */
 @media (min-width: 601px) and (max-width: 1024px) {
   .ai-audit-page {
     padding: 1.5rem;
@@ -317,16 +403,9 @@ export default {
     font-size: 2rem;
   }
 
-  .ad-textarea {
-    height: 7.5rem;
-  }
-
-  .audit-button {
-    padding: 0.625rem 1.25rem;
-  }
-
-  .audit-result {
-    max-width: 90%;
+  .input-area,
+  .highlight-area {
+    height: 10rem;
   }
 }
 </style>
