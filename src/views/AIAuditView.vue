@@ -208,10 +208,11 @@ export default {
   margin-bottom: 0.5rem;
 }
 
-/* 左右並排容器 */
+/* 上下堆疊容器 */
 .audit-wrapper {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.75rem;
   max-width: 56rem;
   margin: 0 auto;
   text-align: left;
@@ -219,8 +220,8 @@ export default {
 
 /* 輸入框 */
 .input-area {
-  flex: 1;
-  height: 12rem;
+  width: 100%;
+  height: 10rem;
   padding: 0.75rem;
   font-size: 0.9375rem;
   font-family: inherit;
@@ -229,6 +230,7 @@ export default {
   border-radius: 0.375rem;
   resize: vertical;
   outline: none;
+  box-sizing: border-box;
   transition: border-color 0.2s;
 }
 
@@ -238,8 +240,8 @@ export default {
 
 /* 高亮預覽區 */
 .highlight-area {
-  flex: 1;
-  height: 12rem;
+  width: 100%;
+  min-height: 6rem;
   padding: 0.75rem;
   font-size: 0.9375rem;
   font-family: inherit;
@@ -250,25 +252,28 @@ export default {
   overflow-y: auto;
   white-space: pre-wrap;
   word-break: break-all;
+  box-sizing: border-box;
   color: #333;
 }
 
 /* 高亮樣式 */
 .highlight {
   font-weight: bold;
-  border-radius: 0.2rem;
-  padding: 0 0.1rem;
+  border-radius: 0.25rem;
+  padding: 0.05rem 0.2rem;
   cursor: help;
 }
 
 .highlight-high {
-  background-color: #ffd5d5;
+  background-color: #ffcccc;
+  border: 1px solid #e74c3c;
   color: #c0392b;
 }
 
 .highlight-other {
   background-color: #fff3cd;
-  color: #856404;
+  border: 1px solid #fd7e14;
+  color: #7d4e00;
 }
 
 .char-count {
@@ -363,12 +368,7 @@ export default {
     font-size: 0.875rem;
   }
 
-  .audit-wrapper {
-    flex-direction: column;
-  }
-
-  .input-area,
-  .highlight-area {
+  .input-area {
     height: 8rem;
   }
 
@@ -403,8 +403,7 @@ export default {
     font-size: 2rem;
   }
 
-  .input-area,
-  .highlight-area {
+  .input-area {
     height: 10rem;
   }
 }
