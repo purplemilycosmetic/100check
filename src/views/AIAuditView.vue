@@ -109,19 +109,30 @@ export default {
   async mounted() {
     this.loading = true
     try {
-      const { data, error } = await supabase
-        .from('forbidden_words')
-        .select(`
-          id, name, core_keyword, category, risk_score, fix_suggestion, reference,
-          violation_cases (
-            case_no, company, product, ad_source,
-            fine, enforce_unit, enforce_date, phrase, law_ref
-          )
-        `)
-        .order('risk_score', { ascending: false })
-      if (error) throw error
-      this.forbiddenWordsList = data || []
-      console.log(`詞庫載入完成：${this.forbiddenWordsList.length} 筆`)
+      // Supabase 預設每次只回傳 1000 筆，詞庫有 1485 筆，必須分頁拉完
+      const PAGE = 500
+      let allData = []
+      let page = 0
+      while (true) {
+        const { data, error } = await supabase
+          .from('forbidden_words')
+          .select(`
+            id, name, core_keyword, category, risk_score, fix_suggestion, reference,
+            violation_cases (
+              case_no, company, product, ad_source,
+              fine, enforce_unit, enforce_date, phrase, law_ref
+            )
+          `)
+          .order('id', { ascending: true })
+          .range(page * PAGE, (page + 1) * PAGE - 1)
+        if (error) throw error
+        if (!data || data.length === 0) break
+        allData = allData.concat(data)
+        if (data.length < PAGE) break  // 最後一頁
+        page++
+      }
+      this.forbiddenWordsList = allData
+      console.log(`詞庫載入完成：${allData.length} 筆（共 ${page + 1} 頁）`)
     } catch (e) {
       console.error('詞庫載入失敗:', e)
     } finally {
