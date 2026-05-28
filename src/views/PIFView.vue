@@ -114,28 +114,33 @@
     <section class="files-section">
       <h2>應建立的 PIF 檔案資訊</h2>
       <table>
-        <tr>
-          <th>檔案資訊</th>
-          <th>說明及備製文件</th>
-        </tr>
-        <tr><td>一、產品基本資料</td><td>品名、類別、劑型、用途、製造廠、製造或輸入業者資訊等</td></tr>
-        <tr><td>二、完成產品登錄之證明文件</td><td>產品登錄結案資料</td></tr>
-        <tr><td>三、全成分名稱及其各含量</td><td>INCI NAME、含量、用途，成分總計需為 100%</td></tr>
-        <tr><td>四、產品標籤、仿單、外包裝或容器</td><td>產品中文標籤、仿單、外包裝或容器照片或設計稿</td></tr>
-        <tr><td>五、製造場所符合化妝品優良製造準則之證明文件或聲明書</td><td>製造場所符合 ISO 22716 證明文件或聲明書</td></tr>
-        <tr><td>六、製造方法、流程</td><td>簡述產品製造流程，可為圖示或文字描述</td></tr>
-        <tr><td>七、使用方法、部位、用量、頻率及族群</td><td>產品類型、使用部位、使用量、使用停留時間、使用頻率、使用族群等</td></tr>
-        <tr><td>八、產品使用不良反應資料</td><td>產品正常使用若無不良反應可提供聲明書</td></tr>
-        <tr><td>九、產品及各成分之物理與化學特性</td><td>成品 SDS/COA/TDS 或其他；各成分 SDS/COA/TDS 或其他</td></tr>
-        <tr><td>十、成分毒理資料</td><td>急毒性（口服、表皮或吸入）、皮膚及眼部刺激性、皮膚致敏性及致突變性等評估數據；替代性試驗</td></tr>
-        <tr><td>十一、產品安定性試驗報告</td><td>加速安定性試驗；常溫/一般安定性試驗（視需求提供）</td></tr>
-        <tr><td>十二、微生物檢測報告</td><td>包含微生物管制規定、採用之檢測標準方法及檢驗結果，且應符合中應主管機關公告知「化粧品中微生物容許量基準」。</td></tr>
-        <tr><td>十三、防腐效能試驗報告</td><td>防腐效能測試（挑戰性試驗）；開罐性試驗（視需求提供）</td></tr>
-        <tr><td>十四、功能評估佐證資料（依產品功效及宣稱提供文件）</td><td>
-          <br> ►產品含有公告之特定成分或具有特定之功能宣稱者， 產品責任業者應備有相關測試報告或佐證資料，如推 論功能參考文獻、體外功能性評估、消費者實測報告、 特定成分含量檢驗報告等。
-          <br> ►宣稱詞句內容應與化粧品範圍及種類相符，不得涉及 醫療效能、虛偽或誇大等。）</td></tr>
-        <tr><td>十五、與產品接觸之包裝材質資料</td><td>重金屬、塑化劑、材質試驗、溶出試驗、耐熱試驗（2025 年新增微塑料成分監測要求）</td></tr>
-        <tr><td>十六、產品安全資料</td><td>經安全資料簽署人員進行安全評估結論、建議、資格證明文件、SA 人員簽名並載明日期</td></tr>
+        <thead>
+          <tr>
+            <th>檔案資訊</th>
+            <th>說明及備製文件</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>一、產品基本資料</td><td>品名、類別、劑型、用途、製造廠、製造或輸入業者資訊等</td></tr>
+          <tr><td>二、完成產品登錄之證明文件</td><td>產品登錄結案資料</td></tr>
+          <tr><td>三、全成分名稱及其各含量</td><td>INCI NAME、含量、用途，成分總計需為 100%</td></tr>
+          <tr><td>四、產品標籤、仿單、外包裝或容器</td><td>產品中文標籤、仿單、外包裝或容器照片或設計稿</td></tr>
+          <tr><td>五、製造場所符合化妝品優良製造準則之證明文件或聲明書</td><td>製造場所符合 ISO 22716 證明文件或聲明書</td></tr>
+          <tr><td>六、製造方法、流程</td><td>簡述產品製造流程，可為圖示或文字描述</td></tr>
+          <tr><td>七、使用方法、部位、用量、頻率及族群</td><td>產品類型、使用部位、使用量、使用停留時間、使用頻率、使用族群等</td></tr>
+          <tr><td>八、產品使用不良反應資料</td><td>產品正常使用若無不良反應可提供聲明書</td></tr>
+          <tr><td>九、產品及各成分之物理與化學特性</td><td>成品 SDS/COA/TDS 或其他；各成分 SDS/COA/TDS 或其他</td></tr>
+          <tr><td>十、成分毒理資料</td><td>急毒性（口服、表皮或吸入）、皮膚及眼部刺激性、皮膚致敏性及致突變性等評估數據；替代性試驗</td></tr>
+          <tr><td>十一、產品安定性試驗報告</td><td>加速安定性試驗；常溫/一般安定性試驗（視需求提供）</td></tr>
+          <tr><td>十二、微生物檢測報告</td><td>包含微生物管制規定、採用之檢測標準方法及檢驗結果，且應符合主管機關公告之「化粧品中微生物容許量基準」。</td></tr>
+          <tr><td>十三、防腐效能試驗報告</td><td>防腐效能測試（挑戰性試驗）；開罐性試驗（視需求提供）</td></tr>
+          <tr><td>十四、功能評估佐證資料（依產品功效及宣稱提供文件）</td><td>
+            ►產品含有公告之特定成分或具有特定之功能宣稱者，產品責任業者應備有相關測試報告或佐證資料，如推論功能參考文獻、體外功能性評估、消費者實測報告、特定成分含量檢驗報告等。<br>
+            ►宣稱詞句內容應與化粧品範圍及種類相符，不得涉及醫療效能、虛偽或誇大等。
+          </td></tr>
+          <tr><td>十五、與產品接觸之包裝材質資料</td><td>重金屬、塑化劑、材質試驗、溶出試驗、耐熱試驗（2025 年新增微塑料成分監測要求）</td></tr>
+          <tr><td>十六、產品安全資料</td><td>經安全資料簽署人員進行安全評估結論、建議、資格證明文件、SA 人員簽名並載明日期</td></tr>
+        </tbody>
       </table>
     </section>
 
@@ -160,9 +165,11 @@
           <span class="faq-text">{{ faq.question }}</span>
           <span class="faq-icon">{{ faq.isOpen ? '−' : '+' }}</span>
         </div>
-        <div class="faq-answer" v-show="faq.isOpen">
-          <p>{{ faq.answer }}</p>
-        </div>
+        <transition name="faq-slide">
+          <div class="faq-answer" v-show="faq.isOpen">
+            <p>{{ faq.answer }}</p>
+          </div>
+        </transition>
       </div>
     </section>
 
@@ -249,9 +256,9 @@ export default {
 
 <style scoped>
 .cosmetics-safety-page {
-  margin: 3.75rem auto 1.25rem; /* 60px 20px 轉為 rem */
-  padding: 1.25rem; /* 20px 轉為 rem */
-  max-width: 75rem; /* 1200px 轉為 rem */
+  margin: 0 auto 1.25rem;
+  padding: 1.25rem;
+  max-width: 75rem;
 }
 
 /* 標題區塊 */
@@ -469,10 +476,21 @@ export default {
 }
 
 .faq-answer {
-  padding: 0.9375rem; /* 15px 轉為 rem */
+  padding: 0.9375rem;
   background: #fff;
   border-top: 1px solid #ddd;
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* FAQ 展開動畫 */
+.faq-slide-enter-active,
+.faq-slide-leave-active {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.faq-slide-enter,
+.faq-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
 }
 
 .faq-answer p {

@@ -16,7 +16,7 @@
         <router-link to="/" exact>首頁</router-link>
         <router-link to="/ai-audit">AI廣告檢核</router-link>
         <router-link to="/services">服務介紹</router-link>
-        <router-link to="/PIF">化妝品安全資料簽署</router-link>
+        <router-link to="/PIF">PIF簽署</router-link>
         <router-link to="/plan">方案介紹</router-link>
         <router-link to="/about">關於我們</router-link>
       </nav>
