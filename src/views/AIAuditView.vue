@@ -23,7 +23,7 @@
     </div>
 
     <div class="legend">
-      <span class="legend-item l5">★★★★★ 極高（醫療效能）</span>
+      <span class="legend-item l5">★★★★★ 極高</span>
       <span class="legend-item l4">★★★★☆ 高</span>
       <span class="legend-item l3">★★★☆☆ 中</span>
       <span class="legend-item l2">★★☆☆☆ 低</span>
@@ -210,7 +210,7 @@ export default {
   methods: {
     updateCharCount() { this.charCount = this.adText.length },
     riskLabel(s) {
-      return {5:'極高風險',4:'高風險',3:'中風險',2:'低風險',1:'觀察'}[s]||'未知'
+      return {5:'極高風險（醫療效能）',4:'高風險',3:'中風險',2:'低風險',1:'觀察'}[s]||'未知'
     },
 
     auditAd() {
