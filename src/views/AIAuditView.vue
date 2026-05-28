@@ -1,15 +1,7 @@
 <template>
   <div class="ai-audit-page">
     <h1>AI廣告檢核</h1>
-    <p>依據「化粧品標示宣傳廣告涉及虛偽誇大或醫療效能認定準則」附件一、二、四進行審核。</p>
-
-    <div class="audit-controls">
-      <label for="category-select">選擇化粧品種類：</label>
-      <select id="category-select" v-model="selectedCategory" class="category-select">
-        <option value="" disabled selected>請選擇種類</option>
-        <option v-for="c in categories" :key="c" :value="c">{{ c }}</option>
-      </select>
-    </div>
+    <p>本審核結果請供參考，缺少字眼歡迎加line告知，增加我們資料庫</p>
 
     <div class="audit-input">
       <label>輸入廣告文案：</label>
@@ -38,7 +30,7 @@
       <span class="legend-item l1">★☆☆☆☆ 觀察</span>
     </div>
 
-    <button @click="auditAd" class="audit-button" :disabled="!selectedCategory || !adText || loading">
+    <button @click="auditAd" class="audit-button" :disabled="!adText || loading">
       {{ loading ? '詞庫載入中...' : '審核' }}
     </button>
 
@@ -58,18 +50,10 @@ export default {
   name: 'AIAuditView',
   data() {
     return {
-      selectedCategory: '',
       adText: '',
       auditResult: null,
       violationCount: 0,
       loading: false,
-      categories: [
-        '一、洗髮用化粧品類','二、洗臉卸粧用化粧品類','三、沐浴用化粧品類',
-        '四、香皂類','五、頭髮用化粧品類','六、化粧水/油/面霜乳液類',
-        '七、香氛用化粧品類','八、止汗制臭劑','九、唇用化粧品類',
-        '十、覆敷用化粧品類','十一、眼部用化粧品類','十二、指甲用化粧品類',
-        '十三、美白牙齒類','十四、非藥用牙膏、漱口水類','十五、其他及綜合性內容'
-      ],
       maxLength: 2000,
       charCount: 0,
       // 違規詞庫（含關聯案例）
@@ -353,11 +337,6 @@ export default {
 .ai-audit-page h1 { color: #ff5733; font-size: 2.25rem; margin-bottom: 1.25rem; }
 .ai-audit-page > p { font-size: 1rem; color: #555; margin-bottom: 1.5rem; }
 
-.audit-controls { margin-bottom: 1.25rem; }
-.audit-controls label { font-size: 1rem; color: #333; margin-right: 0.625rem; }
-.category-select { padding: 0.5rem 0.75rem; font-size: 0.875rem; border: 1px solid #ddd; border-radius: 0.3125rem; background: #fff; cursor: pointer; }
-.category-select:hover { border-color: #ff5733; }
-
 .audit-input { margin-bottom: 0.75rem; }
 .audit-input > label { font-size: 1rem; color: #333; display: block; margin-bottom: 0.5rem; text-align: left; max-width: 56rem; margin-inline: auto; }
 .audit-wrapper { display: flex; flex-direction: column; gap: 0.75rem; max-width: 56rem; margin: 0 auto; text-align: left; }
@@ -436,7 +415,6 @@ export default {
   .ai-audit-page { padding: 1rem; }
   .ai-audit-page h1 { font-size: 1.5rem; }
   .input-area { height: 8rem; }
-  .category-select { width: 100%; margin-top: 0.5rem; }
   :deep(.card-row) { flex-direction: column; }
   :deep(.case-top) { flex-direction: column; align-items: flex-start; }
 }
