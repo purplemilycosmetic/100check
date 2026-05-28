@@ -21,7 +21,7 @@
           <img src="@/assets/幻燈片2.png" alt="Slide 2" class="carousel-image" />
         </div>
         <div class="carousel-slide" :class="{ active: currentSlide === 2 }">
-          <img src="@/assets/PIF違規.jpg" alt="Slide 3" class="carousel-image" />
+          <img src="@/assets/PIF違規.png" alt="Slide 3" class="carousel-image" />
         </div>
       </div>
     </div>
