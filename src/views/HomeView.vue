@@ -372,7 +372,6 @@ export default {
 @media (max-width: 600px) {
   .carousel {
     max-width: 100%;
-    height: 10rem;
   }
 
   .hero-section-content h1 {
@@ -439,7 +438,6 @@ export default {
 @media (min-width: 601px) and (max-width: 1024px) {
   .carousel {
     max-width: 60rem;
-    height: 21rem;
   }
 
   .hero-section-content h1 {
@@ -487,7 +485,6 @@ export default {
 @media (min-width: 1025px) {
   .carousel {
     max-width: 75rem;
-    height: 27rem;
   }
 
   .info-card {
