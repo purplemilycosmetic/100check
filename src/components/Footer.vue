@@ -11,7 +11,7 @@
       </div>
       <div class="footer-section">
         <h3>聯絡我們</h3>
-        <p>Email: adcheck@gmail.com</p>
+        <p>Email: adchecktw@gmail.com</p>
         <div class="info-item">
           <i class="fas fa-qrcode"></i>
           <div class="qrcode-container">

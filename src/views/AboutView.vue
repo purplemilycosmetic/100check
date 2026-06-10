@@ -13,7 +13,7 @@
           <h2>聯絡資訊</h2>
           <div class="info-item">
             <i class="fas fa-envelope"></i>
-            <p>電子信箱: adcheck@gmail.com</p>
+            <p>電子信箱: adchecktw@gmail.com</p>
           </div>
           <div class="info-item">
             <i class="fas fa-qrcode"></i>
