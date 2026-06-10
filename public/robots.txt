@@ -1,13 +1,8 @@
 User-agent: *
 Allow: /
 
-# 禁止爬取管理相關頁面
-Disallow: /admin/
 Disallow: /login
 Disallow: /register
+Disallow: /forget-password
 
-# 指向 sitemap
-Sitemap: http://www.aicheck.com.tw/sitemap.xml
-
-# 爬取延遲（可選）
-Crawl-delay: 1
+Sitemap: https://www.aicheck.com.tw/sitemap.xml
