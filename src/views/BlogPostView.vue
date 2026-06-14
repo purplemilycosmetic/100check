@@ -18,7 +18,13 @@
           <h2>參考資料</h2>
           <ul>
             <li v-for="(ref, i) in article.refs" :key="i">
-              <a :href="ref.url" target="_blank" rel="noopener noreferrer">{{ ref.title }}</a>
+              
+                v-if="ref.url"
+                :href="ref.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >{{ ref.label }}</a>
+              <span v-else>{{ ref.label }}</span>
             </li>
           </ul>
         </footer>
