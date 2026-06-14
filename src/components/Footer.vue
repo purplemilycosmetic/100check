@@ -6,7 +6,11 @@
       </div>
       <div class="footer-section">
         <h3>產品服務</h3>
-        <p>服務介紹</p>
+        <router-link to="/services">服務介紹</router-link>
+        <router-link to="/blog">法規專欄</router-link>
+        <router-link to="/ad-review">AI 廣告審核</router-link>
+        <router-link to="/pif">PIF 建檔</router-link>
+        <router-link to="/safety-assessment">安全評估</router-link>
         <p>隱私權</p>
       </div>
       <div class="footer-section">
@@ -54,9 +58,16 @@
   margin-bottom: 15px;
 }
 
-.footer-section p {
+.footer-section p,
+.footer-section a {
+  display: block;
   font-size: 14px;
   margin: 5px 0;
+  color: #333;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  color: #ff5733;
 }
 
 .info-item {

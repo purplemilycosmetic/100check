@@ -18,6 +18,7 @@
         <router-link to="/services">服務介紹</router-link>
         <router-link to="/PIF">PIF簽署</router-link>
         <router-link to="/plan">方案介紹</router-link>
+        <router-link to="/blog">法規專欄</router-link>
         <router-link to="/about">關於我們</router-link>
       </nav>
       <div class="right-section">

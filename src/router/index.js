@@ -76,10 +76,47 @@ const router = createRouter({
        {
       path: '/ai-audit',
       name: 'ai-audit',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AIAuditView.vue'),
+    },
+    {
+      path: '/ad-review',
+      name: 'ad-review',
+      component: () => import('../views/AdReviewView.vue'),
+    },
+    {
+      path: '/pif',
+      name: 'pif-landing',
+      component: () => import('../views/PIFLandingView.vue'),
+    },
+    {
+      path: '/safety-assessment',
+      name: 'safety-assessment',
+      component: () => import('../views/SafetyAssessmentView.vue'),
+    },
+    {
+      path: '/blog',
+      name: 'blog',
+      component: () => import('../views/BlogListView.vue'),
+    },
+    {
+      path: '/blog/:slug',
+      name: 'blog-post',
+      component: () => import('../views/BlogPostView.vue'),
+    },
+    {
+      path: '/admin/blog',
+      name: 'admin-blog',
+      component: () => import('../views/AdminBlogView.vue'),
+    },
+    {
+      path: '/admin/blog/new',
+      name: 'admin-blog-new',
+      component: () => import('../views/AdminBlogEditView.vue'),
+    },
+    {
+      path: '/admin/blog/:id',
+      name: 'admin-blog-edit',
+      component: () => import('../views/AdminBlogEditView.vue'),
     },
   ],
 })

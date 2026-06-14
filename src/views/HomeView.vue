@@ -97,11 +97,29 @@
 </template>
 
 <script>
-import AdsenseAd from '@/components/Adsense.vue'; // 引入廣告元件
+import { useHead } from '@unhead/vue'
+import AdsenseAd from '@/components/Adsense.vue'
 
 export default {
-  components: { AdsenseAd }, // 註冊元件
+  components: { AdsenseAd },
   name: 'HomeView',
+  setup() {
+    useHead({
+      title: '審盾橘｜化妝品廣告審核、AI 化粧品廣告合規檢測',
+      meta: [
+        {
+          name: 'description',
+          content: '審盾橘提供 AI 化妝品（化粧品）廣告審核服務，一鍵快速檢測廣告合規性，標示風險字眼，依據政府裁罰案例辨識違規內容，幫助企業降低查核風險。'
+        },
+        { property: 'og:title', content: '審盾橘｜化妝品廣告審核、AI 化粧品廣告合規檢測' },
+        { property: 'og:description', content: '審盾橘 AI 快速審核化妝品（化粧品）廣告合規性，標示風險字眼，依據政府裁罰案例辨識違規內容。' },
+        { property: 'og:url', content: 'https://www.aicheck.com.tw/' },
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://www.aicheck.com.tw/' }
+      ]
+    })
+  },
   data() {
     return {
       currentSlide: 0,
