@@ -56,12 +56,8 @@ export default {
       loading: false,
       maxLength: 2000,
       charCount: 0,
-      // 違規詞庫（含關聯案例）
       forbiddenWordsList: [],
-      // 白名單：附件二合法詞（不觸發警示）
-      // 長詞優先，比對時若白名單詞先匹配則該區段不再比對違規詞
       whitelistSet: new Set([
-        // 附件二第六類（化粧水/油/面霜乳液）──最常見誤報來源
         '修復','修護','修復肌膚','修護肌膚',
         '滋潤肌膚','調理肌膚','清潔肌膚','保護肌膚',
         '舒緩肌膚乾燥不適感','舒緩肌膚壓力',
@@ -74,15 +70,11 @@ export default {
         '淨白肌膚','美白肌膚','亮白肌膚',
         '幫助改善黑眼圈','幫助淡化黑眼圈',
         '幫助改善泡泡眼','幫助改善熊貓眼',
-        // 附件二第一類（洗髮）
         '強健髮根','滋養頭皮','滋養頭髮',
         '防止髮絲斷裂','防止髮絲分叉',
         '去除多餘油脂',
-        // 附件二第二類（洗臉）
         '促進角質更新代謝','促進肌膚新陳代謝',
-        // 附件二第五類（頭髮）
         '改善毛躁髮質','修護毛躁髮質','改善乾燥髮質','修護乾燥髮質',
-        // 附件二第十五類（其他）
         '草本','植萃','放鬆心情','舒緩壓力',
         '減緩因乾燥引起的皮膚癢',
         '減緩因乾燥引起的皮膚泛紅',
@@ -93,7 +85,7 @@ export default {
   async mounted() {
     this.loading = true
     try {
-      // Supabase 預設每次只回傳 1000 筆，詞庫有 1485 筆，必須分頁拉完
+      // Supabase 預設每次只回傳 1000 筆，詞庫已超過，必須分頁拉完
       const PAGE = 500
       let allData = []
       let page = 0
@@ -112,7 +104,7 @@ export default {
         if (error) throw error
         if (!data || data.length === 0) break
         allData = allData.concat(data)
-        if (data.length < PAGE) break  // 最後一頁
+        if (data.length < PAGE) break
         page++
       }
       this.forbiddenWordsList = allData
@@ -128,64 +120,24 @@ export default {
     highlightedText() {
       if (!this.adText || !this.forbiddenWordsList.length) return ''
       const text = this.adText
-
-      // ── 步驟1：先標出白名單區間（這些區間不觸發違規警示）
-      const whiteRanges = []
-      const whitelistSorted = [...this.whitelistSet]
-        .filter(w => w.length >= 2)
-        .sort((a, b) => b.length - a.length)
-      for (const w of whitelistSorted) {
-        let idx = 0
-        while (idx < text.length) {
-          const pos = text.indexOf(w, idx)
-          if (pos === -1) break
-          const end = pos + w.length
-          if (!whiteRanges.some(r => pos < r.end && end > r.start))
-            whiteRanges.push({ start: pos, end })
-          idx = pos + 1
-        }
-      }
-
-      // ── 步驟2：在非白名單區間比對違規詞
-      const candidates = this.forbiddenWordsList
-        .filter(item => item.name?.trim().length >= 2)
-        .sort((a, b) => b.name.length - a.name.length)
-
-      const matches = []
-      for (const item of candidates) {
-        const kw = item.name.trim()
-        let idx = 0
-        while (idx <= text.length - kw.length) {
-          const pos = text.indexOf(kw, idx)
-          if (pos === -1) break
-          const end = pos + kw.length
-          // 若落在白名單區間內，跳過
-          const inWhite = whiteRanges.some(r => pos >= r.start && end <= r.end)
-          const overlaps = matches.some(m => pos < m.end && end > m.start)
-          if (!inWhite && !overlaps) matches.push({ start: pos, end, item })
-          idx = pos + 1
-        }
-      }
-      matches.sort((a, b) => a.start - b.start)
+      // 共用比對：取得違規區間與白名單區間（與審核結果完全一致）
+      const { matches, whiteRanges } = this.computeMatches(text)
 
       const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')
       const toHtml = s => esc(s).replace(/\n/g,'<br>')
-      let result = '', last = 0
 
-      // 合併白名單與違規區間，按位置順序渲染
+      // 合併違規＋白名單區間，違規優先（去重疊）
       const allRanges = [
         ...matches.map(m => ({ ...m, type: 'violation' })),
         ...whiteRanges.map(r => ({ ...r, item: null, type: 'white' }))
       ].sort((a, b) => a.start - b.start)
-
-      // 去除白名單與違規的重疊（違規優先）
       const rendered = []
       for (const r of allRanges) {
-        if (!rendered.some(x => r.start < x.end && r.end > x.start))
-          rendered.push(r)
+        if (!rendered.some(x => r.start < x.end && r.end > x.start)) rendered.push(r)
       }
       rendered.sort((a, b) => a.start - b.start)
 
+      let result = '', last = 0
       for (const r of rendered) {
         result += toHtml(text.slice(last, r.start))
         if (r.type === 'violation') {
@@ -197,7 +149,6 @@ export default {
           const title = esc(`${stars} ${r.item.category||''} ｜ ${cases||'法規明文禁用詞'}`)
           result += `<span class="hl hl${score}" title="${title}">${esc(r.item.name.trim())}</span>`
         } else {
-          // 白名單詞：淡綠色底，表示合法
           result += `<span class="hl-ok" title="附件二合法詞彙">${esc(text.slice(r.start, r.end))}</span>`
         }
         last = r.end
@@ -213,19 +164,17 @@ export default {
       return {5:'極高風險（醫療效能）',4:'高風險',3:'中風險',2:'低風險',1:'觀察'}[s]||'未知'
     },
 
-    auditAd() {
-      if (!this.forbiddenWordsList.length) {
-        this.auditResult = '<p class="empty">⚠️ 詞庫尚未載入，請稍後再試</p>'
-        this.violationCount = 0; return
-      }
-
-      // 白名單區間
+    // ★ 核心：單一比對來源，預覽與審核共用，確保結果一致、無子字串重複
+    computeMatches(text) {
+      // 1. 先標白名單區間（長詞優先，不重疊）
       const whiteRanges = []
-      const whitelistSorted = [...this.whitelistSet].filter(w=>w.length>=2).sort((a,b)=>b.length-a.length)
+      const whitelistSorted = [...this.whitelistSet]
+        .filter(w => w.length >= 2)
+        .sort((a, b) => b.length - a.length)
       for (const w of whitelistSorted) {
         let idx = 0
-        while (idx < this.adText.length) {
-          const pos = this.adText.indexOf(w, idx)
+        while (idx < text.length) {
+          const pos = text.indexOf(w, idx)
           if (pos === -1) break
           const end = pos + w.length
           if (!whiteRanges.some(r => pos < r.end && end > r.start))
@@ -233,25 +182,42 @@ export default {
           idx = pos + 1
         }
       }
-
-      const matchedMap = new Map()
-      for (const item of this.forbiddenWordsList) {
-        const kw = item.name?.trim()
-        if (!kw || kw.length < 2) continue
-        // 找到第一個符合且不在白名單內的位置
+      // 2. 違規詞比對（長詞優先，不重疊，跳過白名單區間）
+      const candidates = this.forbiddenWordsList
+        .filter(item => item.name && item.name.trim().length >= 2)
+        .sort((a, b) => b.name.length - a.name.length)
+      const matches = []
+      for (const item of candidates) {
+        const kw = item.name.trim()
         let idx = 0
-        let found = false
-        while (idx <= this.adText.length - kw.length) {
-          const pos = this.adText.indexOf(kw, idx)
+        while (idx <= text.length - kw.length) {
+          const pos = text.indexOf(kw, idx)
           if (pos === -1) break
           const end = pos + kw.length
           const inWhite = whiteRanges.some(r => pos >= r.start && end <= r.end)
-          if (!inWhite) { found = true; break }
+          const overlaps = matches.some(m => pos < m.end && end > m.start)
+          if (!inWhite && !overlaps) matches.push({ start: pos, end, item })
           idx = pos + 1
         }
-        if (found && !matchedMap.has(item.id)) matchedMap.set(item.id, item)
+      }
+      matches.sort((a, b) => a.start - b.start)
+      return { matches, whiteRanges }
+    },
+
+    auditAd() {
+      if (!this.forbiddenWordsList.length) {
+        this.auditResult = '<p class="empty">⚠️ 詞庫尚未載入，請稍後再試</p>'
+        this.violationCount = 0; return
       }
 
+      // 與預覽共用同一套比對，從實際命中區間取違規詞
+      const { matches } = this.computeMatches(this.adText)
+
+      // 同一違規詞（同 id）只列一張卡片
+      const matchedMap = new Map()
+      for (const m of matches) {
+        if (!matchedMap.has(m.item.id)) matchedMap.set(m.item.id, m.item)
+      }
       const matched = [...matchedMap.values()].sort((a,b)=>(b.risk_score||3)-(a.risk_score||3))
       this.violationCount = matched.length
 
@@ -265,7 +231,6 @@ export default {
         const score = item.risk_score || 3
         const stars = '★'.repeat(score) + '☆'.repeat(5 - score)
         const cases = item.violation_cases || []
-        const isLegal = cases.length === 0  // 法規明文詞，無真實案例
 
         const lawBadge = item.reference?.includes('第2項')
           ? `<span class="badge-2p">⚠️ 涉及醫療效能（第2項，罰則更重）</span>` : ''
@@ -344,14 +309,12 @@ export default {
 .input-area:focus { border-color: #ff5733; }
 .highlight-area { width: 100%; min-height: 4rem; padding: 0.75rem; font-size: 0.9375rem; font-family: inherit; line-height: 1.6; border: 1px solid #ddd; border-radius: 0.375rem; background: #fafafa; overflow-y: auto; white-space: pre-wrap; word-break: break-all; box-sizing: border-box; color: #333; }
 
-/* 違規高亮 */
 :deep(.hl) { border-radius: 0.25rem; padding: 0.1rem 0.3rem; cursor: help; font-weight: bold; }
 :deep(.hl5) { background: #ff8a80; border: 2px solid #c62828; color: #b71c1c; }
 :deep(.hl4) { background: #ffcccc; border: 2px solid #e53935; color: #c0392b; }
 :deep(.hl3) { background: #ffe0b2; border: 2px solid #fb8c00; color: #7d4e00; }
 :deep(.hl2) { background: #fff9c4; border: 2px solid #f9a825; color: #5d4037; }
 :deep(.hl1) { background: #f1f8e9; border: 2px solid #7cb342; color: #33691e; }
-/* 合法詞（白名單）：淡綠色底，讓用戶知道這些詞是安全的 */
 :deep(.hl-ok) { background: #e8f5e9; border-bottom: 2px solid #4caf50; color: #1b5e20; border-radius: 0.15rem; }
 
 .legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 1.25rem; max-width: 56rem; margin-inline: auto; }
