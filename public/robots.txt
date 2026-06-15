@@ -1,8 +1,11 @@
 User-agent: *
 Allow: /
 
+# 後台與 API 不需被收錄
+Disallow: /admin
 Disallow: /login
 Disallow: /register
 Disallow: /forget-password
 
+# Sitemap 位置（Google / Bing 會自動讀取）
 Sitemap: https://www.aicheck.com.tw/sitemap.xml
