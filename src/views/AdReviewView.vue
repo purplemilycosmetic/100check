@@ -68,11 +68,11 @@ const copy = {
 
 // SEO（title / description 若要修改也在這裡改）
 useHead({
-  title: 'AI 化妝品廣告審核｜化粧品廣告合規檢測服務 - 審盾橘',
+  title: '免費 AI 廣告文案審查｜化妝品廣告合規檢測服務 - 審盾橘',
   meta: [
-    { name: 'description', content: '審盾橘提供 AI 化妝品（化粧品）廣告審核服務，自動標示風險字眼、比對政府裁罰案例，快速完成廣告合規檢測，降低違規風險。' },
-    { property: 'og:title', content: 'AI 化妝品廣告審核｜化粧品廣告合規檢測服務 - 審盾橘' },
-    { property: 'og:description', content: '審盾橘 AI 快速檢測化妝品（化粧品）廣告合規性，標示風險字眼，依據政府裁罰案例辨識違規內容。' },
+    { name: 'description', content: '審盾橘提供免費 AI 化妝品（化粧品）廣告文案審查服務，自動標示違規風險字眼、比對政府裁罰案例，快速完成廣告合規檢測，降低違規罰款風險。' },
+    { property: 'og:title', content: '免費 AI 廣告文案審查｜化妝品廣告合規檢測服務 - 審盾橘' },
+    { property: 'og:description', content: '免費 AI 化妝品廣告文案審查，自動標示風險字眼，依據政府裁罰案例辨識違規內容。' },
     { property: 'og:url', content: 'https://www.aicheck.com.tw/ad-review' },
   ],
   link: [{ rel: 'canonical', href: 'https://www.aicheck.com.tw/ad-review' }],

@@ -66,11 +66,11 @@ const copy = {
 // ═══════════════════════════════════════════════
 
 useHead({
-  title: 'PIF 化妝品產品資訊檔案建檔｜化粧品安全資料服務 - 審盾橘',
+  title: 'PIF 審查建檔服務｜化妝品產品資訊檔案 - 審盾橘',
   meta: [
-    { name: 'description', content: '審盾橘提供化妝品（化粧品）產品資訊檔案 PIF 建檔服務，協助品牌符合法規要求，由具備專業證照的人員協助建立完整安全資料。' },
-    { property: 'og:title', content: 'PIF 化妝品產品資訊檔案建檔｜化粧品安全資料服務 - 審盾橘' },
-    { property: 'og:description', content: '審盾橘協助化妝品（化粧品）品牌完成 PIF 產品資訊檔案建檔，符合衛福部法規要求，專業人員直接簽署。' },
+    { name: 'description', content: '審盾橘提供化妝品（化粧品）PIF 審查建檔服務，由具備專業證照人員協助完成產品資訊檔案，符合衛福部《化粧品衛生安全管理法》法規要求。' },
+    { property: 'og:title', content: 'PIF 審查建檔服務｜化妝品產品資訊檔案 - 審盾橘' },
+    { property: 'og:description', content: '化妝品 PIF 審查建檔，由專業證照人員協助，符合衛福部法規要求，有效管理產品資訊檔案。' },
     { property: 'og:url', content: 'https://www.aicheck.com.tw/pif' },
   ],
   link: [{ rel: 'canonical', href: 'https://www.aicheck.com.tw/pif' }],

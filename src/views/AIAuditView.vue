@@ -44,10 +44,23 @@
 </template>
 
 <script>
+import { useHead } from '@unhead/vue'
 import { supabase } from '../supabaseClient'
 
 export default {
   name: 'AIAuditView',
+  setup() {
+    useHead({
+      title: '免費 AI 廣告文案審查工具｜化妝品廣告合規檢測 - 審盾橘',
+      meta: [
+        { name: 'description', content: '免費使用 AI 審查化妝品（化粧品）廣告文案，自動標示違規風險字眼，依據政府裁罰案例即時檢測，幫助品牌廣告文案符合法規，避免罰款。' },
+        { property: 'og:title', content: '免費 AI 廣告文案審查工具｜化妝品廣告合規 - 審盾橘' },
+        { property: 'og:description', content: '免費 AI 化妝品廣告文案審查，自動標示風險字眼，依政府裁罰案例辨識違規內容。' },
+        { property: 'og:url', content: 'https://www.aicheck.com.tw/ai-audit' },
+      ],
+      link: [{ rel: 'canonical', href: 'https://www.aicheck.com.tw/ai-audit' }],
+    })
+  },
   data() {
     return {
       adText: '',

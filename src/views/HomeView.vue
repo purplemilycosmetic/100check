@@ -105,14 +105,14 @@ export default {
   name: 'HomeView',
   setup() {
     useHead({
-      title: '審盾橘｜化妝品廣告審核、AI 化粧品廣告合規檢測',
+      title: '審盾橘｜免費 AI 廣告文案審查、化妝品廣告審核',
       meta: [
         {
           name: 'description',
-          content: '審盾橘提供 AI 化妝品（化粧品）廣告審核服務，一鍵快速檢測廣告合規性，標示風險字眼，依據政府裁罰案例辨識違規內容，幫助企業降低查核風險。'
+          content: '審盾橘提供免費 AI 化妝品（化粧品）廣告文案審查，一鍵快速標示風險字眼、比對政府裁罰案例，並提供 PIF 審查建檔服務，幫助品牌降低違規風險。'
         },
-        { property: 'og:title', content: '審盾橘｜化妝品廣告審核、AI 化粧品廣告合規檢測' },
-        { property: 'og:description', content: '審盾橘 AI 快速審核化妝品（化粧品）廣告合規性，標示風險字眼，依據政府裁罰案例辨識違規內容。' },
+        { property: 'og:title', content: '審盾橘｜免費 AI 廣告文案審查、化妝品廣告審核' },
+        { property: 'og:description', content: '免費 AI 化妝品廣告文案審查，自動標示風險字眼，依據政府裁罰案例辨識違規內容，另提供 PIF 審查建檔服務。' },
         { property: 'og:url', content: 'https://www.aicheck.com.tw/' },
       ],
       link: [
