@@ -143,7 +143,7 @@ export default {
     startAutoPlay() {
       this.autoPlayInterval = setInterval(() => {
         this.nextSlide()
-      }, 3000) // 改為 3 秒
+      }, 3000)
     },
     stopAutoPlay() {
       clearInterval(this.autoPlayInterval)
@@ -193,10 +193,9 @@ export default {
   left: 0;
 }
 
-/* 移除按鈕相關樣式 */
 .carousel-prev,
 .carousel-next {
-  display: none; /* 隱藏按鈕 */
+  display: none;
 }
 
 /* 區塊1 樣式 */
@@ -324,27 +323,12 @@ export default {
   border-radius: 0.625rem;
 }
 
-.info-card4 {
-  width: auto;
-  text-align: center;
-  padding: 1.25rem;
-  box-sizing: border-box;
-  margin: 0 0.625rem;
-}
-
-.card-icon4 {
-  width: 75rem;
-  height: 27rem;
-  margin-bottom: 0.625rem;
-  object-fit: cover;
-  border-radius: 0.625rem;
-}
-
-/* 區塊2 樣式 */
+/* 區塊2 樣式 — 三張卡對齊 */
 .info-sections1 {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: flex-start;
   margin-top: 0;
   padding: 1.25rem;
   background: #ffffff;
@@ -357,6 +341,10 @@ export default {
   padding: 1.25rem;
   box-sizing: border-box;
   margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
 }
 
 .card-icon {
@@ -377,7 +365,9 @@ export default {
   list-style: none;
   padding: 0;
   text-align: left;
-  margin-left: 1.25rem;
+  margin-left: 0;
+  width: 100%;
+  max-width: 280px;
 }
 
 .info-card ul li {
@@ -412,6 +402,7 @@ export default {
 
   .info-card {
     width: 100%;
+    min-height: auto;
   }
 
   .card-icon {
@@ -425,6 +416,11 @@ export default {
 
   .info-card ul li {
     font-size: 1rem;
+  }
+
+  .info-card ul {
+    max-width: 100%;
+    margin-left: 1.25rem;
   }
 
   .info-sections2, .info-sections3, .info-sections4 {
@@ -468,6 +464,7 @@ export default {
 
   .info-card {
     width: 45%;
+    min-height: auto;
   }
 
   .card-icon {
