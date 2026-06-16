@@ -2,7 +2,7 @@
   <section class="hero-section">
     <!-- 區塊1 -->
     <div class="hero-section-content">
-      <h1>審盾橘 | 廣告快速審核 - AI 快速審核廣告 - PIF代辦諮詢</h1>
+      <h1>審盾橘 | 免費 AI 快速審核廣告 - PIF代辦諮詢 - 化妝品檢測 </h1>
       <p>減少人工檢核，建立標準化審查程序，降低建項風險！</p>
       <p class="subtext">※ 詳情請參考 <a href="#">審盾橘</a>，免費體驗檢核廣告</p>
       <div class="buttons">
