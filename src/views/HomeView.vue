@@ -41,14 +41,14 @@
     <div class="info-sections3">
       <h2 class="section-title">｜台北市衛生局查緝資訊</h2>
       <div class="info-card4">
-        <img src="@/assets/臺北市政府衛生局1.png" alt="Case 3" class="card-icon4" />
+        <img src="@/assets/2025-2026違規文字雲.png" alt="Case 3" class="card-icon4" />
       </div>
     </div>
 
     <!-- 新增區塊 3 -->
     <div class="info-sections4">
       <div class="info-card4">
-        <img src="@/assets/臺北市政府衛生局2.png" alt="Case 4" class="card-icon4" />
+        <img src="@/assets/PIF違規.jpg" alt="Case 4" class="card-icon4" />
       </div>
     </div>
 
