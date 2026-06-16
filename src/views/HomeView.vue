@@ -2,7 +2,7 @@
   <section class="hero-section">
     <!-- 區塊1 -->
     <div class="hero-section-content">
-      <h1>審盾橘 | 廣告快速審核 - AI 快速審核廣告</h1>
+      <h1>審盾橘 | 廣告快速審核 - AI 快速審核廣告 - PIF代辦諮詢</h1>
       <p>減少人工檢核，建立標準化審查程序，降低建項風險！</p>
       <p class="subtext">※ 詳情請參考 <a href="#">審盾橘</a>，免費體驗檢核廣告</p>
       <div class="buttons">
@@ -39,7 +39,7 @@
 
     <!-- 新增區塊 2 -->
     <div class="info-sections3">
-      <h2 class="section-title">｜台北市衛生局查緝資訊</h2>
+      <h2 class="section-title">｜常見違規關鍵字</h2>
       <div class="info-card4">
         <img src="@/assets/2025-2026違規文字雲.png" alt="Case 3" class="card-icon4" />
       </div>
