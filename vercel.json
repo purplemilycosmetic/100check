@@ -1,14 +1,8 @@
 {
-  "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/pif", "destination": "/pif/index.html" },
-    { "source": "/PIF", "destination": "/PIF/index.html" },
-    { "source": "/services", "destination": "/services/index.html" },
-    { "source": "/plan", "destination": "/plan/index.html" },
-    { "source": "/ai-audit", "destination": "/ai-audit/index.html" },
-    { "source": "/about", "destination": "/about/index.html" },
-    { "source": "/blog", "destination": "/blog/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
