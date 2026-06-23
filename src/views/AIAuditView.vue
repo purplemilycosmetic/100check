@@ -1,7 +1,7 @@
 <template>
   <div class="ai-audit-page">
     <h1>AI廣告檢核</h1>
-    <p>本審核結果請供參考，缺少字眼歡迎加line告知，增加我們資料庫</p>
+    <p>本審核結果僅供參考，缺少字眼歡迎加line告知，增加我們資料庫</p>
 
     <div class="audit-input">
       <label>輸入廣告文案：</label>
