@@ -270,7 +270,7 @@ ${sourceText}
 
   // gemini-flash-latest 是 Google 提供的別名，會自動指向當前的穩定版本，
   // 不用每次 Google 換模型代號就要手動更新。若忙線，退而求其次試備用模型。
-  const models = ['gemini-flash-latest', 'gemini-2.5-flash']
+  const models = ['gemini-flash-latest', 'gemini-3.1-flash-lite', 'gemini-3.5-flash']
 
   const requestBody = JSON.stringify({
     system_instruction: { parts: [{ text: systemPrompt }] },
