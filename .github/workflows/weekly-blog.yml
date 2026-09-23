@@ -1,0 +1,29 @@
+name: 每週自動監控與寫文章
+
+on:
+  schedule:
+    # 每週一早上 8:00（台北時間）＝ UTC 前一天 00:00
+    - cron: '0 0 * * 1'
+  workflow_dispatch: {} # 允許在 GitHub 網頁上手動點「Run workflow」測試
+
+jobs:
+  weekly-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 專案
+        uses: actions/checkout@v4
+
+      - name: 設定 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 安裝依賴套件
+        run: npm install @supabase/supabase-js fast-xml-parser
+
+      - name: 執行每週監控與寫文章腳本
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/weekly-blog.mjs
