@@ -271,22 +271,37 @@ ${sourceText}
   const model = 'gemini-3.6-flash'
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`
 
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-goog-api-key': GEMINI_API_KEY,
+  const requestBody = JSON.stringify({
+    system_instruction: { parts: [{ text: systemPrompt }] },
+    contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+    generationConfig: {
+      // 直接要求 JSON 輸出，省去自己剝 code fence 的麻煩
+      responseMimeType: 'application/json',
+      maxOutputTokens: 4000,
     },
-    body: JSON.stringify({
-      system_instruction: { parts: [{ text: systemPrompt }] },
-      contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
-      generationConfig: {
-        // 直接要求 JSON 輸出，省去自己剝 code fence 的麻煩
-        responseMimeType: 'application/json',
-        maxOutputTokens: 4000,
-      },
-    }),
   })
+
+  // Gemini 偶爾會回 503（伺服器過載）或 429（速率限制），這兩種都值得重試
+  const MAX_ATTEMPTS = 4
+  let res
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-goog-api-key': GEMINI_API_KEY,
+      },
+      body: requestBody,
+    })
+
+    if (res.ok) break
+    const retryable = res.status === 503 || res.status === 429
+    if (!retryable || attempt === MAX_ATTEMPTS) break
+
+    const waitMs = attempt * 5000 // 5s, 10s, 15s...
+    console.log(`⏳ Gemini API 回應 ${res.status}（暫時性），${waitMs / 1000}秒後重試（第 ${attempt}/${MAX_ATTEMPTS} 次）...`)
+    await new Promise((r) => setTimeout(r, waitMs))
+  }
 
   if (!res.ok) {
     const errText = await res.text()
