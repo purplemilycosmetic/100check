@@ -101,11 +101,16 @@ async function fetchTFDAViolations() {
     }
     const data = await res.json()
     const list = Array.isArray(data) ? data : data?.Data || []
-    for (const row of list) {
-      const dateStr = row['處分日期'] || row['刊播日期'] || ''
-      const rowDate = parseROCorADDate(dateStr)
-      if (rowDate && rowDate < cutoff) continue // 只留近期的
+    const parsed = list
+      .map((row) => ({ row, rowDate: parseROCorADDate(row['處分日期'] || row['刊播日期'] || '') }))
+      // 保守處理：日期解析不出來的，寧可跳過也不要誤收進一大包舊資料
+      .filter((x) => x.rowDate && x.rowDate >= cutoff)
+      // 保險上限：就算篩選邏輯還是抓太多，最多只取最近 50 筆，避免塞爆 AI 的輸入
+      .sort((a, b) => b.rowDate - a.rowDate)
+      .slice(0, 50)
 
+    for (const { row, rowDate } of parsed) {
+      const dateStr = row['處分日期'] || row['刊播日期'] || ''
       items.push({
         source_name: 'TFDA裁罰',
         title: `違規裁罰：${row['違規產品名稱'] || '（未載明產品）'}（${row['違規廠商名稱或負責人'] || '未載明廠商'}）`,
@@ -263,7 +268,7 @@ ${sourceText}
 
 請根據以上資料撰寫本週的化妝品法規週報文章。`
 
-  const model = 'gemini-2.5-flash'
+  const model = 'gemini-3.6-flash'
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`
 
   const res = await fetch(url, {
@@ -353,6 +358,12 @@ async function main() {
 
   const allItems = [...tfdaNews, ...tfdaViolations, ...intlReg, ...twNews]
   const newItems = await filterUnseen(allItems)
+  // 保險上限：不管前面各來源篩選有沒有出包，送進 AI 的項目數都設個天花板
+  const MAX_ITEMS = 60
+  if (newItems.length > MAX_ITEMS) {
+    console.log(`⚠️ 項目數 ${newItems.length} 超過上限，只取前 ${MAX_ITEMS} 筆`)
+    newItems.length = MAX_ITEMS
+  }
 
   console.log(`📋 去除重複後剩下 ${newItems.length} 則新項目`)
 
