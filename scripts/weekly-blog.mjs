@@ -11,14 +11,14 @@
  *     - 國際法規更新（Google News RSS：SCCS / EU cosmetics regulation）
  *     - 台灣新聞媒體（Google News RSS：化妝品 違規／裁罰 關鍵字）
  *  2. 去除「上週已經處理過」的項目（用 Supabase 的 source_log 表記錄）
- *  3. 把新項目丟給 Claude API，整理寫成一篇繁體中文文章
+ *  3. 把新項目丟給 Gemini API（Google，免費），整理寫成一篇繁體中文文章
  *  4. 寫入 Supabase 的 articles 表，並標記 published: true
  *
  *  執行：由 GitHub Actions 排程觸發（見 .github/workflows/weekly-blog.yml）
  *  也可以在本機手動跑：node scripts/weekly-blog.mjs
  *
  *  需要的環境變數（GitHub Secrets）：
- *  - ANTHROPIC_API_KEY
+ *  - GEMINI_API_KEY            （Google AI Studio 免費申請，不需信用卡）
  *  - SUPABASE_URL              （即 VITE_SUPABASE_URL 的值）
  *  - SUPABASE_SERVICE_ROLE_KEY （Supabase 專案設定 → API → service_role key，不是 anon key！）
  */
@@ -28,13 +28,13 @@ import { XMLParser } from 'fast-xml-parser'
 
 // ─── 環境變數檢查 ───
 const {
-  ANTHROPIC_API_KEY,
+  GEMINI_API_KEY,
   SUPABASE_URL,
   SUPABASE_SERVICE_ROLE_KEY,
 } = process.env
 
-if (!ANTHROPIC_API_KEY || !SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
-  console.error('❌ 缺少必要的環境變數：ANTHROPIC_API_KEY / SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY')
+if (!GEMINI_API_KEY || !SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+  console.error('❌ 缺少必要的環境變數：GEMINI_API_KEY / SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY')
   process.exit(1)
 }
 
@@ -223,7 +223,8 @@ async function markAsSeen(items) {
 }
 
 // ════════════════════════════════════════════════════════════
-// 呼叫 Claude API，把整理過的原始資料寫成一篇文章
+// 呼叫 Gemini API（Google AI Studio，免費），把整理過的原始資料寫成一篇文章
+// 文件：https://ai.google.dev/gemini-api/docs
 // ════════════════════════════════════════════════════════════
 async function generateArticle(items) {
   const sourceText = items
@@ -245,7 +246,7 @@ async function generateArticle(items) {
 - 內容使用 Markdown 格式（## 標題、- 條列、**粗體**等）
 - 不要編造資料中沒有的事實或數字
 
-只回傳一個 JSON 物件，格式如下，不要有其他文字、不要用 markdown code fence 包起來：
+只回傳一個 JSON 物件，格式如下，不要有其他文字：
 {
   "title": "文章標題（吸引人但專業，包含日期週次或主題）",
   "slug": "url-friendly-slug（英文小寫+連字號，例如 weekly-roundup-2026-09-22）",
@@ -262,39 +263,47 @@ ${sourceText}
 
 請根據以上資料撰寫本週的化妝品法規週報文章。`
 
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
+  const model = 'gemini-2.5-flash'
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`
+
+  const res = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': ANTHROPIC_API_KEY,
-      'anthropic-version': '2023-06-01',
+      'x-goog-api-key': GEMINI_API_KEY,
     },
     body: JSON.stringify({
-      model: 'claude-sonnet-5',
-      max_tokens: 4000,
-      system: systemPrompt,
-      messages: [{ role: 'user', content: userPrompt }],
+      system_instruction: { parts: [{ text: systemPrompt }] },
+      contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+      generationConfig: {
+        // 直接要求 JSON 輸出，省去自己剝 code fence 的麻煩
+        responseMimeType: 'application/json',
+        maxOutputTokens: 4000,
+      },
     }),
   })
 
   if (!res.ok) {
     const errText = await res.text()
-    throw new Error(`Claude API 錯誤 ${res.status}：${errText}`)
+    throw new Error(`Gemini API 錯誤 ${res.status}：${errText}`)
   }
 
   const data = await res.json()
-  const textBlock = data.content.find((b) => b.type === 'text')
-  if (!textBlock) throw new Error('Claude API 回應沒有文字內容')
+  const candidate = data.candidates?.[0]
+  const textPart = candidate?.content?.parts?.find((p) => p.text)
+  if (!textPart) {
+    throw new Error(`Gemini API 回應沒有文字內容，finishReason：${candidate?.finishReason || '未知'}`)
+  }
 
-  let raw = textBlock.text.trim()
-  // 保險：如果模型還是包了 code fence，剝掉它
+  let raw = textPart.text.trim()
+  // 保險：萬一還是包了 code fence，剝掉它
   raw = raw.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/```\s*$/i, '')
 
   let article
   try {
     article = JSON.parse(raw)
   } catch (err) {
-    throw new Error(`無法解析 Claude 回傳的 JSON：${err.message}\n原始內容：${raw.slice(0, 500)}`)
+    throw new Error(`無法解析 Gemini 回傳的 JSON：${err.message}\n原始內容：${raw.slice(0, 500)}`)
   }
   return article
 }
@@ -352,7 +361,7 @@ async function main() {
     return
   }
 
-  console.log('✍️ 呼叫 Claude API 撰寫文章...')
+  console.log('✍️ 呼叫 Gemini API 撰寫文章...')
   const article = await generateArticle(newItems)
 
   console.log(`📝 產出文章：${article.title}`)
