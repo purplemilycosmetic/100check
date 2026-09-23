@@ -268,8 +268,9 @@ ${sourceText}
 
 請根據以上資料撰寫本週的化妝品法規週報文章。`
 
-  const model = 'gemini-3.6-flash'
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`
+  // gemini-flash-latest 是 Google 提供的別名，會自動指向當前的穩定版本，
+  // 不用每次 Google 換模型代號就要手動更新。若忙線，退而求其次試備用模型。
+  const models = ['gemini-flash-latest', 'gemini-2.5-flash']
 
   const requestBody = JSON.stringify({
     system_instruction: { parts: [{ text: systemPrompt }] },
@@ -281,26 +282,34 @@ ${sourceText}
     },
   })
 
-  // Gemini 偶爾會回 503（伺服器過載）或 429（速率限制），這兩種都值得重試
-  const MAX_ATTEMPTS = 4
+  // Gemini 偶爾會回 503（伺服器過載）或 429（速率限制），這兩種都值得重試；
+  // 單一模型重試幾次還是忙線，就換下一個模型試試看。
+  const MAX_ATTEMPTS_PER_MODEL = 3
   let res
-  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
-    res = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-goog-api-key': GEMINI_API_KEY,
-      },
-      body: requestBody,
-    })
+  for (const model of models) {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS_PER_MODEL; attempt++) {
+      res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': GEMINI_API_KEY,
+        },
+        body: requestBody,
+      })
 
+      if (res.ok) break
+      const retryable = res.status === 503 || res.status === 429
+      if (!retryable || attempt === MAX_ATTEMPTS_PER_MODEL) break
+
+      const waitMs = attempt * 5000 // 5s, 10s...
+      console.log(`⏳ Gemini（${model}）回應 ${res.status}（暫時性），${waitMs / 1000}秒後重試（第 ${attempt}/${MAX_ATTEMPTS_PER_MODEL} 次）...`)
+      await new Promise((r) => setTimeout(r, waitMs))
+    }
     if (res.ok) break
-    const retryable = res.status === 503 || res.status === 429
-    if (!retryable || attempt === MAX_ATTEMPTS) break
-
-    const waitMs = attempt * 5000 // 5s, 10s, 15s...
-    console.log(`⏳ Gemini API 回應 ${res.status}（暫時性），${waitMs / 1000}秒後重試（第 ${attempt}/${MAX_ATTEMPTS} 次）...`)
-    await new Promise((r) => setTimeout(r, waitMs))
+    if (res.status === 503 || res.status === 429) {
+      console.log(`⏳ ${model} 重試多次仍忙線，改試下一個模型...`)
+    }
   }
 
   if (!res.ok) {
