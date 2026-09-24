@@ -14,12 +14,12 @@
       </div>
       <nav :class="{ 'active': isMenuOpen }">
         <router-link to="/" exact>首頁</router-link>
+        <router-link to="/ai-audit">AI廣告檢核</router-link>
         <div class="nav-dropdown" :class="{ open: isToolsOpen }">
           <button type="button" class="dropdown-trigger" @click="toggleTools">
             小工具 <span class="caret">▾</span>
           </button>
           <div class="dropdown-menu">
-            <router-link to="/ai-audit">AI廣告檢核</router-link>
             <router-link to="/label-generator">標籤產生器</router-link>
             <router-link to="/PIF">PIF簽署</router-link>
           </div>

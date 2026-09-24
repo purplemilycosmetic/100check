@@ -72,25 +72,14 @@
           <input v-model.trim="form.companyName" type="text" placeholder="請輸入公司全名" />
         </div>
         <div class="field">
-          <label>聯絡電話 <span class="required">*</span></label>
-          <input v-model.trim="form.companyPhone" type="text" placeholder="例：02-1234-5678" />
+          <label>地址/電話 <span class="required">*</span></label>
+          <input v-model.trim="form.companyContact" type="text" placeholder="例：台北市OO路OO號 / 02-1234-5678" />
         </div>
       </div>
 
-      <div class="field">
-        <label>{{ form.manufacturerType === 'imported' ? '輸入業者地址' : '製造或輸入業者地址' }} <span class="required">*</span></label>
-        <input v-model.trim="form.companyAddress" type="text" placeholder="請輸入完整地址" />
-      </div>
-
-      <div v-if="form.manufacturerType === 'domestic'" class="field-row highlight-block">
-        <div class="field">
-          <label>製造工廠名稱 <span class="required">*</span></label>
-          <input v-model.trim="form.factoryName" type="text" placeholder="台灣廠商需另外標示製造工廠" />
-        </div>
-        <div class="field">
-          <label>製造工廠地址 <span class="required">*</span></label>
-          <input v-model.trim="form.factoryAddress" type="text" placeholder="請輸入工廠地址" />
-        </div>
+      <div v-if="form.manufacturerType === 'domestic'" class="field highlight-block">
+        <label>製造工廠（名稱/地址） <span class="required">*</span></label>
+        <input v-model.trim="form.factoryInfo" type="text" placeholder="台灣廠商需另外標示，例：OO化工廠 / 桃園市OO路OO號" />
       </div>
 
       <div class="field date-block">
@@ -179,10 +168,8 @@ const form = reactive({
   origin: '',
   manufacturerType: 'domestic',
   companyName: '',
-  companyPhone: '',
-  companyAddress: '',
-  factoryName: '',
-  factoryAddress: '',
+  companyContact: '',
+  factoryInfo: '',
   mfgDate: '',
   expiryPeriod: '',
   expiryDate: '',
@@ -239,8 +226,7 @@ const missingFields = computed(() => {
     ['ingredients', '全成分'],
     ['origin', '原產地'],
     ['companyName', '製造或輸入業者名稱'],
-    ['companyPhone', '聯絡電話'],
-    ['companyAddress', '製造或輸入業者地址'],
+    ['companyContact', '地址/電話'],
     ['batchNo', '批號'],
     ['precautions', '注意事項'],
   ]
@@ -248,8 +234,7 @@ const missingFields = computed(() => {
     if (!form[key]) missing.push(label)
   }
   if (form.manufacturerType === 'domestic') {
-    if (!form.factoryName) missing.push('製造工廠名稱')
-    if (!form.factoryAddress) missing.push('製造工廠地址')
+    if (!form.factoryInfo) missing.push('製造工廠（名稱/地址）')
   }
   return missing
 })
@@ -282,14 +267,11 @@ const labelText = computed(() => {
   lines.push('')
   if (form.manufacturerType === 'imported') {
     lines.push(`輸入業者：${form.companyName}`)
-    lines.push(`地址：${form.companyAddress}`)
-    lines.push(`電話：${form.companyPhone}`)
+    lines.push(`地址/電話：${form.companyContact}`)
   } else {
     lines.push(`製造或輸入業者：${form.companyName}`)
-    lines.push(`地址：${form.companyAddress}`)
-    lines.push(`電話：${form.companyPhone}`)
-    lines.push(`製造工廠：${form.factoryName}`)
-    lines.push(`工廠地址：${form.factoryAddress}`)
+    lines.push(`地址/電話：${form.companyContact}`)
+    lines.push(`製造工廠：${form.factoryInfo}`)
   }
   lines.push(`原產地：${form.origin}`)
   lines.push('')
