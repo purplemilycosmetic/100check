@@ -38,21 +38,6 @@
       </div>
 
       <div class="field">
-        <label>全成分 <span class="required">*</span></label>
-        <label class="checkbox-line">
-          <input type="checkbox" v-model="form.ingredientsOnPackaging" />
-          容器太小寫不下，改標示「詳見外包裝」（常見於內層小容器，外盒需完整列出）
-        </label>
-        <textarea
-          v-if="!form.ingredientsOnPackaging"
-          v-model.trim="form.ingredients"
-          rows="3"
-          placeholder="請依含量由高到低排列，逗號分隔，例：Water, Glycerin, Niacinamide..."
-        ></textarea>
-        <p class="hint">依規定需列出全成分（INCI 名稱），含量大於 1% 者需由高到低排列。</p>
-      </div>
-
-      <div class="field">
         <label>原產地 <span class="required">*</span></label>
         <input v-model.trim="form.origin" type="text" placeholder="例：台灣、日本、韓國" />
       </div>
@@ -70,15 +55,9 @@
         <input v-model.trim="form.companyNameAddress" type="text" placeholder="例：OO股份有限公司 / 台北市OO區OO路OO號O樓" />
       </div>
 
-      <div class="field-row">
-        <div class="field">
-          <label>客服電話 <span class="required">*</span></label>
-          <input v-model.trim="form.companyPhone" type="text" placeholder="例：02-1234-5678" />
-        </div>
-        <div class="field">
-          <label>核准字號</label>
-          <input v-model.trim="form.approvalNumber" type="text" placeholder="一般化妝品可填「免備查」" />
-        </div>
+      <div class="field">
+        <label>客服電話 <span class="required">*</span></label>
+        <input v-model.trim="form.companyPhone" type="text" placeholder="例：02-1234-5678" />
       </div>
 
       <div v-if="form.manufacturerType === 'domestic'" class="field highlight-block">
@@ -120,6 +99,21 @@
       <div class="field">
         <label>注意事項 <span class="required">*</span></label>
         <textarea v-model.trim="form.precautions" rows="3" placeholder="例：避開眼周使用，如有不適請停止使用並洽詢醫師"></textarea>
+      </div>
+
+      <div class="field">
+        <label>全成分 <span class="required">*</span></label>
+        <label class="checkbox-line">
+          <input type="checkbox" v-model="form.ingredientsOnPackaging" />
+          詳見外包裝
+        </label>
+        <textarea
+          v-if="!form.ingredientsOnPackaging"
+          v-model.trim="form.ingredients"
+          rows="3"
+          placeholder="請依含量由高到低排列，逗號分隔，例：Water, Glycerin, Niacinamide..."
+        ></textarea>
+        <p class="hint">依規定需列出全成分（INCI 名稱），含量大於 1% 者需由高到低排列。</p>
       </div>
 
       <button class="generate-btn" :disabled="wordsLoading" @click="generate">
@@ -184,7 +178,6 @@ const form = reactive({
   manufacturerType: 'domestic',
   companyNameAddress: '',
   companyPhone: '',
-  approvalNumber: '',
   factoryInfo: '',
   ingredientsOnPackaging: false,
   batchDatesOnPackaging: false,
@@ -281,9 +274,7 @@ const labelText = computed(() => {
 
   lines.push(`品名：${form.productName}${sp}用途：${form.purpose}`)
   lines.push(`使用方法：${form.usage}`)
-
-  const ingredientsText = form.ingredientsOnPackaging ? '詳見外包裝' : form.ingredients
-  lines.push(`全成分：${ingredientsText}${sp}原產地：${form.origin}`)
+  lines.push(`原產地：${form.origin}`)
 
   const roleLabel = form.manufacturerType === 'imported' ? '輸入業者名稱地址' : '製造或輸入業者名稱地址'
   lines.push(`${roleLabel}：${form.companyNameAddress}`)
@@ -303,11 +294,10 @@ const labelText = computed(() => {
   }
 
   lines.push(`注意事項：${form.precautions}`)
+  lines.push(`容量：${form.volumeValue}${form.volumeUnit === 'g' ? 'G' : 'ML'}`)
 
-  const lastLineParts = []
-  if (form.approvalNumber) lastLineParts.push(`核准字號：${form.approvalNumber}`)
-  lastLineParts.push(`容量：${form.volumeValue}${form.volumeUnit === 'g' ? 'G' : 'ML'}`)
-  lines.push(lastLineParts.join(sp))
+  const ingredientsText = form.ingredientsOnPackaging ? '詳見外包裝' : form.ingredients
+  lines.push(`全成分：${ingredientsText}`)
 
   return lines.join('\n')
 })

@@ -15,6 +15,10 @@
       <nav :class="{ 'active': isMenuOpen }">
         <router-link to="/" exact>首頁</router-link>
         <router-link to="/ai-audit">AI廣告檢核</router-link>
+        <router-link to="/services">服務介紹</router-link>
+        <router-link to="/plan">方案介紹</router-link>
+        <router-link to="/blog">法規專欄</router-link>
+        <router-link to="/about">關於我們</router-link>
         <div class="nav-dropdown" :class="{ open: isToolsOpen }">
           <button type="button" class="dropdown-trigger" @click="toggleTools">
             小工具 <span class="caret">▾</span>
@@ -24,10 +28,6 @@
             <router-link to="/PIF">PIF簽署</router-link>
           </div>
         </div>
-        <router-link to="/services">服務介紹</router-link>
-        <router-link to="/plan">方案介紹</router-link>
-        <router-link to="/blog">法規專欄</router-link>
-        <router-link to="/about">關於我們</router-link>
       </nav>
       <div class="right-section">
         <div class="lang-switcher">
@@ -214,8 +214,9 @@ nav a:hover {
   display: none;
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 0;
+  left: auto;
+  transform: none;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 0.5rem;
