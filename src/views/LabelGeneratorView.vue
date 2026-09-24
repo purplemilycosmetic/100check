@@ -45,7 +45,12 @@
 
       <div class="field">
         <label>全成分 <span class="required">*</span></label>
+        <label class="checkbox-line">
+          <input type="checkbox" v-model="form.ingredientsOnPackaging" />
+          容器太小寫不下，改標示「詳見外包裝」（常見於內層小容器，外盒需完整列出）
+        </label>
         <textarea
+          v-if="!form.ingredientsOnPackaging"
           v-model.trim="form.ingredients"
           rows="3"
           placeholder="請依含量由高到低排列，逗號分隔，例：Water, Glycerin, Niacinamide..."
@@ -66,14 +71,19 @@
         </div>
       </div>
 
+      <div class="field">
+        <label>{{ form.manufacturerType === 'imported' ? '輸入業者名稱/地址' : '製造或輸入業者名稱/地址' }} <span class="required">*</span></label>
+        <input v-model.trim="form.companyNameAddress" type="text" placeholder="例：沃盛股份有限公司 / 台北市松山區復興北路367號3樓" />
+      </div>
+
       <div class="field-row">
         <div class="field">
-          <label>{{ form.manufacturerType === 'imported' ? '輸入業者名稱' : '製造或輸入業者名稱' }} <span class="required">*</span></label>
-          <input v-model.trim="form.companyName" type="text" placeholder="請輸入公司全名" />
+          <label>客服電話 <span class="required">*</span></label>
+          <input v-model.trim="form.companyPhone" type="text" placeholder="例：02-8712-8807" />
         </div>
         <div class="field">
-          <label>地址/電話 <span class="required">*</span></label>
-          <input v-model.trim="form.companyContact" type="text" placeholder="例：台北市OO路OO號 / 02-1234-5678" />
+          <label>核准字號</label>
+          <input v-model.trim="form.approvalNumber" type="text" placeholder="一般化妝品可填「免備查」" />
         </div>
       </div>
 
@@ -167,9 +177,11 @@ const form = reactive({
   ingredients: '',
   origin: '',
   manufacturerType: 'domestic',
-  companyName: '',
-  companyContact: '',
+  companyNameAddress: '',
+  companyPhone: '',
+  approvalNumber: '',
   factoryInfo: '',
+  ingredientsOnPackaging: false,
   mfgDate: '',
   expiryPeriod: '',
   expiryDate: '',
@@ -223,16 +235,16 @@ const missingFields = computed(() => {
     ['usage', '使用方法'],
     ['storage', '保存方法'],
     ['volumeValue', '容量或淨重'],
-    ['ingredients', '全成分'],
     ['origin', '原產地'],
-    ['companyName', '製造或輸入業者名稱'],
-    ['companyContact', '地址/電話'],
+    ['companyNameAddress', '製造或輸入業者名稱/地址'],
+    ['companyPhone', '客服電話'],
     ['batchNo', '批號'],
     ['precautions', '注意事項'],
   ]
   for (const [key, label] of need) {
     if (!form[key]) missing.push(label)
   }
+  if (!form.ingredientsOnPackaging && !form.ingredients) missing.push('全成分')
   if (form.manufacturerType === 'domestic') {
     if (!form.factoryInfo) missing.push('製造工廠（名稱/地址）')
   }
@@ -258,29 +270,34 @@ const riskMatches = computed(() => {
 
 const labelText = computed(() => {
   const lines = []
-  lines.push(`品名：${form.productName}`)
-  lines.push(`用途：${form.purpose}`)
+  const sp = '　' // 全形空格，模仿實際標籤緊密排版的分隔方式
+
+  lines.push(`品名：${form.productName}${sp}用途：${form.purpose}`)
   lines.push(`使用方法：${form.usage}`)
-  lines.push(`保存方法：${form.storage}`)
-  lines.push(`容量：${form.volumeValue}${form.volumeUnit}`)
-  lines.push(`全成分：${form.ingredients}`)
-  lines.push('')
-  if (form.manufacturerType === 'imported') {
-    lines.push(`輸入業者：${form.companyName}`)
-    lines.push(`地址/電話：${form.companyContact}`)
-  } else {
-    lines.push(`製造或輸入業者：${form.companyName}`)
-    lines.push(`地址/電話：${form.companyContact}`)
-    lines.push(`製造工廠：${form.factoryInfo}`)
+
+  const ingredientsText = form.ingredientsOnPackaging ? '詳見外包裝' : form.ingredients
+  lines.push(`全成分：${ingredientsText}${sp}原產地：${form.origin}`)
+
+  const roleLabel = form.manufacturerType === 'imported' ? '輸入業者名稱地址' : '製造或輸入業者名稱地址'
+  lines.push(`${roleLabel}：${form.companyNameAddress}`)
+  if (form.manufacturerType === 'domestic' && form.factoryInfo) {
+    lines.push(`製造工廠名稱地址：${form.factoryInfo}`)
   }
-  lines.push(`原產地：${form.origin}`)
-  lines.push('')
-  if (form.mfgDate) lines.push(`製造日期：${form.mfgDate}`)
-  if (form.expiryPeriod) lines.push(`有效期間：${form.expiryPeriod}`)
-  if (form.expiryDate) lines.push(`保存期限：${form.expiryDate}`)
-  lines.push(`批號：${form.batchNo}`)
-  lines.push('')
+  lines.push(`客服電話：${form.companyPhone}`)
+
+  const dateParts = []
+  if (form.mfgDate) dateParts.push(`製造日期：${form.mfgDate}`)
+  if (form.expiryPeriod) dateParts.push(`有效期間：${form.expiryPeriod}`)
+  if (form.expiryDate) dateParts.push(`保存期限：${form.expiryDate}`)
+  lines.push(`批號：${form.batchNo}${sp}${dateParts.join(sp)}${sp}保存方法：${form.storage}`)
+
   lines.push(`注意事項：${form.precautions}`)
+
+  const lastLineParts = []
+  if (form.approvalNumber) lastLineParts.push(`核准字號：${form.approvalNumber}`)
+  lastLineParts.push(`容量：${form.volumeValue}${form.volumeUnit === 'g' ? 'G' : 'ML'}`)
+  lines.push(lastLineParts.join(sp))
+
   return lines.join('\n')
 })
 
@@ -365,6 +382,18 @@ textarea {
   font-size: 0.82rem;
   color: #999;
   margin-top: 0.35rem;
+}
+.checkbox-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.checkbox-line input {
+  margin-top: 0.15rem;
 }
 .radio-group {
   display: flex;
