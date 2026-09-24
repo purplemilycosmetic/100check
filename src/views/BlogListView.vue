@@ -17,7 +17,9 @@
           class="article-card"
         >
           <img v-if="a.cover_image" :src="a.cover_image" :alt="a.title" class="card-cover" />
-          <div class="card-cover placeholder" v-else></div>
+          <div v-else class="card-cover placeholder" :style="placeholderStyle(a)">
+            <span class="placeholder-title">{{ a.title }}</span>
+          </div>
           <div class="card-body">
             <span class="card-date">{{ formatDate(a.created_at) }}</span>
             <h2 class="card-title">{{ a.title }}</h2>
@@ -60,6 +62,22 @@ onMounted(async () => {
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
+// 沒有封面圖的文章：用文章 id 決定一組固定的品牌色漸層，同一篇文章每次看到顏色都一樣，
+// 不同文章之間會有變化，列表看起來不會太單調重複。
+const gradients = [
+  ['#ff5733', '#ff8c42'],
+  ['#ff7043', '#ffab40'],
+  ['#e64a19', '#ff5733'],
+  ['#ff5733', '#ffca28'],
+  ['#d84315', '#ff7043'],
+]
+
+function placeholderStyle(article) {
+  const idx = (article.id || 0) % gradients.length
+  const [from, to] = gradients[idx]
+  return { background: `linear-gradient(135deg, ${from}, ${to})` }
 }
 </script>
 
@@ -109,7 +127,23 @@ function formatDate(iso) {
   object-fit: cover;
 }
 .card-cover.placeholder {
-  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+.placeholder-title {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .card-body {
   padding: 1rem;

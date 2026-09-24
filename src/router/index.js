@@ -94,6 +94,11 @@ const router = createRouter({
       component: () => import('../views/SafetyAssessmentView.vue'),
     },
     {
+      path: '/label-generator',
+      name: 'label-generator',
+      component: () => import('../views/LabelGeneratorView.vue'),
+    },
+    {
       path: '/blog',
       name: 'blog',
       component: () => import('../views/BlogListView.vue'),

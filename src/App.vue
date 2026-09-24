@@ -14,9 +14,17 @@
       </div>
       <nav :class="{ 'active': isMenuOpen }">
         <router-link to="/" exact>首頁</router-link>
-        <router-link to="/ai-audit">AI廣告檢核</router-link>
+        <div class="nav-dropdown" :class="{ open: isToolsOpen }">
+          <button type="button" class="dropdown-trigger" @click="toggleTools">
+            小工具 <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu">
+            <router-link to="/ai-audit">AI廣告檢核</router-link>
+            <router-link to="/label-generator">標籤產生器</router-link>
+            <router-link to="/PIF">PIF簽署</router-link>
+          </div>
+        </div>
         <router-link to="/services">服務介紹</router-link>
-        <router-link to="/PIF">PIF簽署</router-link>
         <router-link to="/plan">方案介紹</router-link>
         <router-link to="/blog">法規專欄</router-link>
         <router-link to="/about">關於我們</router-link>
@@ -53,7 +61,8 @@ export default {
     return {
       username: localStorage.getItem('username') || '',
       isLoggedIn: !!localStorage.getItem('token'),
-      isMenuOpen: false
+      isMenuOpen: false,
+      isToolsOpen: false
     }
   },
   methods: {
@@ -66,6 +75,9 @@ export default {
     },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
+    },
+    toggleTools() {
+      this.isToolsOpen = !this.isToolsOpen
     }
   },
   watch: {
@@ -73,6 +85,7 @@ export default {
       this.isLoggedIn = !!localStorage.getItem('token')
       this.username = localStorage.getItem('username') || ''
       this.isMenuOpen = false // 切換路由時關閉菜單
+      this.isToolsOpen = false
     }
   }
 }
@@ -164,6 +177,76 @@ nav a {
 
 nav a:hover {
   color: #ff5733;
+}
+
+/* 小工具下拉選單 */
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+  margin: 0 1rem;
+}
+
+.dropdown-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e04e2d;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0;
+}
+
+.dropdown-trigger:hover {
+  color: #ff5733;
+}
+
+.caret {
+  font-size: 0.75rem;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.nav-dropdown.open .caret {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
+  min-width: 8.5rem;
+  z-index: 1001;
+}
+
+.dropdown-menu a {
+  display: block;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #fff5f2;
+}
+
+/* 桌面：滑鼠移入即展開 */
+@media (min-width: 601px) {
+  .nav-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+/* 手機：點擊展開（見下方手機模式區塊的補充樣式） */
+.nav-dropdown.open .dropdown-menu {
+  display: block;
 }
 
 .right-section {
@@ -272,6 +355,35 @@ nav a:hover {
     display: block;
     margin: 0.5rem 0;
     font-size: 0.875rem;
+  }
+
+  .nav-dropdown {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .dropdown-trigger {
+    display: block;
+    font-size: 0.875rem;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 0 0 0 1rem;
+    min-width: 0;
+  }
+
+  .nav-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    padding: 0.35rem 0;
+    font-size: 0.85rem;
   }
 
   .right-section {
