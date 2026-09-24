@@ -26,20 +26,14 @@
         <textarea v-model.trim="form.storage" rows="2" placeholder="例：請置於陰涼乾燥處，避免陽光直射"></textarea>
       </div>
 
-      <div class="field-row">
-        <div class="field">
-          <label>容量或淨重 <span class="required">*</span></label>
-          <div class="inline-inputs">
-            <input v-model.trim="form.volumeValue" type="text" placeholder="例：30" />
-            <select v-model="form.volumeUnit">
-              <option value="ml">ml（容量）</option>
-              <option value="g">g（淨重）</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label>批號 <span class="required">*</span></label>
-          <input v-model.trim="form.batchNo" type="text" placeholder="例：B20260924" />
+      <div class="field">
+        <label>容量或淨重 <span class="required">*</span></label>
+        <div class="inline-inputs">
+          <input v-model.trim="form.volumeValue" type="text" placeholder="例：30" />
+          <select v-model="form.volumeUnit">
+            <option value="ml">ml（容量）</option>
+            <option value="g">g（淨重）</option>
+          </select>
         </div>
       </div>
 
@@ -73,13 +67,13 @@
 
       <div class="field">
         <label>{{ form.manufacturerType === 'imported' ? '輸入業者名稱/地址' : '製造或輸入業者名稱/地址' }} <span class="required">*</span></label>
-        <input v-model.trim="form.companyNameAddress" type="text" placeholder="例：沃盛股份有限公司 / 台北市松山區復興北路367號3樓" />
+        <input v-model.trim="form.companyNameAddress" type="text" placeholder="例：OO股份有限公司 / 台北市OO區OO路OO號O樓" />
       </div>
 
       <div class="field-row">
         <div class="field">
           <label>客服電話 <span class="required">*</span></label>
-          <input v-model.trim="form.companyPhone" type="text" placeholder="例：02-8712-8807" />
+          <input v-model.trim="form.companyPhone" type="text" placeholder="例：02-1234-5678" />
         </div>
         <div class="field">
           <label>核准字號</label>
@@ -93,23 +87,34 @@
       </div>
 
       <div class="field date-block">
-        <label>製造日期／有效期間／保存期限（三選二） <span class="required">*</span></label>
-        <p class="hint">依規定至少需擇二標示，且欄位名稱須與下方完全一致，本工具已自動套用正確名稱。</p>
-        <div class="date-grid">
-          <div class="date-item">
-            <label class="date-label">製造日期</label>
-            <input v-model.trim="form.mfgDate" type="text" placeholder="日/月/年，例：24/09/2026" />
+        <label>批號／製造日期／有效期間／保存期限 <span class="required">*</span></label>
+        <label class="checkbox-line">
+          <input type="checkbox" v-model="form.batchDatesOnPackaging" />
+          如包裝所示（批號與日期已標示於產品本體或外包裝上，不另外填寫）
+        </label>
+
+        <template v-if="!form.batchDatesOnPackaging">
+          <div class="field" style="margin-top: 0.75rem">
+            <label class="date-label">批號</label>
+            <input v-model.trim="form.batchNo" type="text" placeholder="例：B20260924" />
           </div>
-          <div class="date-item">
-            <label class="date-label">有效期間</label>
-            <input v-model.trim="form.expiryPeriod" type="text" placeholder="例：三年" />
+          <p class="hint">製造日期／有效期間／保存期限三選二，且欄位名稱須與下方完全一致，本工具已自動套用正確名稱。</p>
+          <div class="date-grid">
+            <div class="date-item">
+              <label class="date-label">製造日期</label>
+              <input v-model.trim="form.mfgDate" type="text" placeholder="日/月/年，例：24/09/2026" />
+            </div>
+            <div class="date-item">
+              <label class="date-label">有效期間</label>
+              <input v-model.trim="form.expiryPeriod" type="text" placeholder="例：三年" />
+            </div>
+            <div class="date-item">
+              <label class="date-label">保存期限</label>
+              <input v-model.trim="form.expiryDate" type="text" placeholder="日/月/年，例：24/09/2029" />
+            </div>
           </div>
-          <div class="date-item">
-            <label class="date-label">保存期限</label>
-            <input v-model.trim="form.expiryDate" type="text" placeholder="日/月/年，例：24/09/2029" />
-          </div>
-        </div>
-        <p v-if="!dateRuleOk" class="warning-text">⚠ 三項需至少填寫兩項</p>
+          <p v-if="!dateRuleOk" class="warning-text">⚠ 三項需至少填寫兩項</p>
+        </template>
       </div>
 
       <div class="field">
@@ -182,6 +187,7 @@ const form = reactive({
   approvalNumber: '',
   factoryInfo: '',
   ingredientsOnPackaging: false,
+  batchDatesOnPackaging: false,
   mfgDate: '',
   expiryPeriod: '',
   expiryDate: '',
@@ -223,6 +229,7 @@ async function loadForbiddenWords() {
 loadForbiddenWords()
 
 const dateRuleOk = computed(() => {
+  if (form.batchDatesOnPackaging) return true
   const filled = [form.mfgDate, form.expiryPeriod, form.expiryDate].filter(Boolean).length
   return filled >= 2
 })
@@ -238,13 +245,13 @@ const missingFields = computed(() => {
     ['origin', '原產地'],
     ['companyNameAddress', '製造或輸入業者名稱/地址'],
     ['companyPhone', '客服電話'],
-    ['batchNo', '批號'],
     ['precautions', '注意事項'],
   ]
   for (const [key, label] of need) {
     if (!form[key]) missing.push(label)
   }
   if (!form.ingredientsOnPackaging && !form.ingredients) missing.push('全成分')
+  if (!form.batchDatesOnPackaging && !form.batchNo) missing.push('批號')
   if (form.manufacturerType === 'domestic') {
     if (!form.factoryInfo) missing.push('製造工廠（名稱/地址）')
   }
@@ -285,11 +292,15 @@ const labelText = computed(() => {
   }
   lines.push(`客服電話：${form.companyPhone}`)
 
-  const dateParts = []
-  if (form.mfgDate) dateParts.push(`製造日期：${form.mfgDate}`)
-  if (form.expiryPeriod) dateParts.push(`有效期間：${form.expiryPeriod}`)
-  if (form.expiryDate) dateParts.push(`保存期限：${form.expiryDate}`)
-  lines.push(`批號：${form.batchNo}${sp}${dateParts.join(sp)}${sp}保存方法：${form.storage}`)
+  if (form.batchDatesOnPackaging) {
+    lines.push(`批號及製造、保存期限：標示於包裝或產品${sp}保存方法：${form.storage}`)
+  } else {
+    const dateParts = []
+    if (form.mfgDate) dateParts.push(`製造日期：${form.mfgDate}`)
+    if (form.expiryPeriod) dateParts.push(`有效期間：${form.expiryPeriod}`)
+    if (form.expiryDate) dateParts.push(`保存期限：${form.expiryDate}`)
+    lines.push(`批號：${form.batchNo}${sp}${dateParts.join(sp)}${sp}保存方法：${form.storage}`)
+  }
 
   lines.push(`注意事項：${form.precautions}`)
 
