@@ -1,0 +1,29 @@
+name: 更新成分字典資料
+
+on:
+  workflow_dispatch: {} # 手動點「Run workflow」觸發
+  push:
+    branches: [main]
+    paths:
+      - 'data/ingredient-dictionary-seed.json' # 資料檔一有更新，自動重新匯入 Supabase
+
+jobs:
+  seed-ingredients-dictionary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 專案
+        uses: actions/checkout@v4
+
+      - name: 設定 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 安裝依賴套件
+        run: npm install @supabase/supabase-js
+
+      - name: 執行資料匯入腳本
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/seed-ingredients-dictionary.mjs

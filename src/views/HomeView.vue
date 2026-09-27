@@ -94,11 +94,16 @@
       </div>
     </div>
   </section>
+
+  <div v-if="visitCountsLoaded" class="visit-counter">
+    🌐 今日造訪 {{ todayCount }}・累計 {{ totalCount }} 人次
+  </div>
 </template>
 
 <script>
 import { useHead } from '@unhead/vue'
 import AdsenseAd from '@/components/Adsense.vue'
+import { supabase } from '@/supabaseClient'
 
 export default {
   components: { AdsenseAd },
@@ -124,11 +129,15 @@ export default {
     return {
       currentSlide: 0,
       slidesCount: 3,
-      autoPlayInterval: null
+      autoPlayInterval: null,
+      todayCount: 0,
+      totalCount: 0,
+      visitCountsLoaded: false
     }
   },
   mounted() {
     this.startAutoPlay()
+    this.recordVisitAndLoadCounts()
   },
   beforeDestroy() {
     this.stopAutoPlay()
@@ -147,6 +156,36 @@ export default {
     },
     stopAutoPlay() {
       clearInterval(this.autoPlayInterval)
+    },
+    // 每個瀏覽器每天只記錄一次造訪（用 localStorage 判斷是否已記過），
+    // 避免同一個人重整頁面就一直洗流量數字
+    async recordVisitAndLoadCounts() {
+      try {
+        const todayStr = new Date().toISOString().slice(0, 10)
+        const recordedKey = 'site_visit_recorded_date'
+        if (localStorage.getItem(recordedKey) !== todayStr) {
+          await supabase.from('site_visits').insert({})
+          localStorage.setItem(recordedKey, todayStr)
+        }
+
+        const startOfToday = new Date()
+        startOfToday.setHours(0, 0, 0, 0)
+
+        const [{ count: today }, { count: total }] = await Promise.all([
+          supabase
+            .from('site_visits')
+            .select('*', { count: 'exact', head: true })
+            .gte('visited_at', startOfToday.toISOString()),
+          supabase.from('site_visits').select('*', { count: 'exact', head: true }),
+        ])
+
+        this.todayCount = today || 0
+        this.totalCount = total || 0
+        this.visitCountsLoaded = true
+      } catch (e) {
+        // 流量計數失敗不影響網站其他功能，安靜失敗就好
+        console.error('訪客計數載入失敗:', e)
+      }
     }
   }
 }
@@ -519,6 +558,22 @@ export default {
   .card-icon4 {
     width: 70rem;
     height: 40rem;
+  }
+}.visit-counter {
+  position: fixed;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  font-size: 0.7rem;
+  color: #bbb;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 10;
+}
+@media (max-width: 600px) {
+  .visit-counter {
+    display: none; /* 手機版畫面小，先隱藏，避免擋到內容 */
   }
 }
 </style>
