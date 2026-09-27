@@ -99,6 +99,16 @@ const router = createRouter({
       component: () => import('../views/LabelGeneratorView.vue'),
     },
     {
+      path: '/reference-links',
+      name: 'reference-links',
+      component: () => import('../views/ReferenceLinksView.vue'),
+    },
+    {
+      path: '/restricted-ingredients',
+      name: 'restricted-ingredients',
+      component: () => import('../views/RestrictedIngredientsView.vue'),
+    },
+    {
       path: '/blog',
       name: 'blog',
       component: () => import('../views/BlogListView.vue'),
