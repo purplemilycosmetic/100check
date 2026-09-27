@@ -51,7 +51,7 @@
       </div>
 
       <div class="field">
-        <label>{{ form.manufacturerType === 'imported' ? '輸入業者名稱/地址' : '製造或輸入業者名稱/地址' }} <span class="required">*</span></label>
+        <label>{{ form.manufacturerType === 'imported' ? '輸入業者名稱/地址' : '製造業者名稱/地址' }} <span class="required">*</span></label>
         <input v-model.trim="form.companyNameAddress" type="text" placeholder="例：OO股份有限公司 / 台北市OO區OO路OO號O樓" />
       </div>
 
@@ -65,8 +65,14 @@
         <input v-model.trim="form.factoryInfo" type="text" placeholder="台灣廠商需另外標示，例：OO化工廠 / 桃園市OO路OO號" />
       </div>
 
+      <div class="field">
+        <label>有效期間 <span class="required">*</span></label>
+        <input v-model.trim="form.expiryPeriod" type="text" placeholder="例：三年" />
+        <p class="hint">保存期限的長度說明，依規定需以文字明確標示，不能用「標示於包裝」代替。</p>
+      </div>
+
       <div class="field date-block">
-        <label>批號／製造日期／有效期間／保存期限 <span class="required">*</span></label>
+        <label>批號／製造日期／保存期限 <span class="required">*</span></label>
         <label class="checkbox-line">
           <input type="checkbox" v-model="form.batchDatesOnPackaging" />
           如包裝所示（批號與日期已標示於產品本體或外包裝上，不另外填寫）
@@ -77,22 +83,17 @@
             <label class="date-label">批號</label>
             <input v-model.trim="form.batchNo" type="text" placeholder="例：B20260924" />
           </div>
-          <p class="hint">製造日期／有效期間／保存期限三選二，且欄位名稱須與下方完全一致，本工具已自動套用正確名稱。</p>
-          <div class="date-grid">
+          <div class="date-grid two-col">
             <div class="date-item">
-              <label class="date-label">製造日期</label>
+              <label class="date-label">製造日期 <span class="required">*</span></label>
               <input v-model.trim="form.mfgDate" type="text" placeholder="日/月/年，例：24/09/2026" />
             </div>
             <div class="date-item">
-              <label class="date-label">有效期間</label>
-              <input v-model.trim="form.expiryPeriod" type="text" placeholder="例：三年" />
-            </div>
-            <div class="date-item">
-              <label class="date-label">保存期限</label>
+              <label class="date-label">保存期限（選填）</label>
               <input v-model.trim="form.expiryDate" type="text" placeholder="日/月/年，例：24/09/2029" />
             </div>
           </div>
-          <p v-if="!dateRuleOk" class="warning-text">⚠ 三項需至少填寫兩項</p>
+          <p class="hint">保存期限為選填，若已填寫「有效期間」則本項可留空；製造日期為必填。</p>
         </template>
       </div>
 
@@ -141,7 +142,7 @@
         <p class="hint">這裡的比對只是參考，正式送審前建議另外使用「AI廣告檢核」做完整檢查。</p>
       </div>
 
-      <template v-if="!missingFields.length && dateRuleOk">
+      <template v-if="!missingFields.length">
         <div class="label-preview">
           <h3>標籤內容預覽</h3>
           <pre>{{ labelText }}</pre>
@@ -221,12 +222,6 @@ async function loadForbiddenWords() {
 }
 loadForbiddenWords()
 
-const dateRuleOk = computed(() => {
-  if (form.batchDatesOnPackaging) return true
-  const filled = [form.mfgDate, form.expiryPeriod, form.expiryDate].filter(Boolean).length
-  return filled >= 2
-})
-
 const missingFields = computed(() => {
   const missing = []
   const need = [
@@ -236,15 +231,19 @@ const missingFields = computed(() => {
     ['storage', '保存方法'],
     ['volumeValue', '容量或淨重'],
     ['origin', '原產地'],
-    ['companyNameAddress', '製造或輸入業者名稱/地址'],
+    ['companyNameAddress', '製造業者／輸入業者名稱地址'],
     ['companyPhone', '客服電話'],
+    ['expiryPeriod', '有效期間'],
     ['precautions', '注意事項'],
   ]
   for (const [key, label] of need) {
     if (!form[key]) missing.push(label)
   }
   if (!form.ingredientsOnPackaging && !form.ingredients) missing.push('全成分')
-  if (!form.batchDatesOnPackaging && !form.batchNo) missing.push('批號')
+  if (!form.batchDatesOnPackaging) {
+    if (!form.batchNo) missing.push('批號')
+    if (!form.mfgDate) missing.push('製造日期')
+  }
   if (form.manufacturerType === 'domestic') {
     if (!form.factoryInfo) missing.push('製造工廠（名稱/地址）')
   }
@@ -276,19 +275,20 @@ const labelText = computed(() => {
   lines.push(`使用方法：${form.usage}`)
   lines.push(`原產地：${form.origin}`)
 
-  const roleLabel = form.manufacturerType === 'imported' ? '輸入業者名稱地址' : '製造或輸入業者名稱地址'
+  const roleLabel = form.manufacturerType === 'imported' ? '輸入業者名稱地址' : '製造業者名稱地址'
   lines.push(`${roleLabel}：${form.companyNameAddress}`)
   if (form.manufacturerType === 'domestic' && form.factoryInfo) {
     lines.push(`製造工廠名稱地址：${form.factoryInfo}`)
   }
   lines.push(`客服電話：${form.companyPhone}`)
 
+  // 有效期間永遠以文字明確標示，不受「如包裝所示」影響
+  lines.push(`有效期間：${form.expiryPeriod}`)
+
   if (form.batchDatesOnPackaging) {
-    lines.push(`批號及製造、保存期限：標示於包裝或產品${sp}保存方法：${form.storage}`)
+    lines.push(`批號及製造日期、保存期限：標示於包裝或產品${sp}保存方法：${form.storage}`)
   } else {
-    const dateParts = []
-    if (form.mfgDate) dateParts.push(`製造日期：${form.mfgDate}`)
-    if (form.expiryPeriod) dateParts.push(`有效期間：${form.expiryPeriod}`)
+    const dateParts = [`製造日期：${form.mfgDate}`]
     if (form.expiryDate) dateParts.push(`保存期限：${form.expiryDate}`)
     lines.push(`批號：${form.batchNo}${sp}${dateParts.join(sp)}${sp}保存方法：${form.storage}`)
   }
@@ -423,6 +423,9 @@ textarea {
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
   margin-top: 0.5rem;
+}
+.date-grid.two-col {
+  grid-template-columns: repeat(2, 1fr);
 }
 .date-label {
   font-size: 0.85rem;
