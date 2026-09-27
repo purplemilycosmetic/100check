@@ -33,8 +33,29 @@
       />
     </section>
 
+    <section class="category-section">
+      <button
+        class="category-chip"
+        :class="{ active: selectedCategory === null }"
+        @click="selectedCategory = null"
+      >
+        全部（{{ items.length }}）
+      </button>
+      <button
+        v-for="cat in categoryList"
+        :key="cat.name"
+        class="category-chip"
+        :class="{ active: selectedCategory === cat.name }"
+        @click="selectedCategory = selectedCategory === cat.name ? null : cat.name"
+      >
+        {{ cat.name }}（{{ cat.count }}）
+      </button>
+    </section>
+
     <section class="result-section">
-      <p class="result-count">共 {{ filtered.length }} 筆成分{{ query ? '（搜尋結果）' : '' }}</p>
+      <p class="result-count">
+        共 {{ filtered.length }} 筆成分{{ query ? '（搜尋結果）' : '' }}{{ selectedCategory ? `・分類：${selectedCategory}` : '' }}
+      </p>
 
       <div v-if="query && filtered.length === 0" class="generate-block">
         <p>查無「{{ query }}」，字典裡還沒有這個成分。</p>
@@ -96,6 +117,7 @@ useHead({
 })
 
 const query = ref('')
+const selectedCategory = ref(null)
 const items = ref([])
 const loadError = ref('')
 const generating = ref(false)
@@ -127,14 +149,31 @@ const legendRows = [
   { level: 1, text: '具明確爭議、限制或需特別留意的成分，建議謹慎評估' },
 ]
 
+const categoryList = computed(() => {
+  const counts = {}
+  for (const item of items.value) {
+    if (!item.category) continue
+    counts[item.category] = (counts[item.category] || 0) + 1
+  }
+  return Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, count]) => ({ name, count }))
+})
+
 const filtered = computed(() => {
-  if (!query.value) return items.value
-  const q = query.value.toLowerCase()
-  return items.value.filter(
-    (item) =>
-      (item.name_zh && item.name_zh.includes(query.value)) ||
-      (item.name_en && item.name_en.toLowerCase().includes(q))
-  )
+  let list = items.value
+  if (selectedCategory.value) {
+    list = list.filter((item) => item.category === selectedCategory.value)
+  }
+  if (query.value) {
+    const q = query.value.toLowerCase()
+    list = list.filter(
+      (item) =>
+        (item.name_zh && item.name_zh.includes(query.value)) ||
+        (item.name_en && item.name_en.toLowerCase().includes(q))
+    )
+  }
+  return list
 })
 
 async function generateNew() {
@@ -243,6 +282,31 @@ async function generateNew() {
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
+}
+.category-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.category-chip {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  color: #666;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.category-chip:hover {
+  border-color: #ff5733;
+  color: #ff5733;
+}
+.category-chip.active {
+  background: #ff5733;
+  border-color: #ff5733;
+  color: #fff;
 }
 .result-count {
   color: #666;
