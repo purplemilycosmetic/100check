@@ -11,6 +11,19 @@
       請自行查閱驗證或諮詢專業人員。
     </div>
 
+    <div class="rating-legend">
+      <h3>⭐ 成分安心度說明</h3>
+      <p class="legend-note">
+        以下星級是 AI 綜合成分的安全性數據、致敏機率與爭議程度所給的參考等級，<strong>非官方分級，僅供初步參考</strong>。
+      </p>
+      <ul>
+        <li v-for="row in legendRows" :key="row.level">
+          <span class="stars">{{ starString(row.level) }}</span>
+          <span class="legend-text">{{ row.text }}</span>
+        </li>
+      </ul>
+    </div>
+
     <section class="search-section">
       <input
         v-model.trim="query"
@@ -23,6 +36,14 @@
     <section class="result-section">
       <p class="result-count">共 {{ filtered.length }} 筆成分{{ query ? '（搜尋結果）' : '' }}</p>
 
+      <div v-if="query && filtered.length === 0" class="generate-block">
+        <p>查無「{{ query }}」，字典裡還沒有這個成分。</p>
+        <button class="generate-btn" :disabled="generating" @click="generateNew">
+          {{ generating ? 'AI 生成中...（約需 5-10 秒）' : '讓 AI 幫你生成介紹' }}
+        </button>
+        <p v-if="generateError" class="error-text">⚠ {{ generateError }}</p>
+      </div>
+
       <div v-if="loadError" class="error-text">⚠ 載入失敗：{{ loadError }}</div>
 
       <div v-for="item in filtered" :key="item.id" class="ing-card">
@@ -31,7 +52,12 @@
             <span class="ing-name-zh">{{ item.name_zh }}</span>
             <span class="ing-name-en">{{ item.name_en }}</span>
           </div>
-          <span class="ing-category">{{ item.category }}</span>
+          <div class="ing-header-right">
+            <span v-if="item.safety_rating" class="safety-stars" :title="`安心度 ${item.safety_rating}/5`">
+              {{ starString(item.safety_rating) }}
+            </span>
+            <span class="ing-category">{{ item.category }}</span>
+          </div>
         </div>
         <p class="ing-summary">{{ item.summary }}</p>
 
@@ -72,6 +98,8 @@ useHead({
 const query = ref('')
 const items = ref([])
 const loadError = ref('')
+const generating = ref(false)
+const generateError = ref('')
 
 onMounted(async () => {
   try {
@@ -86,6 +114,19 @@ onMounted(async () => {
   }
 })
 
+function starString(n) {
+  const level = Math.max(0, Math.min(5, Number(n) || 0))
+  return '★'.repeat(level) + '☆'.repeat(5 - level)
+}
+
+const legendRows = [
+  { level: 5, text: '安全性高、致敏性極低，長期廣泛使用且安全性數據充分' },
+  { level: 4, text: '安全性良好，多數人耐受度佳，僅極少數敏感狀況' },
+  { level: 3, text: '具一定活性效果，可能有初期反應，建議先建立耐受度使用' },
+  { level: 2, text: '效果較強的活性成分，刺激性較明顯，需注意使用方式與濃度' },
+  { level: 1, text: '具明確爭議、限制或需特別留意的成分，建議謹慎評估' },
+]
+
 const filtered = computed(() => {
   if (!query.value) return items.value
   const q = query.value.toLowerCase()
@@ -95,6 +136,25 @@ const filtered = computed(() => {
       (item.name_en && item.name_en.toLowerCase().includes(q))
   )
 })
+
+async function generateNew() {
+  generating.value = true
+  generateError.value = ''
+  try {
+    const res = await fetch('/api/ingredient-lookup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ term: query.value }),
+    })
+    const data = await res.json()
+    if (!res.ok) throw new Error(data.error || '生成失敗')
+    items.value.unshift({ ...data.item, expanded: true })
+  } catch (err) {
+    generateError.value = err.message
+  } finally {
+    generating.value = false
+  }
+}
 </script>
 
 <style scoped>
@@ -125,6 +185,54 @@ const filtered = computed(() => {
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
+.rating-legend {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.rating-legend h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: #333;
+}
+.legend-note {
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0 0 0.6rem;
+}
+.rating-legend ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.rating-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+.rating-legend .stars {
+  color: #ff9800;
+  letter-spacing: 1px;
+  min-width: 5.5rem;
+  flex-shrink: 0;
+}
+.ing-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.safety-stars {
+  color: #ff9800;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
 .search-section {
   margin-bottom: 1.5rem;
 }
@@ -140,6 +248,31 @@ const filtered = computed(() => {
   color: #666;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+}
+.generate-block {
+  background: #fafafa;
+  border: 1px dashed #ddd;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.generate-block p {
+  margin: 0 0 0.75rem;
+  color: #666;
+}
+.generate-btn {
+  padding: 0.6rem 1.5rem;
+  background: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.generate-btn:disabled {
+  background: #ffb499;
+  cursor: not-allowed;
 }
 .error-text {
   color: #d84315;
