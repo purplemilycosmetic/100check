@@ -39,9 +39,9 @@
       <p v-if="loadError" class="error-text">⚠ 查詢失敗：{{ loadError }}</p>
 
       <template v-else>
-        <p class="result-count">共找到 {{ results.length }} 筆相關資料</p>
+        <p class="result-count">共找到 {{ results.length }} 筆精確符合資料</p>
 
-        <div v-if="results.length === 0" class="empty-hint">
+        <div v-if="results.length === 0 && partialResults.length === 0" class="empty-hint">
           查無資料，可能代表此成分不在食藥署公告的禁用／限用清單中，但仍建議另外查閱 PIF 安全評估相關文獻確認。
         </div>
 
@@ -71,6 +71,29 @@
             </template>
           </dl>
         </div>
+
+        <details v-if="partialResults.length > 0" class="partial-block">
+          <summary>另有 {{ partialResults.length }} 筆「相似詞」，非精確符合，僅供參考（點開查看）</summary>
+          <p class="hint partial-warning">
+            以下資料是成分名稱裡「剛好包含」你輸入的字，不代表就是同一個成分——例如查「Water」可能會連到「Water-soluble
+            zinc salts...」這種完全不同的物質，或是一段落落長的限制條文裡剛好提到你查的字（甚至條文本身可能寫的是「不在此限」）。
+            請務必完整讀過內容再判斷，不要只看到成分名出現就當作真的違規。
+          </p>
+          <div v-for="item in partialResults" :key="item.id" class="result-card info">
+            <div class="result-header">
+              <span class="category-badge info">{{ item.category }}（相似詞）</span>
+              <span class="result-name">{{ item.name || item.inci_name || '（未載明名稱）' }}</span>
+            </div>
+            <dl class="result-detail">
+              <template v-if="item.inci_name"><dt>INCI 名稱</dt><dd>{{ item.inci_name }}</dd></template>
+              <template v-if="item.cas_no"><dt>CAS 號碼</dt><dd>{{ item.cas_no }}</dd></template>
+              <template v-if="item.scope"><dt>使用範圍</dt><dd>{{ item.scope }}</dd></template>
+              <template v-if="item.limit_standard"><dt>限量標準</dt><dd>{{ item.limit_standard }}</dd></template>
+              <template v-if="item.restriction"><dt>限制規定</dt><dd>{{ item.restriction }}</dd></template>
+              <template v-if="item.notes"><dt>備註</dt><dd>{{ item.notes }}</dd></template>
+            </dl>
+          </div>
+        </details>
       </template>
     </section>
 
@@ -82,6 +105,7 @@
           共 {{ batchResults.length }} 項成分：
           <span class="summary-danger">{{ bannedCount }} 項禁止使用</span>、
           <span class="summary-warning">{{ restrictedCount }} 項限制使用</span>、
+          <span class="summary-info">{{ similarCount }} 項有相似詞待確認</span>、
           <span class="summary-clear">{{ clearCount }} 項未查到</span>
         </p>
 
@@ -90,8 +114,8 @@
             <span class="batch-term">{{ row.term }}</span>
             <span class="batch-status" :class="rowClass(row)">{{ statusLabel(row) }}</span>
           </div>
-          <div v-if="row.matches.length && row.expanded" class="batch-detail">
-            <div v-for="item in row.matches" :key="item.id" class="result-card" :class="cardClass(item.category)">
+          <div v-if="(row.exact.length || row.partial.length) && row.expanded" class="batch-detail">
+            <div v-for="item in row.exact" :key="item.id" class="result-card" :class="cardClass(item.category)">
               <div class="result-header">
                 <span class="category-badge" :class="cardClass(item.category)">{{ item.category }}</span>
                 <span class="result-name">{{ item.name || item.inci_name || '（未載明名稱）' }}</span>
@@ -105,6 +129,26 @@
                 <template v-if="item.notes"><dt>備註</dt><dd>{{ item.notes }}</dd></template>
               </dl>
             </div>
+
+            <template v-if="row.partial.length">
+              <p class="hint partial-warning">
+                以下是「相似詞」，成分名稱裡剛好包含這個字，不代表就是同一個成分，請完整讀過內容再判斷：
+              </p>
+              <div v-for="item in row.partial" :key="item.id" class="result-card info">
+                <div class="result-header">
+                  <span class="category-badge info">{{ item.category }}（相似詞）</span>
+                  <span class="result-name">{{ item.name || item.inci_name || '（未載明名稱）' }}</span>
+                </div>
+                <dl class="result-detail">
+                  <template v-if="item.inci_name"><dt>INCI 名稱</dt><dd>{{ item.inci_name }}</dd></template>
+                  <template v-if="item.cas_no"><dt>CAS 號碼</dt><dd>{{ item.cas_no }}</dd></template>
+                  <template v-if="item.scope"><dt>使用範圍</dt><dd>{{ item.scope }}</dd></template>
+                  <template v-if="item.limit_standard"><dt>限量標準</dt><dd>{{ item.limit_standard }}</dd></template>
+                  <template v-if="item.restriction"><dt>限制規定</dt><dd>{{ item.restriction }}</dd></template>
+                  <template v-if="item.notes"><dt>備註</dt><dd>{{ item.notes }}</dd></template>
+                </dl>
+              </div>
+            </template>
           </div>
         </div>
 
@@ -138,6 +182,7 @@ const mode = ref('single')
 // ── 單筆查詢 ──
 const query = ref('')
 const results = ref([])
+const partialResults = ref([])
 const loading = ref(false)
 const searched = ref(false)
 const loadError = ref('')
@@ -146,16 +191,32 @@ function cardClass(category) {
   return category === '禁止使用成分' ? 'danger' : 'warning'
 }
 
+// 判斷一筆資料是否為「精確符合」：成分名或 INCI 名整個字串完全等於輸入詞（不分大小寫），
+// 或 CAS 號碼完全相同。只有精確符合才代表這筆資料真的就是在講這個成分本身；
+// 反之，字串裡「剛好包含」輸入詞的（例如 Water 出現在 "Water-soluble zinc salts..." 或
+// "...cherry laurel water" 這種完全不同的成分名稱裡），只能算「相似詞」，不能直接當作命中。
+function isExactMatch(item, term) {
+  const t = term.trim().toLowerCase()
+  const name = (item.name || '').trim().toLowerCase()
+  const inci = (item.inci_name || '').trim().toLowerCase()
+  const cas = (item.cas_no || '').trim().toLowerCase()
+  return name === t || inci === t || cas === t
+}
+
 async function queryIngredient(term) {
   const q = `%${term}%`
+  // CAS 號碼不做模糊比對（號碼相似不代表是同一物質），只比對成分名／INCI名
   const { data, error } = await supabase
     .from('restricted_ingredients')
     .select('*')
-    .or(`name.ilike.${q},inci_name.ilike.${q},cas_no.ilike.${q}`)
+    .or(`name.ilike.${q},inci_name.ilike.${q},cas_no.eq.${term}`)
     .order('category', { ascending: true })
     .limit(200)
   if (error) throw error
-  return data || []
+  const all = data || []
+  const exact = all.filter((item) => isExactMatch(item, term))
+  const partial = all.filter((item) => !isExactMatch(item, term))
+  return { exact, partial }
 }
 
 async function search() {
@@ -164,10 +225,13 @@ async function search() {
   searched.value = true
   loadError.value = ''
   try {
-    results.value = await queryIngredient(query.value)
+    const { exact, partial } = await queryIngredient(query.value)
+    results.value = exact
+    partialResults.value = partial
   } catch (err) {
     loadError.value = err.message
     results.value = []
+    partialResults.value = []
   } finally {
     loading.value = false
   }
@@ -202,8 +266,8 @@ async function runBatch() {
 
   try {
     for (const term of terms) {
-      const matches = await queryIngredient(term)
-      rows.push({ term, matches, expanded: false })
+      const { exact, partial } = await queryIngredient(term)
+      rows.push({ term, exact, partial, expanded: false })
       batchProgress.value++
     }
     batchResults.value = rows
@@ -214,20 +278,25 @@ async function runBatch() {
   }
 }
 
+// 狀態判定「只看精確符合」：精確符合才會標成禁止使用／限制使用，
+// 光是有相似詞出現，只會標成中性的「有相似詞」，不會誤判成真的違規。
 function rowClass(row) {
-  if (row.matches.some((m) => m.category === '禁止使用成分')) return 'danger'
-  if (row.matches.length > 0) return 'warning'
+  if (row.exact.some((m) => m.category === '禁止使用成分')) return 'danger'
+  if (row.exact.length > 0) return 'warning'
+  if (row.partial.length > 0) return 'info'
   return 'clear'
 }
 
 function statusLabel(row) {
-  if (row.matches.some((m) => m.category === '禁止使用成分')) return '🚫 禁止使用'
-  if (row.matches.length > 0) return `⚠ 限制使用（${row.matches.length}）`
+  if (row.exact.some((m) => m.category === '禁止使用成分')) return '🚫 禁止使用'
+  if (row.exact.length > 0) return `⚠ 限制使用（${row.exact.length}）`
+  if (row.partial.length > 0) return `🔍 有相似詞（${row.partial.length}），建議人工確認`
   return '✓ 未查到'
 }
 
 const bannedCount = computed(() => batchResults.value.filter((r) => rowClass(r) === 'danger').length)
 const restrictedCount = computed(() => batchResults.value.filter((r) => rowClass(r) === 'warning').length)
+const similarCount = computed(() => batchResults.value.filter((r) => rowClass(r) === 'info').length)
 const clearCount = computed(() => batchResults.value.filter((r) => rowClass(r) === 'clear').length)
 </script>
 
@@ -294,9 +363,45 @@ const clearCount = computed(() => batchResults.value.filter((r) => rowClass(r) =
   color: #e65100;
   font-weight: 600;
 }
+.summary-info {
+  color: #1565c0;
+  font-weight: 600;
+}
 .summary-clear {
   color: #2e7d32;
   font-weight: 600;
+}
+.result-card.info {
+  border-left-color: #90caf9;
+  background: #f5f9ff;
+}
+.category-badge.info {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+.batch-row.info {
+  border-left-color: #90caf9;
+}
+.batch-status.info {
+  color: #1565c0;
+}
+.partial-block {
+  margin-top: 1.25rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+.partial-block summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #1565c0;
+}
+.partial-warning {
+  background: #fffde7;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  margin: 0.75rem 0;
+  color: #7d6608;
 }
 .batch-row {
   border: 1px solid #eee;
