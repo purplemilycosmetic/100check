@@ -10288,5 +10288,575 @@
   "limit_standard": null,
   "restriction": null,
   "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Alkyl (C12-22) trimethyl ammonium bromide and chloride",
+  "inci_name": "Behentrimonium chloride/Cetrimonium bromide/Cetrimonium chloride/Laurtrimonium bromide/Laurtrimonium chloride/Steartrimonium bromide/Steartrimonium chloride",
+  "cas_no": "17301-53-0 / 57-09-0 / 112-02-7 / 1119-94-4 / 112-00-5 / 1120-02-1 / 112-03-8",
+  "scope": null,
+  "limit_standard": "0.1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Benzalkonium chloride, bromide and saccharinate",
+  "inci_name": "Benzalkonium chloride/Benzalkonium bromide/Benzalkonium saccharinate",
+  "cas_no": "8001-54-5 等",
+  "scope": null,
+  "limit_standard": "0.1%（以benzalkonium chloride計）",
+  "restriction": null,
+  "notes": "使用時避免接觸眼睛。"
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Benzenemethanaminium...chloride",
+  "inci_name": "Benzethonium chloride",
+  "cas_no": "121-54-0",
+  "scope": "(a)立即沖洗產品 (b)非立即沖洗產品（口腔製劑除外）",
+  "limit_standard": "0.1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Salts of benzoic acid and esters of benzoic acid",
+  "inci_name": "Ammonium benzoate/Butyl benzoate/Calcium benzoate/Ethyl benzoate等",
+  "cas_no": "1863-63-4 等",
+  "scope": null,
+  "limit_standard": "0.5%（以acid計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Benzoic acid and its sodium salt",
+  "inci_name": "Benzoic acid/Sodium benzoate",
+  "cas_no": "65-85-0 / 532-32-1",
+  "scope": "(a)立即沖洗產品(口腔製劑除外) (b)非立即沖洗產品 (c)口腔製劑",
+  "limit_standard": "(a)2.5% (b)0.5% (c)1.7%（皆以acid計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Benzyl alcohol",
+  "inci_name": "Benzyl alcohol",
+  "cas_no": "100-51-6",
+  "scope": null,
+  "limit_standard": "1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "2-Benzyl-4-chlorophenol",
+  "inci_name": "Chlorophene",
+  "cas_no": "120-32-1",
+  "scope": null,
+  "limit_standard": "0.2%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Tosylchloramide sodium",
+  "inci_name": "Chloramine T",
+  "cas_no": "127-65-1",
+  "scope": null,
+  "limit_standard": "0.2%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "N,N'-bis(4-chlorophenyl)...diamidine",
+  "inci_name": "Chlorhexidine/Chlorhexidine digluconate/Chlorhexidine dihydrochloride/Chlorhexidine diacetate",
+  "cas_no": "55-56-1 等",
+  "scope": null,
+  "limit_standard": "0.3%（以chlorhexidine計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Chlorobutanol",
+  "inci_name": "Chlorobutanol",
+  "cas_no": "57-15-8",
+  "scope": null,
+  "limit_standard": "0.5%",
+  "restriction": "不得使用於噴霧類產品。",
+  "notes": "含Chlorobutanol"
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Chlorocresol",
+  "inci_name": "p-Chloro-m-cresol",
+  "cas_no": "59-50-7",
+  "scope": null,
+  "limit_standard": "0.2%",
+  "restriction": "不得使用於接觸黏膜部位產品。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Chloroxylenol",
+  "inci_name": "Chloroxylenol",
+  "cas_no": "88-04-0 / 1321-23-9",
+  "scope": null,
+  "limit_standard": "0.5%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Citric acid (and) Silver citrate",
+  "inci_name": "Citric acid (and) Silver citrate",
+  "cas_no": "-",
+  "scope": null,
+  "limit_standard": "0.2%（相當於silver 0.0024%）",
+  "restriction": "不得使用於口腔與眼部產品。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "1-(4-Chlorophenoxy)-1-(imidazol-1-yl)-3,3-dimethylbutan-2-one",
+  "inci_name": "Climbazole",
+  "cas_no": "38083-17-9",
+  "scope": null,
+  "limit_standard": "0.5%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "3-Acetyl-6-methylpyran-2,4(3H)-dione and its salts",
+  "inci_name": "Dehydroacetic acid/Sodium dehydroacetate",
+  "cas_no": "520-45-6 等",
+  "scope": null,
+  "limit_standard": "0.6%（以acid計）",
+  "restriction": "不得使用於噴霧類產品。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "4,4-Dimethyl-1,3-oxazolidine",
+  "inci_name": "Dimethyl oxazolidine",
+  "cas_no": "51200-87-4",
+  "scope": null,
+  "limit_standard": "0.1%",
+  "restriction": "pH>6",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "2,2'-Methylenebis(6-bromo-4-chlorophenol)",
+  "inci_name": "Bromochlorophene",
+  "cas_no": "15435-29-7",
+  "scope": null,
+  "limit_standard": "0.1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "3,3'-Dibromo-4,4'-hexamethylene dioxydibenzamidine and its salts",
+  "inci_name": "Dibromohexamidine isethionate",
+  "cas_no": "93856-83-8",
+  "scope": null,
+  "limit_standard": "0.1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "2,4-Dichlorobenzyl alcohol",
+  "inci_name": "Dichlorobenzyl alcohol",
+  "cas_no": "1777-82-8",
+  "scope": null,
+  "limit_standard": "0.15%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Ethyl-N-alpha-dodecanoyl-L-arginate hydrochloride",
+  "inci_name": "Ethyl lauroyl arginate HCl",
+  "cas_no": "60372-77-2",
+  "scope": "(a)漱口水產品 (b)其他產品",
+  "limit_standard": "(a)0.15% (b)0.4%",
+  "restriction": "(a)不得使用於10歲以下孩童之產品 (b)不得使用於唇部、口腔（漱口水除外）及噴霧類產品",
+  "notes": "不得使用於10歲以下孩童。"
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "5-Ethyl-3,7-dioxa-1-azabicyclo[3.3.0]octane",
+  "inci_name": "7-Ethylbicyclooxazolidine",
+  "cas_no": "7747-35-5",
+  "scope": null,
+  "limit_standard": "0.3%",
+  "restriction": "不得使用於口腔及接觸黏膜部位產品。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Formic acid and its sodium salt",
+  "inci_name": "Formic acid/Sodium formate",
+  "cas_no": "64-18-6 / 141-53-7",
+  "scope": null,
+  "limit_standard": "0.5%（以acid計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Glutaraldehyde (Pentane-1,5-dial)",
+  "inci_name": "Glutaral",
+  "cas_no": "111-30-8",
+  "scope": null,
+  "limit_standard": "0.1%",
+  "restriction": "不得使用於噴霧類產品。",
+  "notes": "倘含量超過0.05%時，應刊載：含Glutaral。"
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Benzenecarboximidamide...hexanediylbis",
+  "inci_name": "Hexamidine/Hexamidine diisethionate/Hexamidine paraben",
+  "cas_no": "3811-75-4 等",
+  "scope": null,
+  "limit_standard": "0.1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "5-Pyrimidinamine, 1,3-bis(2-ethylhexyl)hexahydro-5-methyl",
+  "inci_name": "Hexetidine",
+  "cas_no": "141-94-6",
+  "scope": null,
+  "limit_standard": "0.1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Inorganic sulphites and hydrogensulphites",
+  "inci_name": "Sodium sulfite/Sodium bisulfite/Sodium metabisulfite/Potassium sulfite等",
+  "cas_no": "7757-83-7 等",
+  "scope": null,
+  "limit_standard": "0.2%（以free SO2計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "3-Iodo-2-propynylbutylcarbamate",
+  "inci_name": "Iodopropynyl butylcarbamate",
+  "cas_no": "55406-53-6",
+  "scope": "(a)立即沖洗產品 (b)非立即沖洗產品 (c)止汗劑及制臭劑",
+  "limit_standard": "(a)0.02% (b)0.01% (c)0.0075%",
+  "restriction": "(a)不得使用於三歲以下孩童之產品（沐浴和洗髮產品除外） (b)不得使用於身體乳液和身體乳霜產品 (b)&(c)不得使用於三歲以下孩童之產品",
+  "notes": "不得使用於三歲以下孩童。（沐浴和洗髮產品得免刊載該注意事項）"
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "4-Isopropyl-m-cresol",
+  "inci_name": "o-Cymen-5-ol",
+  "cas_no": "3228-02-2",
+  "scope": null,
+  "limit_standard": "0.1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "2-Methyl-2H-isothiazol-3-one",
+  "inci_name": "Methylisothiazolinone",
+  "cas_no": "2682-20-4",
+  "scope": "立即沖洗產品",
+  "limit_standard": "0.0015%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Mixture of 5-Chloro-2-methyl-isothiazol-3(2H)-one and 2-Methylisothiazol-3(2H)-one",
+  "inci_name": "Methylchloroisothiazolinone and Methylisothiazolinone",
+  "cas_no": "55965-84-9, 26172-55-4, 2682-20-4",
+  "scope": "立即沖洗產品",
+  "limit_standard": "0.0015%",
+  "restriction": "5-Chloro-2-methyl-isothiazol-3(2H)-one及2-Methylisothiazol-3(2H)-one混合比例為3：1",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Biphenyl-2-ol, and its salts",
+  "inci_name": "o-Phenylphenol/Sodium o-phenylphenate/MEA o-phenylphenate/Potassium o-phenylphenate",
+  "cas_no": "90-43-7 等",
+  "scope": null,
+  "limit_standard": "0.2%（以phenol計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Butyl 4-hydroxybenzoate and its salts / Propyl 4-hydroxybenzoate and its salts",
+  "inci_name": "Butylparaben/Propylparaben/Sodium propylparaben/Sodium butylparaben/Potassium butylparaben/Potassium propylparaben",
+  "cas_no": "94-26-8 等",
+  "scope": null,
+  "limit_standard": "(a)0.14%（總量，以acid計） (b)0.8%（與編號33混合使用，butylparaben及propylparaben及其鹽類各不得超過0.14%）",
+  "restriction": "不得使用於三歲以下孩童使用於尿布部位之非立即沖洗之產品。",
+  "notes": "不得使用於三歲以下孩童之尿布部位。（立即沖洗產品得免刊載該注意事項）"
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "4-Hydroxybenzoic acid and its Methyl- and Ethyl- esters, and their salts",
+  "inci_name": "Methylparaben/Ethylparaben/4-Hydroxybenzoic acid/Potassium ethylparaben/Potassium paraben/Sodium methylparaben/Sodium ethylparaben/Sodium paraben/Potassium methylparaben/Calcium paraben",
+  "cas_no": "99-76-3 等",
+  "scope": null,
+  "limit_standard": "(a)0.4%（單獨使用，以acid計） (b)0.8%（混合使用，以acid計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "3-(p-chlorophenoxy)-propane-1,2-diol",
+  "inci_name": "Chlorphenesin",
+  "cas_no": "104-29-0",
+  "scope": null,
+  "limit_standard": "0.3%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "2-Phenoxyethanol",
+  "inci_name": "Phenoxyethanol",
+  "cas_no": "122-99-6",
+  "scope": null,
+  "limit_standard": "1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "1-Phenoxypropan-2-ol",
+  "inci_name": "Phenoxyisopropanol",
+  "cas_no": "770-35-4",
+  "scope": "立即沖洗產品",
+  "limit_standard": "1%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Phenylmercuric salts (including borate)",
+  "inci_name": "Phenyl mercuric acetate/Phenyl mercuric benzoate",
+  "cas_no": "62-38-4 / 94-43-9",
+  "scope": "眼部化粧品",
+  "limit_standard": "0.007%（以Hg計）",
+  "restriction": "倘混合使用其他我國準用之汞化合物，其汞總殘留量為0.007%。",
+  "notes": "含Phenylmercuric compounds。"
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "1-Hydroxy-4-methyl-6-(2,4,4-trimethylpentyl)-2-pyridon and its monoethanolamine salt",
+  "inci_name": "1-Hydroxy-4-methyl-6-(2,4,4-trimethylpentyl)-2-pyridon/Piroctone olamine",
+  "cas_no": "50650-76-5 / 68890-66-4",
+  "scope": "(a)立即沖洗產品 (b)其他產品",
+  "limit_standard": "(a)1% (b)0.5%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Poly(methylene)...biguanide",
+  "inci_name": "Polyaminopropyl biguanide",
+  "cas_no": "32289-58-0 等",
+  "scope": null,
+  "limit_standard": "0.3%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Propionic acid and its salts",
+  "inci_name": "Propionic acid/Sodium propionate/Ammonium propionate/Calcium propionate/Magnesium propionate/Potassium propionate",
+  "cas_no": "79-09-4 等",
+  "scope": null,
+  "limit_standard": "2%（以acid計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Salicylic acid and its salts",
+  "inci_name": "Salicylic acid/Calcium salicylate/Magnesium salicylate/MEA-salicylate/Sodium salicylate/Potassium salicylate/TEA-salicylate",
+  "cas_no": "69-72-7 等",
+  "scope": null,
+  "limit_standard": "0.5%（以acid計）",
+  "restriction": "除洗髮產品外，不得使用於三歲以下孩童之產品。",
+  "notes": "不得使用於三歲以下孩童。（洗髮產品得免刊載該注意事項）"
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Silver Chloride deposited on titanium dioxide",
+  "inci_name": "Silver chloride",
+  "cas_no": "7783-90-6",
+  "scope": null,
+  "limit_standard": "0.004%（以AgCl計）",
+  "restriction": "20% AgCl (w/w) on TiO2；不得使用於三歲以下孩童之口腔、唇部及眼部產品。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Hexa-2,4-dienoic acid and its salts",
+  "inci_name": "Sorbic acid/Potassium sorbate/Calcium sorbate/Sodium sorbate",
+  "cas_no": "110-44-1 等",
+  "scope": null,
+  "limit_standard": "0.6%（以acid計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Thiomersal",
+  "inci_name": "Thimerosal",
+  "cas_no": "54-64-8",
+  "scope": "眼部化粧品",
+  "limit_standard": "0.007%（以Hg計）",
+  "restriction": "倘混合使用其他我國準用之汞化合物，其汞總殘留量為0.007%。",
+  "notes": "含Thiomersal。"
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "5-Chloro-2-(2,4-dichlorophenoxy)phenol",
+  "inci_name": "Triclosan",
+  "cas_no": "3380-34-5",
+  "scope": "(a)牙膏、洗手液、香皂/沐浴乳、制臭劑（噴霧劑型除外）、粉餅、粉底或使用人造指甲前之清潔指甲與趾甲用之指甲產品 (b)漱口水產品",
+  "limit_standard": "(a)0.3% (b)0.2%",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "1-(4-Chlorophenyl)-3-(3,4-dichlorophenyl)urea",
+  "inci_name": "Triclocarban",
+  "cas_no": "101-20-2",
+  "scope": null,
+  "limit_standard": "0.2%",
+  "restriction": "純度標準：3,3',4,4'-Tetrachloroazobenzene<1ppm；3,3',4,4'-Tetrachloroazoxybenzene<1ppm。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Undec-10-enoic acid and its salts",
+  "inci_name": "Undecylenic acid/Potassium undecylenate/Calcium undecylenate/Sodium undecylenate/MEA-undecylenate/TEA-undecylenate",
+  "cas_no": "112-38-9 等",
+  "scope": null,
+  "limit_standard": "0.2%（以acid計）",
+  "restriction": null,
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Pyrithione zinc",
+  "inci_name": "Zinc pyrithione",
+  "cas_no": "13463-41-7",
+  "scope": "(a)髮用產品 (b)其他產品（口腔製劑除外）",
+  "limit_standard": "(a)1% (b)0.5%",
+  "restriction": "限使用於立即沖洗產品",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "5-Bromo-5-nitro-1,3-dioxane",
+  "inci_name": "5-Bromo-5-nitro-1,3-dioxane",
+  "cas_no": "30007-47-7",
+  "scope": "立即沖洗產品",
+  "limit_standard": "0.1%",
+  "restriction": "避免形成Nitrosamines；化粧品中使用此類成分作為防腐劑時，其總釋出之Free Formaldehyde量，不得超過1,000ppm。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Bronopol",
+  "inci_name": "2-Bromo-2-nitropropane-1,3-diol",
+  "cas_no": "52-51-7",
+  "scope": null,
+  "limit_standard": "0.1%",
+  "restriction": "避免形成Nitrosamines；化粧品中使用此類成分作為防腐劑時，其總釋出之Free Formaldehyde量，不得超過1,000ppm。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Methanol, (phenylmethoxy-)",
+  "inci_name": "Benzylhemiformal",
+  "cas_no": "14548-60-8",
+  "scope": "立即沖洗產品",
+  "limit_standard": "0.15%",
+  "restriction": "化粧品中使用此類成分作為防腐劑時，其總釋出之Free Formaldehyde量，不得超過1,000ppm。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "1,3-Bis(hydroxymethyl)-5,5-dimethylimidazolidine-2,4-dione",
+  "inci_name": "DMDM hydantoin",
+  "cas_no": "6440-58-0",
+  "scope": null,
+  "limit_standard": "0.6%",
+  "restriction": "化粧品中使用此類成分作為防腐劑時，其總釋出之Free Formaldehyde量，不得超過1,000ppm。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "N-(Hydroxymethyl)-N-(dihydroxymethyl-1,3-dioxo-2,5-imidazolidinyl-4)-N'-(hydroxymethyl)urea",
+  "inci_name": "Diazolidinyl urea",
+  "cas_no": "78491-02-8",
+  "scope": null,
+  "limit_standard": "0.5%",
+  "restriction": "化粧品中使用此類成分作為防腐劑時，其總釋出之Free Formaldehyde量，不得超過1,000ppm。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "N,N''-Methylenebis[N'-[3-(hydroxymethyl)-2,5-dioxoimidazolidin-4-yl]urea]",
+  "inci_name": "Imidazolidinyl urea",
+  "cas_no": "39236-46-9",
+  "scope": null,
+  "limit_standard": "0.6%",
+  "restriction": "化粧品中使用此類成分作為防腐劑時，其總釋出之Free Formaldehyde量，不得超過1,000ppm。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Methenamine",
+  "inci_name": "Methenamine",
+  "cas_no": "100-97-0",
+  "scope": null,
+  "limit_standard": "0.15%",
+  "restriction": "化粧品中使用此類成分作為防腐劑時，其總釋出之Free Formaldehyde量，不得超過1,000ppm。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Methenamine 3-chloroallylochloride",
+  "inci_name": "Quaternium-15",
+  "cas_no": "4080-31-3",
+  "scope": null,
+  "limit_standard": "0.2%",
+  "restriction": "化粧品中使用此類成分作為防腐劑時，其總釋出之Free Formaldehyde量，不得超過1,000ppm。",
+  "notes": null
+ },
+ {
+  "category": "防腐劑限制",
+  "name": "Sodium hydroxymethylamino acetate",
+  "inci_name": "Sodium hydroxymethylglycinate",
+  "cas_no": "70161-44-3",
+  "scope": null,
+  "limit_standard": "0.5%",
+  "restriction": "化粧品中使用此類成分作為防腐劑時，其總釋出之Free Formaldehyde量，不得超過1,000ppm。",
+  "notes": null
  }
 ]
