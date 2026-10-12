@@ -215,7 +215,24 @@ async function filterUnseen(items) {
   }
 
   const seenSet = new Set((seen || []).map((r) => r.source_url))
-  return items.filter((i) => !i.url || !seenSet.has(i.url))
+  let unseen = items.filter((i) => !i.url || !seenSet.has(i.url))
+
+  // 第二層：標題去重。同一則新聞常被不同媒體用不同網址轉載，
+  // 所以也比對「已處理過的標題」與「本批內部重複的標題」。
+  const { data: pastTitles } = await supabase
+    .from('source_log')
+    .select('title')
+    .order('seen_at', { ascending: false })
+    .limit(500)
+  const norm = (t) => String(t || '').replace(/\s*[-–—|｜].{0,30}$/, '').replace(/[\s\p{P}]/gu, '').toLowerCase()
+  const seenTitles = new Set((pastTitles || []).map((r) => norm(r.title)))
+  unseen = unseen.filter((i) => {
+    const k = norm(i.title)
+    if (!k || seenTitles.has(k)) return false
+    seenTitles.add(k)
+    return true
+  })
+  return unseen
 }
 
 async function markAsSeen(items) {
@@ -225,13 +242,27 @@ async function markAsSeen(items) {
   if (rows.length === 0) return
   const { error } = await supabase.from('source_log').upsert(rows, { onConflict: 'source_url' })
   if (error) console.warn('⚠️ 寫入 source_log 失敗：', error.message)
+  else console.log(`   已記錄 ${rows.length} 筆來源到 source_log`)
 }
 
 // ════════════════════════════════════════════════════════════
 // 呼叫 Gemini API（Google AI Studio，免費），把整理過的原始資料寫成一篇文章
 // 文件：https://ai.google.dev/gemini-api/docs
 // ════════════════════════════════════════════════════════════
+async function fetchRecentArticles(n = 6) {
+  const { data } = await supabase
+    .from('articles')
+    .select('title, summary')
+    .order('created_at', { ascending: false })
+    .limit(n)
+  return data || []
+}
+
 async function generateArticle(items) {
+  const recent = await fetchRecentArticles()
+  const recentText = recent.length
+    ? recent.map((a, i) => `${i + 1}. ${a.title}｜${a.summary || ''}`).join('\n')
+    : '（無）'
   const sourceText = items
     .map((i, idx) => `${idx + 1}. [${i.source_name}] ${i.title}\n   日期：${i.date}\n   連結：${i.url}\n   摘要：${i.summary || '（無）'}`)
     .join('\n\n')
@@ -250,6 +281,7 @@ async function generateArticle(items) {
 - 結尾可以加一段「本週提醒」，給品牌方實用建議
 - 內容使用 Markdown 格式（## 標題、- 條列、**粗體**等）
 - 不要編造資料中沒有的事實或數字
+- 【避免雷同】系統會附上「最近已發布的文章」。請不要重複寫相同的主題與角度；若本週資料中有與之重疊的項目，只能一句話帶過，把篇幅留給「全新的」項目。標題必須反映本週最新、最不同的重點，不可沿用近期標題的句型
 
 只回傳一個 JSON 物件，格式如下，不要有其他文字：
 {
@@ -265,6 +297,9 @@ async function generateArticle(items) {
 本週蒐集到的原始資料（共 ${items.length} 則）：
 
 ${sourceText}
+
+最近已發布的文章（請避免重複這些主題與角度）：
+${recentText}
 
 請根據以上資料撰寫本週的化妝品法規週報文章。`
 
@@ -391,6 +426,11 @@ async function main() {
 
   console.log(`📋 去除重複後剩下 ${newItems.length} 則新項目`)
 
+  const MIN_NEW_ITEMS = 3
+  if (newItems.length > 0 && newItems.length < MIN_NEW_ITEMS) {
+    console.log(`✅ 新項目僅 ${newItems.length} 則（少於 ${MIN_NEW_ITEMS}），累積到下週再一併寫，避免湊數灌水。`)
+    return
+  }
   if (newItems.length === 0) {
     console.log('✅ 本週沒有新資料，不產出文章。')
     return
