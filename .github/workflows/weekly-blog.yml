@@ -28,7 +28,7 @@ jobs:
           node-version: '22'
 
       - name: 安裝依賴套件
-        run: npm install @supabase/supabase-js fast-xml-parser
+        run: npm install @supabase/supabase-js fast-xml-parser pdfjs-dist@4.10.38
 
       - name: 執行每週監控與寫文章腳本
         env:

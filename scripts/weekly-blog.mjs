@@ -25,7 +25,7 @@
 
 import { createClient } from '@supabase/supabase-js'
 import { XMLParser } from 'fast-xml-parser'
-import { fetchAllInternationalRecalls, fetchTaipeiPenalties } from './recall-sources.mjs'
+import { fetchAllInternationalRecalls, fetchTaipeiPenalties, debug } from './recall-sources.mjs'
 
 // ─── 環境變數檢查 ───
 const {
@@ -102,10 +102,13 @@ async function fetchTFDAViolations() {
     const res = await fetch(url)
     if (!res.ok) {
       console.warn(`⚠️ TFDA 違規廣告資料集回應非 200：${res.status}`)
+    debug('TFDA裁罰', `HTTP ${res.status}`)
       return items
     }
     const data = await res.json()
     const list = Array.isArray(data) ? data : data?.Data || []
+    const dates = list.map((row) => parseROCorADDate(row['處分日期'] || row['刊播日期'] || '')).filter(Boolean).sort((a, b) => b - a)
+    debug('TFDA裁罰', `資料集共 ${list.length} 筆，可解析日期 ${dates.length} 筆，最新 ${dates[0]?.toISOString().slice(0, 10)}。欄位：${Object.keys(list[0] || {}).join('、')}`)
     const parsed = list
       .map((row) => ({ row, rowDate: parseROCorADDate(row['處分日期'] || row['刊播日期'] || '') }))
       // 保守處理：日期解析不出來的，寧可跳過也不要誤收進一大包舊資料
@@ -134,6 +137,7 @@ async function fetchTFDAViolations() {
     }
   } catch (err) {
     console.warn(`⚠️ TFDA 違規廣告資料集抓取失敗：${err.message}`)
+    debug('TFDA裁罰', `抓取失敗：${err.message}`)
   }
   return items
 }

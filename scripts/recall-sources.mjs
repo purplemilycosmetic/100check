@@ -18,7 +18,7 @@ const xml = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@_' }
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; 100check-weekly-bot; +https://www.aicheck.com.tw)' }
 
 // 國際召回資料更新頻率不一（例如歐盟是週報），抓久一點，靠 source_log 去重
-const INTL_LOOKBACK_DAYS = 21
+const INTL_LOOKBACK_DAYS = 35
 const intlCutoff = () => new Date(Date.now() - INTL_LOOKBACK_DAYS * 24 * 60 * 60 * 1000)
 
 async function getText(url, opts = {}) {
@@ -33,7 +33,15 @@ const asArray = (x) => (Array.isArray(x) ? x : x ? [x] : [])
 
 function warn(name, err) {
   console.warn(`⚠️ ${name} 抓取失敗：${err.message}`)
+  debug(name, `抓取失敗：${err.message}`)
   return []
+}
+
+// 試跑（DRY_RUN）時把除錯訊息寫成 GitHub Actions 警告註記，不用下載 log 也看得到
+export function debug(name, msg) {
+  if (process.env.DRY_RUN && process.env.GITHUB_ACTIONS) {
+    console.log(`::warning title=${name}::${String(msg).replace(/%/g, '%25').replace(/\r?\n/g, '%0A').slice(0, 900)}`)
+  }
 }
 
 // ─── 英國 OPSS（GOV.UK 官方搜尋 API，cosmetics 類別）───
@@ -67,6 +75,8 @@ export async function fetchCanada() {
     const url = 'https://recalls-rappels.canada.ca/sites/default/files/opendata-donneesouvertes/HCRSAMOpenData.json'
     const data = JSON.parse(await getText(url))
     const cutoff = intlCutoff()
+    const beauty = asArray(data).filter((r) => /beauty and personal care|cosmetic/i.test(`${r.Category} ${r.Title}`))
+    debug(name, `總筆數 ${asArray(data).length}，美妝類 ${beauty.length}，最新日期 ${beauty.map((r) => r['Last updated']).sort().pop()}`)
     return asArray(data)
       .filter((r) => /beauty and personal care|cosmetic/i.test(`${r.Category} ${r.Title}`))
       .filter((r) => r['Last updated'] && new Date(r['Last updated']) >= cutoff)
@@ -189,8 +199,9 @@ export async function fetchUS() {
     const rss = xml.parse(await getText('https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/recalls/rss.xml'))
     for (const r of asArray(rss?.rss?.channel?.item)) {
       const text = `${r.title} ${r.description}`
-      if (!/cosmetic|shampoo|lotion|cream|soap|sunscreen|hair|nail|makeup|lip|skin/i.test(text)) continue
-      if (/drug|tablet|capsule|food|dietary/i.test(r.title) && !/cosmetic/i.test(text)) continue
+      const cosmeticWords = /cosmetic|shampoo|conditioner|sunscreen|body wash|hand soap|face wash|lotion|moisturi[sz]er|toothpaste|mouthwash|deodorant|mascara|eyeliner|eye shadow|lipstick|lip gloss|nail polish|hair dye|hair color|tattoo ink|baby wipes|dry shampoo|makeup|skin ?care/i
+      const foodWords = /ice cream|gelato|cheese|snack|cookie|candy|chocolate|frozen|beverage|juice|supplement|tablet|capsule|undeclared|allergen|listeria|salmonella|e\. coli/i
+      if (!cosmeticWords.test(text) || foodWords.test(text)) continue
       const d = r.pubDate ? new Date(r.pubDate) : null
       if (d && d < cutoff) continue
       items.push({ source_name: name, title: stripTags(r.title), url: r.link, date: r.pubDate || '', summary: clip(stripTags(r.description)) })
@@ -206,9 +217,12 @@ export async function fetchThailand() {
   const name = '泰國FDA'
   try {
     const html = await getText('https://cosmetic.fda.moph.go.th/dangerous-cosmetics')
+    const occ = (html.match(/dangerous-cosmetics\//g) || []).length
+    const sample = (html.match(/.{0,120}dangerous-cosmetics\/.{0,160}/s) || [''])[0]
+    debug(name, `HTML 長度 ${html.length}，出現 dangerous-cosmetics/ ${occ} 次。範例：${sample}`)
     const items = []
     const seen = new Set()
-    const re = /<a[^>]+href="([^"]*\/dangerous-cosmetics\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi
+    const re = /<a[^>]+href=["']([^"']*\/dangerous-cosmetics\/[^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi
     let m
     while ((m = re.exec(html)) && items.length < 10) {
       let href = m[1].trim()
@@ -242,23 +256,57 @@ export async function fetchJapan() {
   }
 }
 
-// ─── 台北市衛生局 化粧品違規裁罰公告（官方網頁列表）───
+// ─── 台北市衛生局「化粧品違規廣告處罰案件統計表」（每月一份 PDF，內含被罰廠商名單）───
+async function pdfToText(buf, maxChars = 6000) {
+  const { getDocument } = await import('pdfjs-dist/legacy/build/pdf.mjs')
+  const doc = await getDocument({ data: new Uint8Array(buf), useSystemFonts: true }).promise
+  let text = ''
+  for (let p = 1; p <= doc.numPages && text.length < maxChars; p++) {
+    const page = await doc.getPage(p)
+    const tc = await page.getTextContent()
+    // 依 y 座標分行，讓表格列盡量維持在同一行
+    const rows = new Map()
+    for (const it of tc.items) {
+      const y = Math.round(it.transform[5])
+      rows.set(y, (rows.get(y) || '') + it.str + ' ')
+    }
+    text += [...rows.entries()].sort((a, b) => b[0] - a[0]).map(([, t]) => t.trim()).filter(Boolean).join('\n') + '\n'
+  }
+  return text.slice(0, maxChars)
+}
+
 export async function fetchTaipeiPenalties() {
   const name = '台北市裁罰'
   try {
     const base = 'https://health.gov.taipei/News.aspx?n=13A23138C06A3532&sms=8E7386D329C4B210'
     const html = await getText(base)
+    const re = /<a[^>]+href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi
     const items = []
-    const re = /<a[^>]+href="([^"]*News_Content\.aspx[^"]*)"[^>]*(?:title="([^"]*)")?[^>]*>([\s\S]*?)<\/a>/gi
     let m
-    while ((m = re.exec(html)) && items.length < 10) {
+    while ((m = re.exec(html)) && items.length < 2) {
+      const title = stripTags(m[2])
+      if (!/化粧品違規廣告處罰案件統計表/.test(title)) continue
       const href = new URL(m[1].replace(/&amp;/g, '&'), 'https://health.gov.taipei/').href
-      const title = stripTags(m[2] || m[3])
-      if (!title || !/化粧品|化妝品|裁罰|違規|處分/.test(title)) continue
-      const near = html.slice(m.index, m.index + 800)
-      const date = (near.match(/\d{3,4}[-/.]\d{1,2}[-/.]\d{1,2}/) || [''])[0]
-      items.push({ source_name: name, title, url: href, date, summary: '' })
+      const near = html.slice(m.index, m.index + 1500)
+      const date = (near.match(/1\d{2}-\d{2}-\d{2}/) || [''])[0]
+      let text = ''
+      try {
+        const res = await fetch(href, { headers: UA })
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        text = await pdfToText(await res.arrayBuffer())
+      } catch (e) {
+        debug(name, `PDF 解析失敗：${e.message}`)
+      }
+      items.push({
+        source_name: name,
+        title,
+        url: href,
+        date,
+        // 給 AI 的原始表格文字（內含處分日期、廠商、產品、違規內容、罰鍰）
+        summary: text ? `【統計表內容節錄】\n${text}` : '（PDF 內容無法解析，請只列出公告標題）',
+      })
     }
+    debug(name, `找到 ${items.length} 份統計表；第一份文字長度 ${items[0]?.summary.length || 0}。節錄：${(items[0]?.summary || '').slice(0, 500)}`)
     return items
   } catch (e) {
     return warn(name, e)
