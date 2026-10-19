@@ -338,7 +338,7 @@ ${recentText}
     generationConfig: {
       // 直接要求 JSON 輸出，省去自己剝 code fence 的麻煩
       responseMimeType: 'application/json',
-      maxOutputTokens: 8192,
+      maxOutputTokens: 16384, // 多了兩個表格，輸出較長；Gemini 的思考 token 也算在內，給足空間避免 JSON 被截斷
     },
   })
 
