@@ -114,7 +114,10 @@ async function fetchTFDAViolations() {
       items.push({
         source_name: 'TFDA裁罰',
         title: `違規裁罰：${row['違規產品名稱'] || '（未載明產品）'}（${row['違規廠商名稱或負責人'] || '未載明廠商'}）`,
-        url: 'https://data.gov.tw/dataset/154561', // 資料集來源頁，無個別連結時的預設
+        // 資料集沒有個別連結，用「資料集頁 + 產品/廠商/日期」組成唯一識別，才能正確去重
+        url: `https://data.gov.tw/dataset/154561#${encodeURIComponent(
+          [row['違規產品名稱'], row['違規廠商名稱或負責人'], row['處分日期'] || row['刊播日期']].join('|')
+        )}`,
         date: dateStr,
         summary: [
           row['處分機關'] && `處分機關：${row['處分機關']}`,
@@ -236,9 +239,10 @@ async function filterUnseen(items) {
 }
 
 async function markAsSeen(items) {
-  const rows = items
-    .filter((i) => i.url)
-    .map((i) => ({ source_url: i.url, source_name: i.source_name, title: i.title }))
+  // 同一批內若有重複網址，upsert 會整批失敗，所以先去重
+  const byUrl = new Map()
+  for (const i of items) if (i.url && !byUrl.has(i.url)) byUrl.set(i.url, i)
+  const rows = [...byUrl.values()].map((i) => ({ source_url: i.url, source_name: i.source_name, title: i.title }))
   if (rows.length === 0) return
   const { error } = await supabase.from('source_log').upsert(rows, { onConflict: 'source_url' })
   if (error) console.warn('⚠️ 寫入 source_log 失敗：', error.message)
@@ -401,6 +405,20 @@ async function publishArticle(article) {
 // 主流程
 // ════════════════════════════════════════════════════════════
 async function main() {
+  // 防止一週發兩篇：最近 3 天內已發過文章就跳過（手動補發可設 FORCE=1）
+  if (!process.env.FORCE) {
+    const { data: last } = await supabase
+      .from('articles')
+      .select('created_at')
+      .order('created_at', { ascending: false })
+      .limit(1)
+    const lastAt = last?.[0]?.created_at ? new Date(last[0].created_at) : null
+    if (lastAt && Date.now() - lastAt.getTime() < 3 * 24 * 60 * 60 * 1000) {
+      console.log(`✅ 最近一篇文章發布於 ${lastAt.toISOString()}，3 天內不重複發文，本次跳過。`)
+      return
+    }
+  }
+
   console.log('🔍 開始蒐集本週資料...')
 
   const [tfdaNews, tfdaViolations, intlReg, twNews] = await Promise.all([
