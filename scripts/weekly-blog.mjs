@@ -112,7 +112,7 @@ async function fetchTFDAViolations() {
     const parsed = list
       .map((row) => ({ row, rowDate: parseROCorADDate(row['處分日期'] || row['刊播日期'] || '') }))
       // 保守處理：日期解析不出來的，寧可跳過也不要誤收進一大包舊資料
-      .filter((x) => x.rowDate && x.rowDate >= violationCutoff)
+      .filter((x) => x.rowDate && x.rowDate >= violationCutoff && x.rowDate <= new Date(Date.now() + 86400000)) // 排除資料打錯的未來日期（例如 2819 年）
       // 保險上限：就算篩選邏輯還是抓太多，最多只取最近 50 筆，避免塞爆 AI 的輸入
       .sort((a, b) => b.rowDate - a.rowDate)
       .slice(0, 30)
