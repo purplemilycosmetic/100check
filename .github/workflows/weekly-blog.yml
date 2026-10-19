@@ -4,7 +4,16 @@ on:
   schedule:
     # 每週一早上 8:00（台北時間）＝ UTC 前一天 00:00
     - cron: '0 0 * * 1'
-  workflow_dispatch: {} # 允許在 GitHub 網頁上手動點「Run workflow」測試
+  workflow_dispatch: # 允許在 GitHub 網頁上手動點「Run workflow」測試
+    inputs:
+      dry_run:
+        description: '試跑：只檢查各來源抓到什麼，不寫文章、不發布'
+        type: boolean
+        default: false
+      force:
+        description: '強制發文（忽略「3 天內已發過」的保護）'
+        type: boolean
+        default: false
 
 jobs:
   weekly-blog:
@@ -26,4 +35,6 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          FORCE: ${{ inputs.force && '1' || '' }}
         run: node scripts/weekly-blog.mjs

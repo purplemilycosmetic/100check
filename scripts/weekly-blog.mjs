@@ -25,6 +25,7 @@
 
 import { createClient } from '@supabase/supabase-js'
 import { XMLParser } from 'fast-xml-parser'
+import { fetchAllInternationalRecalls, fetchTaipeiPenalties } from './recall-sources.mjs'
 
 // ─── 環境變數檢查 ───
 const {
@@ -44,6 +45,10 @@ const xml = new XMLParser({ ignoreAttributes: false })
 // 只處理最近 N 天內的項目（配合每週排程，抓 8 天留一點緩衝）
 const LOOKBACK_DAYS = 8
 const cutoff = new Date(Date.now() - LOOKBACK_DAYS * 24 * 60 * 60 * 1000)
+// 違規廣告資料集更新較慢（常落後數週），抓 45 天，再靠 source_log 去重，才不會每週都 0 筆
+const VIOLATION_LOOKBACK_DAYS = 45
+const violationCutoff = new Date(Date.now() - VIOLATION_LOOKBACK_DAYS * 24 * 60 * 60 * 1000)
+const DRY_RUN = !!process.env.DRY_RUN
 
 function fmtDate(d) {
   const p = (n) => String(n).padStart(2, '0')
@@ -104,10 +109,10 @@ async function fetchTFDAViolations() {
     const parsed = list
       .map((row) => ({ row, rowDate: parseROCorADDate(row['處分日期'] || row['刊播日期'] || '') }))
       // 保守處理：日期解析不出來的，寧可跳過也不要誤收進一大包舊資料
-      .filter((x) => x.rowDate && x.rowDate >= cutoff)
+      .filter((x) => x.rowDate && x.rowDate >= violationCutoff)
       // 保險上限：就算篩選邏輯還是抓太多，最多只取最近 50 筆，避免塞爆 AI 的輸入
       .sort((a, b) => b.rowDate - a.rowDate)
-      .slice(0, 50)
+      .slice(0, 30)
 
     for (const { row, rowDate } of parsed) {
       const dateStr = row['處分日期'] || row['刊播日期'] || ''
@@ -279,7 +284,11 @@ async function generateArticle(items) {
 寫作規則：
 - 用繁體中文（台灣用語，例如「化粧品」是法規正式用字，一般敘述可用「化妝品」）
 - 語氣專業但易讀，避免生硬的公文腔
-- 依主題分類整理（例如：國內裁罰案例、法規公告、國際更新、產業新聞），每類用 ## 小標題
+- 依主題分類整理，每類用 ## 小標題。以下兩個段落為固定必備（資料中有相關項目時一定要寫）：
+  1. 「## 本週台灣違規裁罰廠商」：把來源為 [TFDA裁罰]、[台北市裁罰] 以及新聞中明確點名的違規業者，整理成 Markdown 表格，欄位：廠商｜產品｜違規情節｜處分機關／法條｜日期。廠商與產品名稱照資料原文，不可改寫或臆測；資料沒寫的欄位填「—」。表格後用 2-3 句話點出共通的違規類型與提醒
+  2. 「## 國際化粧品召回與警訊」：把來源為 [歐盟SafetyGate]、[美國FDA]、[英國OPSS]、[加拿大HealthCanada]、[日本回收]、[泰國FDA] 的項目整理成 Markdown 表格，欄位：國家／機關｜品牌或廠商｜產品｜原因｜連結。外文產品名保留原文，原因翻成中文（例如檢出禁用成分、微生物超標、標示不全）。表格後說明「台灣品牌／代理商該注意什麼」，例如是否有相同成分、是否有在台販售的可能
+  - 若本週該類沒有資料，就寫一句「本週無新增」，不要編造
+- 其他主題（法規公告、國際法規更新、產業新聞）再依內容分段
 - 對每則重要項目，說明「這對品牌/業者代表什麼」「有什麼合規上要注意的地方」，不要只是條列原文
 - 開頭寫 2-3 句話的本週摘要
 - 結尾可以加一段「本週提醒」，給品牌方實用建議
@@ -317,7 +326,7 @@ ${recentText}
     generationConfig: {
       // 直接要求 JSON 輸出，省去自己剝 code fence 的麻煩
       responseMimeType: 'application/json',
-      maxOutputTokens: 4000,
+      maxOutputTokens: 8192,
     },
   })
 
@@ -406,7 +415,7 @@ async function publishArticle(article) {
 // ════════════════════════════════════════════════════════════
 async function main() {
   // 防止一週發兩篇：最近 3 天內已發過文章就跳過（手動補發可設 FORCE=1）
-  if (!process.env.FORCE) {
+  if (!process.env.FORCE && !DRY_RUN) {
     const { data: last } = await supabase
       .from('articles')
       .select('created_at')
@@ -427,16 +436,49 @@ async function main() {
     fetchInternationalRegUpdates(),
     fetchTaiwanNews(),
   ])
+  const [intlRecalls, taipeiPenalties] = await Promise.all([fetchAllInternationalRecalls(), fetchTaipeiPenalties()])
 
   console.log(`   TFDA公告：${tfdaNews.length} 則`)
   console.log(`   TFDA裁罰：${tfdaViolations.length} 則`)
   console.log(`   國際法規：${intlReg.length} 則`)
   console.log(`   台灣新聞：${twNews.length} 則`)
+  console.log(`   台北市裁罰：${taipeiPenalties.length} 則`)
+  const bySource = {}
+  for (const i of intlRecalls) bySource[i.source_name] = (bySource[i.source_name] || 0) + 1
+  for (const k of ['歐盟SafetyGate', '美國FDA', '英國OPSS', '加拿大HealthCanada', '日本回收', '泰國FDA']) {
+    console.log(`   ${k}：${bySource[k] || 0} 則`)
+  }
 
-  const allItems = [...tfdaNews, ...tfdaViolations, ...intlReg, ...twNews]
+  // 順序決定超過上限時優先保留誰：官方公告 > 台灣裁罰 > 國際召回 > 新聞
+  const allItems = [...tfdaNews, ...tfdaViolations, ...taipeiPenalties, ...intlRecalls, ...intlReg, ...twNews]
+
+  if (DRY_RUN) {
+    console.log('🧪 DRY_RUN：只檢查來源，不呼叫 AI、不發布、不寫 source_log')
+    const groups = {}
+    for (const i of allItems) (groups[i.source_name] ||= []).push(i)
+    for (const [k, list] of Object.entries(groups)) {
+      console.log(`\n── ${k}（${list.length}）`)
+      for (const i of list.slice(0, 3)) console.log(`   • ${i.date} ｜ ${i.title}\n     ${i.url}\n     ${String(i.summary).slice(0, 160)}`)
+    }
+    // GitHub Actions 註記（Annotations），方便不用下載 log 也能看到結果（每步驟上限 10 則）
+    if (process.env.GITHUB_ACTIONS) {
+      const esc = (t) => String(t).replace(/%/g, '%25').replace(/\r/g, '').replace(/\n/g, '%0A')
+      const counts = Object.entries(groups).map(([k, l]) => `${k}=${l.length}`).join(', ')
+      console.log(`::notice title=DRY_RUN counts::${esc(counts || 'no items')}`)
+      const focus = ['TFDA裁罰', '台北市裁罰', '歐盟SafetyGate', '美國FDA', '英國OPSS', '加拿大HealthCanada', '日本回收', '泰國FDA', 'TFDA公告']
+      for (const k of focus) {
+        const list = groups[k] || []
+        const body = list.length
+          ? list.slice(0, 2).map((i) => `${i.date} | ${i.title} | ${i.url} | ${String(i.summary).slice(0, 120)}`).join('\n')
+          : '0 items'
+        console.log(`::notice title=${k}::${esc(body)}`)
+      }
+    }
+    return
+  }
   const newItems = await filterUnseen(allItems)
   // 保險上限：不管前面各來源篩選有沒有出包，送進 AI 的項目數都設個天花板
-  const MAX_ITEMS = 60
+  const MAX_ITEMS = 100
   if (newItems.length > MAX_ITEMS) {
     console.log(`⚠️ 項目數 ${newItems.length} 超過上限，只取前 ${MAX_ITEMS} 筆`)
     newItems.length = MAX_ITEMS
