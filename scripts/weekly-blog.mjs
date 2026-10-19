@@ -108,7 +108,7 @@ async function fetchTFDAViolations() {
     const data = await res.json()
     const list = Array.isArray(data) ? data : data?.Data || []
     const dates = list.map((row) => parseROCorADDate(row['處分日期'] || row['刊播日期'] || '')).filter(Boolean).sort((a, b) => b - a)
-    debug('TFDA裁罰', `資料集共 ${list.length} 筆，可解析日期 ${dates.length} 筆，最新 ${dates[0]?.toISOString().slice(0, 10)}。欄位：${Object.keys(list[0] || {}).join('、')}`)
+    debug('TFDA裁罰', `資料集共 ${list.length} 筆，可解析日期 ${dates.length} 筆，最新 ${dates[0]?.toISOString().slice(0, 10)}。日期範例：${list.slice(0, 3).map((r) => `${r['處分日期']}／${r['刊播日期']}`).join('、')}。欄位：${Object.keys(list[0] || {}).join('、')}`)
     const parsed = list
       .map((row) => ({ row, rowDate: parseROCorADDate(row['處分日期'] || row['刊播日期'] || '') }))
       // 保守處理：日期解析不出來的，寧可跳過也不要誤收進一大包舊資料
@@ -145,7 +145,10 @@ async function fetchTFDAViolations() {
 // 民國年或西元年日期字串轉 Date（抓不到就回傳 null，不會擋掉這筆資料）
 function parseROCorADDate(str) {
   if (!str) return null
-  const m = String(str).match(/(\d{2,4})[\/\-.](\d{1,2})[\/\-.](\d{1,2})/)
+  const raw = String(str).trim()
+  // 支援 115/09/23、2026-09-23，以及無分隔的 1150923（民國 7 碼）、20260923（西元 8 碼）
+  let m = raw.match(/(\d{2,4})[\/\-.年](\d{1,2})[\/\-.月](\d{1,2})/)
+  if (!m) m = raw.match(/^(\d{3})(\d{2})(\d{2})$/) || raw.match(/^(\d{4})(\d{2})(\d{2})$/)
   if (!m) return null
   let [, y, mo, d] = m.map(Number)
   if (y < 1911) y += 1911 // 民國年轉西元年

@@ -234,9 +234,22 @@ export async function fetchThailand() {
       const tail = stripTags(html.slice(m.index + m[0].length, m.index + m[0].length + 600)).slice(0, 200)
       items.push({ source_name: name, title: `泰國FDA危險化粧品：${title}`, url: href, date: '', summary: tail })
     }
-    return items
+    if (items.length) return items
+    debug(name, '官方頁面無法直接讀取（會導向登入頁），改用泰文新聞備援')
   } catch (e) {
-    return warn(name, e)
+    warn(name, e)
+  }
+  // 備援：Google News 泰文「危險化粧品／食藥署」
+  try {
+    const q = encodeURIComponent('เครื่องสำอาง (อันตราย OR สารห้ามใช้) อย.')
+    const rss = xml.parse(await getText(`https://news.google.com/rss/search?q=${q}&hl=th&gl=TH&ceid=TH:th`))
+    const cutoff = intlCutoff()
+    return asArray(rss?.rss?.channel?.item)
+      .filter((r) => !r.pubDate || new Date(r.pubDate) >= cutoff)
+      .slice(0, 8)
+      .map((r) => ({ source_name: name, title: r.title, url: r.link, date: r.pubDate || '', summary: clip(stripTags(r.description)) }))
+  } catch (e) {
+    return warn(`${name}（新聞備援）`, e)
   }
 }
 
@@ -257,7 +270,7 @@ export async function fetchJapan() {
 }
 
 // ─── 台北市衛生局「化粧品違規廣告處罰案件統計表」（每月一份 PDF，內含被罰廠商名單）───
-async function pdfToText(buf, maxChars = 6000) {
+async function pdfToText(buf, maxChars = 9000) {
   const { getDocument } = await import('pdfjs-dist/legacy/build/pdf.mjs')
   const doc = await getDocument({ data: new Uint8Array(buf), useSystemFonts: true }).promise
   let text = ''
