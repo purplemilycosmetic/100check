@@ -2,33 +2,31 @@
   <div class="dv-sim">
 <div class="band"><div class="wrap">
   <div class="eyebrow">Diversity Visa · DV-2027 審核模擬器</div>
+  <span class="ai-tag"><b>AI 製作</b><span>內容與程式由 AI 協助產生，資料更新至 2026/10/19・<a href="#ai">詳見說明</a></span></span>
   <h1>美國綠卡抽籤：你過得了幾關？</h1>
-  <p>依美國國務院公開的 DV 計畫規則與歷年中籤統計，四關模擬：資格是否成立、中籤機率多高、中籤後能否排到簽證名額、面談財力與文件是否過關。</p>
-  <div class="status"><span>登記開放 <b>2026/11/1 起 30 天</b></span><span>通知中籤 <b>2026/12/3 前</b></span><span>簽證截止 <b>2027/9/30</b></span></div>
+  <p>依美國國務院公開的 DV 計畫規則與歷年中籤統計，照實際流程分兩個階段、四個步驟模擬：報名前先確認能不能報、抽中機率多高；中籤後再看排不排得到名額、面談能不能過。</p>
+  <ol class="flow" aria-label="審核流程">
+    <li class="phase-a"><a href="#s1"><span class="fl-n">報名階段 · 1</span><span class="fl-t">報名資格</span><span class="fl-d">2026/11/1 起 30 天</span></a></li>
+    <li class="phase-a"><a href="#s2"><span class="fl-n">報名階段 · 2</span><span class="fl-t">中籤機率</span><span class="fl-d">2026/12/3 前公布</span></a></li>
+    <li class="phase-b"><a href="#s3"><span class="fl-n">中籤後 · 3</span><span class="fl-t">排號</span><span class="fl-d">每月簽證公告</span></a></li>
+    <li class="phase-b"><a href="#s4i"><span class="fl-n">中籤後 · 4</span><span class="fl-t">面談審查</span><span class="fl-d">2027/9/30 前完成</span></a></li>
+  </ol>
 </div></div>
 
 <div class="wrap dv-main">
 
+<div class="phase a"><span class="ph-k">PHASE A · 報名階段</span><h2>能不能報、抽中機率多高</h2><p>報名時系統只檢查出生地與報名資料，學歷、財力這些要等中籤後面談才審。</p></div>
+
 <!-- STAGE 1 -->
 <section class="stage" id="s1">
-  <div class="stage-head"><span class="stage-no">STAGE 1</span><h2>資格審核</h2><p>任何一項不符合，報名會被取消資格，後面的機率直接歸零。</p></div>
+  <div class="stage-head"><span class="stage-no">STEP 1</span><h2>報名資格</h2><p>這些是報名當下就會檢查的項目，任何一項不符，報名會被取消資格，後面的機率直接歸零。</p></div>
   <div class="grid">
     <label class="f">你的出生地<select id="birth"></select></label>
     <label class="f">婚姻狀態<select id="marital"><option value="single">未婚</option><option value="married">已婚</option></select></label>
     <label class="f" id="spouseWrap" hidden>配偶出生地 <small>可改用配偶出生國報名</small><select id="spouseBirth"></select></label>
-    <label class="f">最高學歷 <small>只看有沒有達到高中，學歷更高不會提高中籤率</small><select id="edu">
-      <option value="none">未完成高中</option><option value="hs">高中（職）畢業</option><option value="voc">專科／技術學院</option>
-      <option value="ba" selected>大學學士</option><option value="ms">碩士</option><option value="phd">博士</option></select></label>
-    <label class="f" id="jobWrap">職業 <small>學歷未達高中時，才用工作經驗代替</small><select id="job">
-      <option value="5">醫師、藥師、律師（Job Zone 5）</option>
-      <option value="4" selected>工程師、軟體開發、化學師、會計師（Job Zone 4）</option>
-      <option value="4">護理師、教師（Job Zone 4）</option>
-      <option value="3">電工、實驗室技術員、牙科助理（Job Zone 3）</option>
-      <option value="2">門市銷售、司機、行政助理（Job Zone 2）</option>
-      <option value="1">餐飲服務、清潔、收銀（Job Zone 1）</option></select></label>
+
   </div>
   <div class="checks">
-    <label class="check" id="workWrap"><input type="checkbox" id="work" checked><span>上述職業在過去 5 年內做滿 2 年</span></label>
     <label class="check"><input type="checkbox" id="parentOpt"><span>我的出生地不是父母任一方的出生地，父母當時也不住在那裡（可改用父母出生國）</span></label>
     <label class="f hidden-inline" id="parentWrap" hidden style="max-width:320px">父母出生地<select id="parentBirth"></select></label>
     <label class="check"><input type="checkbox" id="passport" checked><span>持有有效、未過期護照，並能上傳個人資料頁與簽名頁 JPEG 掃描檔（DV-2027 新規）</span></label>
@@ -43,7 +41,7 @@
 
 <!-- STAGE 2 -->
 <section class="stage" id="s2">
-  <div class="stage-head"><span class="stage-no">STAGE 2</span><h2>中籤機率</h2><p>電腦在各地理區內隨機抽出。以下依歷年官方公布的中籤人數推估，含配偶與子女。</p></div>
+  <div class="stage-head"><span class="stage-no">STEP 2</span><h2>中籤機率</h2><p>電腦在各地理區內隨機抽出。以下依歷年官方公布的中籤人數推估，含配偶與子女。</p></div>
   <div class="grid">
     <label class="f">試算年度<select id="year"><option value="2027" selected>DV-2027（今年，2026/11 報名）推估</option><option value="hist">DV-2024～2026 歷年平均</option></select></label>
     <label class="f" id="scenWrap">今年情境 <small>新規則對報名人數的影響還無法確定</small><select id="scen">
@@ -92,9 +90,11 @@
   <div class="ticket" id="ticket"><span class="note">按下「模擬抽一次籤」看看結果。中籤後會產生案件編號，自動帶入下一關。</span></div>
 </section>
 
+<div class="phase b"><span class="ph-k">PHASE B · 中籤後</span><h2>排不排得到、面談過不過</h2><p>2026/12/3 前公布中籤後才開始。中籤人數約為名額的 2.5 倍，排號和面談都會淘汰人。建議報名前就先看過，提早準備文件。</p></div>
+
 <!-- STAGE 3 -->
 <section class="stage" id="s3">
-  <div class="stage-head"><span class="stage-no">STAGE 3</span><h2>中籤後：排得到名額嗎？</h2><p>中籤人數約為名額的 2.5 倍。每月簽證公告（Visa Bulletin）公布各區截止號碼，案件編號低於截止號碼才能面談。</p></div>
+  <div class="stage-head"><span class="stage-no">STEP 3</span><h2>排號：排得到名額嗎？</h2><p>中籤人數約為名額的 2.5 倍。每月簽證公告（Visa Bulletin）公布各區截止號碼，案件編號低於截止號碼才能面談。</p></div>
   <div class="grid">
     <label class="f">你的案件編號（亞洲區數字部分）<small>例如 AS00012345 輸入 12345</small><input type="number" id="caseNo" min="1" max="99999" value="18000"></label>
   </div>
@@ -107,12 +107,30 @@
 
 <!-- STAGE 4 -->
 <section class="stage" id="s4i">
-  <div class="stage-head"><span class="stage-no">STAGE 4</span><h2>面談審查：財力、文件、體檢、背景</h2><p>排到號碼後，要在美國在台協會（AIT）面談。中籤人數比名額多很多，任何一項沒過，名額就會給下一位。</p></div>
+  <div class="stage-head"><span class="stage-no">STEP 4</span><h2>面談審查</h2><p>排到號碼後，在美國在台協會（AIT）面談。審查學歷、財力、文件、體檢與背景，任何一項沒過，名額就會給下一位。</p></div>
 
-  <div>
-    <h3>財力證明（公共負擔審查）</h3>
-    <p class="note">要證明到美國後不會依賴政府補助。一般以美國聯邦貧窮線 100% 為參考門檻，可用自己的存款與資產、美國工作錄取，或由美國公民／綠卡持有人簽 I-134 財力擔保。</p>
+  <div class="sub">
+    <h3>4-1　學歷或工作經驗</h3>
+    <p class="note">報名表上只是自行填寫，面談時才查證。只看有沒有達到高中，學歷更高不會提高中籤率。</p>
+    <div class="grid">
+    <label class="f">最高學歷<select id="edu">
+      <option value="none">未完成高中</option><option value="hs">高中（職）畢業</option><option value="voc">專科／技術學院</option>
+      <option value="ba" selected>大學學士</option><option value="ms">碩士</option><option value="phd">博士</option></select></label>
+    <label class="f" id="jobWrap">職業 <small>學歷未達高中時，才用工作經驗代替</small><select id="job">
+      <option value="5">醫師、藥師、律師（Job Zone 5）</option>
+      <option value="4" selected>工程師、軟體開發、化學師、會計師（Job Zone 4）</option>
+      <option value="4">護理師、教師（Job Zone 4）</option>
+      <option value="3">電工、實驗室技術員、牙科助理（Job Zone 3）</option>
+      <option value="2">門市銷售、司機、行政助理（Job Zone 2）</option>
+      <option value="1">餐飲服務、清潔、收銀（Job Zone 1）</option></select></label>
+    </div>
+    <label class="check" id="workWrap"><input type="checkbox" id="work" checked><span>上述職業在過去 5 年內做滿 2 年</span></label>
+    <ul class="results" id="r4e"></ul>
   </div>
+
+  <div class="sub">
+    <h3>4-2　財力證明（公共負擔審查）</h3>
+    <p class="note">要證明到美國後不會依賴政府補助。一般以美國聯邦貧窮線 100% 為參考門檻，可用自己的存款與資產、美國工作錄取，或由美國公民／綠卡持有人簽 I-134 財力擔保。</p>
   <div class="grid">
     <label class="f">移民人數（含本人與隨行家人）<input type="number" id="hh" min="1" max="12" value="1"></label>
     <label class="f">可動用存款與資產（新台幣）<input type="number" id="assets" min="0" step="10000" value="800000"></label>
@@ -125,10 +143,12 @@
     <label class="check"><input type="checkbox" id="insure" checked><span>到美國後有醫療保險規劃（雇主保險或自購）</span></label>
   </div>
   <ul class="results" id="r4f"></ul>
+  </div>
 
+  <div class="sub">
   <div class="two">
     <div>
-      <h3>文件準備（勾選已備妥）</h3>
+      <h3>4-3　文件與體檢（勾選已備妥）</h3>
       <div class="checks" id="docs">
         <label class="check"><input type="checkbox" data-doc checked><span>DS-260 線上移民申請表（每位移民的家人各一份）</span></label>
         <label class="check"><input type="checkbox" data-doc checked><span>DV 申請費每人 330 美元，面談前繳交，不退費</span></label>
@@ -143,7 +163,7 @@
       <p class="note" style="margin-top:8px">有前科者另需法院判決書。台灣無軍方紀錄可申請，不需提供兵役紀錄。DS-260 會要求填寫過去 5 年的社群媒體帳號。</p>
     </div>
     <div>
-      <h3>不可入境事由（勾選曾經發生的）</h3>
+      <h3>4-4　背景審查：不可入境事由（勾選曾經發生的）</h3>
       <div class="checks" id="bars2">
         <label class="check"><input type="checkbox" data-bar="逾期居留"><span>曾在美國逾期居留或非法打工</span></label>
         <label class="check"><input type="checkbox" data-bar="遭拒入境"><span>曾被美國拒絕入境或遣返</span></label>
@@ -154,11 +174,12 @@
     </div>
   </div>
   <ul class="results" id="r4d"></ul>
+  </div>
 </section>
 
 <!-- VERDICT -->
 <section class="stage" id="s4">
-  <div class="stage-head"><span class="stage-no">審核總結</span><h2>綜合評估</h2></div>
+  <div class="stage-head"><span class="stage-no">RESULT</span><h2>綜合評估</h2></div>
   <ul class="results" id="r4"></ul>
   <div class="two">
     <div>
@@ -182,6 +203,15 @@
 </div>
 
 <div class="wrap dv-foot">
+  <div class="ai-note" id="ai">
+    <h3>AI 製作說明</h3>
+    <ul>
+      <li>本工具的資料蒐集、文字內容與網頁程式，由 AI（Anthropic 的 Claude）協助產生，再由審盾橘整理後發布。</li>
+      <li>規則與數據來自美國國務院等公開資料，查證日期為 2026/10/19；DV-2027 正式規則預計 10/29 前公告，屆時可能變動。</li>
+      <li>DV-2027 中籤率、台灣報名人數為依歷史數據推估的模擬值，不是官方數字。</li>
+      <li>內容未經美國移民律師審閱。AI 可能出錯，重要決定請以官方公告為準，必要時諮詢專業律師。</li>
+    </ul>
+  </div>
   <p>本網站為非官方模擬工具，與美國政府無關，不構成法律意見。機率為依歷史數據推估，實際結果以美國國務院公告為準。</p>
   <p>資料來源：U.S. Department of State DV-2024／2025／2026 Selected Entrants、DV-2019–2021 Entrants by Country、Visa Bulletin（2025/11、2026/5）、DV-2027 護照與報名費最終規則（2026/3/11 公告）、Taiwan Reciprocity Schedule、2026 HHS Poverty Guidelines、國務院公共負擔指引（2025/11、2026/2）與 75 國移民簽證暫停措施（2026/1）。</p>
 </div>
@@ -245,21 +275,16 @@ function stage1(){
   else if(married && sp[3]){charge=sp;via="配偶出生地";out.push(li("mid","改用",`本人出生地不符，可改用配偶出生地「${sp[1]}」報名（${RN[sp[2]]}），但需與配偶同時取得簽證並一同入境。`))}
   else if(byId("parentOpt").checked && pa[3]){charge=pa;via="父母出生地";out.push(li("mid","改用",`本人出生地不符，可改用父母出生地「${pa[1]}」報名（${RN[pa[2]]}）。`))}
   else {ok=false;out.push(li("no","不符",`出生地「${own[1]}」近五年移民美國人數超過 5 萬，不在 DV 名單內；也沒有可改用的配偶或父母出生國。`))}
-  const eduSel=byId("edu"), eduOk = eduSel.value!=="none", work=byId("work").checked, zone=+byId("job").value;
-  const eduName=eduSel.options[eduSel.selectedIndex].text;
-  byId("jobWrap").hidden=eduOk; byId("workWrap").hidden=eduOk;
-  if(eduOk) out.push(li("ok","符合",`學歷「${eduName}」達高中門檻，面談時需出示畢業證明。學歷高低不影響中籤率。`));
-  else if(zone>=4 && work) out.push(li("ok","符合",`學歷未達，但職業屬 Job Zone ${zone}，且 5 年內做滿 2 年，可用工作經驗代替。面談需提出工作證明。`));
-  else if(zone>=4) {ok=false;out.push(li("no","不符",`職業屬 Job Zone ${zone} 可代替學歷，但必須在過去 5 年內做滿 2 年。`))}
-  else {ok=false;out.push(li("no","不符",`學歷未達高中，職業屬 Job Zone ${zone}，未達 Job Zone 4 的工作經驗門檻。這項是在中籤後的面談審查，報名時不會擋下，但會在面談被拒。`))}
   const items=[["passport","護照資料與掃描檔","DV-2027 起報名必須提供有效護照並上傳掃描檔，否則無法送出。"],
     ["fee","1 美元報名費","DV-2027 起報名需繳 1 美元，無減免。"],
     ["single","單一報名","同一人送出兩筆以上，所有報名都會被取消資格。"],
     ["family","完整列出家人","漏列配偶或子女，中籤後會被拒發簽證。"],
     ["photo","照片規格","照片不合規是最常見的取消原因之一。"]];
-  items.forEach(([id,name,why])=>{ if(byId(id).checked) out.push(li("ok","符合",name+"。")); else {ok=false;out.push(li("no","不符",name+"：" + why))} });
+  const passed=items.filter(([id])=>byId(id).checked);
+  if(passed.length) out.push(li("ok","符合",passed.map(x=>x[1]).join("、")+"。"));
+  items.forEach(([id,name,why])=>{ if(!byId(id).checked){ok=false;out.push(li("no","不符",name+"："+why))} });
   byId("r1").innerHTML=out.join("");
-  const st=byId("stamp1"); st.className="stamp "+(ok?"ok":"no"); st.textContent=ok?"資格成立":"資格不符";
+  const st=byId("stamp1"); st.className="stamp "+(ok?"ok":"no"); st.textContent=ok?"可以報名":"無法報名";
   byId("charge").innerHTML = ok? `以<b>${via}</b>認定，歸屬 <b>${charge[1]}・${RN[charge[2]]}</b>` : `<span class="note">修正標示「不符」的項目後再試一次。</span>`;
   state.eligible=ok; state.code=charge?charge[0]:null; state.region=charge?charge[2]:null;
   // spouse eligibility for dual entry
@@ -321,6 +346,15 @@ function stage3(){
 // 2026 HHS poverty guidelines, 48 contiguous states
 const FPL = n => 15960 + 5680*(Math.max(1,n)-1);
 function stage4(){
+  let eo=[], eduOk2=true;
+  const eduSel=byId("edu"), eduOk = eduSel.value!=="none", work=byId("work").checked, zone=+byId("job").value;
+  const eduName=eduSel.options[eduSel.selectedIndex].text;
+  byId("jobWrap").hidden=eduOk; byId("workWrap").hidden=eduOk;
+  if(eduOk) eo.push(li("ok","符合",`學歷「${eduName}」達高中門檻，面談時需出示畢業證明。學歷高低不影響中籤率。`));
+  else if(zone>=4 && work) eo.push(li("ok","符合",`學歷未達，但職業屬 Job Zone ${zone}，且 5 年內做滿 2 年，可用工作經驗代替。面談需提出工作證明。`));
+  else if(zone>=4) {eduOk2=false;eo.push(li("no","不符",`職業屬 Job Zone ${zone} 可代替學歷，但必須在過去 5 年內做滿 2 年。`))}
+  else {eduOk2=false;eo.push(li("no","不符",`學歷未達高中，職業屬 Job Zone ${zone}，未達 Job Zone 4 的工作經驗門檻。報名時不會擋下，但面談會被拒。`))}
+  byId("r4e").innerHTML=eo.join(""); state.edu=eduOk2;
   const n=+byId("hh").value||1, ntd=+byId("assets").value||0, fx=+byId("fx").value||31;
   const usd=ntd/fx, need=FPL(n);
   const job=byId("joboffer").checked, sp=byId("sponsor").checked, h=byId("health").checked, ins=byId("insure").checked;
@@ -345,14 +379,15 @@ function stage4(){
 
 function verdict(){
   let out=[];
-  out.push(state.eligible? li("ok","通過","第一關：資格成立。") : li("no","未過","第一關：資格不符，目前無法參加抽籤。"));
+  out.push(state.eligible? li("ok","通過","第一步報名資格：可以報名。") : li("no","未過","第一步報名資格：目前無法參加抽籤。"));
   if(state.eligible){
     const p = state.dual? 1-(1-state.p)**2 : state.p;
-    out.push(li("mid","機率",`第二關（${state.label}）：中籤率約 ${pct(p)}（約 ${Math.round(1/p).toLocaleString()} 分之 1）。這是最難的一關。`));
+    out.push(li("mid","機率",`第二步中籤機率（${state.label}）：中籤率約 ${pct(p)}（約 ${Math.round(1/p).toLocaleString()} 分之 1）。這是最難的一關。`));
     const n=state.case;
-    out.push(n&&n<=35000? li("ok","有望","第三關：案件編號在常見截止範圍內。") : n&&n<=40000? li("mid","邊緣","第三關：案件編號偏後，時間緊。") : li("no","偏低","第三關：案件編號可能排不到名額。"));
-    out.push(state.fin==="ok"? li("ok","通過","第四關財力：達到公共負擔門檻。") : state.fin==="mid"? li("mid","注意","第四關財力：達標，但健康因素可能被要求更多財力或保險證明。") : li("no","不足","第四關財力：未達公共負擔門檻。"));
-    out.push(state.bars? li("no","高風險","第四關背景：有不可入境事由。") : state.docs? li("ok","備齊","第四關文件：已備齊，無不可入境事由。") : li("mid","未齊","第四關文件：尚未備齊，建議中籤前就先準備。"));
+    out.push(n&&n<=35000? li("ok","有望","第三步排號：案件編號在常見截止範圍內。") : n&&n<=40000? li("mid","邊緣","第三步排號：案件編號偏後，時間緊。") : li("no","偏低","第三步排號：案件編號可能排不到名額。"));
+    out.push(state.edu? li("ok","通過","第四步學歷：達到門檻。") : li("no","不符","第四步學歷：未達高中，也沒有符合條件的工作經驗。"));
+    out.push(state.fin==="ok"? li("ok","通過","第四步財力：達到公共負擔門檻。") : state.fin==="mid"? li("mid","注意","第四步財力：達標，但健康因素可能被要求更多財力或保險證明。") : li("no","不足","第四步財力：未達公共負擔門檻。"));
+    out.push(state.bars? li("no","高風險","第四步背景：有不可入境事由。") : state.docs? li("ok","備齊","第四步文件：已備齊，無不可入境事由。") : li("mid","未齊","第四步文件：尚未備齊，建議中籤前就先準備。"));
     out.push(li("mid","期限","全部要在 2027/9/30 前完成面談、取得簽證；簽證核發後通常 6 個月內要入境美國。"));
   }
   byId("r4").innerHTML=out.join("");
@@ -463,9 +498,35 @@ all();
 .dv-sim .timeline time{font-family:var(--f-mono);font-size:12.5px;color:var(--accent);font-weight:600;display:block}
 .dv-sim .dv-foot{padding-block:0 40px;font-size:12.5px;color:var(--muted);display:grid;gap:6px}
 .dv-sim .dv-foot a,.dv-sim .stage a{color:var(--accent)}
-.dv-sim .hidden-inline[hidden]{display:none!important}
+.dv-sim [hidden]{display:none!important}
+.dv-sim .stage,.dv-sim .ai-note{scroll-margin-top:84px}
+.dv-sim .ai-tag{display:inline-flex;align-items:baseline;gap:8px;justify-self:start;max-width:100%;font-size:12.5px;line-height:1.5;border:1px solid currentColor;border-radius:6px;padding:4px 12px;opacity:.9}
+.dv-sim .ai-tag b{font-family:var(--f-mono);letter-spacing:.06em;white-space:nowrap}
+.dv-sim .ai-tag a{color:inherit;white-space:nowrap}
+.dv-sim .flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0;padding:0;list-style:none;counter-reset:none}
+.dv-sim .flow li{min-width:0;border-top:3px solid rgba(255,255,255,.25);padding:10px 12px 0 0}
+.dv-sim .flow li.phase-a{border-top-color:#8fd3b4}
+.dv-sim .flow li.phase-b{border-top-color:#e8c27a}
+.dv-sim .flow a{color:inherit;text-decoration:none;display:grid;gap:2px}
+.dv-sim .flow a:hover .fl-t,.dv-sim .flow a:focus-visible .fl-t{text-decoration:underline}
+.dv-sim .flow .fl-n{font-family:var(--f-mono);font-size:11.5px;opacity:.75;letter-spacing:.08em}
+.dv-sim .flow .fl-t{font-weight:700;font-size:14.5px}
+.dv-sim .flow .fl-d{font-size:12px;opacity:.75}
+@media (max-width:640px){.dv-sim .flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:12px}}
+.dv-sim .phase{display:grid;gap:4px;padding-top:6px}
+.dv-sim .phase .ph-k{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:var(--accent);font-weight:600}
+.dv-sim .phase.b .ph-k{color:var(--warn)}
+.dv-sim .phase h2{font-size:26px}
+.dv-sim .phase p{margin:0;color:var(--muted);font-size:14px;max-width:70ch}
+.dv-sim .sub{display:grid;gap:14px;border-top:1px dashed var(--line);padding-top:16px}
+.dv-sim .stage-head + .sub{border-top:0;padding-top:0}
+.dv-sim .sub h3{font-size:16px;margin:0}
+.dv-sim .ai-note{border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:6px;background:var(--sheet)}
+.dv-sim .ai-note h3{margin:0}
+.dv-sim .ai-note ul{margin:0;padding-left:1.2em;display:grid;gap:4px}
 @media (prefers-reduced-motion:no-preference){.dv-sim .stamp{transition:transform .25s}.dv-sim .fill{transition:width .4s}}
 .dv-sim [hidden]{display:none!important}
+.dv-sim .stage,.dv-sim .ai-note{scroll-margin-top:84px}
 .dv-sim h1,.dv-sim h2,.dv-sim h3{color:inherit}
 
 </style>
