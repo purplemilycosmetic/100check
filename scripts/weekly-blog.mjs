@@ -149,6 +149,11 @@ function parseROCorADDate(str) {
   // 支援 115/09/23、2026-09-23，以及無分隔的 1150923（民國 7 碼）、20260923（西元 8 碼）
   let m = raw.match(/(\d{2,4})[\/\-.年](\d{1,2})[\/\-.月](\d{1,2})/)
   if (!m) m = raw.match(/^(\d{3})(\d{2})(\d{2})$/) || raw.match(/^(\d{4})(\d{2})(\d{2})$/)
+  if (!m) {
+    // TFDA 資料集格式：「月 日 年 12:00AM」，例如「12  6 2022 12:00AM」
+    const us = raw.match(/^(\d{1,2})\s+(\d{1,2})\s+(\d{4})/)
+    if (us) m = [null, us[3], us[1], us[2]]
+  }
   if (!m) return null
   let [, y, mo, d] = m.map(Number)
   if (y < 1911) y += 1911 // 民國年轉西元年
