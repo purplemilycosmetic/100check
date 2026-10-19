@@ -29,6 +29,7 @@
             <router-link to="/reference-links">常用參考網站</router-link>
             <router-link to="/restricted-ingredients">禁限用成分查詢</router-link>
             <router-link to="/ingredients-dictionary">成分字典</router-link>
+            <router-link to="/dv-greencard">美國綠卡抽籤審核模擬</router-link>
           </div>
         </div>
       </nav>

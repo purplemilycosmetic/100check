@@ -114,6 +114,11 @@ const router = createRouter({
       component: () => import('../views/IngredientsDictionaryView.vue'),
     },
     {
+      path: '/dv-greencard',
+      name: 'dv-greencard',
+      component: () => import('../views/DvGreencardView.vue'),
+    },
+    {
       path: '/blog',
       name: 'blog',
       component: () => import('../views/BlogListView.vue'),
