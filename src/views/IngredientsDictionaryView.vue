@@ -77,7 +77,13 @@
             <span v-if="item.safety_rating" class="safety-stars" :title="`安心度 ${item.safety_rating}/5`">
               {{ starString(item.safety_rating) }}
             </span>
-            <span class="ing-category">{{ item.category }}</span>
+            <span
+              v-for="tag in item.tags"
+              :key="tag"
+              class="ing-category"
+              :class="{ active: tag === selectedCategory }"
+              @click.stop="selectedCategory = selectedCategory === tag ? null : tag"
+            >{{ tag }}</span>
           </div>
         </div>
         <p class="ing-summary">{{ item.summary }}</p>
@@ -130,7 +136,12 @@ onMounted(async () => {
       .select('*')
       .order('name_zh', { ascending: true })
     if (error) throw error
-    items.value = (data || []).map((r) => ({ ...r, expanded: false }))
+    // 一個成分可有多個分類；舊資料只有 category 時退回單一分類
+    items.value = (data || []).map((r) => ({
+      ...r,
+      tags: Array.isArray(r.categories) && r.categories.length ? r.categories : r.category ? [r.category] : [],
+      expanded: false,
+    }))
   } catch (err) {
     loadError.value = err.message
   }
@@ -149,21 +160,28 @@ const legendRows = [
   { level: 1, text: '具明確爭議、限制或需特別留意的成分，建議謹慎評估' },
 ]
 
+// 分類固定順序（依保養功效 → 配方用途 → 特殊類別）；不在清單內的新分類排在最後
+const CATEGORY_ORDER = [
+  '保濕', '滋潤', '舒緩修護', '抗氧化', '抗老', '美白', '去角質', '抗痘控油', '防曬',
+  '防腐劑', '界面活性劑', '乳化質地', '配方輔助', '彩妝色料', '髮用', '口腔・制汗・指甲',
+  '常見過敏原', '禁用成分',
+]
+
 const categoryList = computed(() => {
   const counts = {}
   for (const item of items.value) {
-    if (!item.category) continue
-    counts[item.category] = (counts[item.category] || 0) + 1
+    for (const tag of item.tags) counts[tag] = (counts[tag] || 0) + 1
   }
+  const rank = (name) => (CATEGORY_ORDER.includes(name) ? CATEGORY_ORDER.indexOf(name) : 999)
   return Object.entries(counts)
-    .sort((a, b) => b[1] - a[1])
+    .sort((a, b) => rank(a[0]) - rank(b[0]) || b[1] - a[1])
     .map(([name, count]) => ({ name, count }))
 })
 
 const filtered = computed(() => {
   let list = items.value
   if (selectedCategory.value) {
-    list = list.filter((item) => item.category === selectedCategory.value)
+    list = list.filter((item) => item.tags.includes(selectedCategory.value))
   }
   if (query.value) {
     const q = query.value.toLowerCase()
@@ -263,8 +281,10 @@ async function generateNew() {
 .ing-header-right {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  flex-shrink: 0;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  max-width: 55%;
 }
 .safety-stars {
   color: #ff9800;
@@ -352,7 +372,18 @@ async function generateNew() {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  gap: 0.75rem;
   cursor: pointer;
+}
+@media (max-width: 600px) {
+  .ing-header {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .ing-header-right {
+    max-width: 100%;
+    justify-content: flex-start;
+  }
 }
 .ing-name-zh {
   font-weight: 700;
@@ -370,6 +401,12 @@ async function generateNew() {
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
   white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.ing-category:hover,
+.ing-category.active {
+  border-color: #ff5733;
 }
 .ing-summary {
   margin: 0.5rem 0 0;
