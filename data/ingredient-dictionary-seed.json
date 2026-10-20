@@ -2806,5 +2806,1493 @@
         "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
       }
     ]
+  },
+  {
+    "name_zh": "甜菜鹼",
+    "name_en": "Betaine",
+    "category": "保濕",
+    "summary": "從甜菜萃取的小分子保濕成分，能減輕清潔產品的刺激感。",
+    "content": "甜菜鹼是天然存在於甜菜中的胺基酸衍生物，具有良好的吸濕與保水能力，使用起來清爽不黏。它也被發現能降低界面活性劑對皮膚的刺激，所以常出現在洗面乳、沐浴乳與保濕化妝水中。注意它和「椰油醯胺丙基甜菜鹼」等甜菜鹼型界面活性劑是不同成分。",
+    "cautions": "刺激性極低。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Betaine",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Betaine"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "山梨醇",
+    "name_en": "Sorbitol",
+    "category": "保濕",
+    "summary": "常見的糖醇類保濕劑，也是牙膏的主要基底之一。",
+    "content": "山梨醇是一種糖醇，吸濕能力與甘油類似，能幫助產品保持濕潤、不易乾掉，常用於牙膏、乳霜與洗沐產品。在牙膏中它還能帶來微甜口感，且不會被口腔細菌用來產生蛀牙酸。",
+    "cautions": "刺激性極低。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Sorbitol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Sorbitol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "乳酸鈉",
+    "name_en": "Sodium Lactate",
+    "category": "保濕",
+    "summary": "皮膚天然保濕因子（NMF）的成分之一。",
+    "content": "乳酸鈉是乳酸的鈉鹽，本身就是角質層天然保濕因子的一部分，吸水力強，能幫助維持角質層的含水量。它也常和乳酸搭配，作為配方的 pH 緩衝系統。與乳酸不同，乳酸鈉本身不具去角質效果。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "所有膚質，尤其乾燥肌",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Sodium lactate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Sodium%20lactate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "戊二醇",
+    "name_en": "Pentylene Glycol",
+    "category": "保濕",
+    "summary": "兼具保濕與抑菌輔助效果的多元醇，常見於溫和配方。",
+    "content": "戊二醇是小分子多元醇，可以保濕、幫助溶解植物萃取物，同時具有抑菌輔助作用，因此常和其他多元醇一起用來降低傳統防腐劑的用量。膚感比丙二醇清爽。",
+    "cautions": "整體溫和；高濃度時少數敏感肌可能有刺痛感。",
+    "suitable_for": "大部分膚質皆適用",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Pentylene glycol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Pentylene%20glycol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "丙二醇（1,3-丙二醇）",
+    "name_en": "Propanediol",
+    "category": "保濕／溶劑",
+    "summary": "常由玉米發酵製得的多元醇，用來替代丙二醇。",
+    "content": "Propanediol 指的是 1,3-丙二醇，和常見的丙二醇（Propylene Glycol，1,2-丙二醇）結構不同。它常以植物原料發酵生產，具有保濕、溶解萃取物與增強防腐效果的功能，刺激性與致敏性報告比丙二醇少，因此常被用作「天然來源」的替代選擇。",
+    "cautions": "整體溫和。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — 1,3-Propanediol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=1%2C3-Propanediol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "雙丙甘醇",
+    "name_en": "Dipropylene Glycol",
+    "category": "保濕／溶劑",
+    "summary": "常見於香水與化妝水的溶劑，也能降低產品黏稠度。",
+    "content": "雙丙甘醇主要作為溶劑與黏度調整劑，可以幫助香料、植物萃取物均勻溶解，也能讓產品更好推開，同時帶有輕微的保濕效果，在香水、化妝水與髮品中很常見。",
+    "cautions": "刺激性低。",
+    "suitable_for": "大部分膚質皆適用",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Dipropylene glycol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Dipropylene%20glycol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "羥乙基脲",
+    "name_en": "Hydroxyethyl Urea",
+    "category": "保濕",
+    "summary": "尿素的衍生物，保濕力強但沒有黏膩感。",
+    "content": "羥乙基脲保有尿素類成分的強大吸濕能力，但不像尿素在高濃度時會刺激或有去角質作用，膚感也比甘油清爽，常用於身體乳與質地輕盈的保濕產品。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "所有膚質，尤其想要清爽保濕者",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Hydroxyethyl urea",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Hydroxyethyl%20urea"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "銀耳多醣",
+    "name_en": "Tremella Fuciformis Polysaccharide",
+    "category": "保濕",
+    "summary": "來自白木耳的植物多醣，常被稱為「植物玻尿酸」。",
+    "content": "銀耳多醣是從白木耳萃取的多醣體，具有很強的保水能力，能在皮膚表面形成柔軟的保濕膜。它常與玻尿酸搭配使用，強化不同層次的保濕效果。「植物玻尿酸」只是行銷說法，兩者是完全不同的分子。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "所有膚質，尤其乾燥肌",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Tremella fuciformis polysaccharide",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Tremella%20fuciformis%20polysaccharide"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "乙醯化玻尿酸鈉",
+    "name_en": "Sodium Acetylated Hyaluronate",
+    "category": "保濕",
+    "summary": "親油性提升的玻尿酸衍生物，訴求更持久的保濕。",
+    "content": "乙醯化玻尿酸鈉是在玻尿酸結構上接上乙醯基，使它兼具親水與親油特性，與皮膚表面的貼附性更好，保濕效果較持久，有時被稱為「超級玻尿酸」。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Sodium acetylated hyaluronate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Sodium%20acetylated%20hyaluronate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "橄欖果油",
+    "name_en": "Olea Europaea (Olive) Fruit Oil",
+    "category": "滋潤／emollient",
+    "summary": "富含油酸的經典植物油，滋潤度高。",
+    "content": "橄欖油含大量油酸與天然抗氧化物，滋潤效果好，常用於乳霜、身體油與手工皂。由於油酸比例高，有研究指出長期用在本身屏障就較弱的肌膚上，可能讓屏障更脆弱，因此較適合用在身體或偏乾的部位。",
+    "cautions": "痘痘肌與屏障受損肌用於臉部時需留意。",
+    "suitable_for": "乾性肌膚與身體保養",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Olive oil",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Olive%20oil"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "向日葵籽油",
+    "name_en": "Helianthus Annuus (Sunflower) Seed Oil",
+    "category": "滋潤／emollient",
+    "summary": "富含亞麻油酸的輕盈植物油，對皮膚屏障友善。",
+    "content": "向日葵籽油含有豐富的亞麻油酸（一種必需脂肪酸），研究顯示有助於維持皮膚屏障功能，質地也比橄欖油清爽，常見於嬰兒油、乳液與卸妝油。",
+    "cautions": "整體溫和；對菊科植物過敏者可留意。",
+    "suitable_for": "大部分膚質，包括嬰幼兒",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Sunflower oil",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Sunflower%20oil"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "甜杏仁油",
+    "name_en": "Prunus Amygdalus Dulcis (Sweet Almond) Oil",
+    "category": "滋潤／emollient",
+    "summary": "溫和滋潤的按摩基底油。",
+    "content": "甜杏仁油富含油酸與亞麻油酸，延展性好、膚感柔滑，是按摩油與身體保養品的常用基底油，也常用於乾燥肌膚的保養。",
+    "cautions": "堅果過敏者使用前應先小範圍測試。",
+    "suitable_for": "乾性與一般肌膚",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Almond oil",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Almond%20oil"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "蓖麻籽油",
+    "name_en": "Ricinus Communis (Castor) Seed Oil",
+    "category": "滋潤／emollient",
+    "summary": "質地濃稠、光澤感強的油脂，常見於唇膏與睫毛產品。",
+    "content": "蓖麻油的主要成分是蓖麻油酸，質地黏稠、能帶來光澤並幫助色料分散，因此大量用於唇膏、唇蜜。坊間常說它能「讓睫毛變長」，目前缺乏可靠的科學證據，化妝品文案也不得如此宣稱。",
+    "cautions": "少數人可能對蓖麻油過敏；未精製的蓖麻籽含有毒蛋白，化妝品使用的是已精製的油。",
+    "suitable_for": "唇部與乾燥部位",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Castor oil",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Castor%20oil"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "夏威夷果油",
+    "name_en": "Macadamia Integrifolia Seed Oil",
+    "category": "滋潤／emollient",
+    "summary": "含有棕櫚油酸的植物油，膚感接近皮脂。",
+    "content": "夏威夷果油的特色是含有較多棕櫚油酸，這種脂肪酸在年輕肌膚的皮脂中含量較高，因此常被用在熟齡與乾燥肌的滋潤產品中，質地柔滑好吸收。",
+    "cautions": "堅果過敏者應留意。",
+    "suitable_for": "乾性與熟齡肌膚",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Macadamia oil",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Macadamia%20oil"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "蜂蠟",
+    "name_en": "Cera Alba (Beeswax)",
+    "category": "封閉性保濕劑",
+    "summary": "天然的封閉性蠟質，常用於護唇膏與膏狀產品。",
+    "content": "蜂蠟由蜜蜂分泌，能在皮膚表面形成保護膜、減少水分流失，也可讓膏霜產品成形、提升硬度，是護唇膏、護手霜與膏狀香水的常見成分。",
+    "cautions": "少數人對蜂產品過敏；純素產品通常改用堪地里拉蠟等植物蠟。",
+    "suitable_for": "乾燥部位與唇部",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Beeswax",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Beeswax"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "小燭樹蠟",
+    "name_en": "Euphorbia Cerifera (Candelilla) Wax",
+    "category": "封閉性保濕劑",
+    "summary": "植物來源的蠟，常用來替代蜂蠟。",
+    "content": "小燭樹蠟（堪地里拉蠟）從墨西哥的小燭樹植物取得，硬度高、帶光澤，常用於純素唇膏、睫毛膏與膏狀彩妝，幫助產品成形並增加光澤度。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Candelilla wax",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Candelilla%20wax"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "山嵛醇",
+    "name_en": "Behenyl Alcohol",
+    "category": "乳化劑／質地調整劑",
+    "summary": "長鏈脂肪醇，讓乳霜更濃厚、更穩定。",
+    "content": "山嵛醇是 22 個碳的長鏈脂肪醇，用途和鯨蠟醇類似，能增稠、穩定乳化系統並帶來柔軟膚觸，常見於乳霜與護髮產品。它不是會讓皮膚乾燥的酒精。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Behenyl alcohol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Behenyl%20alcohol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "氫化聚異丁烯",
+    "name_en": "Hydrogenated Polyisobutene",
+    "category": "滋潤／emollient",
+    "summary": "常被用來取代礦物油的合成油，穩定不易變質。",
+    "content": "氫化聚異丁烯是合成碳氫化合物，性質非常穩定、不會氧化酸敗，能帶來滑順或光澤的膚感，依分子量不同可用於卸妝油、唇蜜或乳霜。",
+    "cautions": "刺激性很低；高濃度用於臉部時，痘痘肌可留意。",
+    "suitable_for": "大部分膚質",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Hydrogenated polyisobutene",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Hydrogenated%20polyisobutene"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "異壬酸異壬酯",
+    "name_en": "Isononyl Isononanoate",
+    "category": "滋潤／emollient",
+    "summary": "輕盈絲滑的合成酯，常用來調整產品的延展性。",
+    "content": "異壬酸異壬酯質地輕、延展性好，塗抹後會留下絲滑但不油膩的觸感，常見於粉底液、防曬與乳液，也能幫助溶解部分防曬成分。",
+    "cautions": "刺激性低。",
+    "suitable_for": "大部分膚質",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Isononyl isononanoate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Isononyl%20isononanoate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "C12-15 烷基苯甲酸酯",
+    "name_en": "C12-15 Alkyl Benzoate",
+    "category": "滋潤／emollient",
+    "summary": "防曬產品常用的油相成分，幫助溶解化學防曬劑。",
+    "content": "C12-15 烷基苯甲酸酯是清爽的合成酯，能很好地溶解阿伏苯宗等固體防曬劑，讓防曬成分分布更均勻，同時降低防曬產品的油膩感。",
+    "cautions": "刺激性低。",
+    "suitable_for": "大部分膚質",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — C12-15 alkyl benzoate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=C12-15%20alkyl%20benzoate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "異十二烷",
+    "name_en": "Isododecane",
+    "category": "溶劑／收斂劑",
+    "summary": "揮發性輕質油，讓彩妝快速成膜、持久不脫妝。",
+    "content": "異十二烷是揮發性的碳氫化合物，塗上後會很快揮發，留下彩妝色料或成膜劑，因此常用於防水睫毛膏、持妝粉底與卸妝油。揮發後幾乎不殘留油膩感。",
+    "cautions": "揮發時少數人可能感到眼部不適；防水產品需要用卸妝油才能卸乾淨。",
+    "suitable_for": "大部分膚質（彩妝用）",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Isododecane",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Isododecane"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "苯基聚三甲基矽氧烷",
+    "name_en": "Phenyl Trimethicone",
+    "category": "膚觸調整劑",
+    "summary": "能帶來光澤感的矽靈，常見於護髮油與唇彩。",
+    "content": "苯基聚三甲基矽氧烷是含苯基的矽靈，折光率較高，能讓頭髮與唇部看起來更有光澤，也能讓產品更滑順好推，常見於護髮精油、唇蜜與粉底。",
+    "cautions": "刺激性很低；一般正常清潔即可洗掉。",
+    "suitable_for": "所有膚質與髮質",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Phenyl trimethicone",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Phenyl%20trimethicone"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "鯨蠟硬脂基葡萄糖苷",
+    "name_en": "Cetearyl Glucoside",
+    "category": "乳化劑／質地調整劑",
+    "summary": "由植物脂肪醇與葡萄糖組成的溫和乳化劑。",
+    "content": "鯨蠟硬脂基葡萄糖苷常與鯨蠟硬脂醇一起使用，能形成類似皮膚脂質結構的液晶乳化系統，讓乳霜質地細緻、穩定，常見於標榜天然或溫和的保養品。",
+    "cautions": "整體溫和；少數人對糖苷類乳化劑過敏。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Cetearyl glucoside",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Cetearyl%20glucoside"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "PEG-40 氫化蓖麻油",
+    "name_en": "PEG-40 Hydrogenated Castor Oil",
+    "category": "乳化劑／質地調整劑",
+    "summary": "常用的增溶劑，讓香料與精油溶進化妝水。",
+    "content": "PEG-40 氫化蓖麻油是以蓖麻油為原料製成的非離子界面活性劑，主要用來把少量油性成分（例如香料、精油、油溶性維他命）溶進水性配方，讓產品維持透明。",
+    "cautions": "一般濃度下刺激性低；PEG 類原料需控制製程副產物殘留，這部分由原料供應商把關。",
+    "suitable_for": "大部分膚質",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — PEG-40 hydrogenated castor oil",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=PEG-40%20hydrogenated%20castor%20oil"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "聚丙烯酸鈉",
+    "name_en": "Sodium Polyacrylate",
+    "category": "質地調整劑",
+    "summary": "強吸水的高分子增稠劑，能快速形成凝膠質地。",
+    "content": "聚丙烯酸鈉是高吸水性高分子，加入配方後能迅速增稠，並幫助穩定乳液，常用在凝霜、乳液與面膜精華。它也是紙尿布吸水層的材料之一，但化妝品中用量很低。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Sodium polyacrylate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Sodium%20polyacrylate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "丙烯醯二甲基牛磺酸銨/VP 共聚物",
+    "name_en": "Ammonium Acryloyldimethyltaurate/VP Copolymer",
+    "category": "質地調整劑",
+    "summary": "即用型增稠劑，讓凝露與乳液清爽好推。",
+    "content": "這種高分子（常見原料名 Aristoflex AVC）可以直接在冷製程中增稠，不需要像卡波姆一樣先中和，形成的質地清爽、不黏膩，耐受的 pH 範圍也比較廣，常見於凝露與清爽型乳液。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Ammonium acryloyldimethyltaurate/VP copolymer",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Ammonium%20acryloyldimethyltaurate/VP%20copolymer"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "羥乙基纖維素",
+    "name_en": "Hydroxyethylcellulose",
+    "category": "質地調整劑",
+    "summary": "纖維素衍生的增稠劑，常見於洗沐產品與凝膠。",
+    "content": "羥乙基纖維素以植物纖維素為原料，溶於水後形成透明黏稠的溶液，用來增稠、穩定泡沫，常見於洗髮精、沐浴乳、凝膠與潤滑液。",
+    "cautions": "刺激性極低。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Hydroxyethyl cellulose",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Hydroxyethyl%20cellulose"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "小核菌膠",
+    "name_en": "Sclerotium Gum",
+    "category": "質地調整劑",
+    "summary": "微生物發酵製成的天然增稠劑，膚感柔滑。",
+    "content": "小核菌膠是由真菌發酵產生的多醣，能穩定乳液並帶來柔滑、不黏膩的觸感，也有一定的保濕作用，常被用在標榜天然配方的乳液與精華中。",
+    "cautions": "刺激性極低。",
+    "suitable_for": "所有膚質皆適用",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Sclerotium gum",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Sclerotium%20gum"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "椰油醯麩胺酸鈉",
+    "name_en": "Sodium Cocoyl Glutamate",
+    "category": "界面活性劑",
+    "summary": "胺基酸系清潔成分，溫和不緊繃。",
+    "content": "椰油醯麩胺酸鈉由椰子油脂肪酸與麩胺酸組成，屬於胺基酸系界面活性劑，偏弱酸性、對皮膚溫和，洗後較不緊繃，常見於「胺基酸洗面乳」與嬰兒清潔產品。泡沫通常比硫酸鹽類少一些。",
+    "cautions": "整體溫和。",
+    "suitable_for": "大部分膚質，尤其乾性與敏感肌",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Sodium cocoyl glutamate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Sodium%20cocoyl%20glutamate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "月桂醯肌胺酸鈉",
+    "name_en": "Sodium Lauroyl Sarcosinate",
+    "category": "界面活性劑",
+    "summary": "起泡力好的溫和型清潔成分，也常用於牙膏。",
+    "content": "月桂醯肌胺酸鈉由月桂酸與肌胺酸組成，泡沫豐富、清潔力適中，刺激性比 SLS 低，常用於洗面乳、洗髮精，也是部分牙膏的發泡劑。",
+    "cautions": "整體溫和；極少數人可能有刺激反應。",
+    "suitable_for": "大部分膚質",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Sodium lauroyl sarcosinate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Sodium%20lauroyl%20sarcosinate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "月桂基葡萄糖苷",
+    "name_en": "Lauryl Glucoside",
+    "category": "界面活性劑",
+    "summary": "植物來源的非離子清潔成分，泡沫溫和。",
+    "content": "月桂基葡萄糖苷與癸基葡萄糖苷同屬烷基糖苷類，以葡萄糖與植物脂肪醇製成，溫和、易生物分解，常與其他界面活性劑搭配，降低整體刺激性。",
+    "cautions": "整體溫和，但有少數接觸性過敏報告。",
+    "suitable_for": "大部分膚質，包括敏感肌",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Lauryl glucoside",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Lauryl%20glucoside"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "甲基椰油醯基牛磺酸鈉",
+    "name_en": "Sodium Methyl Cocoyl Taurate",
+    "category": "界面活性劑",
+    "summary": "溫和、泡沫細緻的清潔成分，在弱酸性配方中也穩定。",
+    "content": "甲基椰油醯基牛磺酸鈉是牛磺酸系界面活性劑，泡沫細緻綿密，能在弱酸性 pH 下維持良好清潔力，因此常出現在弱酸性洗面乳與溫和洗髮精中。",
+    "cautions": "整體溫和。",
+    "suitable_for": "大部分膚質，尤其敏感肌",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Sodium methyl cocoyl taurate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Sodium%20methyl%20cocoyl%20taurate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "鞣花酸",
+    "name_en": "Ellagic Acid",
+    "category": "美白",
+    "summary": "多酚類美白成分，台灣訂有使用上限。",
+    "content": "鞣花酸是存在於莓果、石榴等植物中的多酚，研究顯示能抑制酪胺酸酶活性，減少黑色素生成，也具有抗氧化作用。依台灣《化粧品一般成分使用限制表》，限量 0.5%。",
+    "cautions": "整體耐受度好；溶解度低，配方技術會影響實際效果。",
+    "suitable_for": "想改善暗沉、膚色不均者",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Ellagic acid",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Ellagic%20acid"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "4-丁基間苯二酚",
+    "name_en": "4-Butylresorcinol",
+    "category": "美白",
+    "summary": "抑制酪胺酸酶效果很強的間苯二酚衍生物。",
+    "content": "4-丁基間苯二酚（常見原料名 Rucinol）在研究中顯示有很強的酪胺酸酶抑制效果，常見於日系與歐系的淡斑精華。在台灣，未列入公告美白成分的原料不得宣稱美白功效，產品文案需特別注意。",
+    "cautions": "少數人可能出現刺激或泛紅；建議搭配防曬。",
+    "suitable_for": "想淡化斑點、改善色沉者",
+    "safety_rating": 3,
+    "reference_links": [
+      {
+        "label": "PubChem — 4-Butylresorcinol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=4-Butylresorcinol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "咖啡因",
+    "name_en": "Caffeine",
+    "category": "抗氧化",
+    "summary": "常見於眼霜，訴求減輕浮腫與抗氧化。",
+    "content": "咖啡因具有收縮血管與抗氧化的作用，用於眼周產品時，常用來改善浮腫與暫時的暗沉感；也常見於頭皮與身體產品。外用的效果多屬暫時性改善。",
+    "cautions": "刺激性低。",
+    "suitable_for": "大部分膚質，尤其在意眼周浮腫者",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Caffeine",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Caffeine"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "肌肽",
+    "name_en": "Carnosine",
+    "category": "抗氧化",
+    "summary": "人體內也有的雙胜肽，訴求抗糖化與抗氧化。",
+    "content": "肌肽由兩種胺基酸組成，存在於人體肌肉組織中。研究指出它能減少糖化反應（蛋白質與糖結合後變硬、變黃的過程）並具有抗氧化作用，因此常見於強調抗老、改善黯沉的保養品。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "熟齡肌與在意黯沉者",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Carnosine",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Carnosine"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "棕櫚醯三胜肽-1",
+    "name_en": "Palmitoyl Tripeptide-1",
+    "category": "抗老",
+    "summary": "訊號胜肽之一，常與棕櫚醯四胜肽-7 搭配使用。",
+    "content": "棕櫚醯三胜肽-1 是模擬膠原蛋白片段的訊號胜肽，在研究中顯示能刺激膠原蛋白合成，常和棕櫚醯四胜肽-7 組成複方（常見原料名 Matrixyl 3000），用於抗皺精華與眼霜。",
+    "cautions": "刺激性低，與多數成分相容。",
+    "suitable_for": "想改善細紋的肌膚",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Palmitoyl tripeptide-1",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Palmitoyl%20tripeptide-1"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "維他命 B12（氰鈷胺）",
+    "name_en": "Cyanocobalamin",
+    "category": "舒緩／修護",
+    "summary": "會讓產品呈現粉紅色的維他命，訴求舒緩修護。",
+    "content": "氰鈷胺是維他命 B12 的一種形式，本身呈深紅色，因此添加它的產品常帶有天然的粉紅色。用於保養品主要訴求舒緩與修護，常見於修護精華與面膜。",
+    "cautions": "刺激性很低；可能使衣物或毛巾輕微染色。",
+    "suitable_for": "敏感、受損肌膚",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Cyanocobalamin",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Cyanocobalamin"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "鋅 PCA",
+    "name_en": "Zinc PCA",
+    "category": "去角質／抗痘",
+    "summary": "兼具控油與保濕的鋅鹽，常見於油肌與頭皮產品。",
+    "content": "鋅 PCA 是鋅與吡咯烷酮羧酸（皮膚天然保濕因子之一）結合的鹽類，研究顯示能幫助調節皮脂分泌，同時有一定的抑菌效果，常見於控油化妝水、痘痘肌產品與頭皮調理品。",
+    "cautions": "刺激性低。",
+    "suitable_for": "油性、痘痘肌與易出油頭皮",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Zinc PCA",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Zinc%20PCA"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "半乳糖酵母樣菌發酵產物濾液",
+    "name_en": "Galactomyces Ferment Filtrate",
+    "category": "保濕／舒緩",
+    "summary": "知名的發酵成分，常見於精華水，訴求保濕與提亮。",
+    "content": "這是酵母樣菌發酵後過濾得到的液體，含有胺基酸、有機酸、礦物質等成分，能提供保濕效果，並幫助改善膚質粗糙、黯沉的觀感，常在配方中大量使用，甚至佔了大部分成分。",
+    "cautions": "整體溫和；少數人對發酵產物敏感，初次使用可小範圍測試。",
+    "suitable_for": "大部分膚質",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Galactomyces",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Galactomyces"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "二裂酵母發酵產物溶胞物",
+    "name_en": "Bifida Ferment Lysate",
+    "category": "舒緩／修護",
+    "summary": "益生菌來源的發酵成分，訴求強化肌膚防禦力。",
+    "content": "二裂酵母發酵產物溶胞物是將比菲德氏菌培養後破壁取得的成分，研究指出有助於減少環境刺激造成的敏感反應、強化屏障功能，常見於修護型精華。名稱中的「酵母」是中文譯名習慣，實際上它是細菌來源。",
+    "cautions": "整體溫和。",
+    "suitable_for": "敏感、屏障較弱的肌膚",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Bifida ferment lysate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Bifida%20ferment%20lysate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "蜂膠萃取",
+    "name_en": "Propolis Extract",
+    "category": "舒緩／修護",
+    "summary": "蜜蜂採集的樹脂物質，具抗菌與抗氧化效果。",
+    "content": "蜂膠含有大量類黃酮與多酚，研究顯示具有抗菌、抗發炎與抗氧化作用，常用於痘痘肌調理與修護型保養品。",
+    "cautions": "蜂膠是已知的接觸性過敏原之一，對蜂產品或樹脂過敏者應避免，初次使用建議先小範圍測試。",
+    "suitable_for": "油性、痘痘肌（非過敏體質）",
+    "safety_rating": 3,
+    "reference_links": [
+      {
+        "label": "PubChem — Propolis",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Propolis"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "艾草萃取",
+    "name_en": "Artemisia Vulgaris Extract",
+    "category": "舒緩／修護",
+    "summary": "韓系保養品常見的舒緩植物萃取。",
+    "content": "艾草含有多種類黃酮與精油成分，傳統上常用於舒緩不適，在保養品中訴求鎮靜泛紅、抗氧化，常見於敏感肌化妝水與精華。",
+    "cautions": "對菊科植物過敏者應留意。",
+    "suitable_for": "敏感與泛紅肌膚",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Artemisia vulgaris",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Artemisia%20vulgaris"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "魚腥草萃取",
+    "name_en": "Houttuynia Cordata Extract",
+    "category": "舒緩／修護",
+    "summary": "具抗菌與舒緩作用的植物萃取，常用於痘痘肌產品。",
+    "content": "魚腥草含有類黃酮與揮發性成分，研究顯示具有抗菌與抗發炎效果，常見於痘痘肌與油性肌膚的調理化妝水、精華。",
+    "cautions": "整體溫和。",
+    "suitable_for": "油性、痘痘與敏感肌",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Houttuynia cordata",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Houttuynia%20cordata"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "馬齒莧萃取",
+    "name_en": "Portulaca Oleracea Extract",
+    "category": "舒緩／修護",
+    "summary": "常見於敏感肌產品的舒緩植物萃取。",
+    "content": "馬齒莧富含多酚、類黃酮與 Omega-3 脂肪酸，研究顯示具有抗發炎與抗氧化作用，常用於舒緩泛紅、乾癢的修護型保養品。",
+    "cautions": "刺激性很低。",
+    "suitable_for": "敏感、泛紅肌膚",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Portulaca oleracea",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Portulaca%20oleracea"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "母菊花萃取",
+    "name_en": "Chamomilla Recutita (Matricaria) Flower Extract",
+    "category": "舒緩／修護",
+    "summary": "洋甘菊萃取，經典的舒緩植物成分。",
+    "content": "德國洋甘菊萃取含有沒藥醇、芹菜素等成分，具有舒緩與抗發炎效果，常見於敏感肌、嬰幼兒與曬後保養品。",
+    "cautions": "對菊科植物過敏者應避免或先小範圍測試。",
+    "suitable_for": "敏感肌與嬰幼兒產品",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Matricaria chamomilla",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Matricaria%20chamomilla"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "金盞花萃取",
+    "name_en": "Calendula Officinalis Flower Extract",
+    "category": "舒緩／修護",
+    "summary": "傳統用於舒緩修護的花卉萃取。",
+    "content": "金盞花萃取含有三萜類與類黃酮，傳統上常用於舒緩皮膚不適，在保養品中訴求修護與鎮靜，常見於嬰兒霜、修護膏與化妝水。",
+    "cautions": "對菊科植物過敏者應留意。",
+    "suitable_for": "乾燥、敏感與嬰幼兒肌膚",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Calendula officinalis",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Calendula%20officinalis"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "迷迭香葉萃取",
+    "name_en": "Rosmarinus Officinalis (Rosemary) Leaf Extract",
+    "category": "抗氧化",
+    "summary": "天然抗氧化劑，常用來延緩配方中油脂氧化。",
+    "content": "迷迭香萃取含有鼠尾草酸、迷迭香酸等抗氧化成分，常用來保護配方中的植物油不易酸敗，也常見於頭皮與髮用產品。精油型態則屬於香料成分。",
+    "cautions": "萃取物一般溫和；迷迭香精油濃度高時可能刺激，香料過敏者留意。",
+    "suitable_for": "大部分膚質",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Rosmarinus officinalis",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Rosmarinus%20officinalis"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "香茅醇",
+    "name_en": "Citronellol",
+    "category": "常見過敏原",
+    "summary": "玫瑰與天竺葵香氣的主要成分，需標示的香料過敏原。",
+    "content": "香茅醇天然存在於玫瑰、天竺葵等精油中，帶有柔和的花香，廣泛用於香水與保養品。它被列在歐盟需標示的香料過敏原清單中，超過一定濃度就必須在成分表中個別標示。",
+    "cautions": "對香料過敏者應留意。",
+    "suitable_for": "一般膚質；香料過敏者避免",
+    "safety_rating": 3,
+    "reference_links": [
+      {
+        "label": "PubChem — Citronellol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Citronellol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "香葉醇",
+    "name_en": "Geraniol",
+    "category": "常見過敏原",
+    "summary": "帶玫瑰香氣的香料成分，屬需標示的過敏原。",
+    "content": "香葉醇存在於玫瑰、玫瑰草等精油中，是常見的香氛成分。它本身與氧化後的產物都可能引起接觸性過敏，因此被列為需標示的香料過敏原。",
+    "cautions": "對香料過敏者應留意。",
+    "suitable_for": "一般膚質；香料過敏者避免",
+    "safety_rating": 3,
+    "reference_links": [
+      {
+        "label": "PubChem — Geraniol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Geraniol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "丁香酚",
+    "name_en": "Eugenol",
+    "category": "常見過敏原",
+    "summary": "丁香精油的主要成分，具辛香氣味，屬需標示的過敏原。",
+    "content": "丁香酚是丁香、肉桂葉等精油的主要成分，帶有溫暖的辛香味，也有抗菌作用。它被列為需標示的香料過敏原，香水與帶辛香調的產品中較常見。",
+    "cautions": "對香料過敏者應避免；高濃度具刺激性。",
+    "suitable_for": "一般膚質；香料過敏者避免",
+    "safety_rating": 3,
+    "reference_links": [
+      {
+        "label": "PubChem — Eugenol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Eugenol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "水楊酸苄酯",
+    "name_en": "Benzyl Salicylate",
+    "category": "常見過敏原",
+    "summary": "常見的香料定香成分，屬需標示的過敏原。",
+    "content": "水楊酸苄酯帶有淡淡的花香，常在香水中作為定香劑，也會出現在部分保養品與洗沐產品的香料中。它被列為需標示的香料過敏原之一，歐盟也已對它在不同產品類型中的使用濃度設定上限。",
+    "cautions": "對香料過敏者應留意。",
+    "suitable_for": "一般膚質；香料過敏者避免",
+    "safety_rating": 3,
+    "reference_links": [
+      {
+        "label": "PubChem — Benzyl salicylate",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Benzyl%20salicylate"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "山嵛基三甲基氯化銨",
+    "name_en": "Behentrimonium Chloride",
+    "category": "髮用調理",
+    "summary": "潤髮乳最常見的柔順成分。",
+    "content": "山嵛基三甲基氯化銨是陽離子界面活性劑，帶正電，能吸附在帶負電的受損髮絲上，減少靜電、讓頭髮柔順好梳，是潤髮乳與護髮素的核心成分。依台灣《化粧品防腐劑成分使用限制表》，作為防腐劑使用時限量 0.1%；作為其他用途時，台灣《化粧品一般成分使用限制表》另訂有依產品類型區分的限量。",
+    "cautions": "不建議用於臉部；沖洗型產品需確實沖淨。",
+    "suitable_for": "所有髮質（潤髮產品）",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Behentrimonium chloride",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Behentrimonium%20chloride"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "西曲氯銨",
+    "name_en": "Cetrimonium Chloride",
+    "category": "髮用調理",
+    "summary": "常見的頭髮柔順與抗靜電成分，台灣依產品類型設有限量。",
+    "content": "西曲氯銨（鯨蠟基三甲基氯化銨）是陽離子界面活性劑，能讓頭髮柔順、減少靜電，常見於潤髮乳與免沖洗護髮。依台灣《化粧品一般成分使用限制表》，與 Steartrimonium chloride 單獨或混合使用時，立即沖洗之髮用產品限量 2.5%、非立即沖洗之髮用產品 1%、非立即沖洗之臉部產品 0.5%。作為防腐劑使用時，依台灣《化粧品防腐劑成分使用限制表》限量 0.1%。",
+    "cautions": "高濃度具刺激性，免沖洗產品要注意濃度與使用部位。",
+    "suitable_for": "所有髮質（潤髮產品）",
+    "safety_rating": 3,
+    "reference_links": [
+      {
+        "label": "PubChem — Cetrimonium chloride",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Cetrimonium%20chloride"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "聚季銨鹽-10",
+    "name_en": "Polyquaternium-10",
+    "category": "髮用調理",
+    "summary": "洗髮精常見的調理成分，洗後髮絲更好梳理。",
+    "content": "聚季銨鹽-10 是陽離子化的纖維素高分子，能在洗髮過程中吸附在髮絲表面，減少打結與靜電，讓洗後頭髮更柔順，是「洗潤合一」產品的常見成分。",
+    "cautions": "刺激性低；長期大量使用可能讓細軟髮顯得扁塌。",
+    "suitable_for": "所有髮質",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Polyquaternium-10",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Polyquaternium-10"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "水解角蛋白",
+    "name_en": "Hydrolyzed Keratin",
+    "category": "髮用調理",
+    "summary": "頭髮主要蛋白質的水解產物，用來修護受損髮絲。",
+    "content": "角蛋白是頭髮與指甲的主要結構蛋白。水解後的小分子角蛋白能附著或部分滲入受損的毛鱗片，暫時填補受損部位，讓頭髮看起來更有光澤、更強韌，常用於護髮素與髮膜。",
+    "cautions": "刺激性很低。注意與含甲醛釋放劑的「角蛋白燙直」沙龍療程不同。",
+    "suitable_for": "受損、染燙髮",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Keratin",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Keratin"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "甘寶素",
+    "name_en": "Climbazole",
+    "category": "髮用調理",
+    "summary": "抗頭皮屑成分，可抑制與頭皮屑相關的真菌。",
+    "content": "甘寶素是咪唑類抗真菌成分，能抑制與頭皮屑相關的馬拉色菌，常見於去屑洗髮精，也可作為防腐劑使用。依台灣《化粧品一般成分使用限制表》與台灣《化粧品防腐劑成分使用限制表》，限量皆為 0.5%。",
+    "cautions": "一般於沖洗型洗髮精中使用；極少數人可能有頭皮刺激。",
+    "suitable_for": "有頭皮屑困擾者",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Climbazole",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Climbazole"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "薄荷醇",
+    "name_en": "Menthol",
+    "category": "舒緩／修護",
+    "summary": "帶來清涼感的成分，常見於頭皮、身體與口腔產品。",
+    "content": "薄荷醇會作用在皮膚的冷感受器上，帶來清涼感，常用於涼感洗髮精、身體噴霧、牙膏與漱口水。依台灣《化粧品一般成分使用限制表》，可能使用於二歲以下孩童之產品須加註「二歲以下孩童使用前請諮詢醫師或藥師」（立即沖洗產品得免刊載）。",
+    "cautions": "濃度高時可能有刺激或刺痛感；敏感肌與眼周需小心。",
+    "suitable_for": "一般膚質；嬰幼兒產品需依規定標示",
+    "safety_rating": 3,
+    "reference_links": [
+      {
+        "label": "PubChem — Menthol",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Menthol"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "樟腦",
+    "name_en": "Camphor",
+    "category": "舒緩／修護",
+    "summary": "帶來清涼、溫熱感的成分，台灣限量 3%。",
+    "content": "樟腦具有獨特的清涼氣味，用於皮膚會帶來先涼後溫的感受，常見於按摩霜、身體乳與部分痘痘調理產品。依台灣《化粧品一般成分使用限制表》，限量 3%；可能使用於二歲以下孩童之產品須加註「二歲以下孩童使用前請諮詢醫師或藥師」（立即沖洗產品得免刊載）。",
+    "cautions": "具刺激性，不可用於破損皮膚；嬰幼兒產品需特別謹慎。",
+    "suitable_for": "成人身體保養",
+    "safety_rating": 2,
+    "reference_links": [
+      {
+        "label": "PubChem — Camphor",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Camphor"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "高嶺土",
+    "name_en": "Kaolin",
+    "category": "膚觸調整劑",
+    "summary": "溫和的白色黏土，常用於清潔面膜與粉類產品。",
+    "content": "高嶺土是天然礦物黏土，能吸附多餘油脂與髒污，質地比其他黏土溫和，常見於清潔面膜、控油產品與蜜粉。",
+    "cautions": "長時間敷用可能讓皮膚覺得乾，建議依產品說明時間沖洗。",
+    "suitable_for": "油性與混合肌",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Kaolin",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Kaolin"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "膨潤土",
+    "name_en": "Bentonite",
+    "category": "膚觸調整劑",
+    "summary": "吸附力強的礦物黏土，常見於深層清潔面膜。",
+    "content": "膨潤土是由火山灰形成的黏土，吸水後會膨脹，吸附油脂與髒污的能力比高嶺土更強，常用於深層清潔面膜，也可作為增稠與懸浮劑。",
+    "cautions": "清潔力強，乾性或敏感肌不宜長時間或頻繁使用。",
+    "suitable_for": "油性肌膚",
+    "safety_rating": 4,
+    "reference_links": [
+      {
+        "label": "PubChem — Bentonite",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Bentonite"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
+  },
+  {
+    "name_zh": "二氧化矽",
+    "name_en": "Silica",
+    "category": "膚觸調整劑",
+    "summary": "常見於粉底與蜜粉的粉體，能吸油並帶來柔焦效果。",
+    "content": "化妝品使用的二氧化矽多為非晶形的微細粉末，能吸附油脂、帶來霧面效果，也能讓粉體更滑順，並有視覺上柔焦毛孔的作用，常見於粉底、蜜粉、防曬與控油產品。",
+    "cautions": "一般使用安全；避免大量吸入粉體。",
+    "suitable_for": "所有膚質，尤其油性肌",
+    "safety_rating": 5,
+    "reference_links": [
+      {
+        "label": "PubChem — Silica",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/#query=Silica"
+      },
+      {
+        "label": "CIR 美國化粧品成分評估委員會（成分索引，可自行搜尋）",
+        "url": "https://www.cir-safety.org/ingredients"
+      },
+      {
+        "label": "CosIng 歐盟化粧品成分資料庫（可自行搜尋）",
+        "url": "https://ec.europa.eu/growth/tools-databases/cosing/index.cfm?fuseaction=search.simple"
+      }
+    ]
   }
 ]
