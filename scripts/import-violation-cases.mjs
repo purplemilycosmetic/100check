@@ -154,9 +154,19 @@ async function main() {
     return
   }
 
+  // 兩張表的 id 沒有自動編號，從目前最大值往後接
+  const maxId = async (table) => {
+    const { data: r, error } = await supabase.from(table).select('id').order('id', { ascending: false }).limit(1)
+    if (error) throw new Error(`讀取 ${table} 最大 id 失敗：${error.message}`)
+    return r?.[0]?.id || 0
+  }
+  let nextWordId = (await maxId('forbidden_words')) + 1
+  let nextCaseId = (await maxId('violation_cases')) + 1
+
   // 1. 新增關鍵詞
   if (newWords.size) {
     const insert = [...newWords.values()].map((w) => ({
+      id: nextWordId++,
       name: w.name,
       category: w.category,
       risk_score: w.risk_score,
@@ -169,7 +179,7 @@ async function main() {
   }
 
   // 2. 寫入案例（分批）
-  const payload = rows.map(({ _word, ...r }) => ({ ...r, forbidden_word_id: _word.id }))
+  const payload = rows.map(({ _word, ...r }) => ({ id: nextCaseId++, ...r, forbidden_word_id: _word.id }))
   for (let i = 0; i < payload.length; i += 500) {
     const { error } = await supabase.from('violation_cases').insert(payload.slice(i, i + 500))
     if (error) throw new Error(`寫入 violation_cases 失敗：${error.message}`)
