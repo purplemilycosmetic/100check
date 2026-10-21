@@ -1,0 +1,4618 @@
+{
+ "source": "臺北市政府衛生局 115年5～8月份處理化粧品違規廣告處罰案件統計表",
+ "cases": [
+  {
+   "month": 5,
+   "case_no": 1,
+   "decision_date": "2026/05/19",
+   "company": "盧亞股份有限公司",
+   "ad_source": "網站",
+   "product": "活顏修護極究精華 50ml 等7項產品",
+   "fine": 100000,
+   "enforce_unit": "新北市政府衛生局",
+   "enforce_date": "2026/04/24",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "decision_date": "2026/05/05",
+   "company": "上琰有限公司",
+   "ad_source": "網站",
+   "product": "【滋潤抗老73折】全酵肌泌水光乳霜(PDRN拉絲霜) 等6項產品",
+   "fine": 100000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2025/08/28",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "decision_date": "2026/05/04",
+   "company": "新靜國際有限公司",
+   "ad_source": "網站",
+   "product": "丰胸彈力 50ml 等7項產品",
+   "fine": 100000,
+   "enforce_unit": "新北市政府衛生局",
+   "enforce_date": "2026/03/09",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 4,
+   "decision_date": "2026/05/18",
+   "company": "上琰有限公司",
+   "ad_source": "網站",
+   "product": "【多入最高8折】107酵萃™蓬鬆控油淨化頭皮洗髮精 等3項產品",
+   "fine": 80000,
+   "enforce_unit": "高雄市政府（民眾陳情）",
+   "enforce_date": "2026/02/07",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "decision_date": "2026/05/05",
+   "company": "台灣萊雅股份有限公司",
+   "ad_source": "看板;立牌",
+   "product": "紫熨斗Max、冰熨斗Max 等5項產品",
+   "fine": 80000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2025/09/04",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "decision_date": "2026/05/25",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國SUNGBOON EDITOR胜肽金絲膠原眼霜",
+   "fine": 70000,
+   "enforce_unit": "宜蘭縣政府衛生局",
+   "enforce_date": "2026/01/07",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "decision_date": "2026/05/20",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國Elujai牛奶蛋白彈力安瓶霜",
+   "fine": 70000,
+   "enforce_unit": "嘉義市政府衛生局",
+   "enforce_date": "2026/02/02",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "decision_date": "2026/05/18",
+   "company": "台灣萊雅股份有限公司",
+   "ad_source": "網站",
+   "product": "CA胜肽精華 等2項產品",
+   "fine": 60000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2025/08/14",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "decision_date": "2026/05/05",
+   "company": "達爾膚生醫科技股份有限公司",
+   "ad_source": "網站",
+   "product": "DR.WU 達爾膚超逆齡肌因再生精華30ML（2入組添加外泌體）",
+   "fine": 60000,
+   "enforce_unit": "雲林縣衛生局（民眾陳情）",
+   "enforce_date": "2025/11/26",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "decision_date": "2026/05/04",
+   "company": "塞席爾商美之本國際有限公司台灣分公司",
+   "ad_source": "電視",
+   "product": "牛O ampm百億級肌泌院線修復組",
+   "fine": 60000,
+   "enforce_unit": "嘉義市政府衛生局",
+   "enforce_date": "2026/01/15",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "decision_date": "2026/05/25",
+   "company": "台灣萊雅股份有限公司",
+   "ad_source": "網站",
+   "product": "L’OREAL 巴黎萊雅PRO 絲芮雅活力啟動精粹90ml",
+   "fine": 50000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/03/10",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 12,
+   "decision_date": "2026/05/15",
+   "company": "上琰有限公司",
+   "ad_source": "網站",
+   "product": "全酵肌泌潔顏露",
+   "fine": 50000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2025/10/03",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 13,
+   "decision_date": "2026/05/14",
+   "company": "綠藤生物科技股份有限公司",
+   "ad_source": "網站",
+   "product": "專心護唇油-唇部油保養的純淨之作",
+   "fine": 50000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2025/11/25",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 14,
+   "decision_date": "2026/05/28",
+   "company": "芙雅國際有限公司",
+   "ad_source": "看板",
+   "product": "法瑪仕E位性強效滋養霜",
+   "fine": 50000,
+   "enforce_unit": "臺北市政府衛生局",
+   "enforce_date": "2026/05/04",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 15,
+   "decision_date": "2026/05/26",
+   "company": "陳OO（薦證代言人）",
+   "ad_source": "電視",
+   "product": "764-1972 台酒生技全效抗齡年度明星回饋檔",
+   "fine": 40000,
+   "enforce_unit": "澎湖縣政府衛生局",
+   "enforce_date": "2026/01/05",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "decision_date": "2026/05/20",
+   "company": "芙雅國際有限公司",
+   "ad_source": "網站",
+   "product": "法瑪仕A微創全效修護霜-75ml",
+   "fine": 40000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/02/11",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 5,
+   "case_no": 17,
+   "decision_date": "2026/05/08",
+   "company": "蔡OO（薦證代言人）",
+   "ad_source": "電視",
+   "product": "台酒生技全效抗齡年度明星回饋檔",
+   "fine": 40000,
+   "enforce_unit": "澎湖縣政府衛生局",
+   "enforce_date": "2026/01/05",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "decision_date": "2026/06/17",
+   "company": "台灣萊雅股份有限公司",
+   "ad_source": "網站",
+   "product": "PX50極塑黑繃帶修護乳霜50ml 等7項產品",
+   "fine": 100000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/03/11",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "decision_date": "2026/06/12",
+   "company": "美商雅詩蘭黛股份有限公司台灣分公司",
+   "ad_source": "網站",
+   "product": "Advanced Night Repair特潤超導全方位修護露 等6項產品",
+   "fine": 100000,
+   "enforce_unit": "新北市政府衛生局",
+   "enforce_date": "2026/04/23",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 3,
+   "decision_date": "2026/06/23",
+   "company": "上琰有限公司",
+   "ad_source": "網站",
+   "product": "【水光撫紋71折】全酵肌泌修護凝萃（小玻泌）",
+   "fine": 60000,
+   "enforce_unit": "高雄市政府（民眾陳情）",
+   "enforce_date": "2026/03/24",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 4,
+   "decision_date": "2026/06/23",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國tenzero蜜光潤肌彈力霜",
+   "fine": 60000,
+   "enforce_unit": "嘉義市政府衛生局",
+   "enforce_date": "2026/03/20",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 5,
+   "decision_date": "2026/06/23",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "INNOCENCE維他膠原特潤彈力霜",
+   "fine": 60000,
+   "enforce_unit": "嘉義市政府衛生局",
+   "enforce_date": "2026/03/11",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "decision_date": "2026/06/12",
+   "company": "達爾膚生醫科技股份有限公司",
+   "ad_source": "網站",
+   "product": "DR.WU達爾膚超逆齡肌因前導精華露150ML 等2項產品",
+   "fine": 60000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/03/09",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "decision_date": "2026/06/04",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國Coreana魚子膠原光燦緊緻霜",
+   "fine": 60000,
+   "enforce_unit": "澎湖縣政府衛生局",
+   "enforce_date": "2026/02/11",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "decision_date": "2026/06/04",
+   "company": "任開數位媒體行銷股份有限公司",
+   "ad_source": "網站",
+   "product": "雪松醇豐盈強健洗髮精、雪松醇蓬鬆養髮精華",
+   "fine": 50000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/03/10",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 9,
+   "decision_date": "2026/06/29",
+   "company": "米捷國際有限公司",
+   "ad_source": "網站",
+   "product": "寶寶極致修護軟膏-無香(96.39g)",
+   "fine": 40000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/03/16",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "decision_date": "2026/06/25",
+   "company": "蘴蒔股份有限公司",
+   "ad_source": "網站",
+   "product": "冰美式小臉面膜",
+   "fine": 40000,
+   "enforce_unit": "衛生福利部食品藥物管理署",
+   "enforce_date": "2026/05/22",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 11,
+   "decision_date": "2026/06/10",
+   "company": "宋OO（薦證代言人）",
+   "ad_source": "電視",
+   "product": "764-1972 台酒生技全效抗齡年度明星回饋檔",
+   "fine": 40000,
+   "enforce_unit": "澎湖縣政府衛生局",
+   "enforce_date": "2026/01/05",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "decision_date": "2026/06/08",
+   "company": "肯夢國際股份有限公司",
+   "ad_source": "網站",
+   "product": "蘊活煥欣豐盈菁華環保包(150ml*2)",
+   "fine": 40000,
+   "enforce_unit": "彰化縣衛生局",
+   "enforce_date": null,
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 6,
+   "case_no": 13,
+   "decision_date": "2026/06/03",
+   "company": "歐麗雅股份有限公司",
+   "ad_source": "網站",
+   "product": "土肉桂青檬養髮液",
+   "fine": 40000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/03/10",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "decision_date": "2026/07/06",
+   "company": "台灣萊雅股份有限公司",
+   "ad_source": "網站",
+   "product": "超未來肌因冰珠亮眼粹 等7項產品",
+   "fine": 110000,
+   "enforce_unit": "新北市政府衛生局",
+   "enforce_date": "2026/05/14",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 2,
+   "decision_date": "2026/07/07",
+   "company": "未來美學品牌行銷有限公司",
+   "ad_source": "網站",
+   "product": "芝·養髮 潔淨液 等7項產品",
+   "fine": 80000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/04/11",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "decision_date": "2026/07/21",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國WB少女肌美白慕斯",
+   "fine": 70000,
+   "enforce_unit": "南投縣政府衛生局",
+   "enforce_date": "2026/04/30",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "decision_date": "2026/07/01",
+   "company": "采妍國際行銷股份有限公司",
+   "ad_source": "網站",
+   "product": "藍熨斗新手緊緻組（BRIGIN 媛生超導儀微震抗皺緊緻A醇精華） 等4項產品",
+   "fine": 70000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/03/17",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "decision_date": "2026/07/29",
+   "company": "台灣萊雅股份有限公司",
+   "ad_source": "網站",
+   "product": "KIEHL'S 益肌重生修復凝霜 NEW 等2項產品",
+   "fine": 60000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/01/20",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "decision_date": "2026/07/21",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國Marchen 斑點修護年輕煥白霜",
+   "fine": 60000,
+   "enforce_unit": "南投縣政府衛生局",
+   "enforce_date": "2026/04/09",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 7,
+   "decision_date": "2026/07/21",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "法國美妝賞SaintFran特潤網紗氣墊",
+   "fine": 60000,
+   "enforce_unit": "南投縣政府衛生局",
+   "enforce_date": "2026/04/09",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "decision_date": "2026/07/09",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "RAVIEL西印度櫻桃美白煥膚霜",
+   "fine": 60000,
+   "enforce_unit": "嘉義市政府衛生局",
+   "enforce_date": "2026/04/15",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 9,
+   "decision_date": "2026/07/09",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國缺貨王VT頂規PDRN微晶精華",
+   "fine": 60000,
+   "enforce_unit": "新竹縣政府衛生局",
+   "enforce_date": "2026/02/11",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "decision_date": "2026/07/09",
+   "company": "軒郁國際股份有限公司",
+   "ad_source": "網站",
+   "product": "【未來美】專業院線PDRN外泌體新生精華 等2項產品",
+   "fine": 60000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/04/30",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 11,
+   "decision_date": "2026/07/27",
+   "company": "德典生技股份有限公司",
+   "ad_source": "網站",
+   "product": "【霓淨思】RE再生奇蹟彈潤星光組",
+   "fine": 50000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/04/12",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 12,
+   "decision_date": "2026/07/16",
+   "company": "同億國際有限公司",
+   "ad_source": "電視",
+   "product": "資生堂激抗痕亮采緊緻眼霜新品推薦",
+   "fine": 50000,
+   "enforce_unit": "嘉義縣衛生局",
+   "enforce_date": "2026/04/15",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "decision_date": "2026/07/06",
+   "company": "橋締股份有限公司",
+   "ad_source": "網站",
+   "product": "【黃金術後修護組】Cebelia 絲寶麗寡胜肽再生霜 等2項產品",
+   "fine": 50000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/04/13",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 14,
+   "decision_date": "2026/07/31",
+   "company": "富美康健股份有限公司",
+   "ad_source": "電視",
+   "product": "女大推薦微米晶球精華粉底",
+   "fine": 40000,
+   "enforce_unit": "嘉義市政府衛生局",
+   "enforce_date": "2026/02/03",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 15,
+   "decision_date": "2026/07/23",
+   "company": "俊勇國際開發股份有限公司",
+   "ad_source": "網站",
+   "product": "優樂碘 ioRinse ULTRA 分子碘漱口水 1000ml",
+   "fine": 40000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2026/05/08",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 16,
+   "decision_date": "2026/07/21",
+   "company": "寶僑家品股份有限公司",
+   "ad_source": "立牌",
+   "product": "OLAY歐蕾胜肽專研緊緻輕潤乳霜",
+   "fine": 40000,
+   "enforce_unit": "臺北市政府衛生局",
+   "enforce_date": "2025/11/11",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 17,
+   "decision_date": "2026/07/21",
+   "company": "歐姬兒股份有限公司",
+   "ad_source": "網站",
+   "product": "『蜂王乳A醇緊緻精華EX』與『蜂王乳凝露EX』撫皺彈潤套組",
+   "fine": 40000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2025/09/19",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 18,
+   "decision_date": "2026/07/21",
+   "company": "拓金造物股份有限公司",
+   "ad_source": "網站",
+   "product": "3重泌體超導激活｜乾式｜微電流面膜｜5片",
+   "fine": 40000,
+   "enforce_unit": "臺北市政府（民眾陳情）",
+   "enforce_date": "2025/12/05",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 7,
+   "case_no": 19,
+   "decision_date": "2026/07/14",
+   "company": "愛比森國際股份有限公司",
+   "ad_source": "電視",
+   "product": "菲常專案愛比森PRP逆時超導安瓶",
+   "fine": 40000,
+   "enforce_unit": "嘉義市政府衛生局",
+   "enforce_date": "2026/04/02",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 1,
+   "decision_date": "2026/08/31",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "VT頂規PDRN微晶精華特殺",
+   "fine": 70000,
+   "enforce_unit": "嘉義市政府衛生局",
+   "enforce_date": "2026/05/22",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "decision_date": "2026/08/12",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國JAS PDRN醫美級素顏霜",
+   "fine": 70000,
+   "enforce_unit": "嘉義市政府衛生局",
+   "enforce_date": "2026/05/15",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 3,
+   "decision_date": "2026/08/07",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "Calvisano 義大利黑鑽魚子緊緻面膜",
+   "fine": 70000,
+   "enforce_unit": "南投縣政府衛生局",
+   "enforce_date": "2026/05/08",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "decision_date": "2026/08/20",
+   "company": "璨暉貿易股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國TROOSKIN真能肌因修護霜",
+   "fine": 60000,
+   "enforce_unit": "基隆市衛生局",
+   "enforce_date": "2026/05/20",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "decision_date": "2026/08/05",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "JAS無痛美白高純度藻針霜特殺",
+   "fine": 60000,
+   "enforce_unit": "新竹縣政府衛生局",
+   "enforce_date": "2026/03/05",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "decision_date": "2026/08/05",
+   "company": "上星股份有限公司",
+   "ad_source": "電視",
+   "product": "韓國EARTHERA最新白蛋白標靶抗老霜",
+   "fine": 60000,
+   "enforce_unit": "新竹縣政府衛生局",
+   "enforce_date": "2026/03/17",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 7,
+   "decision_date": "2026/08/27",
+   "company": "康鮮國際股份有限公司",
+   "ad_source": "網站",
+   "product": "【外泌體新客入門組】SPIRIT'S SECRET 泌妍煥髮精華安瓶 等2項產品",
+   "fine": 50000,
+   "enforce_unit": "新北市政府衛生局",
+   "enforce_date": "2026/06/22",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "decision_date": "2026/08/21",
+   "company": "匯總實業有限公司",
+   "ad_source": "網站",
+   "product": "Moonlight 莯光進化版豐盈生機毛囊精華液 70mL x3",
+   "fine": 50000,
+   "enforce_unit": "衛生福利部食品藥物管理署",
+   "enforce_date": null,
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 9,
+   "decision_date": "2026/08/04",
+   "company": "塞席爾商美之本國際有限公司台灣分公司",
+   "ad_source": "電視",
+   "product": "牛爾京城之霜80%高濃度養膚縮時底妝",
+   "fine": 50000,
+   "enforce_unit": "南投縣政府衛生局",
+   "enforce_date": "2026/04/16",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 10,
+   "decision_date": "2026/08/27",
+   "company": "雨揚國際股份有限公司",
+   "ad_source": "電視",
+   "product": "雨揚珍品第三代五行開運外泌體素顏霜",
+   "fine": 40000,
+   "enforce_unit": "南投縣政府衛生局",
+   "enforce_date": "2026/05/26",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "decision_date": "2026/08/25",
+   "company": "旭飛健康實業股份有限公司",
+   "ad_source": "網站",
+   "product": "【妹妹的益生元噴霧加強版】6效合1私密平衡噴霧｜HYPHY",
+   "fine": 40000,
+   "enforce_unit": "衛生福利部食品藥物管理署（民眾陳情）",
+   "enforce_date": "2026/07/01",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 12,
+   "decision_date": "2026/08/18",
+   "company": "台灣曼秀雷敦股份有限公司",
+   "ad_source": "網站",
+   "product": "50惠黑髮激活洗髮露400mL2入",
+   "fine": 40000,
+   "enforce_unit": "雲林縣衛生局",
+   "enforce_date": null,
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "decision_date": "2026/08/17",
+   "company": "久保雅司國際股份有限公司",
+   "ad_source": "電視",
+   "product": "德國原裝webner白玫瑰活膚精粹",
+   "fine": 40000,
+   "enforce_unit": "基隆市衛生局",
+   "enforce_date": "2026/06/26",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 14,
+   "decision_date": "2026/08/13",
+   "company": "欣新網股份有限公司",
+   "ad_source": "網站",
+   "product": "AHC瞬效B5微導玻尿酸保濕精華液30ml_3入",
+   "fine": 40000,
+   "enforce_unit": "雲林縣衛生局",
+   "enforce_date": "2026/03/16",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  },
+  {
+   "month": 8,
+   "case_no": 15,
+   "decision_date": "2026/08/06",
+   "company": "中隱生活國際有限公司",
+   "ad_source": "網站",
+   "product": "【口角炎 缺乏維他命B 唇周乾裂】活氧舒護唇皰疹發炎修護唇膏",
+   "fine": 40000,
+   "enforce_unit": "衛生福利部食品藥物管理署",
+   "enforce_date": "2026/06/04",
+   "law_ref": "化粧品衛生安全管理法第10條第1項"
+  }
+ ],
+ "phrases": [
+  {
+   "month": 5,
+   "case_no": 1,
+   "phrase": "促進肌膚再生",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 1,
+   "phrase": "92%男性表示使用4週後，肌膚變得更柔軟、平滑且細緻",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 1,
+   "phrase": "防禦外在環境的有害因子侵害而造成的肌膚早衰",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 1,
+   "phrase": "幫助角質老廢細胞自然代謝",
+   "category": "細胞/基因",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "2仟億韓國專利美肌菌外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "塗抹式水光針",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "2000億韓國外泌體",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "拯救爛臉",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "脫皮紅癢",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "灼熱刺痛",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "益生菌外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "2週實測",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "眼下細紋改善",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "醫美級水光",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 2,
+   "phrase": "使用前後對照圖",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "對抗地心引力",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "胸部乾癟者",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "產後垂鬆者",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "揮別妳的空杯困擾",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "抬頭挺胸",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "垂胸鬆弛掰 恢復緊緻俏彈",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "抗衡地心引力",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "哺乳後下垂鬆弛的肌膚 依然能緊緻堅挺",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "輕鬆抹出 豐･彈･緊",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "500奈米小分子",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 3,
+   "phrase": "青春澎彈一瓶搞定",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 4,
+   "phrase": "毛囊堵塞掉髮",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 4,
+   "phrase": "留住髮絲+61%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 4,
+   "phrase": "豐盈髮線",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 4,
+   "phrase": "抗屑",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 4,
+   "phrase": "改善頭皮搔癢",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "撫平全臉5年深層紋",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "全新醫美級成分",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "醫美級",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "無針撫紋雙霸",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "全臉紋路逐層回彈",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "眼周困擾全面改善",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "7倍澎彈",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "橫掃全臉紋",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "7X撐膠原",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 5,
+   "phrase": "7X固膠原",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "拉提膠原蛋白",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "眼下塌垂 眼周細紋 都是因為蛋白質不足",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "肌膚黃金埋線",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "無痛注入的概念",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "臉都拉提了",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "本來沒有輪廓線的會有輪廓線",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "眼睛視野變大",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "前面的頭取代針頭一樣",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "2週顯著改善眼袋",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "重建膠原蛋白柱",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "填補凹陷眼部肌膚",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "全臉用法令紋、抬頭紋、木偶紋提升",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "它就像埋線一樣",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "無時無刻幫你做緊實拉提",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "就好像隱形的拉提埋線一樣",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "他對眼袋最有效",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 6,
+   "phrase": "我們今天用無痛的方式",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "有助於改善雙重斑點(黑色素)",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "法令紋利器",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "用牛奶蛋白治療法令紋",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "蘋果肌超級無敵明顯",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "幫助肌膚表層及深層彈力改善",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "20倍的濃縮",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "細紋會完全被修飾掉",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "回春",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "使用1次之後它的水分含量提升60.74%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "它修復屏障",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "它會自生穀胱甘肽",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "醫美完之後你要做修復",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "幫助傷口",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "除皺",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "好像瞬間打了什麼東西，我好像補了什麼玻尿酸",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "深的法令紋現在馬上都淡掉了",
+   "category": "誇大功效",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 7,
+   "phrase": "法令紋救星",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "塗抹式肉毒",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "動態紋-30%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "24%抬頭紋",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "-23%眉間紋",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "能滲透肌底110微米",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "經臨床證實1小時激活膠原",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "皮膚醫學",
+   "category": "醫療器材混淆",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "無針水光",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "實證深導逼近肌底",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "+353%吸收力",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "+119%激活膠原",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 8,
+   "phrase": "-30%代謝老化",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "添加外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "修復受損肌因",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "再生醫學",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "再生力",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "『細胞失能』是老化關鍵之一",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "基因組不穩定、端粒磨損、表觀遺傳改變",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "粒線體功能障礙",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "幹細胞衰竭",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "酵母菌外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 9,
+   "phrase": "修護受損肌因及再生肌膚",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "醫美最紅抗老最有效的成分",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "1 cc就有百億的植物性外泌素",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "2700億外泌素",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "從修護到拉提都在裡面",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "一抹就緊",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "我醫美都不用做了",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "消炎及修復創傷",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "修復神草",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "為肌膚密集調養激素",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "乾紅癢紋黑，通通退散",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "SGS實測90%細紋明顯淡化",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "90%膠原彈力增加",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "最新醫美技術",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 10,
+   "phrase": "百億濾泡植泌素",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "改善稀疏髮",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "煥活毛囊",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "喚醒沉睡毛囊",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "毛囊休眠期異常是頻繁掉髮的關鍵",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "毛囊萎縮造成頭髮生命週期不穩定",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "延長毛囊生命週期",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "新生濃密黑髮",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "髮際線沒有那麼明顯了",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "實現髮量自由了",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "真的拯救我的寬髮縫",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "幾乎看不太到頭皮了",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 11,
+   "phrase": "可加強稀疏處",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 12,
+   "phrase": "2千億韓國專利美肌菌外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 12,
+   "phrase": "使用前後對照圖",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 13,
+   "phrase": "高親膚性天然植物油",
+   "category": "誇大功效",
+   "risk": 2
+  },
+  {
+   "month": 5,
+   "case_no": 13,
+   "phrase": "優先選擇天然來源",
+   "category": "誇大功效",
+   "risk": 2
+  },
+  {
+   "month": 5,
+   "case_no": 13,
+   "phrase": "天然來源油萃活性成分",
+   "category": "誇大功效",
+   "risk": 2
+  },
+  {
+   "month": 5,
+   "case_no": 13,
+   "phrase": "100% NATURAL ORIGIN",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 13,
+   "phrase": "0 OF 3200+ FROM THE UNNECESSARY LIST",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 14,
+   "phrase": "預防和減輕異位性皮膚炎症狀",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 14,
+   "phrase": "異膚",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 14,
+   "phrase": "急性發作",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 15,
+   "phrase": "使用後臉上痣斑變淺了",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 15,
+   "phrase": "使用後眼尾紋變淡了",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 15,
+   "phrase": "使用四天後眼袋小了一半",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 15,
+   "phrase": "凸出來的斑變小",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 15,
+   "phrase": "使用兩個禮拜臉上的斑不見了",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 15,
+   "phrase": "使用後手上燙傷都不見了",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "重建皮脂膜",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "很快的就止血",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "修復效果非常迅速",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "它擦在傷口上",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "打完皮秒之後",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "縮短了修復期",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "傷口癒合快",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "5天結痂脫落也沒有明顯疤痕",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "具有止癢止傷抗菌的神奇效果",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "連蚊蟲咬也超好用",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "紅腫直接退光",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "異位性皮膚炎",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 16,
+   "phrase": "不用再擦類固醇的藥",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 17,
+   "phrase": "原本那些曬斑不見了",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 17,
+   "phrase": "它就把那個斑融掉了",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 5,
+   "case_no": 17,
+   "phrase": "持續擦了大概不到五六天的時間",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 5,
+   "case_no": 17,
+   "phrase": "中間凹下去一個洞，可是你看不見了",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "微整級",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "6倍快速滲透肌底",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "深層拉提緊塑",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "激活年輕膠原",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "撐起法令紋",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "逆轉鬆垮垂",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "瑞士醫美診所微整級的效果",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "保養品界的電波拉皮",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "協助膠原蛋白增生",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "除皺",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "如雷射電波般的效果",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "緊緻下顎線+40%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "輪廓拉提+78mm",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "輪廓重塑",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "-43%緩解發炎",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "+188%表皮層重建",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 1,
+   "phrase": "+386%真皮層重塑",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "有效激升協同膠原蛋白作用",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "72小時長效保濕，8小時抗老",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "臨床實證3晚修護睡眠不足等各種肌膚老化問題",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "3晚 -10%細紋",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "類肉毒六胜肽",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "擊退1/3動態紋",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "-43% 眼周笑紋",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "-35% 魚尾紋",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "小棕肉毒胜肽眼萃",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "4D除皺雕塑 擊退9大紋路",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "2週淡化黑眼圈",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 2,
+   "phrase": "激升10倍膠原力",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 3,
+   "phrase": "2仟億韓國專利美肌菌外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 3,
+   "phrase": "拯救爛臉",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 3,
+   "phrase": "益生菌外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 3,
+   "phrase": "添加高濃度外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 4,
+   "phrase": "你發炎的皮膚",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 4,
+   "phrase": "術前跟術後的保養",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 4,
+   "phrase": "皮膚增加抵抗力",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 6,
+   "case_no": 4,
+   "phrase": "做完醫美手術後做修復用",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 4,
+   "phrase": "整形術前術後做醫美",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 4,
+   "phrase": "累積很多脂肪、廢水跟廢棄物",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 6,
+   "case_no": 5,
+   "phrase": "所有的皮膚很深的紋路、眼周的那種紋路，你都不用擔心，他全部都可以幫你回彈",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 5,
+   "phrase": "淡化肌膚的眼周、頸部、額頭、法令的什麼皺紋全部都有效",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 5,
+   "phrase": "有助於減緩斑點&斑痕的分布",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 5,
+   "phrase": "有助於減緩肌膚深層斑點部位之黑色素",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "再生醫學",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "因老化而受損的細胞進行修護並達到再生",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "延緩或逆轉細胞層面的老化",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "促進身體的自癒及修護能力",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "皮膚科權威",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "慢性發炎",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "幹細胞衰竭",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "修復受損肌因及再生肌膚",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "全面啟動肌因再生",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "1滴有效逆轉肌齡",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "7天逆轉5年老化",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "外泌體+PDRN",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "再生醫學通過修復、再生受損老化細胞",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "醫美療程『麗珠蘭』",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "促進生長因子和抗炎因子表達",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "類泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "可幫助老化細胞修復與再生",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 6,
+   "phrase": "提升肌膚自癒力",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "使用2週可改善法令紋",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "它有點像擦的美白針",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "2%就可以對抗暗沉跟黑斑",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "美國皮膚科醫生常用",
+   "category": "醫療器材混淆",
+   "risk": 3
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "淡斑(淡化斑點瑕疵)",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "改善痘痘與粉刺問題",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "抑制黑色素向角質細胞轉移",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "減少發紅及炎症",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "醫美雷射後的受損組織進行快速修復與再生",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "幫助肌膚再生",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 7,
+   "phrase": "沒辦法去打電波、音波的人，沒關係你直接擦",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "百位醫師一致推薦",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "醫師認證",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "雪松醇可以避免掉髮",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "雄性禿",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "掉髮情形明顯改善",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "防掉髮洗髮精",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "拯救掉髮危機",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "以前洗頭時滿手掉髮，現在梳頭幾乎看不到落髮",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "我髮量變多了",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 8,
+   "phrase": "促進毛囊生長",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 9,
+   "phrase": "獲得美國濕疹協會認證，適合濕疹護理",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 9,
+   "phrase": "尿布疹、口水疹、濕疹、異位性皮膚炎、蠶豆症寶寶適用",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 9,
+   "phrase": "專為濕疹和尿布疹皮膚而開發",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 9,
+   "phrase": "隔絕水氣、外來刺激物質、過敏原",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 6,
+   "case_no": 9,
+   "phrase": "紅屁屁口水疹的好幫手",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "視覺顯瘦-3kg",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "讓你絕對小臉",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "創新研發敷的瘦臉針",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "瘦V臉",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "真的有感瘦臉",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "才敷3片法令紋就淡了",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "局部消脂",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "甩水消腫",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "添加消脂成份的面膜",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "直接針對臉部脂肪刺激燃燒",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "消退肉肉臉雙下巴",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "10分鐘幫臉穿上雕塑馬甲",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "14天白2階",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 10,
+   "phrase": "媲美醫美美白療程",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 11,
+   "phrase": "使用後隔天黑斑淡了一些",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 11,
+   "phrase": "使用3天斑已經幾乎看不到",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 11,
+   "phrase": "法令紋被填補起來了",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 11,
+   "phrase": "你的臉上所有線條紋路斑點可以通通改善",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 11,
+   "phrase": "使用一個月 全臉輪廓緊緻拉提",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "感受增加一萬一千根髮絲的視覺髮量",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "幫助髮絲健康生長",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "適用髮質：稀疏髮",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "48小時有效提振細胞分子活力",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "滋養毛囊",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "能幫助激勵細胞活力",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "釋放髮量潛力",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "每個毛囊只有約25次生長機會",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "滋養毛囊啟動豐盈",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 12,
+   "phrase": "活化毛囊",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 13,
+   "phrase": "自然脫髮的原因",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 13,
+   "phrase": "解決脫髮問題",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 13,
+   "phrase": "長出蓬鬆豐盈的秀髮",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 6,
+   "case_no": 13,
+   "phrase": "噴灑於全頭及掉髮處",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 6,
+   "case_no": 13,
+   "phrase": "排水孔的髮量變少了",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "phrase": "秒消浮腫",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "phrase": "可深入修護眼周肌亮",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "phrase": "平衡眼周肌膚微生態",
+   "category": "細胞/基因",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "phrase": "可促進眼周微循環",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "phrase": "93%改善浮腫泡",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "phrase": "熬夜黑眼圈急救有感",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "phrase": "有效抑制黑色素生成",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "phrase": "冰鎮消浮腫",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 1,
+   "phrase": "豐盈睫毛",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 2,
+   "phrase": "髮線悄悄「搬家」了",
+   "category": "防脫髮/育髮",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 2,
+   "phrase": "新生的頭髮又細又軟",
+   "category": "防脫髮/育髮",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 2,
+   "phrase": "落/白髮救星",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 2,
+   "phrase": "讓髮量更黑密豐盈",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 2,
+   "phrase": "減少掉髮困擾",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 2,
+   "phrase": "維持健康頭皮循環",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "phrase": "你之前肝斑之前超多",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "phrase": "誰用誰淡斑",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "phrase": "使用四週降低肌膚斑點數量",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "phrase": "使用一次/四週降低10年以上陳年斑點",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "phrase": "你去打一針美白針",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "phrase": "降低肌膚斑點數量33.98%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "phrase": "降低十年以上陳年深層斑點",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "phrase": "老人斑超多的",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 3,
+   "phrase": "擦起來立刻亮、立刻白",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "直搗根源，肌底改善問題",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "吸收效果92%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "紋路淡化83.18%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "肌膚緊實85%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "膠原蛋白彈力增生",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "屏障修護",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "促進循環",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "重構肌底彈力纖維",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "重建表皮屏障",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "幫助提拉臉部",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "提拉輪廓線",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 4,
+   "phrase": "減少動態紋產生",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "細胞&細胞間會出現裂縫",
+   "category": "細胞/基因",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "只要5秒深入裂縫修護",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "90%術後修復",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "93%改善脫皮",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "日常擦可預防發作",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "特殊美容術後第三天",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "急救加速修復",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "促進生長因子分泌速達傷口膚料級修復力",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "天天肌底重塑",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "偕同膠原新生",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "美國濕疹協會",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "美國乾癬協會",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "美國酒糟協會",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "1天就能養出零瑕肌",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "修復肌膚不穩定引起的泛紅",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "能長久保存且有消炎的效果",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "痘痘紅腫都會消很多",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 5,
+   "phrase": "泛紅地方一夜就消失",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "這邊有蝴蝶斑、眼周有很多小碎斑、連黑眼圈都可以解決",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "這邊有顴骨斑、老人斑",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "有助於護理眼下斑點斑痕",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "立即擦立即白",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "兩側老人斑真的淡掉非常多",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "淡斑、袪黃",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "打皮秒一次3千元",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "每擦一次斑就少一次",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "陳年老斑",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 6,
+   "phrase": "它就被我瓦解、被我分解了",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 7,
+   "phrase": "有助於改善可見的深色斑點",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 7,
+   "phrase": "有助於改善法令紋",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 7,
+   "phrase": "裡面的成分可以幫你淡斑",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "phrase": "淡化色素沉澱",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "phrase": "對痘痘肌也有幫助",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "phrase": "我有發炎性肝斑的狀況",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "phrase": "他消失你褐色斑點的變化效果非常好",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "phrase": "你的臉會覺得我怎麼年輕了10歲",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "phrase": "使用3天後19%改善效果",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "phrase": "使用2週後23%改善效果",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "phrase": "曬傷的他有很好的修復效果",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 8,
+   "phrase": "更年期的斑",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 9,
+   "phrase": "修復受損細胞",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 9,
+   "phrase": "淡化痘疤",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 9,
+   "phrase": "減少細紋與皺紋",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 9,
+   "phrase": "修護角質層薄、易敏感肌膚",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 9,
+   "phrase": "你不可能天天去打針，做這種侵入性的治療",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "PDRN外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "微奈藻針導入",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "天然微針技術快速建立數百萬個吸收通道",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "塗抹式水光",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "改善…痘印",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "1抹精準微雕",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "膠原回彈",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "5重錨定膠原網",
+   "category": "細胞/基因",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "直達靶向區域",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "收緊臉頸線條",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 10,
+   "phrase": "年輕能量已經成功抵達肌底",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 11,
+   "phrase": "『再生』奇蹟",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 11,
+   "phrase": "修護肌因",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 11,
+   "phrase": "解決斷崖式衰老",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 11,
+   "phrase": "95.7%澎潤煥亮",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 11,
+   "phrase": "『再生』肌泌",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 12,
+   "phrase": "一款能夠逆轉奇肌的拉提神霜，只要7天",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 12,
+   "phrase": "改善淚溝",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 12,
+   "phrase": "從根源改善眼周暗沉、皺紋、鬆弛與眼袋",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 12,
+   "phrase": "使用眼袋會立即消腫很多",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 12,
+   "phrase": "你的抬頭紋、你的法令紋、包含你的脖紋，全部都可以幫你改善",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 12,
+   "phrase": "一週明顯改善眼袋鬆弛與細紋",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "術後修護",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "再生霜",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "瞬效修復",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "醫美界熱銷",
+   "category": "醫療器材混淆",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "急救膏",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "（手擦傷流血圖）",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "（火灼傷手部圖）",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "調節灼熱感",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "能刺激角質蛋白、第一型膠原蛋白、第三型膠原蛋白和纖維蛋白",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "可保護細胞免受氧化",
+   "category": "細胞/基因",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 13,
+   "phrase": "毫秒間逆轉肌齡",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 14,
+   "phrase": "主要皺紋深度減少15%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 14,
+   "phrase": "深層皺紋減少44%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 14,
+   "phrase": "整體細紋面積減少37%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 14,
+   "phrase": "皺紋很多的，皺紋很大的，有沒有眼袋那麼深的，慢慢淡掉",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 15,
+   "phrase": "牙醫推薦",
+   "category": "醫療器材混淆",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 15,
+   "phrase": "口腔潰瘍、舌頭紅腫或術後皆適用",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 15,
+   "phrase": "術後首選",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 15,
+   "phrase": "牙齦發炎皆適用",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 16,
+   "phrase": "微整?沒整!",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 16,
+   "phrase": "首創！類肉毒肽",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 16,
+   "phrase": "2天淡紋",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 16,
+   "phrase": "14天緊緻下顎線",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 16,
+   "phrase": "28天+41%緊緻",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 16,
+   "phrase": "14天+41%充盈",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 17,
+   "phrase": "市面上卻充斥標榜1%、2%甚至5%的產品，陸續因廣告不實遭衛生局開罰",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 17,
+   "phrase": "僅僅4週改善毛孔皺紋",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 17,
+   "phrase": "毛孔個數…收斂25.17個",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 17,
+   "phrase": "塗抹區皺紋…平均淡化3.29%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 17,
+   "phrase": "細緻毛孔7.65mm²",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 18,
+   "phrase": "3重泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 18,
+   "phrase": "本產品含有來自動物來源的泌體成分",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 18,
+   "phrase": "外泌體",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 18,
+   "phrase": "一般面膜與微電流面膜比較",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 19,
+   "phrase": "你馬上你的臉會緊繃，會有往上拉起的感覺",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 19,
+   "phrase": "想不靠醫美在家就能逆時肌膚",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 19,
+   "phrase": "工研院報告",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 7,
+   "case_no": 19,
+   "phrase": "促進第1型膠原蛋白分泌",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 19,
+   "phrase": "我讓你自己分泌第1型膠原蛋白",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 7,
+   "case_no": 19,
+   "phrase": "做完醫美，有一些小的傷口，我跟你講 PRP用它就好了",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 7,
+   "case_no": 19,
+   "phrase": "拉提效果非常好",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 1,
+   "phrase": "媲美美容院微針療程",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 1,
+   "phrase": "使用一周後本來的問題肌膚，全部得到改善",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 1,
+   "phrase": "他有點像微電流的感覺",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 1,
+   "phrase": "你不用去做醫美，但是你有醫美的效果",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 1,
+   "phrase": "改善深層法令紋15.38%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "phrase": "醫美級",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "phrase": "打針是打肝毒針",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "phrase": "排肝毒",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "phrase": "抑制我現在正要起飛的黑色素跟黃色素",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "phrase": "醫美術後都是擦這支",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "phrase": "你要防止肝斑擦這支",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "phrase": "它就是擦的水光針",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "phrase": "PDRN被用於醫美皮膚治療",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 2,
+   "phrase": "改善…疤痕，術後修復",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 3,
+   "phrase": "是不是覺得皮膚開始鬆垮了",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 3,
+   "phrase": "法令紋都跑出來",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 3,
+   "phrase": "淡化你臉上黑色素的成分",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "滲透真皮0.5-2mm",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "10倍超強滲透力",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "修復再生",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "有皺紋、有下垂有鬆弛的地方，它會…幫你提拉",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "幫你把深層黑色素做到淡化和代謝",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "你看我現在是完全沒有任何的疤痕",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "重啟肌因修復力",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "促進膠原增生",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "外泌穩膚",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "多項歐盟醫療認證",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "應用於:皮膚炎乳霜",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "每一次塗抹3,500根微針深入肌膚表層",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "打開吸收通道形成無創導入孔道",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "醫美等級的肌膚改善力",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "從醫學級導入開始",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 4,
+   "phrase": "重建膠原支撐因子",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "斑點護理霜",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "皮膚擦的水光針",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "擦的美白針",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "排黃色素超級快",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "一禮拜發現皮膚斑淡了不少",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "又稱『水解海綿』、『海綿微針』",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "3天強效美白",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "改善三年以上陳年斑點144.03%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "提升角質20層保濕達212.81%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "阻斷黑色素由黑色素細胞像角質形成細胞的轉移",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "使用3天後改善陳年斑點…改善3.55倍",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "暗沉帶狀斑點、黑斑濃度達205.19%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "緊緻塌垂法令紋部位7.62%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 5,
+   "phrase": "黃色素再來就漸漸變成老人斑了",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "白蛋白能精準鎖定肌膚內的老化因子，修護受損的蛋白質環境",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "實現延緩肌膚時間的『慢速老化機制』",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "改善達26層肌膚層的保濕度276.57%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "增加皮膚的微循環",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "你擦一次等同去護膚中心做一次光療的功效",
+   "category": "醫療器材混淆",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "他會標靶定位在你皮膚在受損的地方",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "斑點瑕疵使用1次後幫助改善672.40%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "真的可以通過血腦屏障",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "白蛋白跟埋線的功效有一點點像",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "你用白蛋白做術後保養的話可以撐一年半到兩年",
+   "category": "手術效果",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 6,
+   "phrase": "更刺激膠原蛋白再生",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 7,
+   "phrase": "髮量變得稀疏不再濃密蓬鬆",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 7,
+   "phrase": "生化脈衝",
+   "category": "細胞/基因",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 7,
+   "phrase": "在不同細胞之間傳遞富含生長、修復、抗發炎因子的包裹",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 7,
+   "phrase": "為身體的細胞進行修復與再生",
+   "category": "細胞/基因",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 7,
+   "phrase": "小分子核糖核酸（microRNA）含量提高188%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 7,
+   "phrase": "每顆活性囊泡大小為30-50奈米能輕易穿過肌膚角質層",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 7,
+   "phrase": "頭皮毛囊健康率平均提升20.2%",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "針對落髮、髮量稀疏",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "近4成國人有掉髮問題",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "若每日落髮量大於100根，則有異常落髮情形",
+   "category": "數據宣稱",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "毛囊阻塞及萎縮，最後導致『落髮』",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "提升萌髮力",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "掉髮狀況有些許改善",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "也有長出頭髮",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "掉髮真的減少很多",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "感覺細毛有長出來",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 8,
+   "phrase": "改善落髮問題",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 9,
+   "phrase": "抗光害",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 9,
+   "phrase": "類肉毒六胜肽緊提素",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 9,
+   "phrase": "雙效禦光防護因子",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 9,
+   "phrase": "柵藻冬凌草抗光因子，抵禦光害",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 9,
+   "phrase": "與他牌比較",
+   "category": "誇大功效",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 10,
+   "phrase": "把五行的能量奈米化，然後帶到你的細胞底層",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 10,
+   "phrase": "讓你每一個細胞都膨潤",
+   "category": "細胞/基因",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 10,
+   "phrase": "它可以強化屏障",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 10,
+   "phrase": "阻隔外在的空氣汙染，外在的一些不好的東西，細菌",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "淨味率99.7%",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "維持菌叢平衡",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "悶癢",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "私密異味消除99.7%以上",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "白色念珠菌",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "金黃色葡萄球菌",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "減少反覆不適與氣味困擾",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "提升日常抵禦力",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "刺癢",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "私密保養不是殺菌，是養好菌",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 11,
+   "phrase": "常見原因是免疫力下降",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 12,
+   "phrase": "重現烏黑",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 12,
+   "phrase": "妳是否白髮越長越多",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 12,
+   "phrase": "有效延緩頭皮老化",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 12,
+   "phrase": "養出充滿光澤的烏黑秀髮",
+   "category": "防脫髮/育髮",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 12,
+   "phrase": "激活黑髮",
+   "category": "防脫髮/育髮",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "擊碎斑點",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "你要除皺",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "你要消除細紋",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "打破黑斑再生",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "能擊碎深層斑點和頑固色素沉澱",
+   "category": "美白/淡斑",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "延續細胞活氧改善大面積暗沉",
+   "category": "細胞/基因",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "重建白皙肌質",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "吻合細胞膜質有效重點導入",
+   "category": "細胞/基因",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "唯一擁有美白肌因深層碎斑淡化色素",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "越用斑越少",
+   "category": "美白/淡斑",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "我去照X光，胸部都是挺的",
+   "category": "誇大功效",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "因為精油走到全身血液了",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "早上起來也不會浮腫，還有眼袋",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 13,
+   "phrase": "很多人去割眼袋",
+   "category": "手術效果",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 14,
+   "phrase": "醫美後適用",
+   "category": "醫療器材混淆",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 14,
+   "phrase": "換季泛紅",
+   "category": "療效宣稱",
+   "risk": 3
+  },
+  {
+   "month": 8,
+   "case_no": 14,
+   "phrase": "紅癢、脫屑",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 14,
+   "phrase": "精準修復受刺激的角質屏障",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 14,
+   "phrase": "1小時擊退8大肌膚問題",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 14,
+   "phrase": "97%改善搔癢",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 14,
+   "phrase": "100%改善泛紅",
+   "category": "數據宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 14,
+   "phrase": "97%舒緩敏感",
+   "category": "數據宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 15,
+   "phrase": "口角炎",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 15,
+   "phrase": "缺乏維他命B",
+   "category": "療效宣稱",
+   "risk": 4
+  },
+  {
+   "month": 8,
+   "case_no": 15,
+   "phrase": "活氧舒護唇皰疹發炎修護唇膏",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 15,
+   "phrase": "專為唇皰疹/唇周乾裂/紅癢不適設計",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 15,
+   "phrase": "特別針對反覆出現的唇皰疹問題",
+   "category": "療效宣稱",
+   "risk": 5
+  },
+  {
+   "month": 8,
+   "case_no": 15,
+   "phrase": "有助於肌膚自我防禦與再生修復",
+   "category": "細胞/基因",
+   "risk": 4
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+name: 匯入違規廣告案例
+
+on:
+  workflow_dispatch:
+    inputs:
+      data_file:
+        description: '要匯入的資料檔'
+        default: 'data/taipei-violations-115-05-08.json'
+        required: true
+      dry_run:
+        description: '試跑：只檢查比對結果，不寫入資料庫'
+        type: boolean
+        default: true
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install @supabase/supabase-js
+      - name: 匯入
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          DATA_FILE: ${{ inputs.data_file }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: node scripts/import-violation-cases.mjs
