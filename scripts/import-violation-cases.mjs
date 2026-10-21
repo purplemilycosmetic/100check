@@ -135,7 +135,19 @@ async function main() {
     `命中既有關鍵詞 ${rows.filter((r) => !r._word._new).length} 列`,
     `新增關鍵詞 ${newWords.size} 筆`,
   ].join('\n'))
-  notice(`比對不到的詞句（${unmatched.length}）`, unmatched.join('\n') || '（無）')
+  // 註記單則長度有限，分段輸出；尚未指定關鍵詞的詞句另外列出
+  const noKw = unmatched.filter((u) => !u.includes(' → '))
+  const chunks = (list) => {
+    const out = [[]]
+    for (const line of list) {
+      if (out.at(-1).join('\n').length + line.length > 3000) out.push([])
+      out.at(-1).push(line)
+    }
+    return out
+  }
+  console.log(`比對不到的詞句（${unmatched.length}）：\n${unmatched.join('\n')}`)
+  chunks(noKw).forEach((c, i) => notice(`未指定關鍵詞（${noKw.length}）#${i + 1}`, c.join('\n') || '（無）'))
+  notice(`新增關鍵詞（${newWords.size}）`, [...newWords.keys()].join('、').slice(0, 3000))
 
   if (DRY_RUN) {
     console.log('🧪 DRY_RUN：不寫入')
