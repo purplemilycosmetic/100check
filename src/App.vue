@@ -15,23 +15,32 @@
       <nav :class="{ 'active': isMenuOpen }">
         <router-link to="/" exact>首頁</router-link>
         <router-link to="/ai-audit">AI廣告檢核</router-link>
-        <router-link to="/services">服務介紹</router-link>
-        <router-link to="/plan">方案介紹</router-link>
+        <div class="nav-dropdown" :class="{ open: openDropdown === 'services' }">
+          <button type="button" class="dropdown-trigger" @click="toggleDropdown('services')">
+            服務與方案 <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu">
+            <router-link to="/services">服務與方案總覽</router-link>
+            <router-link to="/pif">PIF 預檢・建檔</router-link>
+            <router-link to="/safety-assessment">安全評估簽署</router-link>
+            <router-link to="/ad-review">廣告審核服務</router-link>
+          </div>
+        </div>
         <router-link to="/blog">法規專欄</router-link>
-        <router-link to="/about">關於我們</router-link>
-        <div class="nav-dropdown" :class="{ open: isToolsOpen }">
-          <button type="button" class="dropdown-trigger" @click="toggleTools">
+        <div class="nav-dropdown" :class="{ open: openDropdown === 'tools' }">
+          <button type="button" class="dropdown-trigger" @click="toggleDropdown('tools')">
             小工具 <span class="caret">▾</span>
           </button>
           <div class="dropdown-menu">
-            <router-link to="/label-generator">標籤產生器</router-link>
-            <router-link to="/pif">PIF AI 建檔</router-link>
-            <router-link to="/reference-links">常用參考網站</router-link>
+            <router-link to="/pif#precheck">PIF 預檢</router-link>
             <router-link to="/restricted-ingredients">禁限用成分查詢</router-link>
             <router-link to="/ingredients-dictionary">成分字典</router-link>
+            <router-link to="/label-generator">標籤產生器</router-link>
+            <router-link to="/reference-links">常用參考網站</router-link>
             <router-link to="/dv-greencard">美國綠卡抽籤審核模擬</router-link>
           </div>
         </div>
+        <router-link to="/about" class="nav-contact">聯絡我們</router-link>
       </nav>
       <div class="right-section">
         <div class="lang-switcher">
@@ -66,7 +75,7 @@ export default {
       username: localStorage.getItem('username') || '',
       isLoggedIn: !!localStorage.getItem('token'),
       isMenuOpen: false,
-      isToolsOpen: false
+      openDropdown: null
     }
   },
   methods: {
@@ -80,8 +89,8 @@ export default {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
     },
-    toggleTools() {
-      this.isToolsOpen = !this.isToolsOpen
+    toggleDropdown(name) {
+      this.openDropdown = this.openDropdown === name ? null : name
     }
   },
   watch: {
@@ -89,7 +98,7 @@ export default {
       this.isLoggedIn = !!localStorage.getItem('token')
       this.username = localStorage.getItem('username') || ''
       this.isMenuOpen = false // 切換路由時關閉菜單
-      this.isToolsOpen = false
+      this.openDropdown = null
     }
   }
 }
@@ -181,6 +190,23 @@ nav a {
 
 nav a:hover {
   color: #ff5733;
+}
+
+nav > a.router-link-active:not(.nav-contact) {
+  font-weight: 700;
+}
+
+/* 「聯絡我們」做成按鈕，任何頁面都一眼找得到 */
+nav a.nav-contact {
+  background: #ff5733;
+  color: #fff;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+}
+
+nav a.nav-contact:hover {
+  background: #e04e2d;
+  color: #fff;
 }
 
 /* 小工具下拉選單 */
@@ -345,7 +371,9 @@ nav a:hover {
     margin-top: 0.625rem;
     text-align: left;
     background: #fff;
-    padding: 0.625rem 0;
+    padding: 0.625rem 1.25rem 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
     position: absolute;
     top: 100%;
     left: 0;
@@ -389,6 +417,11 @@ nav a:hover {
   .dropdown-menu a {
     padding: 0.35rem 0;
     font-size: 0.85rem;
+  }
+
+  nav a.nav-contact {
+    display: inline-block;
+    margin-top: 0.75rem;
   }
 
   .right-section {

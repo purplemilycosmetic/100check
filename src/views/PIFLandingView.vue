@@ -1,5 +1,5 @@
 <!--
-  PIF AI 智慧預檢 ＋ PIF 建檔・簽署服務（/pif）
+  PIF 預檢 ＋ PIF 建檔・簽署服務（/pif）
   - 原本 /PIF（PIFView）與 /pif（本頁）因 Vue Router 不分大小寫，實際上 /pif 一直顯示舊頁、
     本頁的 SEO 設定從未生效。現在兩頁合併成這一頁，/PIF 轉址到 /pif。
   - 新增免費工具：成分表比對食藥署禁限用表＋依產品類型產生 PIF 16 項缺件清單。
@@ -9,15 +9,15 @@
   <main class="page-pif">
     <!-- ═══ Hero ═══ -->
     <section class="hero">
-      <p class="eyebrow">PIF AI 智慧預檢 · 專業安全資料簽署</p>
-      <h1>化粧品 PIF 一站完成<br class="br-sm" />先用 AI 預檢，再交給專業簽署</h1>
+      <p class="eyebrow">PIF 預檢 · 專業安全資料簽署</p>
+      <h1>化粧品 PIF 一站完成<br class="br-sm" />先免費預檢，再交給專業簽署</h1>
       <p class="subtitle">
         貼上全成分表、選產品類型，30 秒比對食藥署禁用／限用成分表，並產出你這支產品專屬的
         <strong>PIF 16 項缺件清單</strong>。資料不足的部分，由持證安全資料簽署人員協助補齊、評估與簽署。
       </p>
       <div class="hero-cta">
         <a href="#precheck" class="cta-btn">免費開始 PIF 預檢</a>
-        <router-link to="/about" class="cta-btn cta-secondary">免費諮詢報價</router-link>
+        <router-link to="/about?topic=pif" class="cta-btn cta-secondary">免費諮詢報價</router-link>
       </div>
       <ul class="hero-points">
         <li>✓ 免註冊、免費使用</li>
@@ -34,7 +34,7 @@
 
     <!-- ═══ 工具 ═══ -->
     <section id="precheck" class="tool">
-      <h2>PIF AI 智慧預檢（免費）</h2>
+      <h2>PIF 預檢（免費）</h2>
       <p class="tool-intro">三個步驟，先知道自己缺什麼，再決定要自己補還是委託。</p>
 
       <!-- Step 1 -->
@@ -155,7 +155,8 @@
           </ul>
           <div class="row-actions">
             <button class="cta-btn cta-secondary" @click="copyReport">{{ copied ? '已複製 ✓' : '複製預檢報告' }}</button>
-            <router-link to="/about" class="cta-btn">把缺件交給我們處理</router-link>
+            <a :href="mailtoReport" class="cta-btn cta-secondary">Email 寄出報告</a>
+            <router-link to="/about?topic=pif" class="cta-btn">把缺件交給我們處理</router-link>
           </div>
         </div>
       </div>
@@ -167,9 +168,9 @@
 
     <!-- ═══ 服務流程 ═══ -->
     <section class="section">
-      <h2>AI 預檢 ＋ 專業簽署，PIF 怎麼做最省時間</h2>
+      <h2>免費預檢 ＋ 專業簽署，PIF 怎麼做最省時間</h2>
       <ol class="flow">
-        <li><b>AI 預檢</b><span>比對禁限用成分、依產品類型列出應備文件與缺件。</span></li>
+        <li><b>免費預檢</b><span>比對禁限用成分、依產品類型列出應備文件與缺件。</span></li>
         <li><b>文件盤點與補件</b><span>協助向原料商、代工廠索取 SDS／COA／TDS、GMP 證明與試驗報告。</span></li>
         <li><b>成分毒理與 MoS 計算</b><span>依 SCCS 指引整理毒理資料、計算全身暴露量（SED）與安全餘裕。</span></li>
         <li><b>安全資料簽署</b><span>由持證簽署人員載明評估結論、建議並簽名、押日期。</span></li>
@@ -243,7 +244,7 @@
     <section class="section cta-section">
       <h2>預檢完了，剩下的交給我們</h2>
       <p>把預檢報告和現有文件寄給我們，免費評估需要補哪些資料與報價。</p>
-      <router-link to="/about" class="cta-btn">免費諮詢 PIF 建檔・簽署</router-link>
+      <router-link to="/about?topic=pif" class="cta-btn">免費諮詢 PIF 建檔・簽署</router-link>
     </section>
   </main>
 </template>
@@ -287,7 +288,7 @@ const WHY_US = [
   '配方資料嚴格保密；PIF 屬非公開檔案，僅供主管機關查核',
   '由持有化粧品安全資料簽署人員資格的專業人員親自評估、簽署',
   '依 SCCS 指引執行毒理分析與安全餘裕（MoS）計算，熟悉台灣與歐盟法規',
-  'AI 預檢先盤點缺件，減少來回補件時間',
+  '免費預檢先盤點缺件，減少來回補件時間與費用',
 ]
 
 const TIMELINE = [
@@ -319,7 +320,7 @@ const PIF_ITEMS = [
 ]
 
 const FAQS = [
-  { q: 'PIF 可以用 AI 做嗎？', a: 'AI 可以協助比對禁限用成分、盤點應備文件、整理資料，大幅縮短準備時間；但 PIF 第 16 項「產品安全資料」須由符合資格的安全資料簽署人員評估並親自簽署，AI 無法取代簽署責任。審盾橘的做法是先用 AI 預檢找出缺件，再由專業人員完成毒理評估與簽署。' },
+  { q: 'PIF 可以用 AI 做嗎？', a: 'AI 可以協助比對禁限用成分、盤點應備文件、整理資料，大幅縮短準備時間；但 PIF 第 16 項「產品安全資料」須由符合資格的安全資料簽署人員評估並親自簽署，AI 無法取代簽署責任。審盾橘的做法是先用免費 PIF 預檢自動比對成分、找出缺件，再由專業人員完成毒理評估與簽署。' },
   { q: '化粧品沒有建立 PIF 會被罰嗎？', a: '會。依《化粧品衛生安全管理法》，應建立 PIF 而未建立或內容不完整者，可處新臺幣 1 萬元以上 100 萬元以下罰鍰，並得按次處罰，情節重大者可能停業或廢止登記。' },
   { q: '一般化粧品什麼時候要完成 PIF？', a: '特定用途化粧品自 113 年 7 月 1 日起、嬰兒用／唇用／眼部用／非藥用牙膏漱口水自 114 年 7 月 1 日起、一般化粧品自 115 年 7 月 1 日起，均須完成 PIF 並符合 GMP。' },
   { q: 'PIF 要送衛福部審查嗎？', a: '不用。PIF 由業者自行建立並存放於標示地址備查，主管機關查核時須能提供，無須送審或備查。' },
@@ -524,10 +525,10 @@ const readiness = computed(() => Math.round((haveCount.value / requiredItems.val
 const missing = computed(() => checklist.value.filter((i) => !have.value.includes(i.no)))
 
 const copied = ref(false)
-async function copyReport() {
+function buildReport() {
   const typeLabel = PRODUCT_TYPES.find((t) => t.value === product.type)?.label
   const lines = [
-    '【審盾橘 PIF AI 預檢報告】',
+    '【審盾橘 PIF 預檢報告】',
     `產品類別：${typeLabel}`,
     `PIF 準備度：${readiness.value}%`,
     '',
@@ -540,25 +541,32 @@ async function copyReport() {
   lines.push('▍缺件清單')
   for (const m of missing.value) lines.push(`- ${m.no}. ${m.title}${m.optional ? '（可評估免除）' : ''}${m.notes.length ? `：${m.notes.join(' ')}` : ''}`)
   lines.push('', 'https://www.aicheck.com.tw/pif')
+  return lines.join('\n')
+}
+const mailtoReport = computed(
+  () => `mailto:adchecktw@gmail.com?subject=${encodeURIComponent('PIF 預檢報告／建檔諮詢')}&body=${encodeURIComponent(buildReport().slice(0, 1800))}`,
+)
+async function copyReport() {
+  const text = buildReport()
   try {
-    await navigator.clipboard.writeText(lines.join('\n'))
+    await navigator.clipboard.writeText(text)
     copied.value = true
     setTimeout(() => (copied.value = false), 2000)
   } catch {
-    window.prompt('請手動複製：', lines.join('\n'))
+    window.prompt('請手動複製：', text)
   }
 }
 
 // ═══════════════════════════════════════════════
 //  SEO
 // ═══════════════════════════════════════════════
-const TITLE = 'PIF AI 智慧預檢｜化粧品 PIF 建檔・安全簽署代辦 - 審盾橘'
-const DESC = '免費 PIF AI 預檢：貼上全成分表，自動比對食藥署禁用／限用成分並產出 PIF 16 項缺件清單。審盾橘提供化粧品產品資訊檔案建檔、毒理評估、MoS 計算與安全資料簽署，不綁代工、保密配方。'
+const TITLE = 'PIF 預檢｜免費成分比對・缺件清單・PIF 建檔簽署 - 審盾橘'
+const DESC = '免費 PIF 預檢：貼上全成分表，自動比對食藥署禁用／限用成分並產出 PIF 16 項缺件清單。審盾橘提供化粧品產品資訊檔案建檔、毒理評估、MoS 計算與安全資料簽署，不綁代工、保密配方。'
 useHead({
   title: TITLE,
   meta: [
     { name: 'description', content: DESC },
-    { name: 'keywords', content: 'PIF AI, PIF, 化粧品產品資訊檔案, PIF 建檔, PIF 代辦, PIF 費用, 安全資料簽署, 化粧品安全評估, 禁用成分, 限用成分' },
+    { name: 'keywords', content: 'PIF 預檢, PIF AI, PIF, 化粧品產品資訊檔案, PIF 建檔, PIF 代辦, PIF 費用, 安全資料簽署, 化粧品安全評估, 禁用成分, 限用成分' },
     { property: 'og:title', content: TITLE },
     { property: 'og:description', content: DESC },
     { property: 'og:url', content: 'https://www.aicheck.com.tw/pif' },
@@ -575,7 +583,7 @@ useHead({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
-        name: 'PIF AI 智慧預檢',
+        name: 'PIF 預檢',
         url: 'https://www.aicheck.com.tw/pif#precheck',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web',
@@ -586,7 +594,7 @@ useHead({
     },
     breadcrumbSchema([
       { name: '首頁', url: 'https://www.aicheck.com.tw/' },
-      { name: 'PIF AI 預檢與建檔', url: 'https://www.aicheck.com.tw/pif' },
+      { name: 'PIF 預檢與建檔', url: 'https://www.aicheck.com.tw/pif' },
     ]),
   ],
 })

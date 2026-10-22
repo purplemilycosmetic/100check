@@ -27,7 +27,7 @@
     <section class="section cta-section">
       <h2>{{ copy.ctaTitle }}</h2>
       <router-link to="/ai-audit" class="cta-btn">免費體驗</router-link>
-      <router-link to="/plan" class="secondary-btn">查看方案</router-link>
+      <router-link to="/services#plans" class="secondary-btn">查看方案</router-link>
     </section>
 
   </main>
