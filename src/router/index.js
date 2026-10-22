@@ -50,12 +50,10 @@ const router = createRouter({
       component: () => import('../views/ServicesView.vue'),
     },
      {
+      // 舊網址 /PIF 轉到 /pif（sensitive：只攔大寫，避免 /pif 也被導向而無限迴圈）
       path: '/PIF',
-      name: 'PIF',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/PIFView.vue'),
+      redirect: '/pif',
+      sensitive: true,
     },
      {
       path: '/plan',

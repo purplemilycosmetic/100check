@@ -5,7 +5,7 @@ export function serviceSchema(type) {
   const services = {
     pif: {
       name: '化粧品 PIF 建檔・代辦服務',
-      description: '獨立第三方化粧品產品資訊檔案建檔，不綁代工、保密配方，由具備衛福部核可資格的安全資料簽署人員親自簽署。',
+      description: '免費 PIF AI 預檢（禁限用成分比對、16 項缺件清單），搭配獨立第三方化粧品產品資訊檔案建檔與安全資料簽署，不綁代工、保密配方。',
       serviceType: 'PIF 建檔代辦',
     },
     'ad-review': {
@@ -97,6 +97,22 @@ export function breadcrumbSchema(items) {
         position: i + 1,
         name: item.name,
         item: item.url,
+      })),
+    }),
+  }
+}
+
+// FAQPage schema — 傳入 [{ q, a }, ...]，與頁面可見 FAQ 共用同一份資料
+export function faqSchema(faqs) {
+  return {
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
       })),
     }),
   }

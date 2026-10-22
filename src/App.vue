@@ -25,7 +25,7 @@
           </button>
           <div class="dropdown-menu">
             <router-link to="/label-generator">標籤產生器</router-link>
-            <router-link to="/PIF">PIF簽署</router-link>
+            <router-link to="/pif">PIF AI 建檔</router-link>
             <router-link to="/reference-links">常用參考網站</router-link>
             <router-link to="/restricted-ingredients">禁限用成分查詢</router-link>
             <router-link to="/ingredients-dictionary">成分字典</router-link>

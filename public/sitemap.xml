@@ -8,14 +8,9 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- ═══ PIF 變現出口：最高商業價值，priority 拉高 ═══ -->
+  <!-- ═══ PIF AI 預檢＋建檔服務：最高商業價值（舊 /PIF 已轉址至此） ═══ -->
   <url>
     <loc>https://www.aicheck.com.tw/pif</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.aicheck.com.tw/PIF</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -59,4 +54,35 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- ═══ 免費法規工具 ═══ -->
+  <url>
+    <loc>https://www.aicheck.com.tw/safety-assessment</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.aicheck.com.tw/restricted-ingredients</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.aicheck.com.tw/ingredients-dictionary</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.aicheck.com.tw/label-generator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aicheck.com.tw/ad-review</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aicheck.com.tw/reference-links</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
