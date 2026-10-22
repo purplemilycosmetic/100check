@@ -10,7 +10,6 @@
         <router-link to="/services">服務與方案總覽</router-link>
         <router-link to="/pif">PIF 預檢・建檔</router-link>
         <router-link to="/safety-assessment">安全評估簽署</router-link>
-        <router-link to="/ad-review">廣告審核服務</router-link>
       </div>
       <div class="footer-section">
         <h3>免費工具</h3>

@@ -15,24 +15,14 @@
       <nav :class="{ 'active': isMenuOpen }">
         <router-link to="/" exact>首頁</router-link>
         <router-link to="/ai-audit">AI廣告檢核</router-link>
-        <div class="nav-dropdown" :class="{ open: openDropdown === 'services' }">
-          <button type="button" class="dropdown-trigger" @click="toggleDropdown('services')">
-            服務與方案 <span class="caret">▾</span>
-          </button>
-          <div class="dropdown-menu">
-            <router-link to="/services">服務與方案總覽</router-link>
-            <router-link to="/pif">PIF 預檢・建檔</router-link>
-            <router-link to="/safety-assessment">安全評估簽署</router-link>
-            <router-link to="/ad-review">廣告審核服務</router-link>
-          </div>
-        </div>
+        <router-link to="/pif">PIF 預檢</router-link>
+        <router-link to="/services">服務與方案</router-link>
         <router-link to="/blog">法規專欄</router-link>
         <div class="nav-dropdown" :class="{ open: openDropdown === 'tools' }">
           <button type="button" class="dropdown-trigger" @click="toggleDropdown('tools')">
             小工具 <span class="caret">▾</span>
           </button>
           <div class="dropdown-menu">
-            <router-link to="/pif#precheck">PIF 預檢</router-link>
             <router-link to="/restricted-ingredients">禁限用成分查詢</router-link>
             <router-link to="/ingredients-dictionary">成分字典</router-link>
             <router-link to="/label-generator">標籤產生器</router-link>
