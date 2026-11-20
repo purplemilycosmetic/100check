@@ -25,7 +25,7 @@
         <input
           v-model.trim="query"
           type="search"
-          :placeholder="mode === 'company' ? '例：萊雅、雅詩蘭黛、XX 生技有限公司' : '例：精華液、美白霜'"
+          :placeholder="mode === 'company' ? '輸入公司名稱' : '輸入產品名稱'"
           aria-label="查詢關鍵字"
         />
         <button class="btn" :disabled="loading || query.length < 2">{{ loading ? '查詢中…' : '查詢' }}</button>
