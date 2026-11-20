@@ -60,10 +60,17 @@
             <span class="toggle">{{ g.open ? '收合 ▲' : '明細 ▼' }}</span>
           </header>
           <div v-if="g.open" class="cases">
+            <div class="refs">
+              <span class="refs-label">參考資訊</span>
+              <a :href="OFFICIAL_URL" target="_blank" rel="noopener">食藥署違規廣告查詢 ↗</a>
+              <a :href="FINDBIZ_URL" target="_blank" rel="noopener">商工登記查詢（確認統編）↗</a>
+              <a :href="newsUrl(g.company)" target="_blank" rel="noopener">相關新聞 ↗</a>
+            </div>
             <div v-for="c in g.cases" :key="c.id" class="case">
               <div class="case-top">
                 <span class="date">{{ c.decision_date || '日期未載明' }}</span>
                 <b class="product">{{ c.product || '（未載明產品）' }}</b>
+                <span class="src">{{ c.source === '食藥署開放資料' ? '食藥署開放資料' : '裁罰通知彙整' }}</span>
               </div>
               <dl>
                 <template v-if="c.authority"><dt>處分機關</dt><dd>{{ c.authority }}</dd></template>
@@ -93,7 +100,7 @@
     <section class="notes">
       <h2>使用說明</h2>
       <ul>
-        <li>資料來源：衛福部食藥署開放資料「化粧品違規廣告」（全國各縣市衛生局公告，2012 年起），以及本站整理的裁罰通知案例（含罰鍰金額與違規詞句）。每週自動更新。</li>
+        <li>資料來源：衛福部食藥署開放資料「化粧品違規廣告」（全國各縣市衛生局公告，2012 年起），以及本站整理的裁罰通知案例（含罰鍰金額與違規詞句）。每週自動更新。官方查詢請至 <a :href="OFFICIAL_URL" target="_blank" rel="noopener">食藥署違規廣告查詢</a>、<a :href="PUFF_URL" target="_blank" rel="noopener">食藥膨風廣告專區</a>。</li>
         <li>名稱相同或相近不代表是同一家公司，請以統一編號或主管機關公告為準；處分後若經訴願、撤銷，公開資料可能未即時更新。</li>
         <li>非公司行號之個人姓名已遮蔽部分文字。</li>
         <li>想知道自家廣告會不會踩到同樣的雷？用 <router-link to="/ai-audit">AI 廣告檢核</router-link> 比對裁罰案例中的違規詞句。</li>
@@ -109,6 +116,10 @@ import { useHead } from '@unhead/vue'
 import { supabase } from '@/supabaseClient'
 
 const LIMIT = 600
+const OFFICIAL_URL = 'https://pmds.fda.gov.tw/illegalad'
+const PUFF_URL = 'https://www.fda.gov.tw/TC/news.aspx?cid=5085'
+const FINDBIZ_URL = 'https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do'
+const newsUrl = (co) => `https://www.google.com/search?tbm=nws&q=${encodeURIComponent(`"${co}" 廣告 違規 OR 裁罰`)}`
 const route = useRoute()
 const router = useRouter()
 const mode = ref(route.query.by === 'product' ? 'product' : 'company')
@@ -240,6 +251,11 @@ useHead({
 .badge.hot { background: #ffe5de; color: #c62828; }
 .toggle { color: #e04e2d; font-size: 0.88rem; white-space: nowrap; }
 .cases { border-top: 1px solid #f2f2f2; padding: 0.5rem 1.1rem 1rem; }
+.refs { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; background: #fff8f5; border-radius: 8px; padding: 0.55rem 0.8rem; margin: 0.5rem 0 0.25rem; font-size: 0.88rem; }
+.refs-label { color: #888; font-weight: 700; margin-right: 0.2rem; }
+.refs a { color: #e04e2d; text-decoration: none; border: 1px solid #ffd2c4; background: #fff; border-radius: 999px; padding: 0.15rem 0.7rem; }
+.refs a:hover { background: #fff1ec; }
+.src { font-size: 0.75rem; color: #888; background: #f3f3f3; border-radius: 4px; padding: 0 0.4rem; }
 .case { border-left: 3px solid #ffb39e; padding: 0.5rem 0 0.5rem 0.8rem; margin: 0.6rem 0; }
 .case-top { display: flex; gap: 0.6rem; align-items: baseline; flex-wrap: wrap; }
 .date { font-family: ui-monospace, monospace; font-size: 0.85rem; color: #e04e2d; white-space: nowrap; }
