@@ -23,6 +23,7 @@
             小工具 <span class="caret">▾</span>
           </button>
           <div class="dropdown-menu">
+            <router-link to="/penalty-search">違規廠商查詢</router-link>
             <router-link to="/restricted-ingredients">禁限用成分查詢</router-link>
             <router-link to="/ingredients-dictionary">成分字典</router-link>
             <router-link to="/label-generator">標籤產生器</router-link>

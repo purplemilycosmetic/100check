@@ -123,6 +123,7 @@ const WHY = [
 ]
 
 const TOOLS = [
+  { to: '/penalty-search', title: '違規廠商查詢', desc: '全國化粧品裁罰紀錄' },
   { to: '/restricted-ingredients', title: '禁限用成分查詢', desc: '食藥署 5 張公告表' },
   { to: '/ingredients-dictionary', title: '成分字典', desc: '300+ 常見成分說明' },
   { to: '/label-generator', title: '中文標籤產生器', desc: '依法規格式產出標示' },
@@ -182,7 +183,7 @@ useHead({
 .why-icon { font-size: 1.6rem; line-height: 1; }
 .why-item b { font-size: 1.05rem; }
 .why-item p { margin: 0.25rem 0 0; color: #555; font-size: 0.93rem; line-height: 1.6; }
-.tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+.tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.75rem; }
 .tool { display: flex; flex-direction: column; gap: 0.25rem; border: 1px solid #ffd9cc; border-radius: 12px; padding: 1rem; text-decoration: none; background: #fff; transition: transform 0.15s, box-shadow 0.15s; }
 .tool:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255, 87, 51, 0.12); }
 .tool b { color: #e04e2d; }

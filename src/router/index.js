@@ -115,6 +115,11 @@ const router = createRouter({
       component: () => import('../views/RestrictedIngredientsView.vue'),
     },
     {
+      path: '/penalty-search',
+      name: 'penalty-search',
+      component: () => import('../views/PenaltySearchView.vue'),
+    },
+    {
       path: '/ingredients-dictionary',
       name: 'ingredients-dictionary',
       component: () => import('../views/IngredientsDictionaryView.vue'),

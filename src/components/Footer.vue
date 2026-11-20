@@ -14,6 +14,7 @@
       <div class="footer-section">
         <h3>免費工具</h3>
         <router-link to="/ai-audit">AI 廣告檢核</router-link>
+        <router-link to="/penalty-search">違規廠商查詢</router-link>
         <router-link to="/restricted-ingredients">禁限用成分查詢</router-link>
         <router-link to="/ingredients-dictionary">成分字典</router-link>
         <router-link to="/label-generator">標籤產生器</router-link>
