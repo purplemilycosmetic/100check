@@ -15,6 +15,7 @@
  */
 import { createClient } from '@supabase/supabase-js'
 import { createHash } from 'crypto'
+import { existsSync, readFileSync } from 'fs'
 
 const { SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY } = process.env
 const DRY_RUN = !!process.env.DRY_RUN
@@ -54,9 +55,17 @@ const pickField = (row, keys) => { for (const k of keys) { if (row[k] != null &&
 const parseFine = (s) => { if (!s) return null; const m = String(s).replace(/,/g, '').match(/(\d+(?:\.\d+)?)\s*(萬)?/); if (!m) return null; return Math.round(Number(m[1]) * (m[2] ? 10000 : 1)) }
 
 async function fetchTFDA() {
-  const res = await fetch('https://data.fda.gov.tw/data/opendata/export/158/json')
-  if (!res.ok) throw new Error(`TFDA HTTP ${res.status}`)
-  const data = await res.json()
+  // 檔案很大，GitHub Actions 先用 curl（含重試）下載到 TFDA_FILE；沒有檔案時才直接抓
+  let data
+  if (process.env.TFDA_FILE && existsSync(process.env.TFDA_FILE)) {
+    const txt = readFileSync(process.env.TFDA_FILE, 'utf-8').replace(/^\uFEFF/, '')
+    if (!txt.trim()) throw new Error('TFDA 檔案是空的（下載失敗）')
+    data = JSON.parse(txt)
+  } else {
+    const res = await fetch('https://data.fda.gov.tw/data/opendata/export/158/json')
+    if (!res.ok) throw new Error(`TFDA HTTP ${res.status}`)
+    data = await res.json()
+  }
   const list = Array.isArray(data) ? data : data?.Data || []
   const fields = Object.keys(list[0] || {})
   const typeKey = fields.find((f) => /類別|品項|產品類/.test(f))
@@ -93,12 +102,13 @@ async function fetchTFDA() {
 async function fetchTaipei() {
   const rows = []
   for (let p = 0; ; p++) {
-    const { data, error } = await supabase.from('violation_cases').select('company, product, date, fine, phrase, ad_source, enforce_unit, law_ref').range(p * 1000, p * 1000 + 999)
+    const { data, error } = await supabase.from('violation_cases').select('company, product, date, enforce_date, fine, phrase, ad_source, enforce_unit, law_ref').range(p * 1000, p * 1000 + 999)
     if (error) throw error
     rows.push(...data); if (data.length < 1000) break
   }
   const byCase = new Map()
   for (const r of rows) {
+    r.date = r.date || r.enforce_date
     const key = `${r.company}|${r.product}|${r.date}`
     const c = byCase.get(key) || { ...r, phrases: new Set() }
     if (r.phrase) c.phrases.add(r.phrase)
@@ -106,10 +116,10 @@ async function fetchTaipei() {
   }
   return [...byCase.values()].map((c) => ({
     uid: uidOf('TPE', c.company, c.product, c.date),
-    source: '臺北市政府衛生局',
+    source: '裁罰案例彙整',
     company: maskPerson(c.company), product: c.product, product_type: '化粧品',
     violation: [...c.phrases].slice(0, 12).join('、'),
-    law_ref: c.law_ref, authority: c.enforce_unit || '臺北市政府衛生局',
+    law_ref: c.law_ref, authority: c.enforce_unit || null,
     penalty: c.fine ? `罰鍰 ${Number(c.fine).toLocaleString()} 元` : null,
     fine: c.fine ?? null, decision_date: parseDate(c.date), ad_source: c.ad_source,
   }))

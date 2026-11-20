@@ -19,9 +19,17 @@ jobs:
         with:
           node-version: '22'
       - run: npm install @supabase/supabase-js
+      - name: 下載食藥署違規廣告資料集
+        continue-on-error: true
+        run: |
+          curl -sSL --retry 5 --retry-delay 10 --retry-all-errors --max-time 600 \
+            -A "Mozilla/5.0" -o tfda158.json "https://data.fda.gov.tw/data/opendata/export/158/json" || true
+          ls -la tfda158.json || true
+          head -c 300 tfda158.json || true
       - name: 同步
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          TFDA_FILE: tfda158.json
         run: node scripts/sync-penalties.mjs
