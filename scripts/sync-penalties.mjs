@@ -68,7 +68,7 @@ async function fetchTFDA() {
   }
   const list = Array.isArray(data) ? data : data?.Data || []
   const fields = Object.keys(list[0] || {})
-  const typeKey = fields.find((f) => /類別|品項|產品類/.test(f))
+  const typeKey = fields.find((f) => /產品類別|品項/.test(f)) // 資料集 158 本身就是化粧品違規廣告；注意別誤抓「刊播媒體類別」
   const typeCount = {}
   list.forEach((r) => { const t = typeKey ? r[typeKey] : '（無類別欄）'; typeCount[t] = (typeCount[t] || 0) + 1 })
   notice('TFDA 資料集', `共 ${list.length} 筆\n欄位：${fields.join('、')}\n類別欄：${typeKey || '無'}\n類別分布：${Object.entries(typeCount).sort((a, b) => b[1] - a[1]).slice(0, 15).map(([k, v]) => `${k} ${v}`).join('、')}\n範例：${JSON.stringify(list[0]).slice(0, 1500)}`)
@@ -77,23 +77,26 @@ async function fetchTFDA() {
   for (const r of list) {
     const type = typeKey ? String(r[typeKey] || '') : ''
     if (typeKey && type && !/化粧|化妝/.test(type)) continue // 只收化粧品
-    const company = maskPerson(pickField(r, ['違規廠商名稱或負責人', '違規廠商名稱', '廠商名稱']))
-    if (!company) continue
+    // 欄位格式為「公司名稱/負責人」，負責人已由官方遮蔽（陳O光）；只用公司名稱，沒有公司才用負責人
+    const rawCo = pickField(r, ['違規廠商名稱或負責人', '違規廠商名稱', '廠商名稱']) || ''
+    const [coPart, repPart] = rawCo.split('/').map((x) => (x || '').trim())
+    const company = maskPerson(coPart || repPart)
+    if (!company || company === '*') continue
     const product = pickField(r, ['違規產品名稱', '產品名稱'])
     const date = parseDate(pickField(r, ['處分日期', '查處日期', '刊播日期']))
     const penalty = pickField(r, ['查處情形', '處分情形', '罰鍰'])
     out.push({
-      uid: uidOf('TFDA', company, product, date, pickField(r, ['違規情節'])),
+      uid: uidOf('TFDA', rawCo, product, date, pickField(r, ['刊播日期']), pickField(r, ['刊播媒體']), pickField(r, ['處分法條'])),
       source: '食藥署開放資料',
       company, product,
       product_type: type || '化粧品',
-      violation: pickField(r, ['違規情節', '違規內容']),
+      violation: (v => (v && v !== '*' ? v : null))(pickField(r, ['違規情節', '違規內容'])),
       law_ref: pickField(r, ['處分法條', '違反法條']),
       authority: pickField(r, ['處分機關', '查處機關']),
       penalty,
       fine: parseFine(pickField(r, ['罰鍰金額', '罰鍰']) || penalty),
       decision_date: date,
-      ad_source: pickField(r, ['刊播媒體', '刊播媒體類別', '廣告媒體']),
+      ad_source: [pickField(r, ['刊播媒體類別']), pickField(r, ['刊播媒體'])].filter(Boolean).join('・') || null,
     })
   }
   return out
